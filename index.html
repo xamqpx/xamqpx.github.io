@@ -29,10 +29,6 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-<link href="http://fonts.cdnfonts.com/css/century-schoolbook" rel="stylesheet">
-<link href="http://fonts.cdnfonts.com/css/bodoni-mt" rel="stylesheet">
-                
 
 <style>
 
@@ -55,7 +51,7 @@
   font-family: 'Bodoni MT';
   src: url(BOD_R.TTF) format('truetype');
 }
-	
+
 * {
   box-sizing: content-box;
 }
@@ -64,8 +60,20 @@ img {
   width: 100%;
 }
 
+@media (min-width: 1200px) {
+  .img {
+    float: right;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 body {
-  font-family: "Century Schoolbook", serif;
+  font-family: "Helvetica", sans-serif;
   margin: 0;
   font-size: 17px;
   background-color: black;
@@ -100,7 +108,6 @@ a:active {
   background-image: url(archives/25POST\ HEADER.gif);
   background-repeat: no-repeat;
   background-size:cover;
-
 }
 
 .header h1 {
@@ -189,23 +196,23 @@ a:active {
 <body>
 
   <div class="navbar">
-    <a href="index.html" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
+    <a href="home.html" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
     <a href="commentary.html">COMMENTARY</a>
     <a href="nonfiction.html">NON / FICTION</a>
     <a href="about.html">ABOUT</a>
 
     </div>
 
-<div class="header">
-  <p><br><br></p>
-	<h1 style="font-family:Bodoni MT Poster Compressed; font-size:120px">THE 25 POST</h1>
-  <p>Backseat journalism, stories and more.<br><br><i>Read the latest:<br><br><br></i></p>
-</div>
+  <div class="header" id="myHeader">
+    <p><br><br></p>
+    <h1 style="font-family:Bodoni MT Poster Compressed; font-size:120px">THE 25 POST</h1>
+    <p>Backseat journalism, stories and more.<br><br><i>Read the latest:<br><br><br></i></p>
+  </div> 
 
 <!-- left -->
 <div class="row">
   <div class="side">
-    <div>
+    <div id="header">
       <h1 style="font-family:Bodoni MT Condensed; font-size: 50px">NEWEST</h1>
     </div>
     <a href="archives/pieces/the-picture-on-the-wall.html" class="fill-div" style="color:white">
@@ -226,7 +233,10 @@ a:active {
     </div>
     <div>
       <a href="archives/pieces/dear-pl.html" class="fill-div" style="color:white">
-        <small style="color:#dd7e6b"><br><img src="archives/DEAR 25POST.JPG" alt="A painting of a house." style="float:right;width:200px;">NON / FICTION</small>
+        <small style="color:#dd7e6b;">
+          <br><img class="img" src="archives/DEAR 25POST.JPG" style="width:200px;">
+        </small>
+        <small style="color:#dd7e6b"><br>NON / FICTION</small>
         <h2 style="font-family:Bodoni MT; font-size:28px;color:white">Dear,</h2>
         <small>by <b>Peter Liu</b><br>10 July 2022</small>
         <p><br><br><br></p>
@@ -235,8 +245,11 @@ a:active {
     
     <div>
       <a href="archives/articles/heartstopper-queer.html" class="fill-div" style="color:white">
-        <small style="color:#dd7e6b"><br><img src="archives/HEARTSTOPPER 25POST.jpg" alt="A screenshot of the Netflix series 'Hearstopper'." style="float:right;width:200px;">COMMENTARY</small>
-         <h2 style="font-family:Bodoni MT; font-size:28px;color:white">Heartstopper is redefining queer media</h2>
+        <small style="color:#dd7e6b;">
+          <br><img class="img" src="archives/HEARTSTOPPER 25POST.jpg" style="width:200px;">
+        </small>
+        <small style="color:#dd7e6b"><br>COMMENTARY</small>
+        <h2 style="font-family:Bodoni MT; font-size:28px;color:white">Heartstopper is redefining queer media</h2>
         <small>6 July 2022</small>
         <p><br><br><br></p>
       </a>
@@ -244,8 +257,11 @@ a:active {
     
     <div>
       <a href="archives/pieces/dreamsearching.html" class="fill-div" style="color:white">
-        <small style="color:#dd7e6b"><br><img src="archives/DREAMSEARCHING 25POST.jpg" alt="Buildings looming overhead in downtown Beverly Hills." style="float:right;width:200px;">NON / FICTION</small>
-           <h2 style="font-family:Bodoni MT; font-size:28px;color:white">dreamsearching</h2>
+        <small style="color:#dd7e6b;">
+          <br><img class="img" src="archives/DREAMSEARCHING 25POST.jpg" style="width:200px;">
+        </small>
+        <small style="color:#dd7e6b"><br>NON / FICTION</small>
+        <h2 style="font-family:Bodoni MT; font-size:28px;color:white">dreamsearching</h2>
         <small>27 June 2022</small>
         <p><br><br><br></p>
       </a>
@@ -253,12 +269,13 @@ a:active {
   </div>
 
 <div class="footer">
-  <p> <a href="https://instagram.com/25.post/"><img src="archives/instagram 25post.png" style="width:20px"></a>
+  <p> <a href="https://instagram.com/25.post/"><img class="img" src="archives/instagram 25post.png" style="width:20px"></a>
     <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
 
     <br>
   </p>
 </div>
+
 
 </body>
 </html>
