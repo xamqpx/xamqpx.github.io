@@ -54,6 +54,18 @@ img {
   width: 100%;
 }
 
+@media (min-width: 1200px) {
+  .img {
+    float: right;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 body {
   font-family: "Century Schoolbook", serif;
   margin: 0;
