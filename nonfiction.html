@@ -50,8 +50,21 @@
   font-family: 'Century Schoolbook';
   src: url(Century\ Schoolbook\ 400.TTF) format('truetype');
 }
+	
 img {
   width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .img {
+    float: right;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
 }
 
 body {
