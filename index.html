@@ -5,6 +5,10 @@
 <head>
 <title>The 25 Post</title>
 
+<!--basics-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!--icons -->
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
@@ -19,8 +23,7 @@
   <link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
-  <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo">
+
   <meta name="application-name" content="&nbsp;"/>
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
@@ -29,189 +32,17 @@
   <meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!--stylesheets-->
+<link rel="stylesheet" href="homepages-stylesheet.css">
 <style>
-
-@font-face {
-  font-family: 'Bodoni MT Poster Compressed';
-  src: url('BOD_PSTC.TTF') format('truetype');
-}
-	
-@font-face {
-  font-family: 'Bodoni MT Condensed';
-  src: url('bod_cr.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Bodoni MT';
-  src: url(BOD_R.TTF) format('truetype');
-}
-
-
-* {
-  box-sizing: content-box;
-}
-
-img {
-  width: 100%;
-}
-
-@media (min-width: 1200px) {
-  .img {
-    float: right;
-    width: 200px
+  .header {
+    background-image: url(archives/25POST\ HEADER.gif);
   }
-}
-
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-body {
-  margin: 0;
-  font-size: 17px;
-  background-color: #1f1f1f;
-  color: white;
-  text-align:left;
-  font-family: 'Helvetica'
-}
-
-a.fill-div {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
-
-.header {
-  padding: 5px;
-  text-align: center;
-  background-image: url(archives/25POST\ HEADER.gif);
-  background-repeat: no-repeat;
-  background-size:cover;
-}
-
-.header h1 {
-  font-size: 100px;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  text-align: left;
-  padding: 14px 20px;
-  text-decoration: none;
-  color: white
-}
-
-.navbar a:hover {
-  color: rgb(171, 171, 171);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.side {
-  flex: 50%; 
-  padding: 20px;
-}
-
-.main {
-  flex: 50%; 
-  padding: 20px;
-}
-
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
+  .header h1 {
+    font-size: 100px;
   }
-}
-
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-}
-
-.countup {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.countup .timeel {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-  color: rgb(255, 102, 102);
-  min-width: 2.6rem;
-  margin-left: 13px;
-  border-radius: 10px 0 0 10px;
-  font-size: 40px;
-}
-.countup span[class*="timeRef"] {
-  border-radius: 0 10px 10px 0;
-  margin-left: 0;
-  font-size: 20px;
-  
-}
-
-@media screen and (max-width: 700px) {
-  .countup .timeel {
-    display: block;
-  }
-}
-
-
-.reveal{
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.reveal.active{
-  transform: translateY(0);
-  opacity: 1;
-}
 </style>
+
 </head>
 <body>
 
@@ -220,6 +51,7 @@ a:active {
       <a href="index.html" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
       <span><a href="commentary.html">COMMENTARY</a></span>
       <span><a href="nonfiction.html">NON / FICTION</a></span>
+      <span><a href="meta.html">META</a></span>
       <span><a href="about.html">ABOUT</a></span>
       
     </div>
@@ -311,18 +143,14 @@ a:active {
         </a>
       </div>
 
-      <div class="container reveal" style="padding-top:30px;padding:20px;padding-bottom:30px;background-color:#18476E;">   
+      <div class="container reveal" style="padding-top:30px;padding:20px;padding-bottom:30px;background-color: #18476E;">   
         <h2 style="font-family:Bodoni MT Condensed;font-size:50px">DAILY BRIEFING</h2>
         <small>Monday, 15 August 2022<br>Weekly briefings posted on Instagram @25.post</small>
         <ul>
-          <li><h3 style="font-family:Bodoni MT;font-size:28px">Rudy Giuliani to be targeted in 2020 Georgia election denial investigation, lawyers say
-</h3></li>
-          <li><h3 style="font-family:Bodoni MT;font-size:28px">U.S. lawmakers visit Taiwan, China resumes drills
-</h3></li>
-          <li><h3 style="font-family:Bodoni MT;font-size:28px">UKRAINE: Civilians urged to evacuate Russian-occupied Kherson as Ukraine plans counteroffensive
-</h3></li>
-          <li><h3 style="font-family:Bodoni MT;font-size:28px">U.N.-chartered ship carrying Ukrainian grain headed to famine-stricken Ethiopia
-</h3></li>
+          <li><h3 style="font-family:Bodoni MT;font-size:28px">Rudy Giuliani to be targeted in 2020 Georgia election denial investigation, lawyers say</h3></li>
+          <li><h3 style="font-family:Bodoni MT;font-size:28px">U.S. lawmakers visit Taiwan, China resumes drills</h3></li>
+          <li><h3 style="font-family:Bodoni MT;font-size:28px">UKRAINE: Civilians urged to evacuate Russian-occupied Kherson as Ukraine plans counteroffensive</h3></li>
+          <li><h3 style="font-family:Bodoni MT;font-size:28px">U.N.-chartered ship carrying Ukrainian grain headed to famine-stricken Ethiopia</h3></li>
 	      </ul>
       </div>
 
@@ -345,7 +173,7 @@ a:active {
 
 <div class="footer">
     <p style="font-family:Bodoni MT Poster Compressed;font-size:40px;color:white">THE 25 POST</p>
-    <small>To submit an article or written work, click <a href="about.html" style="color:white"><u>here</u></a> for more information.</small>
+    <small>To submit a contribution, click <a href="about.html" style="color:white"><u>here</u></a> for more information.</small>
 </div>
 
 

@@ -1,211 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!--icons -->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
-<link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
-<link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
-<meta name="application-name" content="&nbsp;"/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
-<title>NON / FICTION - The 25 Post</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: content-box;
-}
-	
-@font-face {
-  font-family: 'Bodoni MT';
-  src: url(BOD_R.TTF) format('truetype');
-}
-
-  
-@font-face {
-  font-family: 'Bodoni MT Poster Compressed';
-  src: url('BOD_PSTC.TTF') format('truetype');
-}
-	
-@font-face {
-  font-family: 'Bodoni MT Condensed';
-  src: url('bod_cr.ttf') format('truetype');
-}
-	
-
-	
-img {
-  width: 100%;
-}
-
-@media (min-width: 900px) {
-  .img {
-    float: right;
-	  width: 200px;
-    margin-left: 300px;
-  }
-}
-
-@media (max-width: 900px) {
-  .img {
-    float: none;
-	  width: 100%;
-  }
-}
-
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-body {
-  font-family: "Helvetica", serif;
-  font-size: 17px;
-  margin: 0;
-  background-color: #1f1f1f;
-  color: white;
-}
-
-a.fill-div {
-    display: inline-block;
-    width: 100%;
-    text-decoration: none;
-}
-
-a:link {
-  text-decoration: none;
-  color:white;
-}
-
-a:visited {
-  text-decoration: none;
-  color:white;
-
-}
-
-a:hover {
-  text-decoration: none;
-  color:white;
-
-}
-
-a:active {
-  text-decoration: none;
-  color:white;
-
-}
-
-.header {
-  padding: 5px;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 50px;
-}
-
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  text-align: left;
-  padding: 14px 20px;
-  text-decoration: none;
-  color: white
-}
-
-.navbar a:hover {
-  color: rgb(171, 171, 171);
-}
-
-
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
-}
-
-/* Column container */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 50%; /* Set the width of the sidebar */
-  padding: 20px;
-}
-
-/* Main column */
-.main {
-  flex: 50%; /* Set the width of the main content */
-  padding: 20px;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-
-  .row {
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-
-/* Footer */
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: right;
-  padding: 20px;
-}
-
-hr.solid {
-  border-top: 3px solid #bbb;
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
-</head>
+  <head>
+    <title>NON / FICTION - The 25 Post</title>
+    
+    <!--basics-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
+      <link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
+    
+      <meta name="application-name" content="&nbsp;"/>
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
+      <meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
+      <meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
+      <meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
+      <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+    
+    <!--stylesheets-->
+    <link rel="stylesheet" href="homepages-stylesheet.css">
+    <style>
+      .header {
+        background-image: none;
+      }
+      .header h1 {
+      font-size: 50px;
+      }
+    </style>
+    
+    </head>
 <body>
     <div class="navbar">
         <a href="index.html" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
         <a href="commentary.html">COMMENTARY</a>
         <a href="nonfiction.html">NON / FICTION</a>
+        <span><a href="meta.html">META</a></span>
         <a href="about.html">ABOUT</a>
     
         </div>
