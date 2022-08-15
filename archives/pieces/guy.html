@@ -34,7 +34,6 @@
   font-family: 'Bodoni MT';
   src: url(../../BOD_R.TTF) format('truetype');
 }
-
   
 @font-face {
   font-family: 'Bodoni MT Poster Compressed';
@@ -43,7 +42,7 @@
 	
 @font-face {
   font-family: 'Bodoni MT Condensed';
-  src: url('bod_cr.ttf') format('truetype');
+  src: url('../../bod_cr.ttf') format('truetype');
 }
 	
 
@@ -89,6 +88,11 @@ body {
 }
 
 
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
+
 /* Column container */
 .row {
   display: flex;
@@ -99,18 +103,18 @@ body {
 /* Sidebar/left column */
 .side {
   flex: 30%; /* Set the width of the sidebar */
-  padding: 10px;
+  padding: 20px;
 }
 
 /* Main column */
 .main {
-  flex: 55%; /* Set the width of the main content */
-  padding: 10px;
+  flex: 50%; /* Set the width of the main content */
+  padding: 20px;
 }
 
 .spacer {
-  flex: 15%; /* Set the width of the main content */
-  padding: 10px;
+  flex: 20%; /* Set the width of the main content */
+  padding: 20px;
 }
 
 
