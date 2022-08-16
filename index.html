@@ -41,6 +41,15 @@
   .header h1 {
     font-size: 100px;
   }
+
+  .blink {
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+  }
+
+  @keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 </style>
 
 </head>
@@ -155,7 +164,9 @@
 
       <div class="container reveal" style="padding:20px;background-color: #18476E;border-top:10px solid white">
         <a class="fill-div" style="color:white;" href="https://the25post.com/archives/meta/briefings">
-          <h2 style="font-family:Bodoni MT; font-size:38px;margin-top:10px">Daily news briefings:<br>16 August 2022</h2>
+          <h2 style="font-family:Bodoni MT; font-size:38px;margin-top:10px">
+            <b class="blink">&#11044;</b>
+            Daily news briefings:<br>16 August 2022</h2>
         <ul>
           <li><p>UKRAINE ATTACKS CRIMEA: Fighting extends to Kremlin-occupied territory, in move Russia has sworn would have dire consequences</p></li>
           <li><p>Biden signs Inflation Reduction Act into law</p></li>
