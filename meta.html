@@ -42,6 +42,15 @@
   .header h1 {
     font-size: 50px;
   }
+
+  .blink {
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+  }
+
+  @keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 </style>
 
 </head>
@@ -65,7 +74,9 @@
         <div class="slide">
           <a href="https://the25post.com/archives/meta/briefings" class="fill-div" style="color:white;background-color:#18476E;padding:50px;border-top:10px solid white">
           
-            <h2 style="font-family:Bodoni MT; font-size:38px">Daily news briefings:<br>15 August 2022</h2>
+            <h2 style="font-family:Bodoni MT; font-size:38px">
+              <b class="blink">&#11044;</b>
+              Daily news briefings:<br>15 August 2022</h2>
             <img src="https://static01.nyt.com/images/2022/08/16/multimedia/16ukraine-briefing-carousel-415pm-1/16ukraine-briefing-carousel-415pm-1-threeByTwoMediumAt2X.jpg">
             <p>Brought to you by The 25 Post.</p>
             <small>PHOTO: DAVID GOLDMAN</small>
