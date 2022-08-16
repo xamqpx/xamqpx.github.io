@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NON / FICTION - The 25 Post</title>
+    
+    <!--basics-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
+      <link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
+    
+      <meta name="application-name" content="&nbsp;"/>
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
+      <meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
+      <meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
+      <meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
+      <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+    
+    <!--stylesheets-->
+    <link rel="stylesheet" href="homepages-stylesheet.css">
+    <style>
+      .header {
+        background-image: none;
+      }
+      .header h1 {
+      font-size: 50px;
+      }
+    </style>
+    
+    </head>
+<body>
+    <div class="navbar">
+      <a href="index" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
+      <a href="commentary">COMMENTARY</a>
+      <a href="nonfiction">NON / FICTION</a>
+      <span><a href="meta">META</a></span>
+      <a href="about">ABOUT</a>
+    
+        </div>
+    
+    <div class="header">
+      <h1 style="font-family:Bodoni MT Condensed;">NON / FICTION</h1>
+      <p>The real, the imaginary, and the in between.<br><br><br></p>
+    </div>
+
+    <div class="row">
+        <div class="side">
+          <a href="archives/pieces/he-remembers-alice" class="fill-div" style="color:white;background-color:#525252;padding:50px">
+            <img src="archives/HE REMEMBERS ALICE 25POST.png">
+            <h2 style="font-family:Bodoni MT; font-size:38px">he remembers alice</h2>
+            <small>2 August 2022</small>
+            <p>But there&rsquo;s also another part of him, especially after yesterday and this morning, that&rsquo;s starting to think that maybe it&rsquo;ll be alright to try new things. That the past is just the past, and remembering it and dwelling in it are two different things. 
+            </p>
+        </a>
+        </div>
+        <div class="main">
+          
+            <a href="archives/pieces/the-picture-on-the-wall" class="fill-div" style="color:white">
+                <h2 style="font-family:Bodoni MT; font-size:28px;color:white"><img class="img" src="archives/THE PICTURE ON THE WALL 25POST.jpg">the picture in the wall</h2>
+                <small>2 August 2022</small>
+                <p><br><br><br></p>
+            </a> <hr class="dashed">
+
+            <a href="archives/pieces/dear-pl" class="fill-div" style="color:white">
+              <h2 style="font-family:Bodoni MT; font-size:28px;color:white"><img class="img" src="archives/DEAR 25POST.JPG">Dear,</h2>
+              <small>by <b>Peter Liu</b><br>10 July 2022</small>
+              <p><br><br><br></p>
+          </a> <hr class="dashed">
+
+            <a href="archives/pieces/dreamsearching" class="fill-div" style="color:white">
+                <h2 style="font-family:Bodoni MT; font-size:28px;color:white"><img class="img" src="archives/DREAMSEARCHING 25POST.jpg">dreamsearching</h2>
+                <small>27 June 2022</small>
+                <p><br><br><br></p>
+            </a> <hr class="dashed">
+            <a href="archives/pieces/old-laundry" class="fill-div" style="color:white">
+              <h2 style="font-family:Bodoni MT; font-size:28px;color:white"><img class="img" src="archives/OLD LAUNDRY 25POST.jpg">old laundry</h2>
+              <small>19 April 2022</small>
+              <p><br><br><br></p>
+          </a>
+
+        </div>
+        </div>
+    <div style="padding:20px">
+        <a href="archives/pieces/guy" class="fill-div" style="color:white">
+          <h2 style="font-family:Bodoni MT; font-size:40px;color:white"><img class="img" src="archives/GUY 25POST.JPG">Guy</h2>
+          <small>by <b>Peter Liu</b><br>11 April 2022</small>
+          <p>"then life came and went, and last year, it was just my mother and i, looking over that same sun setting over the couples and the ships and the unspoken deafening absence of the person who was the reason we even came here in the first place."
+          </p>
+        </a>
+        <hr class="dashed">
+
+        <a href="archives/pieces/half-moon-bay" class="fill-div" style="color:white">
+            <h2 style="font-family:Bodoni MT; font-size:40px;color:white"><img class="img" src="archives/HALF MOON BAY 25POST.jpg">half moon bay</h2>
+            <small>25 December 2021</small>
+            <p>"then life came and went, and last year, it was just my mother and i, looking over that same sun setting over the couples and the ships and the unspoken deafening absence of the person who was the reason we even came here in the first place."
+            </p>
+        </a>
+        <hr class="dashed">
+
+        <a href="archives/pieces/nelson" class="fill-div" style="color:white">
+            <h2 style="font-family:Bodoni MT; font-size:40px;color:white"><img class="img" src="archives/NELSON 25POST.jpg">Nelson</h2>
+            <small>29 November 2021</small>
+            <p>"He's been taking his bicycle everywhere recently. 'I've been staring at the ground for so long. But I ride my bike around and I see people; they’re smiling and laughing over the smallest things but they’re still happy.' He's drying my hair with a towel."
+            </p>
+        </a>
+    </div>
+    <div class="footer">
+      <p> <a href="https://instagram.com/25.post/"><img src="archives/instagram 25post.png" style="width:20px"></a>
+        <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+    
+        <br>
+      </p>
+    </div>
+</body>
+</html>

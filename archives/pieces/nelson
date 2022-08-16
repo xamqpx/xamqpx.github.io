@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" /><title>Nelson - The 25 Post</title>
+<!--basics-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--icons -->
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
+<link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
+
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+
+
+<!--stylesheets-->
+<link rel="stylesheet" href="subpage-stylesheet.css">
+<style>
+.header {
+  background-image: url(../NELSON\ 25POST.jpg);
+}
+.header h1 {
+  font-size: 50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="navbar">
+  <a href="../../index" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
+  <a href="../../commentary">COMMENTARY</a>
+  <a href="../../nonfiction">NON / FICTION</a>
+  <a href="../../meta">META</a>
+  <a href="../../about">ABOUT</a>
+
+</div>
+
+<div class="header">
+    <p><br><br><br><br><br><br><br><br></p>
+</div>
+
+<div class="row">
+    <div class="side">
+        <p style="color:#dd7e6b;">NON / FICTION</p>
+        <h2 style="font-family:Bodoni MT; font-size:38px">Nelson</h2>
+        <p>29 November 2021</p>
+        <small>PHOTO: ARNAV MAITI</small>
+
+        
+    </div>
+    <div class="main">
+      <p><inline class="padded-dropcap">H</inline>e's 38. He never admits it outright; he just says he&rsquo;s twenty years my senior and expects me to do the math. I do, but never answer. He didn't want an answer. Past thirty, no one wants an answer.</p>
+
+<p>He's a barber. &quot;Been doing it for twenty years,&quot; he says, less proudly than I would have expected. He fiddles around with scissors and razors and hair clips and he tells me he played soccer professionally before this but he knew it wouldn't work out but he didn't really know what else to do with his life and he thought about quitting but he was still here making it through day by day, and I feel stupid then, an eighteen year old child fresh out of a suburban high school, with no idea what I was doing or where I was going or who I even was, in no position to comfort him or give advice. I just nod and utter some odd grunt. I think he understood. I hope so. There were fifty kids in his soccer league. &quot;Only one ever made it to the big leagues.&quot; He's shaving my sideburns. &quot;One.&quot;</p>
+
+
+
+<p>He's a dad. I asked him how old the kid was. &quot;He's six.&quot; A pause: &quot;I'm jealous of him.&quot; He immigrated here, barely speaking the language and too old to try to be fluent. His kid was struggling too&mdash;he was a first grader, of course he was&mdash;but it wouldn&rsquo;t be for long. &quot;What if he starts correcting me when I make a mistake?&quot; He laughs, but not really.</p>
+
+
+<p>He's been taking his bicycle everywhere recently. &quot;I've been staring at the ground for so long. But I ride my bike around and I see people; they&rsquo;re smiling and laughing over the smallest things but they&rsquo;re still happy.&quot; He's drying my hair with a towel.</p>
+
+
+<p>I mentioned that I've been meaning to buy a bike myself. &quot;Get one.&quot; He looks at me through the mirror for a little while. &quot;I'd love to go riding with my son someday. a long trip, down a beach or through a park. It's a dream of mine.&quot; He's back to trimming again. ''He probably won&rsquo;t want to go out with me when he&rsquo;s a teenager. But it&rsquo;s worth a try.&quot;</p>
+
+
+
+<p>He's like my own father. I don't tell him that, but I do say, &quot;Well, he might not admit it, but I think he&rsquo;ll always want that.&quot;</p>
+
+
+
+<p>&quot;You think so?&quot;</p>
+            </div>
+        <div class="spacer">
+            <p></p>
+        </div>
+        </div>
+        
+
+    <div class="footer">
+      <p> <a href="https://instagram.com/25.post/"><img src="../instagram 25post.png" style="width:20px"></a>
+        <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+    
+        <br>
+      </p>
+    </div>
+    </body>
+    </html>

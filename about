@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ABOUT - The 25 Post</title>
+    
+    <!--basics-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
+      <link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
+    
+      <meta name="application-name" content="&nbsp;"/>
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
+      <meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
+      <meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
+      <meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
+      <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+    
+    <!--stylesheets-->
+    <link rel="stylesheet" href="homepages-stylesheet.css">
+    <style>
+      .header {
+        background-image: none;
+      }
+      .header h1 {
+        font-size: 50px;
+      }
+    </style>
+    
+    </head>
+<body>
+    <div class="navbar">
+      <a href="index" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
+      <a href="commentary">COMMENTARY</a>
+      <a href="nonfiction">NON / FICTION</a>
+      <span><a href="meta">META</a></span>
+      <a href="about">ABOUT</a>
+    
+        </div>
+    
+    <div class="header">
+      <h1 style="font-family:Bodoni MT Condensed;">ABOUT</h1>
+    </div>
+
+    <div class="row">
+        <div class="side">
+          <p>
+            Articles and opinions contained within are original, unless otherwise stated.<br><br>
+            Guest contributors are not endorsed or employed by The 25 Post. Contributors' opinions are their own and not those of The 25 Post.
+          </p>
+          <h3 style="font-family:Bodoni MT;font-size:28px">Submitting an article or written work:</h3>
+          <p>
+            The 25 Post always welcomes guest contributions, of any subject or length (within reason).<br><br>
+
+            Contributions may include, but are not limited to:<br>
+            <ul>
+              <li>Opinion essays, political or otherwise</li>
+              <li>Critiques of art/media</li>
+              <li>Prose, fiction or non-fiction</li>
+              <li>Poetry</li>
+            </ul>
+
+            <b><br><br>If you have an article or written work you would like to contribute, please <a href="https://forms.gle/LgCuXfXnSsCzGgHb6" style="color:white"><u>submit it here</u></a>.</b>
+            <br><br><br><br>Follow us on <a href="https://instagram.com/25.post/" style="color:white"><u>Instagram</u></a>!</p>
+        </div>
+        <div class="main">
+          <img src="archives/PENCIL ART 25POST.png">
+          <p style="text-align:right;font-size: 13px;">AI ART BY MIDJOURNEY<br><i>"man working at dimly lit desk, photorealistic, pencil art"</i></p>
+        </div>
+        </div> 
+        <div class="footer">
+          <p style="font-family:Bodoni MT Poster Compressed;font-size:24px;color:white">THE 25 POST</p>
+      </div>
+</body>
+</html>
