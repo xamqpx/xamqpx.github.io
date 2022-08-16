@@ -46,6 +46,15 @@
       opacity: 1;
     }
   }
+
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%)
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   
   body {
     margin: 0;
@@ -53,7 +62,11 @@
     background-color: #1f1f1f;
     color: white;
     text-align:left;
-    font-family: 'Helvetica'
+    font-family: 'Helvetica';
+  }
+
+  .slide {
+    animation: 1s ease-out 0s 1 slideInFromBottom;
   }
 
   a.fill-div {
