@@ -26,7 +26,8 @@
   @media (min-width: 1200px) {
     .img {
       float: right;
-      width: 200px
+      width: 200px;
+      margin-left: 50px;
     }
   }
   
