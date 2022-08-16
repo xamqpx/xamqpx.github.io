@@ -135,7 +135,7 @@
   }
   
   .countup {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
   .countup .timeel {
@@ -153,12 +153,6 @@
     margin-left: 0;
     font-size: 20px;
     
-  }
-  
-  @media screen and (max-width: 700px) {
-    .countup .timeel {
-      display: block;
-    }
   }
   
   
