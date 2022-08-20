@@ -114,13 +114,13 @@ body {
   }
 
   .side {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1%;
+    padding-right: 1%;
   }
   
   .main {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1%;
+    padding-right: 1%;
   }
 }
 
