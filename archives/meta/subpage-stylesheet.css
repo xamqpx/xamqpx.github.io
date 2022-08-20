@@ -30,23 +30,6 @@ body {
   text-align: justify
 }
 
-a:link {
-  text-decoration: underline;
-  color: white
-}
-
-a:visited {
-text-decoration: underline;
-  color: white}
-
-a:hover {
-  text-decoration: underline;
-  color: white}
-
-a:active {
-  text-decoration: underline;
-  color: white}
-
 .header {
   padding: 50px;
   text-align: left;
