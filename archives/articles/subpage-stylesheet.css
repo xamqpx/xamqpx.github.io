@@ -114,13 +114,20 @@
   }
   
   /* stack row */
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) and (min-width: 700px) {
     .row {
       flex-direction: column;
     }
 
     .side {
       padding-right: 20%
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .row {
+      flex-direction: column;
+      padding: 10px;
     }
   }
   
