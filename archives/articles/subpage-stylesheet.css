@@ -76,35 +76,29 @@
   }
   
   
-  /* Ensure proper sizing */
   * {
     box-sizing: border-box;
   }
   
-  /* Column container */
   .row {
     display: flex;
     flex-wrap: wrap;
   }
   
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
+  /* columns */
+  /* left */
   .side {
     flex: 30%; /* Set the width of the sidebar */
     padding: 20px;
   }
   
-  /* Main column */
+  /* right */
   .main {
-    flex: 50%; /* Set the width of the main content */
+    flex: 70%; /* Set the width of the main content */
     padding: 20px;
+    padding-right: 20%;
   }
-  
-  .spacer {
-    flex: 20%; /* Set the width of the main content */
-    padding: 20px;
-  }
-  
+
   
   .padded-dropcap {
     padding-left: 5px;
@@ -119,14 +113,18 @@
     font-family: "Bodoni MT Condensed"
   }
   
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 700px) {
+  /* stack row */
+  @media screen and (max-width: 1200px) {
     .row {
       flex-direction: column;
     }
+
+    .side {
+      padding-right: 20%
+    }
   }
   
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  /* stack navbar */
   @media screen and (max-width: 400px) {
     .navbar a {
       float: none;
@@ -134,19 +132,10 @@
     }
   }
   
-  /* Footer */
   .footer {
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: right;
     padding: 50px;
-  }
-  
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
-    .navbar a {
-      float: none;
-      width: 100%;
-    }
   }
