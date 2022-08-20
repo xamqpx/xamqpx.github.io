@@ -112,6 +112,16 @@ body {
     flex-direction: column;
     padding: 10px;
   }
+
+  .side {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .main {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* stack navbar */
