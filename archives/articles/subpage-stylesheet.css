@@ -129,6 +129,10 @@
       flex-direction: column;
       padding: 10px;
     }
+
+    .main {
+      padding-right: 0;
+    }
   }
   
   /* stack navbar */
