@@ -92,21 +92,25 @@
     text-decoration: none;
   }
 
-  #more {display: none;}
-  #more1 {display: none;}
-  #more2 {display: none;}
-  #moreBgst {display: none;}
+  #more, #more1, #more2, #moreBgst, #moreRams {
+    display: none;
+  }
 
-  #hide1 {display: inline;}
-  #hideBgst {display: inline;}
-
-  
+  #hide1, #hideBgst {
+    display: inline;
+  }
 
   table {
     font-family: "Helvetica";
     border-collapse: collapse;
     width: 100%;
+    table-layout: fixed;
   }
+
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
   td, th {
     text-align: left;
@@ -189,10 +193,108 @@
         </div>
         <br><br>
 
-        <div class="content" id="queen-death" style="padding:20px;background-color: black;border-top:10px solid #fff">
+        <div class="content" id="bills-rams-09082022" style="padding:20px;background-color: #f1346672;border-top:10px solid #fff">
           <a class="fill-div" style="color:white;">
             <h2 style="font-family:Bodoni MT Condensed; font-size:28px;margin-top:10px">
               <b class="blink">&#11044;</b>
+              N.F.L.: Bills make statement with kickoff game victory vs. Rams</h2>
+              <p>After a tense first three quarters, repeated sacks and incomplete passes by Stafford made space for a runaway Q4. Josh Allen, meanwhile, proved to be an unstoppable force &mdash; crucial deep passes to receivers Stefon Diggs and Gabe Davis, a stealthy no-pass endzone rush, backed by consistently solid defense, left Rams and coach Sean McVay speechless.</p>
+              <table style="margin-bottom:20px;margin-top:20px;">
+                <tr style="margin-bottom:0">
+                  <td></td>
+                  <td colspan="3" style="text-align:center;color:#aaa"><small>FINAL</small></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><img src="https://1000logos.net/wp-content/uploads/2017/10/Buffalo-Bills-Logo-640x400.png" height="50px" style="object-fit:contain;"></td>
+                  <td style="font-family:Bodoni MT;font-size:38px;text-align:center"><b>31</b></td>
+                  <td style="font-family:Bodoni MT;font-size:38px;text-align:center"><b>-</b></td>
+                  <td style="font-family:Bodoni MT;font-size:38px;text-align:center"><b>10</b></td>
+                  <td><img src="https://www.freepnglogos.com/uploads/rams-logo-png/los-angeles-rams-logo-png-2.png" height="50px" style="object-fit:contain"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:center"><a style="color:white;text-decoration:none">BUF</a></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style="text-align:center"><a style="color:white;text-decoration:none">LAR</a></td>
+                </tr>
+                </table>
+                <span id="dotsRams"></span>
+                <span id="moreRams">
+                <table>
+                <tr>
+                  <td colspan="4" style="text-align:left;font-size:14px"><b>Q1 10:03</b> &mdash; TOUCHDOWN
+                    <br>J.Allen pass short right to G.Davis for 26 yards, TOUCHDOWN.
+                  <br>T.Bass extra point is GOOD, Center-R.Ferguson, Holder-S.Martin.
+                <p></p></td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align:left;font-size:14px"><b>Q2 8:51</b> &mdash; FIELD GOAL
+                    <br>T.Bass 41 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.<p></p</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="4" style="text-align:right;font-size:14px">TOUCHDOWN &mdash; <b>Q2 3:05 (SHOTGUN)</b>
+                  <br>M.Stafford pass short right to C.Kupp for 4 yards, TOUCHDOWN.
+                  <br>M.Gay extra point is GOOD, Center-M.Orzech, Holder-R.Dixon.<p></p</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="4" style="text-align:right;font-size:14px">FIELD GOAL &mdash; <b>Q2 0:04</b>
+                  <br>M.Gay 57 yard field goal is GOOD, Center-M. Orzech, Holder-R.Dixon.<p></p</td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align:left;font-size:14px"><b>Q3 8:02 (SHOTGUN)</b> &mdash; TOUCHDOWN
+                    <br>J.Allen pass short right to I.McKenzie for 7 yards, TOUCHDOWN.
+                  <br>T.Bass extra point is GOOD, Center-R.Ferguson, Holder-S.Martin.<p></p</td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align:left;font-size:14px"><b>Q3 13:34 (SHOTGUN)</b> &mdash; TOUCHDOWN
+                    <br>J.Allen scrambles right end for 4 yards, TOUCHDOWN.
+                  <br>T.Bass extra point is GOOD, Center-R.Ferguson, Holder-S.Martin.<p></p</td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align:left;font-size:14px"><b>Q4 9:33</b> &mdash; TOUCHDOWN
+                    <br>J.Allen pass deep right to S.Diggs for 53 yards, TOUCHDOWN.
+                  <br>T.Bass extra point is GOOD, Center-R.Ferguson, Holder-S.Martin.<p></p</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="3" style="text-align:center;font-size:14px"><a href="https://www.nfl.com/games/bills-at-rams-2022-reg-1" style="color:white"><b>Full drive summary</b></a><br>(Courtesy of the N.F.L.)</td>
+                </tr>
+              </table>
+            </span>
+            <button onclick="expandBillsRams()" id="myBtnRams" style="font-family:Helvetica; background-color:transparent;border:none;color:white;font-size:14px"><u>Show details</u></button>
+            <br><br>
+          <script>
+            function expandBillsRams() {
+              var dots1 = document.getElementById("dotsRams");
+              var moreText1 = document.getElementById("moreRams");
+              var btnText1 = document.getElementById("myBtnRams");
+            
+              if (dotsRams.style.display === "none") {
+                dots1.style.display = "inline";
+                btnText1.innerHTML = "<u>Show details</u>"; 
+                moreText1.style.display = "none";
+              } else {
+                dots1.style.display = "none";
+                btnText1.innerHTML = "<u>Show less</u>"; 
+                moreText1.style.display = "inline";
+              }
+            }
+            </script>
+              <img src="https://theramswire.usatoday.com/wp-content/uploads/sites/64/2022/09/409d7ef5713b413db6566b76b4d5e56f.jpg?w=1000&h=600&crop=1">
+              <small>PHOTO: USA TODAY</small>
+              <br><br>
+             
+          </a>
+        </div>
+        <br><br>
+
+        <div class="content" id="queen-death" style="padding:20px;background-color: black;border-top:10px solid #fff">
+          <a class="fill-div" style="color:white;">
+            <h2 style="font-family:Bodoni MT Condensed; font-size:28px;margin-top:10px">
               Queen Elizabeth II, the longest-reigning British monarch, has died.</h2>
                 <p>"The Queen died peacefully at Balmoral this afternoon," the Royal Family wrote on <a href="https://twitter.com/RoyalFamily/status/1567928275913121792?s=20&t=EGxFayDigRzHhEVdoyUTmg" style="color:white">Twitter</a>. "The King and The Queen Consort will remain at Balmoral this evening and will return to London tomorrow."</p>
               <p>She was 96. She assumed the throne at 25, in 1952.</p>
