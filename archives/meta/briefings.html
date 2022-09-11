@@ -186,7 +186,8 @@
           var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
           var date_num = date.getDate();
           var hours = ('0'+date.getHours()).substr(-2);
-          var n = hours + ':'+ date.getMinutes();
+          var mins = ('0'+date.getMinutes()).substr(-2);
+          var n = hours + ':'+ mins;
           document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n + " (Pacific Daylight Time)";
         </script>
 
