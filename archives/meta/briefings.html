@@ -147,7 +147,7 @@
         <h2 style="font-family:Bodoni MT; font-size:38px">Daily news briefings:<br>10 September 2022</h2>
         <p>Brought to you by The 25 Post.</p>
         <small>PHOTO: COURTESY OF FORMULA 1<br><br></small>
-        <b>The 25 Post is not a news website and does not conduct original journalism.</b><br><br>
+        <b>The 25 Post is not a news website and does not conduct original journalism.</b>
         <small>
           <a href="https://the25post.com/about#disclaimers" style="color:white">Learn more</a><br><br>
           Sources/further reading:
@@ -162,6 +162,8 @@
             <br>
             <li><a href="https://www.reuters.com/" style="color:white" target="_blank"><u>Reuters</u></a> is an international news agency founded in London and now owned by Canadian media conglomerate Thomson Reuters.</li>
           </ul>
+          
+
         </small>
         <br><br>
 
@@ -170,6 +172,16 @@
         <div class="container">
           <div class="flex"></div>
         </div>
+        <small style="color:grey">Last updated:&nbsp;<span id="date"></span></small><br><br>
+        <script>
+          const date = new Date(document.lastModified);
+          var month_year = date.toLocaleDateString("en-US", {timezone: "America/Los Angeles", month: "long", year:"numeric"})
+          var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
+          var date_num = date.getDate();
+          var hours = ('0'+date.getHours()).substr(-2);
+          var n = hours + ':'+ date.getMinutes();
+          document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n + " (Pacific Daylight Time)";
+        </script>
 
         <div class="content" id="today" style="padding:20px;background-color: #000;border-top:10px solid #f1346672">
           <a class="fill-div" style="color:white;">
