@@ -93,7 +93,7 @@
     text-align: left;
     padding: 14px 20px;
     text-decoration: none;
-    color: white
+    color: white;
   }
   
   .navbar a:hover {
@@ -122,7 +122,7 @@
   @media screen and (max-width: 1200px) and (min-width: 700px) {
     .row {
       flex-direction: column;
-      padding: 10%;
+      padding: 10px;
     }
   }
 
@@ -179,7 +179,6 @@
     
   }
   
-  
   .reveal{
     position: relative;
     transform: translateY(150px);
@@ -191,3 +190,9 @@
     transform: translateY(0);
     opacity: 1;
   }
+
+  a:link, a:hover, a:visited, a:active {
+    color:white;
+    text-decoration: none;
+  }
+    

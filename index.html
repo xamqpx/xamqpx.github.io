@@ -76,6 +76,37 @@
     border: 1px solid #525252;
     text-decoration: none;
   }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+
+  .button5:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
 </style>
 
 </head>
@@ -83,30 +114,19 @@
 
   <div class="header" id="myHeader">
     <div class="navbar">
-      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px">25</a>
-      <a href="https://the25post.com/commentary">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-      <a href="https://the25post.com/meta">META</a>
-      <a href="https://the25post.com/about">ABOUT</a>
+      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">25</a>
+      <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
+      <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
+      <a href="https://the25post.com/meta" style="color:white">META</a>
+      <a href="https://the25post.com/about" style="color:white">ABOUT</a>
       
     </div>
-    <h1 style="font-family:Bodoni MT Poster Compressed; font-size:120px">THE 25 POST</h1>
-    <p>Backseat journalism, stories and more.<br><br><i>Read the latest:<br><br><br><br></i></p>
+    <div style="color:white">
+      <h1 style="font-family:Bodoni MT Poster Compressed; font-size:120px">THE 25 POST</h1>
+      <p>Backseat journalism, stories and more.<br><br><i>Read the latest:<br><br><br><br></i></p>
+    </div>
     
   </div> 
-
-<div style="background-color:rgba(255, 255, 255, 0.882);padding:20px;color:black;text-align:center">
-  <div class="container reveal">
-    <a href="https://the25post.com/archives/meta/bursting-your-bubble" class="fill-div" style="color:black">
-      <p>New column:</p>
-      <p style="font-family:Bodoni MT Poster Compressed;font-size:80px;line-height:1">BURSTING YOUR BUBBLE</p>
-      <p style="font-family:Helvetica;font-size:17px;"><i>A biweekly reminder that the world outside of America (and Europe) exists.</i>
-      </p>
-      <p style="font-family:Helvetica;font-size:14px;"><br>by <b>JONATHAN PARK</b> for the Daily Trojan
-    </a>
-    
-  </div>
-
 </div>
   
 
@@ -179,7 +199,7 @@
     <div class="container reveal">
 
       <div>
-        <a href="https://the25post.com/archives/articles/17776-review" class="fill-div" style="color:white">
+        <a href="https://the25post.com/archives/articles/17776-review" class="fill-div" >
           <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/17776%2025post.jpg">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">Review: &ldquo;17776&rdquo; is the best argument against capitalist immortality humanity has to offer</h3>
           <small>22 August 2022</small>
@@ -188,7 +208,7 @@
       </div>
 
       <div>
-        <a href="https://the25post.com/archives/articles/loyle-carner" class="fill-div" style="color:white">
+        <a href="https://the25post.com/archives/articles/loyle-carner" class="fill-div" >
           <small style="color:#dd7e6b"><img class="img" src="https://cdn.vox-cdn.com/thumbor/Umg4IDOQd2oWHt8Uk627ZmCjR_Y=/0x0:2546x1672/2070x1164/filters:focal(1070x633:1476x1039):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63612406/loylecarner.0.jpg">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">Every once in a while, Loyle Carner reminds you he&rsquo;s alive</h3>
           <small>20 August 2022</small>
@@ -197,7 +217,7 @@
       </div>
       
       <div>
-        <a href="https://the25post.com/archives/pieces/he-remembers-alice" class="fill-div" style="color:white">
+        <a href="https://the25post.com/archives/pieces/he-remembers-alice" class="fill-div" >
           <small style="color:#dd7e6b"><img class="img" src="archives/HE REMEMBERS ALICE 25POST.jpg">NON / FICTION</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">he remembers alice</h3>
           <small>11 August 2022</small>
@@ -206,7 +226,7 @@
       </div>
       
       <div>
-        <a href="https://the25post.com/archives/pieces/the-picture-on-the-wall" class="fill-div" style="color:white">
+        <a href="https://the25post.com/archives/pieces/the-picture-on-the-wall" class="fill-div" >
           <small style="color:#dd7e6b"><img class="img" src="archives/THE PICTURE ON THE WALL 25POST.jpg">NON / FICTION</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">the picture on the wall</h3>
           <small>2 August 2022</small>
@@ -251,15 +271,27 @@
       </div>
       <br><br>
 
+      
+
       <div class="container reveal">
         <h2 style="font-family:Bodoni MT Condensed;font-size:50px">FOR THE DAILY TROJAN</h2>
-        <a href="https://dailytrojan.com/2022/10/04/bursting-your-bubble-africa-has-zero-monkeypox-vaccines/" class="fill-div" style="color:white" target="_blank">
-          <img src="https://dailytrojan.com/wp-content/uploads/2022/10/vaccines.jpeg">
-          <h3 style="font-family:Bodoni MT;font-size:28px">Bursting your bubble: Africa has zero monkeypox vaccines</small></h3>
-          <small>3 October 2022</small>
-          <p>The West neglecting the continent to save itself is entirely expected.
+        <div style="text-align:center">
+          <a href="https://the25post.com/archives/meta/bursting-your-bubble" class="fill-div" style="color:black;background-color:rgba(255, 255, 255, 0.882);padding:20px;">
+            <p>New column:</p>
+            <p style="font-family:Bodoni MT Poster Compressed; font-size:60px;">
+              BURSTING YOUR BUBBLE</p>
+            <p><i>A biweekly reminder that the world outside of America (and Europe) exists. </i></p>
+            <small>by <b>JONATHAN PARK</b> for the Daily Trojan</small>
+          </a>
+        </div>
+        <br><br>
+        <a href="https://dailytrojan.com/2022/10/05/coronavirus-cases-fall-new-variants-emerge/" class="fill-div"  target="_blank">
+          <img src="https://dailytrojan.com/wp-content/uploads/2022/10/campusCOVID_charlesmccollum_e-00576.jpeg">
+          <h3 style="font-family:Bodoni MT;font-size:28px">Coronavirus cases fall, new variants emerge</small></h3>
+          <small>5 October 2022</small>
+          <p>The new subvariants are a “cause for concern,” but there are no U.S. cases yet.
           </p>
-          <a href="https://dailytrojan.com/tag/jonathan-park/" style="color:white">Complete archive of Daily Trojan contributions</a>
+          <a href="https://dailytrojan.com/tag/jonathan-park/" >Complete archive of Daily Trojan contributions</a>
         </a>
       </div>
       <br><br>
@@ -267,7 +299,7 @@
       <div class="container reveal">
         <h2 style="font-family:Bodoni MT Condensed;font-size:50px;line-height:0.2">BEFORE YOU GO</h2>
         <p>A throwback from our archives.</p>
-        <a href="https://dailytrojan.com/2022/10/04/bursting-your-bubble-africa-has-zero-monkeypox-vaccines/" class="fill-div" style="color:white" target="_blank">
+        <a href="https://dailytrojan.com/2022/10/04/bursting-your-bubble-africa-has-zero-monkeypox-vaccines/" class="fill-div"  target="_blank">
           <blockquote style="border-left:5px solid #fff;padding:10px;margin-left:0px">
             <i>
               But as they all inevitably do, the day I was dreading came: July 7th, the last day of the program. I joined my fellow members in riding the shuttle to Haneda Airport. This time, it was actually in Tokyo. Each of us passed through the check-in line, and my memory fails me, but somehow, Guy and I ended up standing together, alone.
@@ -276,7 +308,7 @@
             </i>
           </blockquote>
           <small style="color:#dd7e6b">NON / FICTION</small>
-          <a href="https://the25post.com/archives/pieces/guy" class="fill-div" style="color:white">
+          <a href="https://the25post.com/archives/pieces/guy" class="fill-div" >
             <h3 style="font-family:Bodoni MT;font-size:28px;line-height:0.2">Guy</h3>
             <small>by <b>Peter Liu</b><br>2 August 2022</small>
           </a>
@@ -286,23 +318,13 @@
     </div>
 
     
-  </div>
-
-  <div class="row2">
-    <div class="left2"><p></p></div>
-      <div class="container reveal" class="side2">
-        
-        </div> 
-          
-
-
-        
+  </div> 
   </div>
 </div>
 
 <div class="footer">
     <p style="font-family:Bodoni MT Poster Compressed;font-size:40px;color:white;text-align:center">THE 25 POST</p>
-    <p style="text-align:center;font-size:13px">To submit a contribution, click <a href="https://the25post.com/about#submit" style="color:white"><u>here</u></a> for more information.</p>
+    <p style="text-align:center;font-size:13px">To submit a contribution, click <a href="https://the25post.com/about#submit" ><u>here</u></a> for more information.</p>
 </div>
 
 
