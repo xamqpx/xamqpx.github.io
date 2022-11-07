@@ -110,10 +110,12 @@
   }
 
   .feed-title {
-    font-family: 'Bodoni MT Condensed';
+    font-family: 'Bodoni MT';
     font-size: 30px;
     text-decoration: none;
     color: white;
+    font-weight: 700;
+    margin-right: 100px;
   }
 
   .feed-title a:hover {
@@ -122,6 +124,13 @@
 
   h4 {
     font-weight: normal;
+    margin-right: 100px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .feed-title, h4 {
+      margin-right: 0;
+    }
   }
 
 </style>
