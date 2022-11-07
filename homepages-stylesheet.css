@@ -24,8 +24,8 @@
     box-sizing: content-box;
   }
   
-  img {
-    width: 100%;
+  .head-img {
+    width: 600px;
   }
   
   @media (min-width: 1200px) {
@@ -205,6 +205,10 @@
     #main {
       transition: margin-top .5s;
       padding: 16px;
+    }
+
+    .head-img {
+      width: 100%;
     }
   }
   
