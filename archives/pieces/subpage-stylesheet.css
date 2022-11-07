@@ -134,6 +134,10 @@ a:active {
   font-family: "Bodoni MT Condensed"
 }
 
+.openbtn {
+  display: none;
+}
+
 /* stack row */
 @media screen and (max-width: 1200px) and (min-width: 700px) {
   .row {
@@ -159,6 +163,25 @@ a:active {
   .main {
     padding-left: 1%;
     padding-right: 1%;
+  }
+
+  .openbtn {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    font-size: 24px;
+  }
+  
+  #main {
+    transition: margin-top .5s;
+    padding: 16px;
   }
 }
 
