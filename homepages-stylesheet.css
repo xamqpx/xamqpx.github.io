@@ -70,6 +70,11 @@
     font-family: 'Helvetica';
   }
 
+  .content {
+    margin-top: 100px;
+    z-index: -1;
+  }
+
   .slide {
     animation: 1s ease-out 0s 1 slideInFromBottom;
   }
@@ -82,15 +87,19 @@
   
   .header {
     padding-bottom: 5px;
-    padding-top: 0;
     text-align: center;
+    top: 0;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
+    position: sticky;
+    z-index: 5;
+    vertical-align: middle;
   }
   
   .navbar {
     overflow: hidden;
     background-color: transparent;
+    top: 0;
   }
   
   .navbar a {
@@ -98,13 +107,12 @@
     display: block;
     text-align: left;
     padding: 14px 20px;
-    padding-bottom: 0;
     text-decoration: none;
     color: white;
   }
   
   .navbar a:hover {
-    color: rgb(171, 171, 171);
+    background-color: #525252;
   }
   
   * {
