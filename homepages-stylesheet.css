@@ -27,15 +27,7 @@
   img {
     width: 100%
   }
-  
-  @media (min-width: 1000px) {
-    .img {
-      float: right;
-      width: 200px;
-      margin-left: 50px;
-      padding-left: 50px;
-    }
-  }
+
   
   .clearfix::after {
     display: block;
@@ -84,6 +76,7 @@
       width: 100%;
       text-decoration: none;
   }
+
   
   .header {
     padding-bottom: 5px;
@@ -160,6 +153,19 @@
   .openbtn {
     display: none;
   }
+
+  @media (min-width: 1000px) {
+    .img {
+      float: right;
+      width: 200px;
+      margin-left: 50px;
+      padding-left: 50px;
+    }
+
+    .side {
+      border-right: 1px solid #525252;
+    }
+  }
   
   @media screen and (max-width: 1000px) and (min-width: 700px) {
     .row {
@@ -178,6 +184,7 @@
     .side {
       padding-left: 1%;
       padding-right: 1%;
+      border-right: none;
     }
     
     .main {
@@ -264,6 +271,17 @@
     text-decoration: none;
   }
 
+  h3 {
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 0.3s;
+    transition: color 0.3s;
+  }
+
+  h3:hover {
+    text-decoration-color: #b0b0b0;
+    color: #b0b0b0;
+  }
+
   h4 a:link, a:visited, a:active {
     color:white;
     text-decoration: underline 0.15em rgba(255, 255, 255, 0);
@@ -272,7 +290,7 @@
   }
 
   h4 a:hover {
-    text-decoration-color: #6f6f6f;
-    color: #6f6f6f;
+    text-decoration-color: #b0b0b0;
+    color: #b0b0b0;
   }
     
