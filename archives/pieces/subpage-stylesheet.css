@@ -18,9 +18,8 @@
 
 @font-face {
   font-family: 'IBM Plex Sans KR';
-  src: url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+KR') format('truetype');
+  src: url('../../IBMPlexSansKR-Regular.ttf') format('truetype');
 }
-    
 
 img {
   width: 100%;

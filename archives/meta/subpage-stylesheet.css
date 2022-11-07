@@ -15,6 +15,11 @@
   font-family: 'Bodoni MT Condensed';
   src: url('../../bod_cr.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'IBM Plex Sans KR';
+  src: url('../../IBMPlexSansKR-Regular.ttf') format('truetype');
+}
     
 
 img {
