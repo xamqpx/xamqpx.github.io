@@ -277,14 +277,19 @@
 
   h3:hover {
     color: #b0b0b0;
+    cursor: pointer;
+
   }
 
   h4 a:link, a:visited, a:active {
     color:white;
     transition: color 0.3s;
+    
   }
 
   h4 a:hover {
     color: #b0b0b0;
+    cursor: pointer;
+
   }
     
