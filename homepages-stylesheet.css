@@ -64,7 +64,7 @@
   body {
     margin: 0;
     font-size: 17px;
-    background-color: #1f1f1f;
+    background-color: black;
     color: white;
     text-align:left;
     font-family: 'Helvetica';
@@ -91,14 +91,14 @@
     top: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    position: sticky;
-    z-index: 5;
     vertical-align: middle;
   }
   
   .navbar {
     overflow: hidden;
-    background-color: transparent;
+    background: black linear-gradient(180deg, rgba(0,0,0,0.309757179238883) 0%, rgba(31,31,31,1) 100%);
+    z-index: 5;
+    position: sticky;
     top: 0;
   }
   
@@ -111,10 +111,31 @@
     color: white;
   }
   
-  .navbar a:hover {
-    background-color: #525252;
+  .navbar-left a {
+    float: left;
+    box-shadow: inset 0 0 0 0 #525252;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .navbar-left a:hover {
+    box-shadow: inset 600px 0 0 0 #525252;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-right a:hover {
+    text-decoration: underline;
   }
   
+  @media screen and (max-width: 600px) {
+    .navbar a, .navbar-right {
+      float: none;
+      display: block;
+    }
+  }
+
   * {
     box-sizing: border-box;
   }
