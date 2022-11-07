@@ -262,7 +262,15 @@
     text-decoration: none;
   }
 
-  a:hover {
-    text-decoration: underline;
+  h4 a:link, a:visited, a:active {
+    color:white;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 0.3s;
+    transition: color 0.3s;
+  }
+
+  h4 a:hover {
+    text-decoration-color: #6f6f6f;
+    color: #6f6f6f;
   }
     
