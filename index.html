@@ -138,6 +138,32 @@
     text-decoration: underline;
   }
 
+
+
+  .left-bottom {
+    flex: 20%; 
+    padding: 20px;
+  }
+  
+  .main-bottom {
+    flex: 60%; 
+    padding: 20px;
+  }
+  
+  .right-bottom {
+    flex: 20%; 
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+
+  .left-bottom, .main-bottom, .right-bottom {
+    padding-left: 1%;
+    padding-right: 1%;
+    border-right: none;
+  }
+}
+
 </style>
 
 </head>
@@ -200,26 +226,25 @@
       <p>Originals from the Post.</p>
       <br><br>
     </div>
-    <div class="container reveal" style="color:white;background-color:#18476E;padding:20px">
-      <a href="https://the25post.com/archives/articles/crashing-review" class="fill-div" >
+      <a href="https://the25post.com/archives/articles/crashing-review" class="fill-div">
+        <div class="container reveal" style="color:white;background-color:#18476E;padding:20px">
+
         <img src="https://the25post.com/archives/uploads/crashing-review.jpg">
-        <small><br><a class="category" href="https://the25post.com/commentary" style="color:#dd7e6b">COMMENTARY</a></small>
+        <small style="color:#dd7e6b"><br>COMMENTARY</small>
         <h3 style="font-family:Bodoni MT;font-size:28px">Review: <i>Crashing</i> through the queer lens</h3>
         <small>21 October 2022</small>
         <p>
           Queer viewers, and perhaps some bright-eyed straight viewers as well, have known it from the start. A part of us knows it to be true, and another part wants it to be true. The boundary separating the two is indiscernible.
         </p>
         <small>PHOTO: CHANNEL 4</small>
-      </a>
+    </a>
     </div>
 
-    <div>
-      <h2 class="container reveal" style="font-family:Bodoni MT Condensed;font-size:50px">RECENT</h2>
+    <h2 class="container reveal" style="font-family:Bodoni MT Condensed;font-size:50px">RECENT</h2>
+    <div class="container reveal">
       <div>
         <a href="https://the25post.com/archives/pieces/macarthur-park" class="fill-div" >
-          <small ><img class="img" src="https://the25post.com/archives/uploads/DSC_0186.JPG">
-            <a class="category" style="color:#dd7e6b" href="https://the25post.com/nonfiction">NON / FICTION</a>
-          </small>
+          <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/uploads/DSC_0186.JPG">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px"><span style="font-family:IBM Plex Sans KR">갈 곳 없어 간 곳, 맥아더 공원</span><br>MacArthur Park: Koreatown in photos and an Uber</h3>
           <small>6 October 2022</small>
           <p><br><br><br></p>
@@ -228,9 +253,7 @@
 
       <div>
         <a href="https://the25post.com/archives/articles/comment-queen-legacy" class="fill-div" >
-          <small style="color:#dd7e6b"><img class="img" src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-05/220509-queen-elizabeth-system-ew-152p-4a211d.jpg">
-            <a class="category" href="https://the25post.com/commentary" style="color:#dd7e6b">COMMENTARY</a>
-          </small>
+          <small style="color:#dd7e6b"><img class="img" src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-05/220509-queen-elizabeth-system-ew-152p-4a211d.jpg">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">The crimes that &lsquo;stable, dutiful&rsquo; Elizabeth hid in plain sight</h3>
           <small>8 September 2022</small>
           <p><br><br><br></p>
@@ -239,9 +262,7 @@
 
       <div>
         <a href="https://the25post.com/archives/articles/17776-review" class="fill-div" >
-          <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/17776%2025post.jpg">
-            <a class="category" href="https://the25post.com/commentary" style="color:#dd7e6b">COMMENTARY</a>
-          </small>
+          <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/17776%2025post.jpg">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">Review: &ldquo;17776&rdquo; is the best argument against capitalist immortality humanity has to offer</h3>
           <small>22 August 2022</small>
           <p><br><br><br></p>
@@ -250,9 +271,7 @@
 
       <div>
         <a href="https://the25post.com/archives/articles/loyle-carner" class="fill-div" >
-          <small style="color:#dd7e6b"><img class="img" src="https://cdn.vox-cdn.com/thumbor/Umg4IDOQd2oWHt8Uk627ZmCjR_Y=/0x0:2546x1672/2070x1164/filters:focal(1070x633:1476x1039):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63612406/loylecarner.0.jpg">
-            <a class="category" href="https://the25post.com/commentary" style="color:#dd7e6b">COMMENTARY</a>
-          </small>
+          <small style="color:#dd7e6b"><img class="img" src="https://cdn.vox-cdn.com/thumbor/Umg4IDOQd2oWHt8Uk627ZmCjR_Y=/0x0:2546x1672/2070x1164/filters:focal(1070x633:1476x1039):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63612406/loylecarner.0.jpg">COMMENTARY</small>
           <h3 style="font-family:Bodoni MT;font-size:28px">Every once in a while, Loyle Carner reminds you he&rsquo;s alive</h3>
           <small>20 August 2022</small>
           <p><br><br><br></p>
@@ -335,7 +354,14 @@
       </a>
     </div>
     <br><br>
+    </div> 
+  </div> 
+  </div>
+</div>
 
+<div class="row">
+  <div class="left-bottom"></div>
+  <div class="main-bottom">
     <div class="container reveal">
       <h2 style="font-family:Bodoni MT Condensed;font-size:50px;line-height:0.2">BEFORE YOU GO</h2>
       <p>A throwback from our archives.</p>
@@ -354,10 +380,11 @@
         </a>
     </div>
     <br><br>
-    </div> 
-  </div> 
   </div>
+  <div class="right-bottom"></div>
+
 </div>
+
 <a href="#" id="loadMore">BACK TO TOP</a>
 
 
