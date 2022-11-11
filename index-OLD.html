@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<title>The 25 Post</title>
+
+<!--basics-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="archives/favicon-196x196.png" sizes="archives/196x196" />
+  <link rel="icon" type="image/png" href="archives/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="archives/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="archives/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="archives/favicon-128.png" sizes="128x128" />
+
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="archives/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="archives/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="archives/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="archives/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the25post.com/">
+  <meta property="og:title" content="The 25 Post">
+  <meta property="og:description" content="We are joining millions of South Koreans in calling on Yoon Seok-yol to resign.">
+  <meta property="og:image" content="https://news.kbs.co.kr/data/news/2022/11/04/20221104_6WWWKa.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+<!--stylesheets-->
+<link rel="stylesheet" href="homepages-stylesheet.css">
+<style>
+  .header {
+    background-color: black;
+
+  }
+  .header h1 {
+    font-size: 100px;
+  }
+
+  .blink {
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+  }
+
+  @keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  #loadMore {
+    width: 200px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid transparent;
+    background-color: #525252;
+    transition: .3s;
+  }
+
+  #loadMore:hover {
+    color: #525252;
+    background-color: white;
+    border: 1px solid #525252;
+    text-decoration: none;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+
+  .button5:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .feed-title {
+    font-family: 'Bodoni MT';
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    margin-right: 100px;
+    transition: color 0.3s;
+  }
+
+  .feed-title a:hover {
+    color: #b0b0b0;
+  }
+
+  h4 {
+    font-weight: normal;
+    margin-right: 100px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .feed-title, h4 {
+      margin-right: 0;
+    }
+  }
+
+  .category:hover {
+    text-decoration: underline;
+  }
+
+
+
+  .left-bottom {
+    flex: 20%; 
+    padding: 20px;
+  }
+  
+  .main-bottom {
+    flex: 60%; 
+    padding: 20px;
+  }
+  
+  .right-bottom {
+    flex: 20%; 
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+
+  .left-bottom, .main-bottom, .right-bottom {
+    padding-left: 1%;
+    padding-right: 1%;
+    border-right: none;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">
+      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
+      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
+        THE 25 POST</a>
+    </div>
+    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
+      <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
+      <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
+      <a href="https://the25post.com/meta" style="color:white">META</a>
+      <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+    </div>
+  </div>
+
+  <script>
+  function toggleNav() {
+    var element = document.getElementById("navbar-collapse");
+    var button = document.getElementById("menu");
+    if (element.style.height == "250px") {
+      element.style.height = "0px";
+      button.innerHTML = "&equiv;";
+    } else {
+      element.style.height = "250px";
+      button.innerHTML = "&nequiv;";
+    } 
+  }
+  </script>
+
+  <div 
+  style="font-family:IBM Plex Sans KR;
+    text-align:center;
+    padding-top:50px;
+    padding-bottom:50px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:black;">
+    <p style="font-family:Bodoni MT Poster Compressed;font-size:50px;">
+      We are joining millions of South Koreans in calling on Yoon Seok-yeol to resign.
+    </p>
+  <p style="font-size:60px;padding-left:15%;padding-right:15%">
+    <b>尹 사퇴 &centerdot; 金 특검</b>
+  </p>
+  <p style="font-size:18px;">
+    참사를 참사라 말하지 못하고 희생자를 희생자라 부르지 못하게 하는 대통령은 우리나라에 대한 망신이요 우리 국민에 대한 망신입니다.<br>윤석열의 책임인정, 사과, 사퇴, 특검이 나라를 위한 유일한 길입니다.
+  </p>
+  <p style="font-size:14px">이태원 참사 <span style="font-family:Helvetica">156</span>명, 故人의 명복을 빕니다.</p>
+</div>
+
+<div class="container">
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+</div>
+
+<div class="row">
+  <!-- left -->
+  <div class="side">
+    <div id="header" class="container reveal" >
+      <h2 style="font-family:Bodoni MT Condensed;font-size:50px;line-height:0.2">NEWEST</h2>
+      <p>Originals from the Post.</p>
+      <br><br>
+    </div>
+      <a href="https://the25post.com/archives/articles/crashing-review" class="fill-div">
+        <div class="container reveal" style="color:white;background-color:#18476E;padding:20px">
+
+        <img src="https://the25post.com/archives/uploads/crashing-review.jpg">
+        <small style="color:#dd7e6b"><br>COMMENTARY</small>
+        <h3 style="font-family:Bodoni MT;font-size:28px">Review: <i>Crashing</i> through the queer lens</h3>
+        <small>21 October 2022</small>
+        <p>
+          Queer viewers, and perhaps some bright-eyed straight viewers as well, have known it from the start. A part of us knows it to be true, and another part wants it to be true. The boundary separating the two is indiscernible.
+        </p>
+        <small>PHOTO: CHANNEL 4</small>
+    </a>
+    </div>
+
+    <h2 class="container reveal" style="font-family:Bodoni MT Condensed;font-size:50px">RECENT</h2>
+    <div class="container reveal">
+      <div>
+        <a href="https://the25post.com/archives/pieces/macarthur-park" class="fill-div" >
+          <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/uploads/DSC_0186.JPG">COMMENTARY</small>
+          <h3 style="font-family:Bodoni MT;font-size:28px"><span style="font-family:IBM Plex Sans KR">갈 곳 없어 간 곳, 맥아더 공원</span><br>MacArthur Park: Koreatown in photos and an Uber</h3>
+          <small>6 October 2022</small>
+          <p><br><br><br></p>
+        </a>
+      </div>
+
+      <div>
+        <a href="https://the25post.com/archives/articles/comment-queen-legacy" class="fill-div" >
+          <small style="color:#dd7e6b"><img class="img" src="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-05/220509-queen-elizabeth-system-ew-152p-4a211d.jpg">COMMENTARY</small>
+          <h3 style="font-family:Bodoni MT;font-size:28px">The crimes that &lsquo;stable, dutiful&rsquo; Elizabeth hid in plain sight</h3>
+          <small>8 September 2022</small>
+          <p><br><br><br></p>
+        </a>
+      </div>
+
+      <div>
+        <a href="https://the25post.com/archives/articles/17776-review" class="fill-div" >
+          <small style="color:#dd7e6b"><img class="img" src="https://the25post.com/archives/17776%2025post.jpg">COMMENTARY</small>
+          <h3 style="font-family:Bodoni MT;font-size:28px">Review: &ldquo;17776&rdquo; is the best argument against capitalist immortality humanity has to offer</h3>
+          <small>22 August 2022</small>
+          <p><br><br><br></p>
+        </a>
+      </div>
+
+      <div>
+        <a href="https://the25post.com/archives/articles/loyle-carner" class="fill-div" >
+          <small style="color:#dd7e6b"><img class="img" src="https://cdn.vox-cdn.com/thumbor/Umg4IDOQd2oWHt8Uk627ZmCjR_Y=/0x0:2546x1672/2070x1164/filters:focal(1070x633:1476x1039):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63612406/loylecarner.0.jpg">COMMENTARY</small>
+          <h3 style="font-family:Bodoni MT;font-size:28px">Every once in a while, Loyle Carner reminds you he&rsquo;s alive</h3>
+          <small>20 August 2022</small>
+          <p><br><br><br></p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- right -->
+  <div class="main">
+
+    <div id="header" class="container reveal" >
+      <h2 style="font-family:Bodoni MT Condensed;font-size:50px;line-height:0.2">THE WORLD</h2>
+      <p>News from every corner.</p>
+    </div>
+
+    <div class="container reveal" style="padding-top:20px;">
+      <div style="background-color:black">
+        <script src="//rss.bloople.net/?url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FHomePage.xml&detail=-1&limit=5&showtitle=false&type=js"></script>
+        <script src="//rss.bloople.net/?url=https%3A%2F%2Frss.app%2Ffeeds%2FM08TI0EBQ6Z0lh2V.xml&detail=-1&limit=5&showtitle=false&showempty=true&striphtml=true&forceutf8=true&fixbugs=true&type=js"></script>
+        <script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2Frss&detail=-1&limit=5&showtitle=false&showempty=true&striphtml=true&forceutf8=true&fixbugs=true&type=js"></script>
+
+        <small>RSS feeds courtesy of Brenton Fletcher.</small>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="container reveal">
+      <div class="countup" id="countup1">
+        <p style="text-align:left">Russia's invasion of Ukraine has been ongoing for:</p>
+        <span class="timeel days" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefDays" style="font-family:Bodoni MT;font-size:20px">days</span>
+        <span class="timeel hours" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefHours" style="font-family:Bodoni MT;font-size:20px">hours</span>
+        <span class="timeel minutes" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefMinutes" style="font-family:Bodoni MT;font-size:20px">minutes</span>
+        <span class="timeel seconds" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefSeconds" style="font-family:Bodoni MT;font-size:20px">seconds</span>
+        <p style="text-align:left;color:#525252">24 February 2022 02:30:00 UTC<br><br><br></p>
+      </div>
+      <br>
+      <div class="countup" id="countup2">
+        <p style="text-align:left">Given current emission trends, Earth will reach 1.5 °C of global warming in:</p>
+        <span class="timeel days" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefDays" style="font-family:Bodoni MT;font-size:20px">days</span>
+        <span class="timeel hours" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefHours" style="font-family:Bodoni MT;font-size:20px">hours</span>
+        <span class="timeel minutes" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefMinutes" style="font-family:Bodoni MT;font-size:20px">minutes</span>
+        <span class="timeel seconds" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+        <span class="timeel timeRefSeconds" style="font-family:Bodoni MT;font-size:20px">seconds</span>
+        <p style="text-align:left;color:#525252">20 July 2029 09:00:00 UTC (approx.)<br>Learn more about the <a href="https://climateclock.world/" style="color:#525252"><u>Climate Clock</u></a></p>
+      </div>
+      <Br>
+      <div class="countup" id="countup3">
+        <p style="text-align:left;">The Doomsday Clock is currently at:</p>
+        <span class="timeel days" style="font-family:Bodoni MT Condensed;font-size:40px">100</span>
+        <span class="timeel timeRefDays" style="font-family:Bodoni MT;font-size:20px">seconds</span>
+        <span class="timeel timeRefHours" style="font-family:Bodoni MT;font-size:20px">until</span>
+        <span class="timeel timeRefMinutes" style="font-family:Bodoni MT;font-size:20px">midnight</span>
+        <p style="text-align:left;color:#525252">Updated 22 March 2022<br>by the <a href="https://thebulletin.org/doomsday-clock/" style="color:#525252"><u>Bulletin of the Atomic Scientists</u></a></p>
+      </div>      
+    </div>
+    <br><br>
+
+    <div class="container reveal">
+      <h2 style="font-family:Bodoni MT Condensed;font-size:50px">FOR THE DAILY TROJAN</h2>
+      <div style="text-align:center">
+        <a href="https://the25post.com/archives/meta/bursting-your-bubble" class="fill-div" style="color:black;background-color:rgba(255, 255, 255, 0.882);padding:20px;">
+          <p>New column:</p>
+          <p style="font-family:Bodoni MT Poster Compressed; font-size:60px;">
+            BURSTING YOUR BUBBLE</p>
+          <p><i>A biweekly reminder that the world outside of America (and Europe) exists. </i></p>
+          <small>by <b>JONATHAN PARK</b> for the Daily Trojan</small>
+        </a>
+      </div>
+      <br><br>
+      <a href="https://dailytrojan.com/tag/jonathan-park/" style="text-align:center;" class="fill-div" target="_blank">
+        <u>Complete archive of Daily Trojan contributions</u></a>
+      </a>
+    </div>
+    <br><br>
+    </div> 
+  </div> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="left-bottom"></div>
+  <div class="main-bottom">
+    <div class="container reveal">
+      <h2 style="font-family:Bodoni MT Condensed;font-size:50px;line-height:0.2">BEFORE YOU GO</h2>
+      <p>A throwback from our archives.</p>
+      <a href="https://the25post.com/archives/pieces/guy" class="fill-div"  target="_blank">
+        <blockquote style="border-left:5px solid #fff;padding:10px;margin-left:0px">
+          <i>
+            But as they all inevitably do, the day I was dreading came: July 7th, the last day of the program. I joined my fellow members in riding the shuttle to Haneda Airport. This time, it was actually in Tokyo. Each of us passed through the check-in line, and my memory fails me, but somehow, Guy and I ended up standing together, alone.
+            <br><br>The noises of hurried passengers and their suitcases, bound here and everywhere, filled in the silence between us. Finally, he said: &ldquo;I think you can do it.&rdquo;
+            <br><br>&ldquo;Do what?&rdquo;
+          </i>
+        </blockquote>
+        <small style="color:#dd7e6b">NON / FICTION</small>
+        <a href="https://the25post.com/archives/pieces/guy" class="fill-div" >
+          <h3 style="font-family:Bodoni MT;font-size:28px;line-height:0.2">Guy</h3>
+          <small>by <b>Peter Liu</b><br>2 August 2022</small>
+        </a>
+    </div>
+    <br><br>
+  </div>
+  <div class="right-bottom"></div>
+
+</div>
+
+<a href="#" id="loadMore">BACK TO TOP</a>
+
+
+<div class="footer">
+    <p style="font-family:Bodoni MT Poster Compressed;font-size:40px;color:white;text-align:center">THE 25 POST</p>
+    <p style="text-align:center;font-size:13px">To submit a contribution, click <a href="https://the25post.com/about#submit" ><u>here</u></a> for more information.</p>
+</div>
+
+
+</body>
+<script>
+  window.onload = function() {
+  // Month Day, Year Hour:Minute:Second, id-of-element-container
+  countUpFromTime("February 24, 2022 02:30:00", 'countup1');
+  countDownFromTime("July 20, 2029 09:00:00", 'countup2')
+};
+function countUpFromTime(countFrom, id) {
+  countFrom = new Date(countFrom).getTime();
+  var now = new Date(),
+      countFrom = new Date(countFrom),
+      timeDifference = (now - countFrom);
+    
+  var secondsInADay = 60 * 60 * 1000 * 24,
+      secondsInAHour = 60 * 60 * 1000;
+    
+  days = Math.floor(timeDifference / (secondsInADay) * 1);
+  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+
+  var idEl = document.getElementById(id);
+  idEl.getElementsByClassName('days')[0].innerHTML = days;
+  idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+  idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+  idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+
+  clearTimeout(countUpFromTime.interval);
+  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+}
+
+function countDownFromTime(countFrom, id) {
+  countFrom = new Date(countFrom).getTime();
+  var now = new Date(),
+      countFrom = new Date(countFrom),
+      timeDifference = (countFrom - now);
+    
+  var secondsInADay = 60 * 60 * 1000 * 24,
+      secondsInAHour = 60 * 60 * 1000;
+    
+  days = Math.floor(timeDifference / (secondsInADay) * 1);
+  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+
+  var idEl = document.getElementById(id);
+  idEl.getElementsByClassName('days')[0].innerHTML = days;
+  idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+  idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+  idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+
+  clearTimeout(countDownFromTime.interval);
+  countDownFromTime.interval = setTimeout(function(){ countDownFromTime(countFrom, id); }, 1000);
+}
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+</script>
+</html>
