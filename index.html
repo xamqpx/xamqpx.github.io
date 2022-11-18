@@ -160,7 +160,7 @@
   /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
   .hitem {
     flex-shrink: 0;
-    width: 130%;
+    width: 120%;
     text-align: center;
   }
   
@@ -168,9 +168,9 @@
   /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
   @keyframes tickerh {
     0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: translate3d(-400%, 0, 0); }
+    100% { transform: translate3d(-600%, 0, 0); }
   }
-  .hmove { animation: tickerh linear 24s infinite; }
+  .hmove { animation: tickerh linear 30s infinite; }
   .hmove:hover {
     animation-play-state: paused;
     cursor: pointer;
