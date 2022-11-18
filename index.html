@@ -87,7 +87,7 @@
   }
 
   .footer {
-    position: fixed;
+    position: relative;
     right: 0;
     bottom: 0;
     padding-right: 20px;
@@ -135,6 +135,44 @@
       display: none;
     }
 
+  }
+
+  .countup {
+    text-align: center;
+  }
+
+  .countup .timeel {
+    color: white;
+  }
+
+  /*taken from https://code-boxx.com/html-css-news-ticker-horizontal-vertical/#sec-horizontal*/
+
+  /* (A) FIXED WRAPPER */
+  .hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: transparent;
+  }
+  
+  /* (B) MOVING TICKER WRAPPER */
+  .hmove { display: flex; }
+
+  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    flex-shrink: 0;
+    width: 130%;
+    text-align: center;
+  }
+  
+  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-400%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 24s infinite; }
+  .hmove:hover {
+    animation-play-state: paused;
+    cursor: pointer;
   }
 
 </style>
@@ -225,7 +263,89 @@
     <!--right-->
     <div class="main">
       <!--latest-->
-      <p class="latest-heading" style="font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin: 30% 0 0 20px">NEWEST</p>
+      <div class="countup" id="countup2" style="margin: 20px 0 0 20px">
+        <div class="latest" style="margin:0 20px 10px 0;background-color:rgba(29, 161, 242, 0.5);">
+          <p style="text-align:center;font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin:0 0 20px 0;">
+            Can Elon Musk's Twitter outlast a lettuce?
+          </p>
+          <span class="timeel days" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+          <span class="timeel timeRefDays" style="font-family:Bodoni MT;font-size:20px">days</span>
+          <span class="timeel hours" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+          <span class="timeel timeRefHours" style="font-family:Bodoni MT;font-size:20px">hours</span>
+          <span class="timeel minutes" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+          <span class="timeel timeRefMinutes" style="font-family:Bodoni MT;font-size:20px">minutes</span>
+          <span class="timeel seconds" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
+          <span class="timeel timeRefSeconds" style="font-family:Bodoni MT;font-size:20px">seconds</span>
+          <p style="font-size:14px;">You can click on each headline to learn more.</p>
+          <div class="hwrap" style="margin-top:20px;"><div class="hmove">
+            <div class="hitem">
+              <span class="category">
+                <a href="https://twitter.com/kyliebytes/status/1593391167718113280?s=20&t=ZoC-KL80sOo7S2Yc5CoJBg" target="_blank">
+                  75% of 3700~ employees decline to opt-in to "hardcore" Twitter 2.0
+                </a>
+              </span>
+            </div>
+            <div class="hitem">
+              <span class="category">
+                <a href="https://twitter.com/ZoeSchiffer/status/1593391604785504257?s=20&t=JSp2usMlc_OJEdO39DlZSw" target="_blank">
+                  Offices temporarily closed, employees denied badge access, Twitter says
+                </a>
+              </span>
+            </div>
+            <div class="hitem">
+              <span class="category">
+                <a href="https://twitter.com/Gia_Vang/status/1593428267519725568" target="_blank">
+                  Projection outside S.F. headquarters calls Musk "space Karen," "dictator's asskisser," among other things
+                </a>
+              </span>            
+            </div>
+            <div class="hitem">
+              <span class="category">
+                <a href="https://www.npr.org/2022/11/18/1137380084/misinformation-threatens-twitters-function-as-a-public-safety-tool" target="_blank">
+                  NPR: "Misinformation threatens Twitter's function as a public safety tool"
+                </a>
+              </span>             
+            </div>
+            <div class="hitem">
+              <span class="category">
+                <a href="https://twitter.com/HaysKali/status/1593439053034102784" target="_blank">
+                  @HaysKali: "People are genuinely unsure how this company functions come next week"
+                </a>
+              </span>            
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <script>
+        window.onload = function() {
+          // Month Day, Year Hour:Minute:Second, id-of-element-container
+          countDownFromTime("November 28, 2022 00:00:00", 'countup2')
+        };
+        function countDownFromTime(countFrom, id) {
+          countFrom = new Date(countFrom).getTime();
+          var now = new Date(),
+              countFrom = new Date(countFrom),
+              timeDifference = (countFrom - now);
+            
+          var secondsInADay = 60 * 60 * 1000 * 24,
+              secondsInAHour = 60 * 60 * 1000;
+            
+          days = Math.floor(timeDifference / (secondsInADay) * 1);
+          hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+          mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+          secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+
+          var idEl = document.getElementById(id);
+          idEl.getElementsByClassName('days')[0].innerHTML = days;
+          idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+          idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+          idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+
+          clearTimeout(countDownFromTime.interval);
+          countDownFromTime.interval = setTimeout(function(){ countDownFromTime(countFrom, id); }, 1000);
+        }
+      </script>
+      <p class="latest-heading" style="font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin: 20px 0 0 20px">NEWEST</p>
       <a class="fill-div" href="https://the25post.com/archives/articles/crashing-review">
         <div class="latest">
           <small style="color:#dd7e6b"><br>COMMENTARY</small>
