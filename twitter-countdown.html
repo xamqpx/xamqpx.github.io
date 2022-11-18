@@ -50,8 +50,36 @@
     text-align: left;
   }
 
+  /*taken from https://code-boxx.com/html-css-news-ticker-horizontal-vertical/#sec-horizontal*/
+
+  /* (A) FIXED WRAPPER */
   .hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: transparent;
     margin: 0 30% 0 30%;
+  }
+  
+  /* (B) MOVING TICKER WRAPPER */
+  .hmove { display: flex; }
+
+  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    flex-shrink: 0;
+    width: auto;
+    padding-right: 100px;
+    text-align: center;
+  }
+  
+  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-900%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 42s infinite; }
+  .hmove:hover {
+    animation-play-state: paused;
+    cursor: pointer;
   }
 
   .twit {
@@ -62,15 +90,16 @@
     display: none;
   }
 
-
   @media screen and (max-width: 900) {
     .hwrap {
       margin: 0 10% 0 10%;
     }
 
+    .hmove { animation: tickerh linear 70s infinite; }
+
     @keyframes tickerh {
       0% { transform: translate3d(100%, 0, 0); }
-      100% { transform: translate3d(-570%, 0, 0); }
+      100% { transform: translate3d(-1500%, 0, 0); }
     }
 
     .twit {
@@ -86,7 +115,7 @@
 
     @keyframes tickerh {
       0% { transform: translate3d(100%, 0, 0); }
-      100% { transform: translate3d(-1300%, 0, 0); }
+      100% { transform: translate3d(-1900%, 0, 0); }
     }
 
     .twit {
@@ -123,6 +152,34 @@
         <div class="hitem">
           <span class="category">
             <a href="https://twitter.com/kyliebytes/status/1593391167718113280?s=20&t=ZoC-KL80sOo7S2Yc5CoJBg" target="_blank">
+              Musk to engineers this morning: "Anyone who can actually write software, please report to the 10th floor at 2pm today"
+            </a>
+          </span>
+        </div>
+        <div class="hitem">
+          <span class="category">
+            <a href="nytimes.com/2022/11/18/technology/elon-musk-twitter-workers-quit.html" target="_blank">
+              Twitter loses 1200 employees; "The best people are staying, so I'm not super worried," Musk says
+            </a>
+          </span>
+        </div>
+        <div class="hitem">
+          <span class="category">
+            <a href="https://www.theverge.com/2022/11/18/23466625/elon-musk-twitter-reinstatement-jordan-peterson-kathy-griffin-babylon-bee" target="_blank">
+              Musk to reinstate some banned accounts, incl. Kathy Griffin, Jordan B. Peterson, Babylon Bee; "BRING BACK TRUMP" trending
+            </a>
+          </span>
+        </div>
+        <div class="hitem">
+          <span class="category">
+            <a href="https://twitter.com/hayskali/status/1593425305464541186?s=46&t=UiF8elSTQ4_hj-bojNyc8Q" target="_blank">
+              Twitter loses payroll dept., U.S. tax team, financial reporting team
+            </a>
+          </span>
+        </div>
+        <div class="hitem">
+          <span class="category">
+            <a href="https://twitter.com/kyliebytes/status/1593391167718113280?s=20&t=ZoC-KL80sOo7S2Yc5CoJBg" target="_blank">
               75% of 3700~ employees decline to opt-in to "hardcore" Twitter 2.0
             </a>
           </span>
@@ -138,20 +195,6 @@
           <span class="category">
             <a href="https://twitter.com/Gia_Vang/status/1593428267519725568" target="_blank">
               Projection outside S.F. headquarters calls Musk "space Karen," "dictator's asskisser," among other things
-            </a>
-          </span>            
-        </div>
-        <div class="hitem">
-          <span class="category">
-            <a href="https://www.npr.org/2022/11/18/1137380084/misinformation-threatens-twitters-function-as-a-public-safety-tool" target="_blank">
-              NPR: "Misinformation threatens Twitter's function as a public safety tool"
-            </a>
-          </span>             
-        </div>
-        <div class="hitem">
-          <span class="category">
-            <a href="https://twitter.com/HaysKali/status/1593439053034102784" target="_blank">
-              @HaysKali: "People are genuinely unsure how this company functions come next week"
             </a>
           </span>            
         </div>
