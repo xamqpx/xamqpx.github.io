@@ -137,44 +137,6 @@
 
   }
 
-  .countup {
-    text-align: center;
-  }
-
-  .countup .timeel {
-    color: white;
-  }
-
-  /*taken from https://code-boxx.com/html-css-news-ticker-horizontal-vertical/#sec-horizontal*/
-
-  /* (A) FIXED WRAPPER */
-  .hwrap {
-    overflow: hidden; /* HIDE SCROLL BAR */
-    background: transparent;
-  }
-  
-  /* (B) MOVING TICKER WRAPPER */
-  .hmove { display: flex; }
-
-  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
-  .hitem {
-    flex-shrink: 0;
-    width: auto;
-    text-align: center;
-  }
-  
-  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
-  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
-  @keyframes tickerh {
-    0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: translate3d(-400%, 0, 0); }
-  }
-  .hmove { animation: tickerh linear 30s infinite; }
-  .hmove:hover {
-    animation-play-state: paused;
-    cursor: pointer;
-  }
-
 </style>
 
 </head>
@@ -207,7 +169,7 @@
           <p>
             <span class="category"><a href="https://the25post.com/about">ABOUT</a></span>
             &nbsp;||&nbsp;
-            <span class="category"><a target="_blank" href="https://github.com/xamqpx/xamqpx.github.io">GITHUB*</a></span>
+            <span class="category"><a target="_blank" href="https://github.com/xamqpx/xamqpx.github.io">GITHUB REPO*</a></span>
           </p>
           <small>* External link</small>
       </div>
@@ -271,23 +233,6 @@
     <!--right-->
     <div class="main">
       <!--latest-->
-      <div class="countup" id="countup2" style="margin: 20px 0 0 20px">
-        <div class="latest" style="margin:0 20px 10px 0;background-color:rgba(29, 161, 242, 0.5);">
-          <a class="fill-div" href="https://the25post.com/twitter-countdown">
-            <h3 style="text-align:center;font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin:0 0 20px 0;">
-              Can Elon Musk's Twitter outlast a lettuce?
-            </h3>
-            <span class="timeel days" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
-            <span class="timeel timeRefDays" style="font-family:Bodoni MT;font-size:20px">days</span>
-            <span class="timeel hours" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
-            <span class="timeel timeRefHours" style="font-family:Bodoni MT;font-size:20px">hours</span>
-            <span class="timeel minutes" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
-            <span class="timeel timeRefMinutes" style="font-family:Bodoni MT;font-size:20px">minutes</span>
-            <span class="timeel seconds" style="font-family:Bodoni MT Condensed;font-size:40px">00</span>
-            <span class="timeel timeRefSeconds" style="font-family:Bodoni MT;font-size:20px">seconds</span>
-          </a>     
-        </div>
-      </div>
       <script>
         window.onload = function() {
           // Month Day, Year Hour:Minute:Second, id-of-element-container
@@ -317,7 +262,7 @@
           countDownFromTime.interval = setTimeout(function(){ countDownFromTime(countFrom, id); }, 1000);
         }
       </script>
-      <p class="latest-heading" style="font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin: 20px 0 0 20px">NEWEST</p>
+      <p class="latest-heading" style="font-family:Bodoni MT Condensed;font-size:50px;font-weight:bold;margin:20% 0 0 20px">NEWEST</p>
       <a class="fill-div" href="https://the25post.com/archives/articles/crashing-review">
         <div class="latest">
           <small style="color:#dd7e6b"><br>COMMENTARY</small>
@@ -335,6 +280,6 @@
 <!--footer-->
 <div class="footer">
   <small>A.I. art by DALL-E 2</small><br>
-  <small>Text animation courtesy of <a href="https://codepen.io/Tbgse"><u>@Tbgse</u></a></small>
+  <small>Logo animation courtesy of <a href="https://codepen.io/Tbgse"><u>@Tbgse</u></a></small>
 </div>
 </html>
