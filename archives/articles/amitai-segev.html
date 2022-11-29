@@ -68,18 +68,18 @@
 
             /* left */
             .left {
-                flex: 30%; /* Set the width of the sidebar */
+                flex: 25%; /* Set the width of the sidebar */
                 padding: 10px;
             }
 
             /* right */
             .main {
-                flex: 40%; /* Set the width of the main content */
+                flex: 50%; /* Set the width of the main content */
                 padding: 10px;
             }
 
             .right {
-                flex: 30%; /* Set the width of the sidebar */
+                flex: 25%; /* Set the width of the sidebar */
                 padding: 10px;
             }
 
@@ -92,12 +92,44 @@
         </style>
     </head>
     <body>
+        <div class="navbar">
+            <div class="navbar-left">
+                <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
+                <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
+                THE 25 POST</a>
+            </div>
+            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
+                <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
+                <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
+                <a href="https://the25post.com/meta" style="color:white">META</a>
+                <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+            </div>
+        </div>
+    
+        <script>
+        function toggleNav() {
+        var element = document.getElementById("navbar-collapse");
+        var button = document.getElementById("menu");
+        if (element.style.height == "250px") {
+            element.style.height = "0px";
+            button.innerHTML = "&equiv;";
+        } else {
+            element.style.height = "250px";
+            button.innerHTML = "&nequiv;";
+        } 
+        }
+        </script>
+
         <div class="row">
             <div class="cover_left"></div>
-            <div class="cover_main" style="margin: 10% 0 10% 0;">
+            <div class="cover_main" style="margin: 5% 0 5% 0;">
                 <p style="color:#dd7e6b;text-align:center;">COMMENTARY: PROFILES</p>
-                <h2 style="font-family:Bodoni MT; font-size:50px;text-align:center;margin: 0 0 100px 0;">Amitai Segev on the meaning of life</h2>
-                <img src="../uploads/amitaisegev_cover.jpg" style="width:50%;" class="center">
+                <h2 style="font-family:Megalito;font-size:80px;text-align:center;margin: 0 0 100px 0;font-weight:normal;">
+                    Amitai Segev</h2>
+                <figure style="width:50%;" class="center">
+                    <img src="../uploads/amitaisegev_cover.jpg">
+                    <figcaption style="text-align:right;color:grey;"><small>25 POST FILE PHOTO</small></figcaption>
+                </figure>
             </div>
             <div class="cover_right"></div>
         </div>
@@ -105,7 +137,15 @@
         <div class="row">
             <div class="left"></div>
             <div class="main">
-
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac faucibus diam. Suspendisse viverra metus suscipit felis mattis ullamcorper. Fusce tincidunt convallis ante in sagittis. Nam feugiat, diam fermentum aliquam dapibus, dui dui sollicitudin mi, non iaculis lorem nunc at ante. Mauris lobortis diam eget iaculis lobortis. Aenean quis dolor sit amet orci mattis lobortis. Phasellus fringilla ipsum in arcu tincidunt tincidunt. Proin eu iaculis odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a orci dolor.
+                <br><br>
+                Quisque varius turpis mauris, quis tempor est rhoncus sit amet. Praesent lacus nunc, sollicitudin non libero bibendum, interdum cursus turpis. Vestibulum facilisis urna ut justo consequat, sed consectetur dui rhoncus. Integer eu pulvinar dolor. Pellentesque dui dui, accumsan quis sagittis non, lobortis a nisi. Proin iaculis, leo et fringilla auctor, neque nibh viverra quam, vitae imperdiet eros magna sit amet purus. Vestibulum pharetra accumsan odio non gravida. Cras at risus neque. Quisque ac dolor pellentesque, porttitor quam in, feugiat erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent non gravida leo. Aliquam ornare risus massa, sodales lobortis risus cursus vitae.
+                <br><br>
+                Duis id sollicitudin quam. In urna orci, facilisis vitae ligula quis, porttitor tincidunt quam. Nulla in augue sed orci blandit volutpat. Nullam tristique sem at congue eleifend. Sed ac eros a augue efficitur porta vitae non tellus. Maecenas ipsum risus, semper porta lacinia condimentum, sagittis in arcu. Cras tincidunt, lorem quis placerat porta, sapien erat egestas mi, vel sollicitudin nulla sapien ac sem. Sed semper tortor vel lacus finibus, et accumsan augue eleifend. Etiam justo purus, vehicula ac blandit sed, facilisis eget libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis id aliquam arcu.
+                <br><br>
+                Donec scelerisque tempor orci, imperdiet viverra orci sodales nec. Mauris aliquam tincidunt semper. Suspendisse potenti. Duis vel sem ac ex efficitur bibendum sed sit amet leo. Maecenas ligula tortor, pharetra a nunc ut, pulvinar lacinia risus. In hac habitasse platea dictumst. Aliquam aliquet nisi sed nulla gravida, et dictum mi posuere. Pellentesque facilisis ornare enim, ac fringilla odio convallis semper. Quisque metus purus, tincidunt in nunc eu, interdum ultrices purus. In tellus leo, pretium et faucibus id, varius in velit. Donec non leo sit amet felis consequat posuere. Sed ut sem a erat molestie gravida eu sed odio. Nam ac rutrum nunc, sit amet tempus nulla. Ut rutrum at dolor sit amet ultricies. Curabitur accumsan, sem non dignissim maximus, neque lorem fringilla nibh, vel scelerisque odio mauris in nisi.
+                <br><br>
+                Cras a nibh at neque finibus consectetur. Duis mattis leo ac risus bibendum, eu posuere nulla mattis. Nulla sollicitudin velit ac ligula accumsan vehicula. Curabitur sollicitudin turpis nisl, eu efficitur nisi sollicitudin quis. Suspendisse a nibh eu nisi feugiat tempus ut sed massa. Proin iaculis euismod ante eu placerat. Sed quis pharetra neque. Quisque sem lectus, dignissim ut lacinia nec, consequat a nunc. Etiam ultricies accumsan nunc, eu finibus nibh sollicitudin quis. In vel elementum augue. Interdum et malesuada fames ac ante ipsum primis in faucibus.
             </div>
             <div class="right"></div>
     </body>
