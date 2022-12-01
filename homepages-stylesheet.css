@@ -54,7 +54,7 @@
 
   .slide {
     animation: 1s ease-out 0s 1 slideInFromBottom;
-  }
+  }s
 
   a.fill-div {
       display: block;
