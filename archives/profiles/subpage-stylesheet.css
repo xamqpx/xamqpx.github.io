@@ -31,6 +31,11 @@
     font-family: 'Caslon';
     src: url('../../fonts/ACaslonPro-Regular.otf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Caslon Italic';
+    src: url('../../fonts/ACaslonPro-Italic.otf') format('truetype');
+  }
   
   @font-face {
     font-family: 'Cheltenham Std Condensed';
@@ -46,6 +51,11 @@
     font-family: 'Cheltenham Bold';
     src: url('../../fonts/CheltenhamStdBold.otf') format('truetype');
   }
+    
+  @font-face {
+    font-family: 'Cheltenham Std Light Condensed';
+    src: url('../../fonts/CheltenhamStdLightCond.otf') format('truetype');
+  }
       
   
   img {
@@ -58,7 +68,7 @@
     background-color: black;
     color: white;
     font-size: 19px;
-    text-align: justify;
+    text-align: left;
     line-height: 1.3;
   }
 
