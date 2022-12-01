@@ -1,0 +1,54 @@
+  @font-face {
+    font-family: 'Bodoni MT';
+    src: url(../../fonts/BOD_R.TTF) format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Bodoni MT Poster Compressed';
+    src: url('../../fonts/BOD_PSTC.TTF') format('truetype');
+  }
+      
+  @font-face {
+    font-family: 'Bodoni MT Condensed';
+    src: url('../../fonts/bod_cr.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans KR';
+    src: url('../../fonts/IBMPlexSansKR-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Megalito';
+    src: url('../../fonts/Megalito-Slab-FFP.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Caslon';
+    src: url('../../fonts/ACaslonPro-Regular.otf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Caslon Italic';
+    src: url('../../fonts/ACaslonPro-Italic.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Cheltenham Std Condensed';
+    src: url('../../fonts/CheltenhamStdBookCond.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Cheltenham';
+    src: url('../../fonts/CheltenhamStdBook.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Cheltenham Bold';
+    src: url('../../fonts/CheltenhamStdBold.otf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Cheltenham Std Light Condensed';
+    src: url('../../fonts/CheltenhamStdLightCond.otf') format('truetype');
+  }
