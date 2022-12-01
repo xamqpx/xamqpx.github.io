@@ -13,11 +13,11 @@
     background-color: black;
     color: white;
     font-size: 19px;
-    text-align: justify;
+    text-align: left;
     line-height: 1.3;
   }
 
-  body i {
+  p i {
     font-family: "Caslon Italic";
   }
 
@@ -115,7 +115,7 @@
   .main {
     flex: 70%; /* Set the width of the main content */
     padding: 20px;
-    padding-right: 20%;
+    padding-right: 28%;
   }
 
   
