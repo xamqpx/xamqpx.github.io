@@ -30,8 +30,9 @@ body {
   margin: 0;
   background-color: black;
   color: white;
-  font-size: 17px;
-  text-align: justify
+  font-size: 19px;
+  text-align: justify;
+  line-height: 1.3;
 }
 
 a:link {
@@ -88,7 +89,7 @@ a:active {
 }
 
 .navbar-right {
-  float: right;
+  float: left;
 }
 
 .navbar-right a:hover {
@@ -162,6 +163,10 @@ a:active {
   .main {
     padding-left: 1%;
     padding-right: 1%;
+  }
+
+  .navbar-right {
+    height: 0;
   }
 
   .openbtn {

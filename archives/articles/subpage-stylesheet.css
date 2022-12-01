@@ -37,8 +37,9 @@
     margin: 0;
     background-color: black;
     color: white;
-    font-size: 17px;
-    text-align: justify
+    font-size: 19px;
+    text-align: justify;
+    line-height: 1.3;
   }
 
   a:link {
@@ -102,7 +103,7 @@
   }
 
   .navbar-right {
-    float: right;
+    float: left;
   }
 
   .navbar-right a:hover {
@@ -168,14 +169,8 @@
       padding: 10px;
     }
 
-    .side {
-      padding-left: 1%;
-      padding-right: 1%;
-    }
-    
-    .main {
-      padding-left: 1%;
-      padding-right: 1%;
+    .side, .main {
+      padding: 0 10px 0 10px;
     }
 
     .openbtn {
@@ -186,6 +181,10 @@
       color: white;
       padding: 10px 15px;
       border: none;
+    }
+
+    .navbar-right {
+      height: 0;
     }
     
     .openbtn:hover {

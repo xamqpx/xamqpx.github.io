@@ -31,8 +31,9 @@ body {
   margin: 0;
   background-color: black;
   color: white;
-  font-size: 17px;
-  text-align: justify
+  font-size: 19px;
+  text-align: justify;
+  line-height: 1.3;
 }
 
 .header {
@@ -71,7 +72,7 @@ body {
 }
 
 .navbar-right {
-  float: right;
+  float: left;
 }
 
 .navbar-right a:hover {
@@ -164,6 +165,10 @@ body {
   #main {
     transition: margin-top .5s;
     padding: 16px;
+  }
+
+  .navbar-right {
+    height: 0;
   }
 }
 
