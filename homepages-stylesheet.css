@@ -1,22 +1,42 @@
 
 @font-face {
     font-family: 'Bodoni MT Poster Compressed';
-    src: url('BOD_PSTC.TTF') format('truetype');
+    src: url('fonts/BOD_PSTC.TTF') format('truetype');
   }
       
 @font-face {
     font-family: 'Bodoni MT Condensed';
-    src: url('bod_cr.ttf') format('truetype');
+    src: url('fonts/bod_cr.ttf') format('truetype');
   }
   
 @font-face {
     font-family: 'Bodoni MT';
-    src: url(BOD_R.TTF) format('truetype');
+    src: url('fonts/BOD_R.TTF') format('truetype');
   }
 
 @font-face {
   font-family: 'IBM Plex Sans KR';
-  src: url('IBMPlexSansKR-Regular.ttf') format('truetype');
+  src: url('fonts/IBMPlexSansKR-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Caslon';
+  src: url('fonts/ACaslonPro-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cheltenham Std Condensed';
+  src: url('fonts/CheltenhamStdBookCond.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cheltenham';
+  src: url('fonts/CheltenhamStdBook.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cheltenham Bold';
+  src: url('fonts/CheltenhamStdBold.otf') format('truetype');
 }
   
   
@@ -54,7 +74,7 @@
   }
   
   body {
-    font-family: "Helvetica";
+    font-family: "Caslon";
     margin: 0;
     background-color: black;
     color: white;
@@ -94,6 +114,7 @@
     z-index: 5;
     position: sticky;
     top: 0;
+    font-family: "Helvetica";
   }
   
   .navbar a {
@@ -139,6 +160,8 @@
   .row {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1600px;
+    margin: auto;
   }
   
   .side {
