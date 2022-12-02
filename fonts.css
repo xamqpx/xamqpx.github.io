@@ -57,3 +57,8 @@
     font-family: 'Cheltenham Std Light Condensed';
     src: url('../../fonts/CheltenhamStdLightCond.otf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Cheltenham Std Ultra';
+    src: url('../../fonts/CheltenhamStdUltra.otf') format('truetype');
+  }
