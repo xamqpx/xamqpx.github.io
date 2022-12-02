@@ -32,6 +32,11 @@
     font-family: 'Caslon Italic';
     src: url('../../fonts/ACaslonPro-Italic.otf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Caslon Bold';
+    src: url('../../fonts/ACaslonPro-Bold.otf') format('truetype');
+  }
   
   @font-face {
     font-family: 'Cheltenham Std Condensed';
