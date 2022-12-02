@@ -98,12 +98,12 @@ p i {
   padding-right: 5px;
   float: left;
   position: relative;
-  top: -0.25em;
+  top: -0em;
   margin-bottom: -0.5em;
   margin-left: -6px;
   margin-right: 2px;
-  font-size: 100px;
-  font-family: "Bodoni MT Condensed"
+  font-size: 80px;
+  font-family: "Caslon"
 }
 
 .openbtn {
