@@ -46,6 +46,10 @@
     font-size: 17px;
     margin: 0;
   }
+
+  p i {
+    font-family: "Caslon Italic";
+  }
   
   .content {
     margin-top: 100px;
@@ -54,7 +58,7 @@
 
   .slide {
     animation: 1s ease-out 0s 1 slideInFromBottom;
-  }s
+  }
 
   a.fill-div {
       display: block;
