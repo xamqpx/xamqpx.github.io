@@ -41,6 +41,10 @@
     line-height: 1.3;
   }
 
+  a:link, a:visited, a:active {
+    text-decoration: none;
+  }
+
   .meat {
     max-width: 1600px;
     margin: auto;
