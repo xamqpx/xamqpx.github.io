@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<title>META - The 25 Post</title>
+
+<!--basics-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--icons -->
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="archives/icons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="archives/icons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="archives/icons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="archives/icons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="archives/icons/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="archives/icons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="archives/icons/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="archives/icons/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="archives/icons/favicon-196x196.png" sizes="archives/196x196" />
+<link rel="icon" type="image/png" href="archives/icons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="archives/icons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="archives/icons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="archives/icons/favicon-128.png" sizes="128x128" />
+
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="archives/icons/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="archives/icons/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="archives/icons/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="archives/icons/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="archives/icons/mstile-310x310.png" />
+
+<!--stylesheets-->
+<link rel="stylesheet" href="homepages-stylesheet.css">
+<link rel="stylesheet" href="fonts.css">
+
+<style>
+  .header {
+    background-image: none;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+  }
+  .header h1 {
+    font-size: 50px;
+  }
+
+  .blink {
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+  }
+
+  @keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  h2 {
+    color: white;
+    transition: color 0.3s;
+  }
+
+  h2:hover {
+    color: #b0b0b0;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">
+      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
+      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
+        THE 25 POST</a>
+    </div>
+    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
+      <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
+      <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
+      <a href="https://the25post.com/meta" style="color:white">META</a>
+      <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+    </div>
+  </div>
+
+  <script>
+  function toggleNav() {
+    var element = document.getElementById("navbar-collapse");
+    var button = document.getElementById("menu");
+    if (element.style.height == "250px") {
+      element.style.height = "0px";
+      button.innerHTML = "&equiv;";
+    } else {
+      element.style.height = "250px";
+      button.innerHTML = "&nequiv;";
+    } 
+  }
+  </script>
+
+    <div class="header">
+        <h1 style="font-family:Cheltenham Std Condensed;font-weight:normal;">META</h1>
+        <p>Behind the scenes.<br><br><br></p>
+    </div>
+
+    <div class="row">
+      <div class="side">
+        <div class="slide">
+          <a href="https://the25post.com/archives/meta/bursting-your-bubble" class="fill-div" style="color:black;background-color:rgba(255, 255, 255, 0.882);padding:20px;border-left:10px solid rgb(56, 56, 56)">
+            <p>New column:</p>
+            <p style="font-family:Bodoni MT Poster Compressed; font-size:60px;line-height:1">
+              BURSTING YOUR BUBBLE</p>
+            <p><i>A biweekly reminder that the world outside of America (and Europe) exists. </i></p>
+            <small>by <b>JONATHAN PARK</b> for the Daily Trojan</small>
+          </a>
+        </div>
+        <br><br>
+        <div class="slide">
+          <a href="https://the25post.com/archives/meta/briefings" class="fill-div" style="color:white;background-color:#18476E;padding:20px;border-top:10px solid #fff">
+            <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:28px">
+              Daily news briefings:<br>7 October 2022</h2>
+            <img src="https://static01.nyt.com/images/2022/11/06/world/06ukraine-briefing-civilian-bodies03/merlin_214431975_813a3f92-f4d9-4a2a-b36e-8eb69a8ebd96-superJumbo.jpg?quality=75&auto=webp">
+            <p>Brought to you by The 25 Post.</p>
+            <small>PHOTO: IVOR PRICKETT/NEW YORK TIMES</small>
+          </a>
+        </div>
+        <br><br>
+        </div>
+        
+      <div class="main">
+
+          <div class="slide">
+            <a href="https://github.com/xamqpx/xamqpx.github.io" target="_blank" class="fill-div" style="color:white">
+              <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;color:white">The 25 Post is hosted by GitHub Pages.</h2>
+              <p>Check out our site's repository.</p>
+            </a>
+
+            <a href="https://the25post.com/archives/meta/updates" target="_blank" class="fill-div" style="color:white">
+              <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;color:white"><u>Site updates</u></h2>
+              <p>A log of all major changes to the website.<br>Current version: 1.2.1</p>
+            </a>
+          <hr class="dashed">
+          
+          <a href="https://github.com/xamqpx/wordle-sim" target="_blank" class="fill-div" style="color:white">
+            <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:28px;color:white"><img class="img" src="https://assets2.rockpapershotgun.com/wordle-past-answers-header.jpg/BROK/resize/1760%3E/format/jpg/quality/80/wordle-past-answers-header.jpg" >Wordle in Python</h2>
+            <p>Works best with PyCharm/most IDEs.</p>
+            <p><br><br><br></p>
+
+        <a href="https://github.com/xamqpx/google-form-to-calendar" target="_blank" class="fill-div" style="color:white">
+          <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:28px;color:white"><img class="img" src="https://images.ctfassets.net/lzny33ho1g45/4ODoWVyzgicvbcb6J9ZZZ5/89e33c333afa86e9e2864ba42833a5be/app-tips-google-forms-00-hero.png" >Google Form to Calendar converter</h2>
+          <p>Work in progress aiming to generate calendar events from Google Form entries + support multiple Google Forms simultaneously.</p>
+          <p><br><br><br></p>
+        </a>
+
+        <a href="https://the25post.com/archives/meta/ccna-notes" target="_blank" class="fill-div" style="color:white">
+          <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:28px;color:white"><img class="img" src="https://learning.nil.com/assets/News/2016/New-CCNA-Routing-and-Switching-Certification-v3.0.jpg" >CCNA 200-301 Notes</h2>
+          <p>38-page study notes, following the free online course by Jeremy McDowell (YouTube: <a href="https://www.youtube.com/c/JeremysITLab" style="color:white">Jeremy's IT Lab</a>).</p>
+          <p><br><br><br></p>
+        </a>
+      </div>
+          </div></div>
+
+          
+      <div class="footer">
+        <p> <a href="https://instagram.com/25.post/"><img src="archives/instagram 25post.png" style="width:20px"></a>
+          <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+      
+          <br>
+        </p>
+      </div>
+</body>
+</html>

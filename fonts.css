@@ -52,6 +52,11 @@
     font-family: 'Cheltenham Bold';
     src: url('../../fonts/CheltenhamStdBold.otf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Cheltenham Std Light';
+    src: url('../../fonts/CheltenhamStdLight.otf') format('truetype');
+  }
     
   @font-face {
     font-family: 'Cheltenham Std Light Condensed';
