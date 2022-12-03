@@ -151,10 +151,13 @@
   }
   
   .header {
-    text-align: left;
-    color: white;
+    text-align: center;
+    color: black;
     background-repeat: no-repeat;    
     vertical-align: middle;
+    max-width: 1600px;
+    margin: auto;
+    padding:2% 0 2% 0;
   }
 
   .header h1 {
@@ -187,19 +190,15 @@
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
 
-  .navbar-left a:hover {
-    box-shadow: inset 600px 0 0 0 #525252;
-    text-decoration: none;
-  }
-
   .navbar-right {
     float: right;
     transition: 0.3s;
   }
 
   .navbar-right a:hover {
+    cursor: pointer;
     text-decoration: underline;
-  }
+   }
   
   @media screen and (max-width: 600px) {
     .navbar a, .navbar-right {
