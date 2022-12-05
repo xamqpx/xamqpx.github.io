@@ -53,7 +53,7 @@
 
   .diary {
     color: black;
-    padding: 20px;
+    padding: 10px;
   }
 
   .meat {
@@ -102,7 +102,6 @@
   .spill {
     color: black;
     padding: 20px;
-    display: table;
   }
   
   .spill a:link, a:visited, a:active {
