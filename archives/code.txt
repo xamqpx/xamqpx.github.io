@@ -18,3 +18,11 @@
 <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+
+for when websites are down/under construction:
+
+        <div class="left" style="flex:100%;text-align:center;">
+          <p style="font-size:100px;">:(</p>
+          <p><i>Oops. We're under construction.</i><br><span style="font-family:Helvetica;font-size:14px;">You can find what you're looking for <a href="https://the25post.com/archives/old/old-nonfiction">here</a>, for now.</span></p>
+        </div>
