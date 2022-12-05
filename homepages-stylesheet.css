@@ -43,7 +43,6 @@
   }
 
   .long-read {
-    padding:  0 0 0 40px;
     color: white;
   }
 
@@ -120,6 +119,7 @@
     width: 50%;
     vertical-align: top;
     margin: 20px 0 20px 0;
+    padding: 20px;
   }
   
   @media screen and (max-width: 700px) {
