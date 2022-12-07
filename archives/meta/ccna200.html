@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>C.C.N.A. 200-301 study notes | The 25 Post</title>
+        <link rel="stylesheet" href="../../subpage-stylesheet.css">
+        <link rel="stylesheet" href="../../fonts.css">
+         <!--icons -->
+         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../icons/apple-touch-icon-57x57.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../icons/apple-touch-icon-114x114.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../icons/apple-touch-icon-72x72.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../icons/apple-touch-icon-144x144.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../icons/apple-touch-icon-60x60.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../icons/apple-touch-icon-120x120.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../icons/apple-touch-icon-76x76.png" />
+         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../icons/apple-touch-icon-152x152.png" />
+         <link rel="icon" type="image/png" href="../icons/favicon-196x196.png" sizes="archives/196x196" />
+         <link rel="icon" type="image/png" href="../icons/favicon-96x96.png" sizes="96x96" />
+         <link rel="icon" type="image/png" href="../icons/favicon-32x32.png" sizes="32x32" />
+         <link rel="icon" type="image/png" href="../icons/favicon-16x16.png" sizes="16x16" />
+         <link rel="icon" type="image/png" href="../icons/favicon-128.png" sizes="128x128" />
+         
+         <meta name="application-name" content="&nbsp;"/>
+         <meta name="msapplication-TileColor" content="#FFFFFF" />
+         <meta name="msapplication-TileImage" content="../icons/mstile-144x144.png" />
+         <meta name="msapplication-square70x70logo" content="../icons/mstile-70x70.png" />
+         <meta name="msapplication-square150x150logo" content="../icons/mstile-150x150.png" />
+         <meta name="msapplication-wide310x150logo" content="../icons/mstile-310x150.png" />
+         <meta name="msapplication-square310x310logo" content="../icons/mstile-310x310.png" />
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-left">
+              <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
+              <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
+                THE 25 POST</a>
+            </div>
+            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
+              <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
+              <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
+              <a href="https://the25post.com/meta" style="color:white">META</a>
+              <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+            </div>
+        </div>
+      
+        <script>
+        function toggleNav() {
+            var element = document.getElementById("navbar-collapse");
+            var button = document.getElementById("menu");
+            if (element.style.height == "250px") {
+            element.style.height = "0px";
+            button.innerHTML = "&equiv;";
+            } else {
+            element.style.height = "250px";
+            button.innerHTML = "&nequiv;";
+            } 
+        }
+        </script>
+
+        <div class="row">
+            <div class="side"></div>
+            <div class="main">
+                <div style="text-align:center;">
+                    <h3>PROJECTS</h3>
+                    <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px">C.C.N.A. 200-301 study notes</h2>
+                    <p>June - August 2022</p>
+                    <p class="photo-credit" style="text-align:center;">Taken from <b>JEREMY'S IT LAB</b>: Free CCNA Course <a href="https://www.google.com/url?q=https://youtube.com/playlist?list%3DPLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ&amp;sa=D&amp;source=editors&amp;ust=1670399675770993&amp;usg=AOvVaw1RWZcVXcCsjagAKQJta0-j">(YouTube playlist)</a>&nbsp;</p>
+                </div>
+                <div>
+                    <p>Day 1</p>
+                    <ul>
+                    <li>connecting devices of same type: copper cross-over</li>
+                    <li>routers &lt;=100m apart: copper cross-over OK</li>
+                    <li>routers 100m &lt; 550m apart: multi-mode fiber</li>
+                    <li>routers &gt;550m apart: single-mode fiber</li>
+                    <li>use Gigabit-Ethernet ports for fiber</li>
+                    </ul>
+                    <p>Day 2</p>
+                    <ul>
+                    <li>int labels: G - Gigabit (1GB/s), F- FastEthernet (100MB/s)</li>
+                    </ul>
+                    <p>Day 3</p>
+                    <ul>
+                    <li>recall OSPF is a layer 3 link-state protocol (establishes neighbor adjacencies and builds topology table)</li>
+                    </ul>
+                    <p>Day 4</p>
+                    <ul>
+                    <li>note Cisco serial defaults:<br /><img title="" src="images/image25.png" alt="" /></li>
+                    <li>user EXEC &gt; vs privileged EXEC #</li>
+                    <li>enable password cmd &gt; password to turn on enable</li>
+                    <li>running-config: current, active config file on device, edited real-time using CLI</li>
+                    <li>startup-config: file loaded upon startup.</li>
+                    <li>to save running as startup, write/write memory/running-config startup-config</li>
+                    <li>encrypts existing pwds in config: service password-encryption</li>
+                    <li>more secure, ALWAYS-encrypted: use enable secret</li>
+                    <li>if both enable password&nbsp;(7) and enable secret&nbsp;(CMD5) config, enable password ignored</li>
+                    <li>REMEMBER conf t to configure</li>
+                    </ul>
+                    <p>Days 5-6</p>
+                    <ul>
+                    <li>PDUs:<br /><img title="" src="images/image40.png" alt="" /></li>
+                    <li>Ethernet frame:<br /><img title="" src="images/image4.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>preamble: 7 bytes, alt 1/0, syncs receiver clocks</li>
+                    <li>SFD (start frame delimiter): 1 byte, end of preamble</li>
+                    <li>destination/source 6 bytes long</li>
+                    <li>Type (&gt;=1536, IPv4/v6)/Length (&lt;=1500).</li>
+                    </ul>
+                    <ul>
+                    <li>ethernet types: IPv4 0x0800, IPv6 0x86DD</li>
+                    </ul>
+                    <ul>
+                    <li>FCS (frame check sequence): checks for corruptions with CRC</li>
+                    <li>length 7-1-6-6-2-4. 26 bytes total</li>
+                    </ul>
+                    <ul>
+                    <li>OUI is first half of MAC address</li>
+                    <li>ARP (address resolution protocol): request is broadcast, reply is unicast</li>
+                    </ul>
+                    <ul>
+                    <li>ethernet type 0x0806</li>
+                    </ul>
+                    <ul>
+                    <li>ping consists of ICMP echo request/reply, measures round-trip time</li>
+                    <li>clear MAC address tables w/ clear mac address-table etc. as needed</li>
+                    </ul>
+                    <p>Days 7-8</p>
+                    <ul>
+                    <li>IPv4 address classes:<br /><img title="" src="images/image7.png" alt="" /><br />class A: /8 255.0.0.0<br />class B: /16 255.255.0.0<br />class C: /24 255.255.255.0<br />class D: multicast addresses<br />class E: reserved (experimental)<br />127 range reserved for loopback addresses<br />(testing network stack, pinging 127 pings itself)<br />BROADCAST IP: host portion all 1s (.255) (=broadcast MAC all Fs)</li>
+                    <li>2^n - 2 usable&nbsp;addresses per network</li>
+                    <li>show ip interface brief</li>
+                    </ul>
+                    <ul>
+                    <li>status: layer 1 status. default &lsquo;administratively down&rsquo; for Cisco routers (switches: NOT admin down)</li>
+                    <li>protocol: layer 2 status.</li>
+                    </ul>
+                    <ul>
+                    <li>ip add&nbsp;using LAST AVAILABLE address in network</li>
+                    <li>enable interface with no shutdown</li>
+                    </ul>
+                    <p>Day 9</p>
+                    <ul>
+                    <li>duplex: int can send/receive at same time? full: yes. half: no. default is auto-full (negotiate w neighbors and full if possible)</li>
+                    <li>devices attached to switches can use full duplex!</li>
+                    <li>show interface status</li>
+                    </ul>
+                    <p>Days 10-11</p>
+                    <ul>
+                    <li>ip route&nbsp;[dest-prefix] [mask] [next-hop router]</li>
+                    <li>show ip route</li>
+                    <li>adding ip addresses on routers: add ip addresses of INTERFACES</li>
+                    </ul>
+                    <p>Day 12</p>
+                    <ul>
+                    <li>life of packet:</li>
+                    </ul>
+                    <ul>
+                    <li>end host learns MAC of DG via ARP</li>
+                    <li>host encapsulates packet with Ethernet header containing DG MAC</li>
+                    <li>router decapsulates, learns MAC of next-hop via ARP, encapsulates appropriately, forwards (repeat until reach PC4)</li>
+                    </ul>
+                    <p>Days 13-15</p>
+                    <ul>
+                    <li>Classless Inter-Domain Routing (CIDR) limits IP addressing waste</li>
+                    <li>subnetting:<br /><img title="" src="images/image14.png" alt="" /></li>
+                    <li>Variable Length Subnet Masks (VLSM): creating subnets of different sizes</li>
+                    </ul>
+                    <ul>
+                    <li>assign subnets from largest to subnets</li>
+                    <li>when connecting two hosts, use /30 not /31</li>
+                    <li>Day 16</li>
+                    </ul>
+                    <ul>
+                    <li>broadcast domain: all devices which receive/forward a broadcast frame sent by any device within domain. routers do not forward, and therefore set boundaries for the domain</li>
+                    <li>even different subnets (Layer 3) can be in the same broadcast domain (Layer 2)</li>
+                    <li>VLANs divide domain at Layer 2</li>
+                    <li>show vlan brief</li>
+                    <li>switchport belonging to single VLAN: access port</li>
+                    <li>switchport belonging to multiple VLANs: trunk port</li>
+                    <li>int range g0/0-3 &gt; switchport mode access &gt; switchport access vlan 10</li>
+                    <li>config VLANs on routers: config DG IP to int</li>
+                    </ul>
+                    <ul>
+                    <li>
+                    <h2>Day 17</h2>
+                    </li>
+                    </ul>
+                    <ul>
+                    <li>frames sent through trunk links are &lsquo;tagged&rsquo; (802.1Q, ISL old)</li>
+                    </ul>
+                    <ul>
+                    <li>802.1Q consists of TPID 0x8100, PCP (CoS), DEI (Drop Eligible Indicator), VLAN ID (VID, 1-4094, 0 and 4095 reserved)</li>
+                    <li>frames belonging to native VLANs&nbsp;are untagged (default VLAN 1, but can be manually configured)</li>
+                    </ul>
+                    <ul>
+                    <li>access ports are untagged ports</li>
+                    <li>switchport mode trunk</li>
+                    <li>if switch also supports ISL, switchport trunk encapsulation dot1q&nbsp;then switchport mode trunk</li>
+                    <li>show interfaces trunk&nbsp;to verify</li>
+                    <li>edit VLANs connected to trunk: switchport trunk allowed vlan ?</li>
+                    <li>switchport trunk native vlan [#]</li>
+                    <li>Router on a Stick (ROAS) divides single int into sub-ints, to allow inter-VLAN routing</li>
+                    <li>config: e.g. int g0/0.10&nbsp;&gt; encapsulation dot1q 10 &gt; ip add&nbsp;[last usable, subnet]</li>
+                    <li>remember to config trunk port TO ROUTER as well</li>
+                    </ul>
+                    <p>Day 18</p>
+                    <ul>
+                    <li>config native VLAN on router:</li>
+                    </ul>
+                    <ul>
+                    <li>encapsulation dot1q [vlan-id] native</li>
+                    <li>ip add&nbsp;on router int (int g0/0 &gt; ip add)</li>
+                    </ul>
+                    <ul>
+                    <li>layer 3 (multilayer) switches can switch and route. uses switch virtual interfaces (SVIs) for inter-VLAN routing</li>
+                    </ul>
+                    <ul>
+                    <li>for packets destined outside LAN, can configure default route to separate router connected to Internet</li>
+                    <li>default interface g0/0&nbsp;(set int to default config)</li>
+                    <li>DO NOT FORGET ip routing, no switchport&nbsp;ON MLS</li>
+                    <li>config default route: ip route 0.0.0.0 0.0.0.0 [ip]</li>
+                    <li>creating SVIs: config just like routers, but on MLS (int &gt; ip add &gt; no sh)</li>
+                    </ul>
+                    <p>Day 19</p>
+                    <ul>
+                    <li>DTP (dynamic trunking protocol): dynamically configures access or trunk, not recommended for security purposes</li>
+                    </ul>
+                    <ul>
+                    <li>dynamic desirable&nbsp;configured ports will ACTIVELY form trunk links, i.e. with other trunk, dynamic auto&nbsp;or dynamic desirable&nbsp;ports (older switches default)</li>
+                    <li>dynamic auto&nbsp;ports will form trunk links with other trunk&nbsp;and dynamic desirable ports (newer switches default)</li>
+                    <li>disable with switchport nonegotiate&nbsp;(access mode also disables)</li>
+                    <li>favors ISL over 802.1Q</li>
+                    </ul>
+                    <ul>
+                    <li>VTP (VLAN trunking protocol): allows config VLANs on central server switch, avoids manual config large networks with several VLANs</li>
+                    </ul>
+                    <ul>
+                    <li>three modes: server (modify, store in NVRAM, edit revision # - used to sync, advertise latest VTP version on trunks, function as clients), client (sync, advertise, store in NVRAM - only in v3!!), transparent (no sync, separate database, no advertising, fwds VTP ads within same domain)</li>
+                    </ul>
+                    <ul>
+                    <li>vtp mode [mode]</li>
+                    </ul>
+                    <p>Day 20</p>
+                    <ul>
+                    <li>redundancy is important, but can cause broadcast storms (repeatedly flooded broadcast messages) and MAC address flapping (devices constantly relearning MAC addresses)</li>
+                    <li>solution is Spanning Tree Protocol (STP): redundant ports in default blocking state until active port fails</li>
+                    <li>STP devices send Hello BPDU messages; if device receives msg, then active. if not, failed.</li>
+                    <li>BPDU has bridge ID field; lowest BID is root bridge<br /><img title="" src="images/image42.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>all ports on root bridge in forwarding state. all other switches must have path to root bridge</li>
+                    <li>all ints on root bridge are designated ports, in forwarding state. all other ports assign root port (least root cost), also in forwarding state.<br /><img title="" src="images/image34.png" alt="" /><br />(only calculate cost of outgoing&nbsp;int)<br />(root bridge ints have cost of 0)<br />(least root cost &gt; lowest BID &gt; lowest NEIGHBOR port ID)</li>
+                    <li>switch assumes root bridge at startup, until receives BPDU with lower BID</li>
+                    <li>once topology converges, only root bridge generates BPDUs</li>
+                    </ul>
+                    <ul>
+                    <li>Cisco PVST runs STP instance for each VLAN (BID = priority + VLAN ID unique for each VLAN)</li>
+                    <li><img title="" src="images/image36.png" alt="" /></li>
+                    <li>int connected to root port always designated</li>
+                    <li>verify with show spanning-tree</li>
+                    </ul>
+                    <p>Day 21</p>
+                    <ul>
+                    <li>two more STP states: listening and learning (transitional)</li>
+                    </ul>
+                    <ul>
+                    <li>only designated and root ports enter listening&nbsp;state (15 seconds long by default). only forwards BPDUs, not normal traffic; does NOT learn new MAC addresses.</li>
+                    <li>after listening state, enters learning&nbsp;state (15 s long by default). only forwards BPDUs, not normal traffic; DOES learn new MAC addresses.</li>
+                    </ul>
+                    <ul>
+                    <li>STP timers:</li>
+                    </ul>
+                    <ul>
+                    <li>Hello timer: freq of Hello BPDUs (2 s)</li>
+                    <li>forward delay: length of listening/learning (15 s)</li>
+                    <li>max age: wait time before changing topology (20s, 10x Hello)</li>
+                    </ul>
+                    <ul>
+                    <li>PVST+ uses dest. MAC 0100.0ccc.cccd for BPDUs</li>
+                    <li>regular STP uses dest. MAC 0180.c200.0000</li>
+                    <li>optional STP features:</li>
+                    </ul>
+                    <ul>
+                    <li>Portfast: bypass listening/learning, enter forwarding state immediately ONLY when connecting to end hosts</li>
+                    </ul>
+                    <ul>
+                    <li>spanning-tree portfast default</li>
+                    </ul>
+                    <ul>
+                    <li>BPDU Guard: int shuts down after receiving BPDU to prevent loops</li>
+                    </ul>
+                    <ul>
+                    <li>spanning-tree bpduguard enable</li>
+                    </ul>
+                    <ul>
+                    <li>Root Guard: does not accept superior BPDUs, disables int</li>
+                    <li>Loop Guard: does not start forwarding even if receives no BPDUs. disables int</li>
+                    </ul>
+                    <ul>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>spanning-tree mode ?</li>
+                    <li>set root bridge: spanning-tree vlan 1 root primary</li>
+                    </ul>
+                    <ul>
+                    <li>sets STP priority to 24576, or (current lowest)-4096</li>
+                    </ul>
+                    <ul>
+                    <li>set secondary root bridge: &ldquo; &ldquo; &ldquo; &ldquo; &ldquo; secondary</li>
+                    </ul>
+                    <ul>
+                    <li>sets STP priority to 28672</li>
+                    </ul>
+                    <ul>
+                    <li>can use different connections for different VLANs (different roots per VLAN) = STP load-balancing</li>
+                    <li>can also manually config cost and port-priority</li>
+                    </ul>
+                    <ul>
+                    <li>spanning-tree vlan 1 ?</li>
+                    </ul>
+                    <p>Day 22</p>
+                    <ul>
+                    <li>Rapid STP (RSTP): allows faster forwarding state</li>
+                    <li>expanded costs for faster speeds:<br /><img title="" src="images/image33.png" alt="" /></li>
+                    <li>non-designated ports in RSTP are either alternate&nbsp;or backup</li>
+                    </ul>
+                    <ul>
+                    <li>alternate receives superior BPDUs. if root port fails, best alt immediately moved to forwarding (similar to classic STP&rsquo;s UplinkFast).</li>
+                    <li>backup&nbsp;receives superior BPDUs from another interface on the same switch (only happens when connected via hubs, usually rare)</li>
+                    </ul>
+                    <ul>
+                    <li>RSTP link types:</li>
+                    </ul>
+                    <ul>
+                    <li>edge: connected to end host. moves directly to forwarding (like PortFast)</li>
+                    </ul>
+                    <ul>
+                    <li>even ints connected to hubs are EDGE ports if hubs connected to end hosts.</li>
+                    </ul>
+                    <ul>
+                    <li>point to point: two switches</li>
+                    <li>shared: connection to hub. must operate in half-duplex</li>
+                    </ul>
+                    <p>Day 23</p>
+                    <ul>
+                    <li>EtherChannel groups multiple interfaces as a single int, STP treats as single int</li>
+                    <li>load-balancing: frames in same flow (i.e. same two devices communicating) will use same physical interface</li>
+                    </ul>
+                    <ul>
+                    <li>which interface? based on one of the following:<br /><img title="" src="images/image10.png" alt="" /></li>
+                    <li>verify: show etherchannel load-balance</li>
+                    <li>config: port-channel load-balance ?</li>
+                    </ul>
+                    <ul>
+                    <li>three methods:</li>
+                    </ul>
+                    <ul>
+                    <li>Cisco PAgP (dynamic)</li>
+                    <li>IEEE 802.3ad LACP (dynamic)</li>
+                    <li>static</li>
+                    </ul>
+                    <ul>
+                    <li>config: int range&nbsp;&gt; channel-group [#] mode ?</li>
+                    <li>note:<br /><img title="" src="images/image29.png" alt="" /></li>
+                    <li>static: ONLY on+on create EtherChannel</li>
+                    <li>channel-group # needs to match on same switch, but not with other switch</li>
+                    <li>manually config protocol with channel-protocol ?</li>
+                    <li>verify: show etherchannel summary</li>
+                    <li>Layer 3 EtherChannels (connecting MLSs) use routed ports, no need for STP.</li>
+                    </ul>
+                    <ul>
+                    <li>config: int range &gt; no switchport &gt; channel-group 1 mode ?</li>
+                    </ul>
+                    <p>Day 24</p>
+                    <ul>
+                    <li>dynamic routing: advertise routes, add superior routes to table</li>
+                    <li>divided into two types: Interior Gateway Protocol (IGP, within autonomous system [AS]) and Exterior Gateway Protocol (EGP, between ASs)</li>
+                    <li><img title="" src="images/image5.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>distance vector: &lsquo;routing by rumor&rsquo; - router only knows information neighbors tell it (&ldquo;distance&rdquo; i.e. metric, &ldquo;vector&rdquo; i.e. direction, next-hop)</li>
+                    <li>link state: every router aware of entire topology. uses more resources. faster reactions to network changes</li>
+                    </ul>
+                    <ul>
+                    <li>lower metric = superior. if same metric: both added to table, traffic load-balanced over both. (Equal Cost Multi-Path, ECMP)</li>
+                    <li>in routing table: e.g. [110/2] is admin distance / metric</li>
+                    <li>different IGPs use different metrics.<br /><img title="" src="images/image12.png" alt="" /></li>
+                    <li>metric compares routes learned using same protocol; AD compares protocols</li>
+                    <li>Cisco AD values:<br /><img title="" src="images/image23.png" alt="" /></li>
+                    <li>floating static route: static route AD changed to be less preferred than dynamic routes</li>
+                    </ul>
+                    <ul>
+                    <li>config: ip route, added metric parameter at end - set higher than dynamically learned route AD</li>
+                    </ul>
+                    <p>Day 25</p>
+                    <ul>
+                    <li>Routing Information Protocol (RIP) - industry standard</li>
+                    </ul>
+                    <ul>
+                    <li>metric is hop count (max 15, one router = one hop regardless of bandwidth)</li>
+                    <li>v1 only advertises classful addresses w/ no mask info, no VLSM/CIDR support. broadcasts to 255.255.255.255</li>
+                    <li>v2 supports VLSM/CIDR. ads with mask info. multicasts to 224.0.0.9<br />(multicast = delivered to devices in multicast group)</li>
+                    <li>router rip &gt; version 2 &gt; no auto-summary &gt; network [ip]</li>
+                    <li>network&nbsp;commands assume classful; e.g. 10.0.0.0 assumed /8, 172.16.0.0 assumed /16. router finds matching ints and advertises actual classless network address (e.g. 172.16.1.0/28)</li>
+                    <li>ints with no RIP neighbors should be config as passive (no RIP ads)</li>
+                    <li>(config-router) passive-interface g2/0</li>
+                    <li>ad default route: default-information originate</li>
+                    <li>verify routing protocols: show ip protocols</li>
+                    </ul>
+                    <ul>
+                    <li>Enhanced Interior Gateway Routing Protocol (EIGRP) - Cisco, since opened</li>
+                    </ul>
+                    <ul>
+                    <li>faster reactions to network changes</li>
+                    <li>no 15 hop-count limit</li>
+                    <li>multicast address 224.0.0.10</li>
+                    <li>can perform unequal-cost load balancing</li>
+                    <li>router eigrp 1 &gt; no auto-summary &gt; passive-int &gt; network</li>
+                    <li>AS # must match between routers!</li>
+                    <li>can specify WILDCARD mask in network, else assumes classful</li>
+                    </ul>
+                    <ul>
+                    <li>wildcard masks are inverted subnet masks</li>
+                    <li>for each octet: 255-x</li>
+                    </ul>
+                    <ul>
+                    <li>in order for EIGRP to be activated on int:<br /><img title="" src="images/image31.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>create loopback int: int loopback [#], then config IP on int</li>
+                    <li>enable EIGRP ALL devices: network&nbsp;0.0.0.0 255.255.255.255</li>
+                    <li>EIGRP metric (simpl.) = slowest link bandwidth + ALL links delay</li>
+                    <li>feasible distance: router&rsquo;s metric to dst</li>
+                    <li>reported distance: neighbor&rsquo;s metric to dst</li>
+                    <li>in routing table: [FD / RD]</li>
+                    <li>successor: route w/ lowest metric</li>
+                    <li>feasible successor: RD &gt; successor FD</li>
+                    <li>config unequal-cost load balancing with variance ?</li>
+                    </ul>
+                    <p><img title="" src="images/image9.png" alt="" />Day 26</p>
+                    <ul>
+                    <li>OSPF: routers routinely flood link-state ads (LSAs), which comprise a shared LS database (LSDB)</li>
+                    </ul>
+                    <ul>
+                    <li>become neighbors &gt; exchange LSAs &gt; calculate best routes</li>
+                    </ul>
+                    <ul>
+                    <li>divide network into OSPF areas (each connected to single backbone area, each have unique LSDBs)</li>
+                    <li>internal routers: all ints within same area.</li>
+                    <li>area border routers (ABRs): ints in multiple areas. ABRS maintain separate LSDBs for each area. max 2 areas rec.</li>
+                    <li>OSPF area rules:</li>
+                    </ul>
+                    <ul>
+                    <li>must be contiguous (all of each area must be interconnected)</li>
+                    <li>at least 1 ABR connected to backbone</li>
+                    <li>OSPF ints in same subnet must be in same area</li>
+                    </ul>
+                    <ul>
+                    <li>router ospf [process-id]&nbsp;&gt; network [ip, subnet] [OSPF AREA]</li>
+                    </ul>
+                    <ul>
+                    <li>process-id is only LOCALLY significant</li>
+                    <li>must specify ospf area at end of network</li>
+                    </ul>
+                    <ul>
+                    <li>passive-int and default-info originate&nbsp;same as RIP</li>
+                    <li>determining router ID:<br /><img title="" src="images/image6.png" alt="" /></li>
+                    <li>man config: router-id ? &gt; clear ip ospf process</li>
+                    <li>show ip ospf database</li>
+                    </ul>
+                    <p>Day 27</p>
+                    <ul>
+                    <li>OSPF metric is cost: divide reference bandwidth by int bandwidth</li>
+                    </ul>
+                    <ul>
+                    <li>default ref band is 100 mbps</li>
+                    <li>all cost values &lt;1 converted to 1</li>
+                    <li>modify:</li>
+                    </ul>
+                    <ul>
+                    <li>change ref band: auto-cost reference-bandwidth [#]</li>
+                    </ul>
+                    <ul>
+                    <li>config ref band greater than current fastest links, allow for upgrade</li>
+                    </ul>
+                    <ul>
+                    <li>man config cost itself: (config-if) ip ospf cost ?</li>
+                    <li>change int band: does not change int operation speed, but affects metric calculations</li>
+                    </ul>
+                    <ul>
+                    <li>cost to dst is total cost of OUTGOING ints</li>
+                    <li>loopback cost 1</li>
+                    </ul>
+                    <ul>
+                    <li>router sends OSPF hello msgs through OSPF ints</li>
+                    </ul>
+                    <ul>
+                    <li>default hello timer 10s</li>
+                    <li>multicast to 224.0.0.5</li>
+                    <li>encapsulated in IP header, protocol field 89</li>
+                    </ul>
+                    <ul>
+                    <li>OSPF neighbor states<img title="" src="images/image27.png" alt="" /><img title="" src="images/image38.png" alt="" /></li>
+                    <li>show ip ospf neighbor</li>
+                    <li>show ip ospf interface</li>
+                    <li>activate OSPF directly on int: int &gt; ip ospf [pro-id] area [#]</li>
+                    <li>config ALL ints as passive: passive-int default</li>
+                    <li>config specific ints as active: no passive-int ?</li>
+                    </ul>
+                    <p>Day 28</p>
+                    <ul>
+                    <li>loopback int: virtual int not dependent on physical int. provides consistent IP used to identify router</li>
+                    <li>OSPF network types:</li>
+                    </ul>
+                    <ul>
+                    <li>broadcast (Ethernet and FDDI default enabled)</li>
+                    </ul>
+                    <ul>
+                    <li>DR/BDR election (per subnet): int priority &gt; RID</li>
+                    </ul>
+                    <ul>
+                    <li>default int priority is 1 on all ints</li>
+                    <li>neither DR/BDR = DROther</li>
+                    <li>config int priority: int &gt; ip ospf priority ?</li>
+                    </ul>
+                    <ul>
+                    <li>BDR becomes DR if DR goes down</li>
+                    <li>DROthers don&rsquo;t form full adjacencies with other Others</li>
+                    <li>DROthers only form adjacencies with DR/BDR</li>
+                    <li>reduces LSAs sent/received, i.e. congestion / unnecessary traffic</li>
+                    <li>show ip ospf int brief</li>
+                    </ul>
+                    <ul>
+                    <li>point-to-point (PPP and HDLC default enabled)</li>
+                    </ul>
+                    <ul>
+                    <li>for serial ints (old tech); no need for DR/BDR<br /><img title="" src="images/image3.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>non-broadcast (frame relay, X.25 default enabled)</li>
+                    </ul>
+                    <ul>
+                    <li>OSPF neighbor requirements:</li>
+                    </ul>
+                    <ul>
+                    <li>area # must match</li>
+                    <li>ints in same subnet</li>
+                    <li>OSPF process not shutdown</li>
+                    <li>unique RIDs</li>
+                    <li>hello = dead timer</li>
+                    </ul>
+                    <ul>
+                    <li>ip ospf hello-interval ?</li>
+                    <li>ip ospf dead-interval ?</li>
+                    <li>return to defaults: no &ldquo; &ldquo; &ldquo;</li>
+                    </ul>
+                    <ul>
+                    <li>auth settings must match (matching OSPF passwords)</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; ip ospf authentication-key ?</li>
+                    </ul>
+                    <ul>
+                    <li>IP MTU settings must match: ip mtu ?</li>
+                    <li>OSPF network type must match</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; no ip ospf network ?</li>
+                    </ul>
+                    <ul>
+                    <li>LSA types</li>
+                    </ul>
+                    <ul>
+                    <li>Type 1 (Router LSA):&nbsp;identifies router and attached networks</li>
+                    <li>Type 2 (Network LSA):&nbsp;generated by DRs. lists routers attached to &lsquo;multi-access&rsquo; (broadcast) networks</li>
+                    <li>Type 3 (AS-External LSA):&nbsp;generated by ASBRs. routes outside AS</li>
+                    </ul>
+                    <p>Day 29</p>
+                    <ul>
+                    <li>First Hop Redundancy Protocol (FHRP): another router takes over as DG in event of failure</li>
+                    </ul>
+                    <ul>
+                    <li>both ACTIVE and STANDBY routers have the same&nbsp;virtual IP address, which is configured as DG. (virtual MAC also generated)</li>
+                    <li>when DG router fails, backup broadcasts gratuitous ARP to force switches to update MAC address tables</li>
+                    </ul>
+                    <ul>
+                    <li>types of FHRPs:<br /><img title="" src="images/image16.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>Hot Standby Router Protocol (HSRP) - Cisco</li>
+                    </ul>
+                    <ul>
+                    <li>elects active and standby</li>
+                    <li>multicast address:</li>
+                    </ul>
+                    <ul>
+                    <li>v1: 224.0.0.2</li>
+                    <li>v2: 224.0.0.102</li>
+                    </ul>
+                    <ul>
+                    <li>virtual MAC:</li>
+                    </ul>
+                    <ul>
+                    <li>v1: 0000.0c07.acXX</li>
+                    <li>v2: 0000.0c9f.fXXX</li>
+                    <li>Xs = HSRP group number</li>
+                    </ul>
+                    <ul>
+                    <li>if multiple subnets/VLANs, can configure multiple active routers.</li>
+                    <li>SUBNETS divide at L3, VLANs divide at L2.</li>
+                    <li>config: int &gt; standby [#] ip ? &gt; standby [#] priority ? &gt; standby [#] preempt</li>
+                    </ul>
+                    <ul>
+                    <li>active router determined by<br />highest priority &gt; highest IP</li>
+                    <li>config VIRTUAL IP</li>
+                    <li>preempt: force active router</li>
+                    </ul>
+                    <ul>
+                    <li>verify: show standby</li>
+                    </ul>
+                    <ul>
+                    <li>Virtual Router Redundancy Protocol (VRRP) - open standard</li>
+                    </ul>
+                    <ul>
+                    <li>elects master and backup</li>
+                    <li>multicast: 224.0.0.18</li>
+                    <li>virtual MAC: 0000. 5e00.01XX</li>
+                    </ul>
+                    <ul>
+                    <li>Gateway Load Balancing Protocol (GLBP) - Cisco</li>
+                    </ul>
+                    <ul>
+                    <li>load balances among multiple routers within single subnet</li>
+                    <li>elects single AVG (active virtual gateway) and &lt;=4 AVFs (active virtual forwarders)</li>
+                    <li>multicast: 224.0.0.102</li>
+                    <li>virtual MAC: 0007.b400.XXYY</li>
+                    <li>Xs = GLBP group #, Ys = AVF #</li>
+                    </ul>
+                    <p>Day 30</p>
+                    <ul>
+                    <li>OSI Layer 4: transparent data transfer between end hosts, provide services to applications, provide L4 addressing (&ldquo;port&rdquo; numbers, which identify application-layer protocols and provide session multiplexing)</li>
+                    <li>port numbers:</li>
+                    </ul>
+                    <ul>
+                    <li>well-known: 0-1023</li>
+                    <li>registered: 1024-49151</li>
+                    <li>ephemeral/private/dynamic: 49152-65535</li>
+                    </ul>
+                    <ul>
+                    <li>TCP: (downloads, file-sharing, etc)</li>
+                    </ul>
+                    <ul>
+                    <li>connection-oriented: establish connection before data transfer</li>
+                    <li>reliable communication: segment acknowledgement required</li>
+                    <li>sequencing: data sent in correct order</li>
+                    <li>flow control (via window size)</li>
+                    <li>UDP does none of the above</li>
+                    <li>establishing connection: 1SYN &gt; 2SYN/ACK &gt; 1ACK</li>
+                    <li>terminating connection: 1FIN &gt; 2ACK &gt; 2FIN &gt; 1ACK</li>
+                    <li>forward acknowledgement: 2ACK = 1SEQ + 1, ACK# is # of next segment host expects to receive</li>
+                    </ul>
+                    <ul>
+                    <li>UDP: (VoIP, live video, etc)</li>
+                    </ul>
+                    <ul>
+                    <li>data sent with no ACK, sequencing, reliability, connection required</li>
+                    </ul>
+                    <ul>
+                    <li><img title="" src="images/image43.png" alt="Text
+                    Description automatically generated" /></li>
+                    </ul>
+                    <p>Day 31</p>
+                    <ul>
+                    <li>IPv6 config:</li>
+                    </ul>
+                    <ul>
+                    <li>ipv6 unicast-routing &gt; int &gt; ipv6 address ? &gt; no sh</li>
+                    <li>verify: sh ipv6 int br</li>
+                    </ul>
+                    <p>Day 32</p>
+                    <ul>
+                    <li>IPv6 address types:</li>
+                    </ul>
+                    <ul>
+                    <li>modified EUI-64: converting MAC to 64-bit int ID &gt; host portion of IPv6</li>
+                    </ul>
+                    <ul>
+                    <li>divide MAC address in half</li>
+                    <li>insert FFFE in middle</li>
+                    <li>invert 7th bit - <br />MAC address<br />0: universally administered address (UAA)<br />1: locally administered address (LAA)<br />(reverse for IPv6)</li>
+                    <li>int &gt; ipv6 address [#] eui-64</li>
+                    </ul>
+                    <ul>
+                    <li>global unicast: public, globally unique, Internet use</li>
+                    </ul>
+                    <ul>
+                    <li>XXXX:XXXX:XXXX:YYYY:ZZZZ:ZZZZ:ZZZZ:ZZZZ</li>
+                    <li>X = global routing prefix, assigned by ISP.</li>
+                    <li>Y = subnet ID</li>
+                    <li>Z = int ID, &ldquo;host portion&rdquo;</li>
+                    </ul>
+                    <ul>
+                    <li>unique local: private, not globally unique (except global ID), internal network use</li>
+                    </ul>
+                    <ul>
+                    <li>FDXX:XXXX:XXXX:YYYY:ZZZZ:ZZZZ:ZZZZ:ZZZZ</li>
+                    <li>global ID randomly generated, not ISP assigned</li>
+                    </ul>
+                    <ul>
+                    <li>link local: auto-gen, used for comm. within subnet. not used for packet routing</li>
+                    </ul>
+                    <ul>
+                    <li>FE8?:????:etc.</li>
+                    <li>int &gt; ipv6 enable</li>
+                    <li>OSPFv3, static next-hops, NDP (&ldquo;IPv6 ARP&rdquo;)</li>
+                    </ul>
+                    <ul>
+                    <li>multicast</li>
+                    </ul>
+                    <ul>
+                    <li>FF00::/8</li>
+                    <li>IPv6 does not use broadcast, has no broadcast address</li>
+                    <li>IPv6 and v4 have matching endings for multicast adds:</li>
+                    <li>e.g. all nodes: FF02::1, 224.0.0.1</li>
+                    <li>multicast scopes:</li>
+                    </ul>
+                    <ul>
+                    <li>interface-local&nbsp;- device</li>
+                    <li>link-local&nbsp;- subnet</li>
+                    <li>site-local&nbsp;- physical location</li>
+                    <li>organization-local&nbsp;- org/enterprise</li>
+                    <li>global - no limits</li>
+                    </ul>
+                    <ul>
+                    <li>anycast: multiple routers config same IPv6. packets forwarded to closest router. specify global unicast/unique local address as anycast in CLI:</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; ipv6 address [#] anycast</li>
+                    </ul>
+                    <ul>
+                    <li>unspecified: ::. default routes config to ::/0 <br />(IPv4 0.0.0.0)</li>
+                    <li>loopback: ::1</li>
+                    </ul>
+                    <p>Day 33</p>
+                    <ul>
+                    <li>IPv4 header length is variable; IPv6 fixed</li>
+                    <li>Neighbor Discovery Protocol (NDP)</li>
+                    </ul>
+                    <ul>
+                    <li>replaces ARP; uses ICMPv6 and IPv6 solicited-node multicast addresses to learn new MACs</li>
+                    </ul>
+                    <ul>
+                    <li>Neighbor Solicitation (NS)&nbsp;- ICMPv6 Type 135<br />(sim. ARP Request)</li>
+                    <li>Neighbor Advertisement (NA)&nbsp;- ICMPv6 Type 136<br />(sim. ARP Reply)</li>
+                    <li>IPv6 solicited-node multicast address&nbsp;<br />(calculated from unicast):<br />ff02::1:ff + last 6 hex digits of unicast address</li>
+                    </ul>
+                    <ul>
+                    <li>NS uses solicited-node multicast to generate dst IP/MAC fields</li>
+                    <li>show ipv6 neighbor</li>
+                    <li>NDP also allows automatic discovery:</li>
+                    </ul>
+                    <ul>
+                    <li>Router Solicitation (RS)&nbsp;- ICMPv6 Type 133</li>
+                    </ul>
+                    <ul>
+                    <li>sent to FF02::2 (all routers) whenever int enabled / host connects to network</li>
+                    <li>asks all routers to identify themselves</li>
+                    </ul>
+                    <ul>
+                    <li>Router Advertisement (RA) - ICMPv6 Type 134</li>
+                    </ul>
+                    <ul>
+                    <li>sent to FF02::1 (all nodes) in response to RS and also periodically</li>
+                    <li>announces router presence, provides basic info</li>
+                    </ul>
+                    <ul>
+                    <li>&ldquo;Any routers?&rdquo; / &ldquo;Yes, I&rsquo;m a router, about me:&rdquo;</li>
+                    </ul>
+                    <ul>
+                    <li>Stateless Address Auto-configuration (SLAAC)</li>
+                    </ul>
+                    <ul>
+                    <li>hosts learn IPv6 prefix using RS/RA messages, then auto-gens int ID using EUI-64/random gen</li>
+                    <li>ipv6 address autoconfig</li>
+                    </ul>
+                    <ul>
+                    <li>Duplicate Address Detection (DAD) checks for devices using same IPv6</li>
+                    </ul>
+                    <ul>
+                    <li>sends NS to own IPv6; no reply, no duplicates</li>
+                    </ul>
+                    <ul>
+                    <li>config route as backup path: change AD</li>
+                    </ul>
+                    <ul>
+                    <li>ipv6 route . . . [AD]</li>
+                    </ul>
+                    <p>Day 34</p>
+                    <ul>
+                    <li>Access Control Lists (ACLs)</li>
+                    </ul>
+                    <ul>
+                    <li>ACLs must be built to meet a specific requirement</li>
+                    <li>ACLs configured globally on router as ordered&nbsp;sequence of Access Control Entries (ACEs) (see diagram)</li>
+                    <li>ACL must be applied inbound/outbound to an interface in order to take effect. fulfillment of requirements dependent on in/out and interface<br /><img title="" src="images/image39.png" alt="Text
+                    Description automatically generated" /><br /><img title="" src="images/image26.png" alt="Diagram
+                    Description automatically generated" /></li>
+                    </ul>
+                    <ul>
+                    <li>if G0/2 OUT, PC3/PC4 can connect with SRV1 etc. unchecked, failing requirements</li>
+                    <li>if G0/2 IN, PC3/PC4 denied, cannot access any other network &ndash; too restrictive.</li>
+                    <li>if G0/1 OUT, PC3/PC4 blocked from accessing SRV1, but can still communicate with other networks. meets requirements, not excessively restrictive</li>
+                    </ul>
+                    <ul>
+                    <li>max 1 ACL can be applied to a single interface per direction (1 IN, 1 OUT)</li>
+                    <li>if packet doesn&rsquo;t match any entry in ACL, implicit deny</li>
+                    </ul>
+                    <ul>
+                    <li>there is an implicit deny at the end of all ACLs</li>
+                    </ul>
+                    <ul>
+                    <li>standard ACLs should be applied as close to dest. as possible</li>
+                    </ul>
+                    <ul>
+                    <li>Standard ACLs (match based on source IP only)</li>
+                    </ul>
+                    <ul>
+                    <li>Standard numbered ACLs</li>
+                    </ul>
+                    <ul>
+                    <li>identified with number (e.g. ACL 1, ACL 2, etc.)</li>
+                    <li>different types of ACLs have different range of numbers that can be used</li>
+                    <li>configure:<br />#access-list [number] {deny | permit} [ip] [wildcard-mask]<sup><a href="#ftnt1">[1]</a></sup>&nbsp;&ndash; assumes /32<br />e.g.:<br />#access-list 1 deny 1.1.1.1 0.0.0.0<br /> = #access-list 1 deny 1.1.1.1<br /> = #access-list 1 deny host 1.1.1.1<br />#access-list 1 permit any&nbsp;&ndash; negates implicit deny<br /> = #access-list 1 permit 0.0.0.0 255.255.255.255<br />#interface g0/2<br />#ip access-group 1 out&nbsp;&ndash; config G0/2 OUT</li>
+                    </ul>
+                    <ul>
+                    <li>Standard named ACLs</li>
+                    </ul>
+                    <ul>
+                    <li>identified with a name e.g. &lsquo;BLOCK_BOB&rsquo;</li>
+                    <li>ranges: 1-99, 1300-1399</li>
+                    <li>config:<br />enter &lsquo;standard named ACL config mode,&rsquo; then config each entry<br />#ip access-list standard [acl-name]<br />[entry-number] {deny | permit} [ip] [wildcard-mask]</li>
+                    <li>advantages:</li>
+                    </ul>
+                    <ul>
+                    <li>easily delete individual ACL entries with no sequence-number</li>
+                    <li>insert new entries in between other entries</li>
+                    </ul>
+                    <ul>
+                    <li>editing&nbsp;ACLs</li>
+                    </ul>
+                    <ul>
+                    <li>resequencing:<br />#ip access-list resequence [acl-id] [starting-seq-num] [increment]<br />- e.g. #ip access-list resequence 1 10 10 would change entries 1, 2, 3, 4, 5 to 10, 20, 30, 40, 50</li>
+                    </ul>
+                    <p>Day 36</p>
+                    <ul>
+                    <li>Layer 2 discovery protocols:</li>
+                    <li>Cisco Discovery Protocol</li>
+                    </ul>
+                    <ul>
+                    <li>multicast MAC 0100.0CCC.CCCC</li>
+                    <li>devices receiving CDP messages process and discard, not forward</li>
+                    <li>sent every 60 seconds, holdtime 180 seconds</li>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>CDP globally enabled by default, but if necessary:<br />(no) cdp run</li>
+                    <li>config timer/holdtime: cdp ?</li>
+                    </ul>
+                    <ul>
+                    <li>verify:</li>
+                    </ul>
+                    <ul>
+                    <li>show cdp / show cdp traffic / show cdp int</li>
+                    <li>CDP neighbor table: show cdp neighbor</li>
+                    </ul>
+                    <ul>
+                    <li>Link Layer Discovery Protocol (industry standard)</li>
+                    </ul>
+                    <ul>
+                    <li>default disabled on Cisco devices</li>
+                    <li>multicast MAC 0180.C200.000E</li>
+                    <li>sent every 30 seconds, holdtime 120 seconds</li>
+                    <li>reinitialization delay 2 seconds (delays LLDP init)</li>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>globally: lldp run</li>
+                    <li>int: int &gt; lldp transmit/receive</li>
+                    <li>lldp timer/holdtime/reinit&nbsp;?</li>
+                    </ul>
+                    <ul>
+                    <li>sim. verify: show lldp ?</li>
+                    </ul>
+                    <p>Day 37</p>
+                    <ul>
+                    <li>NTP syncs hardware time to global server</li>
+                    <li>manual time config: clock set / calendar set ?</li>
+                    <li>manual timezone config: clock timezone ?</li>
+                    <li>(DST: clock summer-time recurring ?)</li>
+                    <li>NTP hierarchy: stratum 0 (ref clocks) to 15 max.</li>
+                    </ul>
+                    <ul>
+                    <li>str 1: primary. &gt;1: secondary</li>
+                    </ul>
+                    <ul>
+                    <li>NTP servers can also peer to provide more accurate time</li>
+                    <li>config time server: ntp server ?</li>
+                    </ul>
+                    <ul>
+                    <li>best to config multiple servers for reliability</li>
+                    <li>show ntp associations&nbsp;to verify</li>
+                    <li>device synced to NTP server becomes NTP client, acts as NTP server itself</li>
+                    </ul>
+                    <ul>
+                    <li>ntp update-calendar to update calendar to NTP time</li>
+                    <li>no NTP server?</li>
+                    </ul>
+                    <ul>
+                    <li>make device NTP server with ntp master</li>
+                    <li>symmetric active mode (become peers): ntp peer ?</li>
+                    <li>can also config auth (optional):<br /><img title="" src="images/image35.png" alt="" /></li>
+                    </ul>
+                    <p>Day 38</p>
+                    <ul>
+                    <li>Domain Name System (DNS) typically uses UDP, but TCP &gt; 512 bytes</li>
+                    <li>Cisco routers can be config as DNS servers or clients</li>
+                    <li>config as server:</li>
+                    </ul>
+                    <ul>
+                    <li>ip dns server</li>
+                    <li>build address mappings: ip host ?</li>
+                    <li>config DNS server to query if requested record not in host table: ip name-server ?</li>
+                    <li>perform DNS queries (default enabled): <br />ip domain lookup</li>
+                    </ul>
+                    <p>Day 39</p>
+                    <ul>
+                    <li>Dynamic Host Configuration Protocol (DHCP) allows client devices to automatically learn aspects of network config without manual config</li>
+                    <li>servers use UDP port 67, clients port 68</li>
+                    <li>DHCP DORA (Discover-Offer-Request-Ack)</li>
+                    </ul>
+                    <ul>
+                    <li>Discover: broadcast to find DHCP servers, if any; requests previously used IP address if available</li>
+                    <li>Offer: DHCP server offers IP address etc.</li>
+                    <li>Request: accepts offer (useful if multiple servers send Offer)</li>
+                    <li>Ack: accepts request</li>
+                    </ul>
+                    <ul>
+                    <li>config as server:</li>
+                    </ul>
+                    <ul>
+                    <li>create DHCP pool (range of assignable addresses):<br />ip dhcp pool ?</li>
+                    <li>network [#] [mask/prefix length]</li>
+                    <li>dns-server ?</li>
+                    <li>domain-name ?</li>
+                    <li>default-router ?</li>
+                    <li>specify lease time: lease infinite or lease [d h m]</li>
+                    </ul>
+                    <ul>
+                    <li>config as relay agent:</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; ip helper-address ?</li>
+                    </ul>
+                    <ul>
+                    <li>config as client:</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; ip add dhcp</li>
+                    </ul>
+                    <p>Day 40</p>
+                    <ul>
+                    <li>Simple Network Management Protocol&nbsp;(SNMP) used to monitor device status, make config changes, etc.</li>
+                    <li>two main types of devices: managed devices, Network Management Station (NMS, &ldquo;SNMP server&rdquo;)</li>
+                    <li>operations:</li>
+                    </ul>
+                    <ul>
+                    <li>managed devices can notify NMS of events</li>
+                    <li>NMS can ask managed devices for info about status</li>
+                    <li>NMS can tell managed devices to change config</li>
+                    </ul>
+                    <ul>
+                    <li>components:</li>
+                    </ul>
+                    <ul>
+                    <li>NMS</li>
+                    </ul>
+                    <ul>
+                    <li>SNMP Manager&nbsp;interacts with devices</li>
+                    <li>SNMP Application acts as user interface</li>
+                    </ul>
+                    <ul>
+                    <li>managed devices</li>
+                    </ul>
+                    <ul>
+                    <li>SNMP Agent interacts with NMS</li>
+                    <li>Management Information Base (MIB) stores variables managed by SNMP, each identified by an Object ID (OID)</li>
+                    </ul>
+                    <ul>
+                    <li>versions</li>
+                    </ul>
+                    <ul>
+                    <li>v1 is the original</li>
+                    <li>v2c allowed NMS to handle large amts of info per request (&lsquo;c&rsquo; = community string pwds)</li>
+                    <li>v3 allows encryption and authentication</li>
+                    </ul>
+                    <ul>
+                    <li>messages: Read (Get, GetNext, GetBulk), Write (Set), Notification (Trap, Inform), Response (Response)</li>
+                    </ul>
+                    <p>Day 41</p>
+                    <ul>
+                    <li>syslog (ind std) used to log events</li>
+                    <li>format:<br />seq:timestamp: %facility-severity-MNEMONIC:description</li>
+                    </ul>
+                    <ul>
+                    <li>severity levels:<br /><img title="" src="images/image21.png" alt="" /><br />Every Awesome Cisco Engineer Will Need ISE Daily</li>
+                    </ul>
+                    <ul>
+                    <li>syslog logging locations</li>
+                    </ul>
+                    <ul>
+                    <li>console line (when connected via console port)</li>
+                    <li>VTY lines (when connected via Telnet/SSH. default disabled)</li>
+                    </ul>
+                    <p>Buffer (saved to RAM)</p>
+                    <ul>
+                    <li>external server (UDP port 514)</li>
+                    </ul>
+                    <ul>
+                    <li>config</li>
+                    </ul>
+                    <ul>
+                    <li>log to console line: logging console [level]</li>
+                    </ul>
+                    <ul>
+                    <li>can use level # or keyword</li>
+                    <li>logging console 6&nbsp;enables logging for 6 and higher</li>
+                    </ul>
+                    <ul>
+                    <li>log to VTY: logging monitor [level]</li>
+                    <li>log to buffer: logging buffered [size] [level]</li>
+                    </ul>
+                    <ul>
+                    <li>size in bytes</li>
+                    </ul>
+                    <ul>
+                    <li>log to ext server: <br />logging [server-ip] / logging host [server-ip] <br />logging trap [level]</li>
+                    <li>use terminal monitor&nbsp;to enable display syslog every time you connect via Telnet/SSH</li>
+                    </ul>
+                    <p>Day 42</p>
+                    <ul>
+                    <li>config password on console line:<br />line console 0 &gt; password ? &gt; login</li>
+                    <li>config username+pw:<br />username ? secret ? &gt; line console 0 &gt; login local</li>
+                    <li>switches not IP-aware, but can be assigned management IPs to allow remote connections:<br />int vlan1 &gt; ip add &gt; no sh &gt; ip default-gateway</li>
+                    <li>Telnet</li>
+                    </ul>
+                    <ul>
+                    <li>for remotely accessing CLI, largely replaced by SSH</li>
+                    <li>sends plaintext data</li>
+                    <li>TCP port 23</li>
+                    <li>config: enable secret/password ? &gt; opt. config ACL &gt; line vty 0 15 &gt; login local &gt; transport input telnet &gt; opt. apply ACL to VTY lines</li>
+                    </ul>
+                    <ul>
+                    <li>Secure Shell (SSH) replaced Telnet</li>
+                    </ul>
+                    <ul>
+                    <li>TCP port 22</li>
+                    <li>show version&nbsp;&gt; &ldquo;K9&rdquo; in IOS image name means supports SSH</li>
+                    <li>config</li>
+                    </ul>
+                    <ul>
+                    <li>config hostname</li>
+                    <li>generate RSA public/private key pair:<br />ip domain name ? &gt; crypto key generate rsa modulus [length, &gt;768 for 2]</li>
+                    <li>config VTY lines: sim to Telnet but&nbsp;only login local&nbsp;allowed, transport input ssh, disable Telnet afterwards (SSH only)</li>
+                    </ul>
+                    <ul>
+                    <li>connect via terminal: <br />ssh -l [user] [ip]&nbsp;or ssh [user]@[ip]</li>
+                    </ul>
+                    <p>Day 43</p>
+                    <ul>
+                    <li>FTP vs. TFTP<br /><img title="" src="images/image19.png" alt="Text, application
+                    Description automatically generated" /></li>
+                    <li>FTP control sends commands and replies</li>
+                    <li>FTP data connections have two modes: active and passive</li>
+                    </ul>
+                    <ul>
+                    <li>active mode - server initiates connection</li>
+                    <li>passive mode - device (behind firewall) inits connection</li>
+                    </ul>
+                    <ul>
+                    <li>view file systems of Cisco IOS device with show file systems</li>
+                    <li>upgrading Cisco IOS with FTP/TFTP</li>
+                    </ul>
+                    <ul>
+                    <li>show version&nbsp;/ show flash</li>
+                    <li>TFTP:<br />copy [source] [destination] then enter TFTP server IP, file name on server, name to be saved as on flash - as prompted.<br />conf t &gt; boot system [filepath]&nbsp;&ndash; if not specified, router will use first IOS file found in flash<br />write memory&nbsp;&gt; reload &gt; show version&nbsp;&ndash; verify new version<br />delete [filepath]&nbsp;&ndash; delete old</li>
+                    <li>FTP:<br />ip ftp username ? &gt; ip ftp password ? &gt; same as TFTP</li>
+                    </ul>
+                    <p>Day 44</p>
+                    <ul>
+                    <li>private IPv4 addresses:</li>
+                    </ul>
+                    <ul>
+                    <li>&ldquo;Class A&rdquo; 10.0.0.0/8 (10.0.0.0 - 10.255.255.255)</li>
+                    <li>&ldquo;Class B&rdquo; 172.16.0.0/12 (172.16.0.0 - 172.31.255.255)</li>
+                    <li>&ldquo;Class C&rdquo; 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)</li>
+                    </ul>
+                    <ul>
+                    <li>Network Address Translation (NAT) allows hosts with private IPs to connect with other hosts over the Internet</li>
+                    <li>static NAT translates between inside local&nbsp;and inside global</li>
+                    <li>outside local and outside global are the same unless using dst NAT</li>
+                    </ul>
+                    <ul>
+                    <li>source NAT translates source IP address</li>
+                    <li>static NAT&nbsp;allows manual one-to-one&nbsp;mappings of private to public (doesn&rsquo;t help preserve IP addresses)</li>
+                    </ul>
+                    <ul>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>define inside and outside interfaces:<br />int &gt; nat inside/outside</li>
+                    <li>config one-to-one mappings:<br />ip nat inside source static [inside-local] [inside-global]</li>
+                    <li>verify: show ip nat translations</li>
+                    <li>clear: clear ip nat translation *</li>
+                    </ul>
+                    <ul>
+                    <li>dynamic NAT allows router to auto map inside local to inside global as needed</li>
+                    </ul>
+                    <ul>
+                    <li>ACLs can be used to identify which traffic should be translated (source IPs denied by ACL will not be translated, but will not be dropped)</li>
+                    <li>NAT pool defines available inside global adds (e.g. if packet permitted, translate src IP to add from pool)</li>
+                    <li>mappings are still one-to-one (can cause NAT pool exhaustion, after which packets dropped)</li>
+                    <li>entries auto timeout, or manually cleared</li>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>int &gt; ip nat inside/outside</li>
+                    <li>define traffic to be translated:<br />access-list 1 permit ?</li>
+                    <li>define pool:<br />ip nat pool ? [first-ip] [last-ip] prefix-length ?&nbsp;- checks if both addresses in same subnet</li>
+                    <li>map ACL to pool:<br />ip nat inside source list 1 pool POOL1</li>
+                    </ul>
+                    <ul>
+                    <li>verify: show ip nat translations/statistics</li>
+                    </ul>
+                    <ul>
+                    <li>PAT (NAT overload) translates IP + port #</li>
+                    </ul>
+                    <ul>
+                    <li>allows multiple hosts to use single public IP.</li>
+                    <li>router keeps track of which inside local is using which inside global and port #</li>
+                    <li>config:</li>
+                    </ul>
+                    <ul>
+                    <li>same as dynamic NAT, but ip nat pool ? [first-ip] [last-ip prefix-length] ? overload</li>
+                    </ul>
+                    <p>Day 52</p>
+                    <ul>
+                    <li>common terminologies:</li>
+                    </ul>
+                    <ul>
+                    <li>star: all devices connect to central</li>
+                    <li>full-mesh: all devices interconnected</li>
+                    <li>partial-mesh: some devices interconnected</li>
+                    </ul>
+                    <ul>
+                    <li>two-tier: core/distribution (interconnects access, Internet, WAN), access (QoS, security, PoE)</li>
+                    <li>three-tier: core (layer 3, fast transport), distribution, access. <br />for large LANs &gt;3 dist. layers</li>
+                    <li>spine-leaf: two-tier, every spine connects to every leaf. allows load-balancing, consistent latency, prevents bottlenecks.</li>
+                    <li>small office home office (SOHO): all networking functions (routing, switching, etc) typically provided by single device</li>
+                    </ul>
+                    <p>Day 53</p>
+                    <ul>
+                    <li>WANs connect large geographical areas</li>
+                    <li>topology: sites connect to central SP via leased line (serial)/Ethernet (fiber), which comms with Data Center</li>
+                    <li>Ethernet WAN preferred over leased line due to cost</li>
+                    <li>Multi Protocol Label Switching (MPLS): labels allow creation of VPNs over infrastructure, to separate traffic per consumer<br /><img title="" src="images/image17.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>Customer Edge (CE) router does not use MPLS. PE/P routers are completely transparent; CE routers will act as if directly interconnected</li>
+                    <li>Provider Edge (PE) router</li>
+                    <li>Provider core (P) router</li>
+                    </ul>
+                    <ul>
+                    <li>modems</li>
+                    </ul>
+                    <ul>
+                    <li>modems convert data to be suitable over phone lines</li>
+                    <li>cable modems sim. for CATV lines</li>
+                    <li>modems can be separate or built-in to home router</li>
+                    </ul>
+                    <ul>
+                    <li>redundant internet connections<br /><img title="" src="images/image32.png" alt="" /></li>
+                    <li>VPNs</li>
+                    </ul>
+                    <ul>
+                    <li>IPsec tunnel (encrypt, encapsulate, send, decrypt)</li>
+                    </ul>
+                    <ul>
+                    <li>unicast! for multicast: use GRE over IPSec</li>
+                    <li>full-mesh: use Dynamic Multipoint VPN (DMVPN): configure hub-and-spoke VPN tunnels, then hub auto configs full-mesh</li>
+                    </ul>
+                    <ul>
+                    <li>remote-access via TLS: VPN client installed on end devices, config on firewall<br /><img title="" src="images/image24.png" alt="" /></li>
+                    </ul>
+                    <p>Day 55</p>
+                    <ul>
+                    <li>wireless network issues:</li>
+                    </ul>
+                    <ul>
+                    <li>lack of privacy - all devices in range receive all frames</li>
+                    </ul>
+                    <ul>
+                    <li>CSMA/CA avoids collisions, waits for channel available before transmitting data</li>
+                    </ul>
+                    <ul>
+                    <li>comms regulated by various national/international bodies</li>
+                    <li>must consider coverage area (signal disturbed via absorption,reflection, refraction, scattering)</li>
+                    <li>other devices using same channel can cause interference</li>
+                    </ul>
+                    <ul>
+                    <li>Wi-Fi uses two main bands of radio frequency (RF):</li>
+                    </ul>
+                    <ul>
+                    <li>2.4 GHz (further reach, but more interference)</li>
+                    <li>5 GHz (divides into four smaller bands)</li>
+                    </ul>
+                    <ul>
+                    <li>bands divide into channels. for WLANs with multiple APs, must avoid overlapping channels:</li>
+                    </ul>
+                    <ul>
+                    <li>2.4 GHz: 1, 6, 11 rec. (in North America)</li>
+                    <li>5 GHz consists of non-overlapping channels</li>
+                    <li><img title="" src="images/image41.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>three main types of 802.11 service sets:</li>
+                    </ul>
+                    <ul>
+                    <li>independent (e.g. IBSS/ad hoc): devices interconnected without AP. used for file transfer; not scalable.</li>
+                    <li>infrastructure (e.g. BSS): clients in a Basic Service Area (BSA) connected via AP, not directly. BSSID (MAC address of AP radio) uniquely identifies AP.</li>
+                    </ul>
+                    <ul>
+                    <li>multiple BSSs together form Extended Service Set (ESS). roaming: clients can move between APs/BSSs without manually reconnecting. BSSs overlap 10-15%.</li>
+                    </ul>
+                    <ul>
+                    <li>mesh (e.g. MBSS):<br /><img title="" src="images/image22.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>usually, wireless networks connected to upstream wired Distribution System (DS) via VLAN.</li>
+                    </ul>
+                    <ul>
+                    <li>WLANs are each mapped to separate VLANs, and connected to network via trunk</li>
+                    </ul>
+                    <ul>
+                    <li>additional AP operational modes</li>
+                    </ul>
+                    <ul>
+                    <li>repeater: extends BSS range. two radios (receive, retransmit)</li>
+                    <li>workgroup bridge (WGB): wireless client of AP. connects wired devices to WLAN<br />(uWGB allows one device. Cisco WGB allows multiple)</li>
+                    <li>outdoor bridge: wireless connect over long distances, via antenna. p2p or p2mp.</li>
+                    </ul>
+                    <p>Day 56</p>
+                    <ul>
+                    <li>802.11 frame format:<br /><img title="" src="images/image2.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>frame control: message type/subtype</li>
+                    <li>duration/ID: time dedicated to frame transmission, connection ID</li>
+                    <li>addresses: DA, SA, RA, TA</li>
+                    <li>sequence control: reassembles fragments, elims duplicates</li>
+                    <li>QoS control: used for traffic prioritization</li>
+                    <li>High Throughput (HT) control: added in 802.11n (HT WiFi)</li>
+                    </ul>
+                    <ul>
+                    <li>802.11ac is Very HT (VHT) WiFi</li>
+                    </ul>
+                    <ul>
+                    <li>Frame Check Sequence (FCS): used to check for errors</li>
+                    </ul>
+                    <ul>
+                    <li>station must be authenticated and associated with AP to send traffic thru AP.</li>
+                    </ul>
+                    <ul>
+                    <li>scan for BSS <br />(active: probe request/response; <br />passive: listen for beacons from AP)</li>
+                    <li>auth request/response (auth O assoc X)</li>
+                    <li>association request/response (autho O assoc O)</li>
+                    </ul>
+                    <ul>
+                    <li>802.11 message types:</li>
+                    </ul>
+                    <ul>
+                    <li>management (beacons, probe/auth/assoc req/resp)</li>
+                    <li>control (controls access to medium, delivers mgmt e.g. RTS, CTS, ACK)</li>
+                    <li>data</li>
+                    </ul>
+                    <ul>
+                    <li>AP deployment methods:</li>
+                    </ul>
+                    <ul>
+                    <li>autonomous: self-contained, indep. config, no WLC.</li>
+                    </ul>
+                    <ul>
+                    <li>connect to wired network via trunk link</li>
+                    <li>VLANs must stretch across entire network<br /><img title="" src="images/image20.png" alt="" /></li>
+                    <li>preferable for smaller networks</li>
+                    </ul>
+                    <ul>
+                    <li>lightweight (split-MAC) architecture: functions split between LWAP and WLC.</li>
+                    </ul>
+                    <ul>
+                    <li>LWAP handles &lsquo;real-time&rsquo; operations: encrypting, decrypting, transmitting, receiving, sending beacons/probes, etc.</li>
+                    <li>WLC handles mgmt/auth; centrally configures LWAPs.</li>
+                    <li>LWAP/WLC auth each other using digital certs; only auth APs can join network</li>
+                    <li>LWAP/WLC comm using CAPWAP tunnels</li>
+                    </ul>
+                    <ul>
+                    <li><img title="" src="images/image8.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>LWAP modes:</li>
+                    </ul>
+                    <ul>
+                    <li>local: default, offers BSS for clients</li>
+                    <li>FlexConnect: locally switches traffic if WLC down</li>
+                    <li>sniffer: no BSS offers. listens/captures traffic</li>
+                    <li>monitor: no BSS offers. receives frames to detect rogue devices; deauths rogue devices if found</li>
+                    <li>rogue detector: listens to traffic on wired network. receives list of suspected rogue devices, correlates with ARP messages</li>
+                    <li>Spectrum Expert Connect (SE-Connect): conducts RF spectrum analysis, sends to software e.g. Cisco SE</li>
+                    <li>bridge/mesh: dedicated bridge between sites, e.g. over long distances. mesh between APs.</li>
+                    <li>flex+bridge: adds FlexConnect func to bridge/mesh</li>
+                    </ul>
+                    <ul>
+                    <li>WLC deployments:</li>
+                    </ul>
+                    <ul>
+                    <li>unified: central hardware (6000 APs)</li>
+                    <li>cloud-based: VM running on server (3000 APs)</li>
+                    <li>embedded: integrated in switch (200 APs)</li>
+                    <li>mobility express: integrated in AP (100 APs)</li>
+                    </ul>
+                    <ul>
+                    <li>cloud-based: between autonomous and split-MAC (e.g. Cisco Meraki)</li>
+                    </ul>
+                    <ul>
+                    <li>only mgmt/control traffic sent to cloud</li>
+                    <li>regular traffic sent directly</li>
+                    </ul>
+                    <p>Day 57</p>
+                    <ul>
+                    <li>authentication, encryption, integrity</li>
+                    <li>auth methods:</li>
+                    </ul>
+                    <ul>
+                    <li>open auth (public WiFi)</li>
+                    <li>WEP (shared-key, easily cracked)</li>
+                    <li>EAP (802.1X). consists of supplicant (wants to access), authenticator (provides access), auth server (AS, permits/denies access) entities.</li>
+                    </ul>
+                    <ul>
+                    <li>Cisco LEAP: user, pw, mutual auth with dynamic WEP keys</li>
+                    <li>Cisco EAP-FAST: server inits PAC provisioning, establish TLS tunnel, auth inside tunnel</li>
+                    <li>PEAP: server sends digi cert (not PAC), establish TLS tunnel, auth inside tunnel</li>
+                    <li>EAP-TLS: both send digi cert, establish TLS, auth inside</li>
+                    </ul>
+                    <ul>
+                    <li>encryption + integrity methods</li>
+                    </ul>
+                    <ul>
+                    <li>TKIP</li>
+                    </ul>
+                    <ul>
+                    <li>more secure software for WEP hardware</li>
+                    <li>MIC protects integrity, incl. sender MAC address</li>
+                    <li>WPA</li>
+                    </ul>
+                    <ul>
+                    <li>CCMP</li>
+                    </ul>
+                    <ul>
+                    <li>more secure than TKIP. must be supported by hardware</li>
+                    <li>AES counter mode for encryption</li>
+                    <li>CBC-MAC for MIC</li>
+                    <li>WPA2</li>
+                    </ul>
+                    <ul>
+                    <li>GCMP</li>
+                    </ul>
+                    <ul>
+                    <li>more secure than CCMP.</li>
+                    <li>AES counter mode for encryption</li>
+                    <li>GMAC for MIC</li>
+                    <li>WPA3</li>
+                    </ul>
+                    <ul>
+                    <li>WiFi Protected Access (WPA) has two modes: personal (uses PSK), enterprise (uses ext. server e.g. RADIUS. supports all EAP)</li>
+                    </ul>
+                    <ul>
+                    <li>WPA3 has additional security measures e.g. Protected Mgmt Frames (PMF), Simult. Auth of Equals (SAE, protects four-way handshake), forward secrecy (prevents decryption after transmission)</li>
+                    </ul>
+                    <p>Day 58</p>
+                    <ul>
+                    <li>DHCP option 43&nbsp;helps APs finds WLCs in a network, not necessary unless AP/WLC in diff subnets</li>
+                    <li>get used to WLC GUI - remember to enable WLANs in General</li>
+                    </ul>
+                    <p>Day 59</p>
+                    <ul>
+                    <li>review:<br /><img title="" src="images/image18.png" alt="" /></li>
+                    <li>network functions can be divided into:</li>
+                    </ul>
+                    <ul>
+                    <li>data (forwarding) plane: all tasks related to forwarding/receiving data traffic (de/encap, forwarding, filtering)</li>
+                    </ul>
+                    <ul>
+                    <li>e.g. NAT, ACLs, port security</li>
+                    </ul>
+                    <ul>
+                    <li>control plane: controls&nbsp;what data plane does, performs overhead work</li>
+                    </ul>
+                    <ul>
+                    <li>e.g. routing table, MAC table, ARP table, STP, etc.</li>
+                    </ul>
+                    <ul>
+                    <li>mgmt plane: config, i.e. overhead operations that don&rsquo;t&nbsp;directly influence forwarding</li>
+                    </ul>
+                    <ul>
+                    <li>Telnet/SSH, Syslog, SNMP, NTP</li>
+                    </ul>
+                    <ul>
+                    <li>CPU handles control, mgmt. app-specific integrated circuit (ASIC) used for data. MAC address table (CAM table) stored in TCAM.</li>
+                    <li>software-defined networking (SDN) centralizes control plane to controller (e.g. WLC). controllers interact with devices using APIs.</li>
+                    </ul>
+                    <ul>
+                    <li>centralized controller communicates with and learns about devices using southbound interface (SBI), which consists of comm protocols and APIs (APIs facilitate data exchanges between programs)</li>
+                    </ul>
+                    <ul>
+                    <li>SBIs e.g. OpenFlow, Cisco OpFlex, Cisco onePK, NETCONF</li>
+                    </ul>
+                    <ul>
+                    <li>devices interact with controller and analyze/config network via northbound interface (NBI)</li>
+                    <li>data sent in structured format via JSON/XML<br /><img title="" src="images/image30.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>can also automate traditional networks via Python, RegEx; SDNs however facilitate automation functions</li>
+                    </ul>
+                    <p>Day 60</p>
+                    <ul>
+                    <li>data serialization&nbsp;converts data to standard format</li>
+                    <li>JavaScript Object Notation (JSON): stores and transmits data objects using human-readable text</li>
+                    </ul>
+                    <ul>
+                    <li>JSON objects are unordered lists of key-value pairs, surrounded by {}</li>
+                    </ul>
+                    <ul>
+                    <li>Extensible Markup Language (XML)&nbsp;used for data serialization; less human-readable</li>
+                    </ul>
+                    <ul>
+                    <li>&lt;key&gt;value&lt;/key&gt;</li>
+                    </ul>
+                    <ul>
+                    <li>YAML Ain&rsquo;t Markup Language (YAML) used in Ansible. whitespace is significant.&nbsp;(insig in JSON/XML)</li>
+                    </ul>
+                    <p>Day 61</p>
+                    <ul>
+                    <li>Application Programming Interfaces (APIs) allow two applications to communicate with each other</li>
+                    <li>in SDN architecture:</li>
+                    </ul>
+                    <ul>
+                    <li>NBI - REST APIs</li>
+                    <li>SBI - NETCONF, RESTCONF</li>
+                    </ul>
+                    <ul>
+                    <li>REST (Representational State Transfer) APIs perform CRUD&nbsp;(create, read, update, delete) operations, typically using HTTP/HTTPS</li>
+                    </ul>
+                    <ul>
+                    <li>create (POST)&nbsp;new variables</li>
+                    <li>read (GET) variable values</li>
+                    <li>update (PUT/PATCH)&nbsp;variable values</li>
+                    <li>delete (DELETE) variables</li>
+                    </ul>
+                    <ul>
+                    <li>HTTP Request for data include HTTP verb + URI of req. resource in header</li>
+                    </ul>
+                    <ul>
+                    <li>URI format:<br /><img title="" src="images/image13.png" alt="" /></li>
+                    <li>can also include additional headers, e.g. Accept (accepted data types)</li>
+                    </ul>
+                    <ul>
+                    <li>HTTP Response&nbsp;includes code indicating class:</li>
+                    </ul>
+                    <ul>
+                    <li>1xx informational&nbsp;(req received)</li>
+                    <li>2xx successful&nbsp;(req accepted)</li>
+                    <li>3xx redirection</li>
+                    <li>4xx client error&nbsp;(e.g. 404 Not Found)</li>
+                    <li>5xx server error</li>
+                    </ul>
+                    <ul>
+                    <li>REST API (RESTful) architecture has six constraints:</li>
+                    </ul>
+                    <ul>
+                    <li>uniform int</li>
+                    <li>client-server: client and server are independent; client requests data from server using API calls (HTTP requests)</li>
+                    <li>stateless: each API exchange is a new, separate event. if auth required, must auth every time</li>
+                    <li>cacheable/non-cacheable: must support caching (storing). not all resources need to be cached, but cacheable resources must be declared</li>
+                    <li>layered system</li>
+                    <li>code-on-demand (optional)</li>
+                    </ul>
+                    <p>Day 62</p>
+                    <ul>
+                    <li>SDN layers:<br /><img title="" src="images/image1.png" alt="" /></li>
+                    <li>Cisco SD-Access solution for automating campus LANs, with Cisco DNA Center&nbsp;controller</li>
+                    </ul>
+                    <ul>
+                    <li>underlay: underlying physical network of devices providing IP connectivity</li>
+                    </ul>
+                    <ul>
+                    <li>three different roles:</li>
+                    </ul>
+                    <ul>
+                    <li>edge nodes connect to end hosts</li>
+                    <li>border nodes connect to devices outside domain</li>
+                    <li>control nodes perform ctrl plane functions using Locator ID Separation Protocol (LISP)</li>
+                    <li>can add SD-Access to existing compatible networks (brownfield&nbsp;deployment). DNA Center won&rsquo;t configure underlay</li>
+                    <li>greenfield deployment will be configured by DNA Center.</li>
+                    <li>uses IS-IS to share routing info, no STP/FHRP needed</li>
+                    </ul>
+                    <ul>
+                    <li>overlay: virtual network built on top of underlay</li>
+                    </ul>
+                    <ul>
+                    <li>LISP provides control plane</li>
+                    <li>Cisco TrustSec (CTS) provides policy control</li>
+                    <li>VXLAN provides data plane</li>
+                    </ul>
+                    <ul>
+                    <li>fabric: underlay + overlay<br /><img title="" src="images/image15.png" alt="" /></li>
+                    <li>DNA Center acts as controller and network manager (for non-SDA devices)</li>
+                    </ul>
+                    <ul>
+                    <li>intent-based networking (IBN): engineer communicates intent of config, and DNA Center handles the details</li>
+                    </ul>
+                    <p>Day 63</p>
+                    <ul>
+                    <li>config management tools (e.g. Ansible, Puppet, Chef) can quickly generate new configs for devices on mass scale, by combining templates with variables. can also perform said configs, and check compliance with defined standards.</li>
+                    </ul>
+                    <ul>
+                    <li>Ansible (Red Hat)</li>
+                    </ul>
+                    <ul>
+                    <li>written in Python</li>
+                    <li>agentless (no special software required), uses SSH</li>
+                    <li>push model: connects to devices and pushes config changes, via SSH port (22)</li>
+                    <li>must create text files after installing:<br /><img title="" src="images/image28.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>playbook (i.e. blueprints, YAML)</li>
+                    <li>inventory (INI, YAML, or other)</li>
+                    <li>templates (Jinja2)</li>
+                    <li>variables (YAML)</li>
+                    </ul>
+                    <ul>
+                    <li>Puppet</li>
+                    </ul>
+                    <ul>
+                    <li>written in Ruby</li>
+                    <li>agent-based: requires special software installation</li>
+                    </ul>
+                    <ul>
+                    <li>can be run agentless via proxy agent</li>
+                    </ul>
+                    <ul>
+                    <li>pull model: clients pull configs from Puppet master (server) via TCP 8140</li>
+                    <li>uses proprietary language</li>
+                    <li>req. text files:<br /><img title="" src="images/image37.png" alt="" /></li>
+                    </ul>
+                    <ul>
+                    <li>manifest (desired config state)</li>
+                    <li>templates</li>
+                    </ul>
+                    <ul>
+                    <li>Chef</li>
+                    </ul>
+                    <ul>
+                    <li>written in Ruby</li>
+                    <li>agent-based</li>
+                    <li>pull model, TCP 10002</li>
+                    <li>files use domain specific language (DSL) based on Ruby</li>
+                    <li>req text files:</li>
+                    </ul>
+                    <ul>
+                    <li>resources (ingredients)</li>
+                    <li>recipes</li>
+                    <li>cookbooks (set of related recipes)</li>
+                    <li>run-list (ordered list of recipes to run to bring devices to desired config state)</li>
+                    </ul>
+                    <div>
+                    </div>
+                </div>
+</div>
+            </div>
+        </div>
+        <div class="footer">
+            <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+        </div>
+    </body>
+</html>
