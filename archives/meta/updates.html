@@ -43,6 +43,7 @@
             .main {
                 flex: 95%; /* Set the width of the main content */
             }
+
         </style>
     </head>
     <body>
@@ -81,7 +82,37 @@
             </div>
             <div class="main">
                 <h1 style="font-family:Cheltenham Bold;font-weight:normal;">Site updates</h1>
-                <p>Current version: 1.2.1</p>
+                <p style="margin:0;">Current version: 1.2.2</p>
+                <p class="photo-credit">Last updated:&nbsp;<span id="date"></span> P.D.T.</small>
+                <script>
+                    const date = new Date(document.lastModified);
+                    var month_year = date.toLocaleDateString("en-US", {timezone: "America/Los Angeles", month: "long", year:"numeric"})
+                    var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
+                    var date_num = date.getDate();
+                    var hours = ('0'+date.getHours()).substr(-2);
+                    var mins = ('0'+date.getMinutes()).substr(-2);
+                    var n = hours + ':'+ mins;
+                    document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n;
+                </script>
+                <br><br>
+                <h3 style="font-family:Cheltenham Bold;font-weight:normal;">UPDATE VERSION 1.2.2</h3>
+                <p style="font-family:Caslon Italic">6 December 2022</p>
+                <ul>
+                    <li><p>Revamped category pages:</p>
+                        <ul>
+                            <li>New &ldquo;Your first reads,&rdquo; &ldquo;Diary entries&rdquo; subheadings</li>
+                            <li><p>Introduced new .photo-credit, .author, .featured, .feat-title, .spill classes for efficient uniform formatting</p></li>
+                            <li>Whitesmoke background to white</li>
+                        </ul>
+                    </li>
+                    <li><p>All pages except homepage now black text with white background</p></li>
+                    <li>
+                        <p>Holiday themed homepage! Updated homepage background image:</p>
+                        <img src="https://images.unsplash.com/photo-1513297887119-d46091b24bfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="max-width:500px;">
+                    </li>
+                </ul>
+
+                <br><br>
                 <br><br>
                 <h3 style="font-family:Cheltenham Bold;font-weight:normal;">UPDATE VERSION 1.2.1</h3>
                 <p style="font-family:Caslon Italic">1 December 2022</p>
@@ -117,7 +148,7 @@
                 <h3 style="font-family:Cheltenham Bold;font-weight:normal;">INITIAL RELEASE</h3>
                 <p style="font-family:Caslon Italic">7 April 2022</p>
                 <ul>
-                    <li><p><a href="https://sites.google.com/view/the-25-post/home?authuser=0&pli=1" target="_blank" style="color:white">Google Sites</a> hosting</p></li>
+                    <li><p><a href="https://sites.google.com/view/the-25-post/home?authuser=0&pli=1" target="_blank">Google Sites</a> hosting</p></li>
                 </ul>
             </div>
         </div>
