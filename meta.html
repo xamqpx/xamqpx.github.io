@@ -102,7 +102,19 @@
           <hr style="width:95%;margin: 50px auto 50px auto;">
 
           <h2>Site updates</h2>
-          <p>Current version: 1.2.1</p>
+          <p style="margin:0;">Current version: 1.2.1</p>
+          <p class="photo-credit">Last updated:&nbsp;<span id="date"></span> P.D.T.</small>
+          <br><br>
+          <script>
+            const date = new Date(document.lastModified);
+            var month_year = date.toLocaleDateString("en-US", {timezone: "America/Los Angeles", month: "long", year:"numeric"})
+            var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
+            var date_num = date.getDate();
+            var hours = ('0'+date.getHours()).substr(-2);
+            var mins = ('0'+date.getMinutes()).substr(-2);
+            var n = hours + ':'+ mins;
+            document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n;
+          </script>
           <a class="fill-div" href="https://the25post.com/archives/meta/updates">
             <div class="featured">
               <p style="font-family:Cheltenham Bold;font-weight:normal;">UPDATE VERSION 1.2.1</p>
@@ -122,7 +134,14 @@
           <h2>Projects</h2>
           <a class="fill-div" href="https://the25post.com/archives/meta/migrants-interactive">
             <div class="featured">
+              <p><i>From September:</i></p>
               <h3>INTERACTIVE | Where Republican governors are sending migrants</h3>
+            </div>
+          </a>
+          <br>
+          <a class="fill-div" href="https://the25post.com/archives/meta/ccna200">
+            <div class="featured">
+              <h3>C.C.N.A. 200-301 study notes</h3>
             </div>
           </a>
 
@@ -133,8 +152,13 @@
             <p><u>Sample COMMENTARY</u></p>
           </a>
           <a href="https://the25post.com/archives/meta/sample-nonfiction" style="color:black;">
-            <p><u>Sample NONFICTION</u></p>
+            <p><u>Sample NON / FICTION</u></p>
           </a>
+
+          <hr style="width:95%;margin: 50px auto 50px auto;">
+
+          <h2>Fonts in use</h2>
+          <p class="photo-credit"><b>Logo</b>: Bodoni MT Poster Compressed; <b>Homepage headings</b>: Cheltenham Std Light; <b>Titles</b>: Cheltenham Bold; <b>Body text</b>: Adobe Caslon Pro / Adobe Caslon Pro Italic; <b>Photo and author credits</b>: Helvetica</p>
         </div>
     </div>
 
