@@ -43,7 +43,7 @@
   }
 
   .long-read {
-    color: white;
+    color: black;
   }
 
   a:link, a:visited, a:active {
@@ -61,9 +61,9 @@
   }
 
   .featured {
-    background: #525252;
+    background:#e4e4e4;
+    color:black;
     padding: 20px;
-    color: white;
   }
 
   .featured img, .diary img {
