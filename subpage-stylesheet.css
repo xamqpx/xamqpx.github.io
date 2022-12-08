@@ -132,6 +132,14 @@
     padding-right: 28%;
   }
 
+  .right {
+    padding: 20px;
+  }
+
+  h2 {
+    font-family: "Cheltenham Bold";
+  }
+
   .side h3, .main h3 {
     color:#dd7e6b;
     font-family: "Helvetica";
