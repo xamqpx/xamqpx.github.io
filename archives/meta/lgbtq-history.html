@@ -45,34 +45,19 @@
       <meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
     
     <!--stylesheets-->
-    <link rel="stylesheet" href="subpage-stylesheet.css">
+    <link rel="stylesheet" href="../../subpage-stylesheet.css">
     <link rel="stylesheet" href="../../fonts.css">
 
     <style>
-      .header {
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("http://cdn.cnn.com/cnnnext/dam/assets/190606171127-pride-flag-style-animation-1.jpg");
-        background-size: cover;
-      }
-
-      .header * {
-        color: black;
-      }
-
-      .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-      }
 
       .side1 {
-        flex: 40%; /* Set the width of the sidebar */
+        flex: 50%; /* Set the width of the sidebar */
         padding: 20px;
       }
 
       /* right */
       .main1 {
-        flex: 60%; /* Set the width of the main content */
+        flex: 50%; /* Set the width of the main content */
         padding: 20px;
       }
 
@@ -107,6 +92,22 @@
         0% { opacity: 0; }
         100% { opacity: 1; }
       }
+
+      h3 {
+        transition: color 0.3s;
+        font-family: "Cheltenham Bold";
+        font-weight: normal;
+        font-size: 28px;
+      }
+
+      h3:hover {
+        color: #b0b0b0;
+        cursor: pointer;
+      }
+
+      a:link, a:hover, a:active, a:visited {
+        text-decoration: none;
+      }
     </style>
     
     </head>
@@ -140,62 +141,46 @@
   }
   </script>
 
-<div class="header">
-    <div class="row">
-        <div class="side1">
-          <p class="fade-in-text" style="font-family:Cheltenham Bold;font-size:80px;line-height:1;color:white">Celebrating L.G.B.T.Q. History Month</p>
-          <p><i style="color:white">The Post's curated snapshot of queer history, from all walks of life and the Internet.</i>
-          </p>
-          <small style="color:white">Last updated:&nbsp;<span id="date" style="color:white"></span> P.D.T.</small>
-          <br><br>
-          <script>
-            const date = new Date(document.lastModified);
-            var month_year = date.toLocaleDateString("en-US", {timezone: "America/Los Angeles", month: "long", year:"numeric"})
-            var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
-            var date_num = date.getDate();
-            var hours = ('0'+date.getHours()).substr(-2);
-            var mins = ('0'+date.getMinutes()).substr(-2);
-            var n = hours + ':'+ mins;
-            document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n;
-          </script>
-        </div>
-  </div>
 </div>
 <div class="row" style="padding-left:50px;padding-right:50px;text-align:left;">
   <div class="side2">
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://www.harpersbazaar.com/culture/art-books-music/a40473664/house-music-is-back-lets-remember-its-roots/" style="color:white;text-decoration:underline;">House Music Is Back. Let's Remember Its Roots.</a></p>
+    <br><br>
+    <div style="background:#e4e4e4;padding:20px;">
+      <h2 style="font-size:40px;">Celebrating L.G.B.T.Q. History Month</h2>
+      <p><i>Selected stories from all over the Internet, brought to you by the Post.</i></p>
+      <p>8 October 2022</p>
+    </div>
+    <a target="_blank" href="https://www.harpersbazaar.com/culture/art-books-music/a40473664/house-music-is-back-lets-remember-its-roots/"><h3>House Music Is Back. Let's Remember Its Roots.</h3></a>
     <small>by LYNNÉE DENISE for Harper's Bazaar<br>30 June 2022</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://www.theatlantic.com/culture/archive/2022/05/heartstopper-netflix-love-victor-coming-out/629827/" style="color:white;text-decoration:underline;"><i>Heartstopper</i> and the Era of Feel-Good, Queer-Teen Romances</a></p>
+    <a target="_blank" href="https://www.theatlantic.com/culture/archive/2022/05/heartstopper-netflix-love-victor-coming-out/629827/"><h3><i>Heartstopper</i> and the Era of Feel-Good, Queer-Teen Romances</h3></a></a>
     <small>by SHIRLEY LI for The Atlantic<br>11 May 2022</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://frankocean.tumblr.com/image/26473798723" style="color:white;text-decoration:underline;">thank you's</a></p>
+    <a target="_blank" href="https://frankocean.tumblr.com/image/26473798723"><h3>thank you's</h3></a>
     <small>by FRANK OCEAN<br>5 July 2012</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://sfonline.barnard.edu/cripping-queer-politics-or-the-dangers-of-neoliberalism/" style="color:white;text-decoration:underline;">Cripping Queer Politics, or the Dangers of Neoliberalism</a></p>
+    <a target="_blank" href="https://sfonline.barnard.edu/cripping-queer-politics-or-the-dangers-of-neoliberalism/"><h3>Cripping Queer Politics, or the Dangers of Neoliberalism</h3></a>
     <small>by ROBERT MCRUER for The Scholar and Feminist Online<br>Winter 2021/Spring 2012</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://www.newyorker.com/culture/photo-booth/love-on-the-run-in-stephen-barkers-photographs" style="color:white;text-decoration:underline;">Love on the Run in Stephen Barker's Photographs</a></p>
+    <a target="_blank" href="https://www.newyorker.com/culture/photo-booth/love-on-the-run-in-stephen-barkers-photographs"><h3>Love on the Run in Stephen Barker's Photographs</h3></a>
     <small>by HILTON ALS for The New Yorker<br>27 June 2021</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://oxfordamerican.org/magazine/issue-106/bedfellows-forever" style="color:white;text-decoration:underline;">Bedfellows Forever</a></p>
+    <a target="_blank" href="https://oxfordamerican.org/magazine/issue-106/bedfellows-forever"><h3>Bedfellows Forever</h3></a>
     <small>by LOGAN SCHERER for Oxford American<br>3 September 2019</small>
     <br><br>
-    <p style="font-family: Cheltenham Bold;font-weight:normal;font-size:24px;"><a target="_blank" href="https://time.com/5606594/lgbt-media-history/" style="color:white;text-decoration:underline;">How TIME's Reporting on Gay Life in America Shaped &mdash; and Skewed &mdash; a Generation's Attitudes</a></p>
+    <a target="_blank" href="https://time.com/5606594/lgbt-media-history/"><h3>How TIME's Reporting on Gay Life in America Shaped &mdash; and Skewed &mdash; a Generation's Attitudes</h3></a>
     <small>by ERIC MARCUS for TIME<br>17 June 2019</small>
     <br><br>
   </div>
   <div class="main2">
     <br><br>
-    <img class="center" style="opacity:70%" src="../uploads/dalle-digital-lgbtq.png">
-    <p style="font-size:14px;text-align:right;margin-right:5%;">AI ART BY DALL·E 2</p>
+    <img style="opacity:70%" src="../uploads/dalle-digital-lgbtq.png">
+    <p class="photo-credit" style="text-align:right;">A.I. art by <b>DALL-E 2</b></p>
   </div>
 </div>
 
 <div class="footer">
-  <p> <a href="https://instagram.com/25.post/"><img src="https://the25post.com/archives/instagram 25post.png" style="width:20px"></a>
     <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
-
     <br>
   </p>
 </div>
