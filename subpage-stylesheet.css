@@ -46,7 +46,7 @@
     font-family:Helvetica;
     font-size:14px;
     text-align: left;
-    margin: 0 0 2%;
+    margin: 0 0 10%;
   }
 
   .photo-credit i {
@@ -225,4 +225,13 @@
     width: 100%;
     text-align: right;
     padding: 20px;
+  }
+
+  .blink {
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+  }
+
+  @keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
   }
