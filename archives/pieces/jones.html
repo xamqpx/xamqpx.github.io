@@ -84,17 +84,6 @@
                         <b class="blink">&#11044;</b>&nbsp;DEVELOPING</span>
                       </p>
                     <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px;margin-top: 0;">One must imagine Jones happy</h2>
-                    <p style="text-align:center;font-family:Helvetica;font-size:14px;">Last updated:&nbsp;<span id="date"></span> P.D.T.</small>
-                        <script>
-                            const date = new Date(document.lastModified);
-                            var month_year = date.toLocaleDateString("en-US", {timezone: "America/Los Angeles", month: "long", year:"numeric"})
-                            var time = date.toTimeString("en-US", {timezone: "America/Los Angeles"});
-                            var date_num = date.getDate();
-                            var hours = ('0'+date.getHours()).substr(-2);
-                            var mins = ('0'+date.getMinutes()).substr(-2);
-                            var n = hours + ':'+ mins;
-                            document.getElementById("date").innerHTML = date_num + " " + month_year + " " + n;
-                        </script>
                 </div>
 
                 <hr style="width:30%;margin: 50px auto 50px auto;">
