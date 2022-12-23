@@ -38,6 +38,8 @@
         <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
         <meta name="twitter:card" content="summary_large_image">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
          <style>
             #rss div {
                 display: none;
@@ -70,6 +72,30 @@
                 display: none;
             }
 
+            .fa {
+                font-size: 20px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50%;
+                vertical-align: center;
+                display: inline;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-instagram {
+            background: none;
+            color: white;
+            }
+
+            .fa-twitter {
+                background: none;
+            color: white;
+            }
 
             @media screen and (max-width:700px) {
                 #break {
@@ -241,6 +267,13 @@
                         }
 
                 </script>
+
+                <h2>Hanyung Politics <span><a href="https://www.instagram.com/hanyungpolitics/" class="fa fa-instagram" style="text-decoration:none;"></a> <a href="https://twitter.com/hanyungpolitics" class="fa fa-twitter" style="text-decoration:none;"></a></span></h2>
+                <p><i>Korean news in the English language.</i></p>
+                <a class="twitter-timeline" data-width="400" data-height="700" href="https://twitter.com/hanyungpolitics?ref_src=twsrc%5Etfw">Tweets by hanyungpolitics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                <hr style="width:95%;margin: 50px auto 50px auto;">
+                
                 <h2>The latest in sports</h2>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/2560px-ESPN_wordmark.svg.png">
                 <h2 class="sub">N.B.A.</h2>
@@ -248,10 +281,6 @@
                     <script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.espn.com%2Fespn%2Frss%2Fnba%2Fnews&limit=5&showtitle=false&type=js"></script>
                 </div>
                 <hr style="width:95%;margin: 50px auto 50px auto;">                 
-                <h2 class="sub">N.F.L.</h2>
-                <div id="rss">
-                    <script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.espn.com%2Fespn%2Frss%2Fnfl%2Fnews&limit=5&showtitle=false&type=js"></script>
-                </div>
             </div>
             <div class="main" style="flex:40%;padding-right:0;padding:20px;">
                 <img src="https://i.guim.co.uk/img/media/697fa40e12481aaf5996218f5b1de43b38383b76/0_0_4961_3307/master/4961.jpg?width=1010&quality=45&auto=format&fit=max&dpr=2&s=b2f3e3aadff5322300324e099f4a10fa">
