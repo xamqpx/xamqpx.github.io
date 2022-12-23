@@ -44,32 +44,52 @@
     </head>
 
 <body>
-  <div class="navbar">
+  <div class="navbar" id="navbar">
     <div class="navbar-left">
-      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
-      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
-        THE 25 POST</a>
+      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
+      
     </div>
     <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-      <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
-      <a href="https://the25post.com/meta" style="color:white">META</a>
-      <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+      <a href="https://the25post.com/commentary">COMMENTARY</a>
+      <a href="https://the25post.com/nonfiction">NON / FICTION</a>
+      <a href="https://the25post.com/meta">META</a>
+      <a href="https://the25post.com/about">ABOUT</a>
     </div>
   </div>
 
   <script>
-  function toggleNav() {
-    var element = document.getElementById("navbar-collapse");
-    var button = document.getElementById("menu");
-    if (element.style.height == "250px") {
-      element.style.height = "0px";
-      button.innerHTML = "&equiv;";
-    } else {
-      element.style.height = "250px";
-      button.innerHTML = "&nequiv;";
-    } 
-  }
+    function toggleNav() {
+      var element = document.getElementById("navbar-collapse");
+      var button = document.getElementById("menu");
+      if (element.style.display == "block") {
+        element.style.display = "none";
+        button.innerHTML = "&equiv;";
+      } else {
+        element.style.display = "block";
+        element.style.height = "170px";
+        button.innerHTML = "&times;";
+      } 
+    }
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("navbar").style.padding = "0px";
+        document.getElementById("logo").style.fontSize = "16px";
+        document.getElementById("menu").style.fontSize = "16px";
+      } else {
+        document.getElementById("navbar").style.padding = "10px 10px";
+        document.getElementById("logo").style.fontSize = "20px";
+        document.getElementById("menu").style.fontSize = "20px";
+      }
+    }
+
+    window.onload = function() {navbarCollapse()};
+    function navbarCollapse() {
+      document.getElementById("navbar").style.padding = "10px 10px";
+      document.getElementById("logo").style.fontSize = "20px";
+      document.getElementById("menu").style.fontSize = "20px";
+    }
   </script>
 
 
@@ -147,7 +167,7 @@
   
 
     <div class="footer">
-        <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+        <p>25</p>
   
         
         <br>

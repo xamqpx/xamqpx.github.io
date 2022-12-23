@@ -45,17 +45,16 @@
       AOS.init();
     </script>
 
-    <div class="navbar">
+    <div class="navbar" id="navbar">
       <div class="navbar-left">
-        <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
-        <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
-          THE 25 POST</a>
+        <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
+        
       </div>
       <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-        <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
-        <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
-        <a href="https://the25post.com/meta" style="color:white">META</a>
-        <a href="https://the25post.com/about" style="color:white">ABOUT</a>
+        <a href="https://the25post.com/commentary">COMMENTARY</a>
+        <a href="https://the25post.com/nonfiction">NON / FICTION</a>
+        <a href="https://the25post.com/meta">META</a>
+        <a href="https://the25post.com/about">ABOUT</a>
       </div>
     </div>
 
@@ -63,20 +62,40 @@
       function toggleNav() {
         var element = document.getElementById("navbar-collapse");
         var button = document.getElementById("menu");
-        if (element.style.height == "250px") {
-          element.style.height = "0px";
+        if (element.style.display == "block") {
+          element.style.display = "none";
           button.innerHTML = "&equiv;";
         } else {
-          element.style.height = "250px";
-          button.innerHTML = "&nequiv;";
+          element.style.display = "block";
+          element.style.height = "170px";
+          button.innerHTML = "&times;";
         } 
       }
-      </script>
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("navbar").style.padding = "0px";
+          document.getElementById("logo").style.fontSize = "16px";
+        document.getElementById("menu").style.fontSize = "16px";
+        } else {
+          document.getElementById("navbar").style.padding = "10px 10px";
+          document.getElementById("logo").style.fontSize = "20px";
+          document.getElementById("menu").style.fontSize = "20px";
+        }
+      }
+      window.onload = function() {navbarCollapse()};
+      function navbarCollapse() {
+        document.getElementById("navbar").style.padding = "10px 10px";
+        document.getElementById("logo").style.fontSize = "20px";
+        document.getElementById("menu").style.fontSize = "20px";
+      }
+    </script>
 
       <!-- title -->
-      <div class="header">
-          <h1>COMMENTARY</h1>
-          <p><i>Essays on anything and everything.</i></p>
+    <div class="header">
+      <h1>COMMENTARY</h1>
+      <p><i>Essays on anything and everything.</i></p>
     </div>
 
     <div class="meat">
@@ -94,7 +113,7 @@
           <div class="featured">
             <div class="feat-title">
               <h3>&ldquo;Ditto,&rdquo; the NewJeans gateway drug</h3>
-              <p>I can finally wrap my head around the NewJeans thesis without the other clutter.
+              <p id="dek">I can finally wrap my head around the NewJeans thesis without the other clutter.
               </p>
             </div>
             <small>23 December 2022</small>
@@ -108,7 +127,7 @@
           <div class="featured">
             <div class="feat-title">
               <h3>What does God look like?</h3>
-              <p>Along with every other fear and anxiety that struck me during the pandemic, another came along and lodged itself quite sharply and comfortably in the back of my mind: the fear of eternity, and being absent for it.
+              <p id="dek">Along with every other fear and anxiety that struck me during the pandemic, another came along and lodged itself quite sharply and comfortably in the back of my mind: the fear of eternity, and being absent for it.
               </p>
             </div>
             <small>18 December 2022</small>
@@ -122,7 +141,7 @@
           <div class="featured">
             <div class="feat-title">
               <h3>Notes on Kim Wexler</h3>
-              <p><i>Breaking Bad</i> viewers who hated Skyler White finally got the complicit, unconditionally loving wife they wanted in <i>Better Call Saul</i>. Now what?
+              <p id="dek"><i>Breaking Bad</i> viewers who hated Skyler White finally got the complicit, unconditionally loving wife they wanted in <i>Better Call Saul</i>. Now what?
               </p>
             </div>
             <small>16 December 2022</small>
@@ -266,7 +285,7 @@
     </div>
 
     <div class="footer">
-      <p style="font-family:Bodoni MT Poster Compressed;font-size:24px">THE 25 POST</p>
+      <p>25</p>
     </p>
 
   </body>
