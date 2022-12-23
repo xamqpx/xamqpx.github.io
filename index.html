@@ -82,6 +82,7 @@
     margin: 0;
     display: inline-block;
     border-right: none;
+    flex: 50%;
   }
   
   .latest {
@@ -108,7 +109,6 @@
 
   .console-container {
     font-family:"Cheltenham Tooled Bold";
-    font-size: 48px;
     color:white;
     top:0;
     bottom:0;
@@ -124,7 +124,16 @@
     left:10px;
   }
 
+  #text, #console {
+    font-size: 48px;
+  }
+
   @media screen and (max-width: 1000px) {
+
+    #text, #console {
+      font-size: 38px;
+    }
+
 
     body {
       background-position: 30%;
@@ -136,13 +145,23 @@
 
     .title-card {
       padding: 10% 0 10% 20px;
-      width: 300px;
+      width: 100%
     }
 
     .main {
       display: none;
     }
 
+    .side {
+      flex: 100%;
+    }
+
+  }
+
+  @media screen and (max-width:700px) {
+    #text, #console {
+      font-size: 28px;
+    }
   }
 
 </style>
@@ -154,7 +173,7 @@
 <body style="color:white;">
   <div class="row">
     <!--left-->
-    <div class="left" style="flex: 50%;">
+    <div class="left">
       <!--title card-->
       <div class="title-card">
         <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
@@ -236,7 +255,7 @@
     </script>
 
     <!--right-->
-    <div class="main" style="flex:50%;">
+    <div class="main">
       <!--latest-->
       <script>
         window.onload = function() {
