@@ -85,10 +85,12 @@
         }
       }
       window.onload = function() {navbarCollapse()};
-    function navbarCollapse() {
-      document.getElementById("navbar-collapse").style.display = "none";
-      document.getElementById("menu").innerHTML = "&equiv;";
-    }
+      function navbarCollapse() {
+        if (window.innerWidth < 700) {
+          document.getElementById("navbar-collapse").style.display = "none";
+          document.getElementById("menu").innerHTML = "&equiv;";
+        }
+      }
     </script>
 
       <!-- title -->
