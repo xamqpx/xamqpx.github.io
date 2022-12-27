@@ -95,11 +95,10 @@
   }
 
   window.onload = function() {navbarCollapse()};
-      function navbarCollapse() {
-        document.getElementById("navbar").style.padding = "10px 10px";
-        document.getElementById("logo").style.fontSize = "20px";
-        document.getElementById("menu").style.fontSize = "20px";
-      }
+    function navbarCollapse() {
+      document.getElementById("navbar-collapse").style.display = "none";
+      document.getElementById("menu").innerHTML = "&equiv;";
+    }
 </script>
 
       <!-- title -->

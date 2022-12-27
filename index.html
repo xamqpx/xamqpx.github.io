@@ -3,7 +3,7 @@
 
 
 <head>
-<title>HAPPY HOLIDAYS! | The 25 Post</title>
+<title>HOME | The 25 Post</title>
 
 <!--basics-->
 <meta charset="UTF-8">
@@ -45,273 +45,73 @@
 <!--stylesheets-->
 <link rel="stylesheet" href="homepages-stylesheet.css">
 <link rel="stylesheet" href="fonts.css">
-
 <style>
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
 
   body {
-    background-image: url('archives/uploads/cristian-escobar-abkEAOjnY0s-unsplash.jpg');
+    text-align: center;
+    color: white;
+    background: url('archives/uploads/jr-korpa-stwHyPWNtbI-unsplash.jpg');
     background-size: cover;
-    font-size: 17px;
-    max-width: 1600px;
-    margin: auto;
+    padding: 50px 10%;
+  }
+
+  .head p {
+    display: block;
+    font-family: 'Cheltenham Std Light';
+    font-size: 80px;
+    margin: 0;
+  }
+
+  .title {
+   display: none;
+  }
+
+  .category {
+    font-family: 'Work Sans';
+    font-size: 19px;
+  }
+
+  a:link, a:active, a:visited {
+    text-decoration: none;
     color: white;
   }
 
-  a:link,a:visited,a:active {
-        color:white;
-      }
-
-  .category {
-    transition: color 0.3s;
-    line-height: 1.5;
-    font-family: 'Work Sans';
+  a:hover {
+    color: grey;
   }
 
-  .category a:hover {
-    color: #b0b0b0;
-  }
-
-  .title-card {
-    padding: 90px 20px 0 20px;
-    width: 60%;
-  }
-
-  .left, .main {
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    border-right: none;
-    flex: 50%;
-  }
-  
-  .latest {
-    margin: 0 20px 0 20px;
-    padding: 20px;
-    background-color:rgba(82,82,82,0.7);
-  }
-
-  .latest-heading {
-    margin: 30% 0 0 20px;
-  }
-
-  .footer {
-    z-index: -1;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding-right: 20px;
-  }
-  
-  .hidden {
-    opacity:0;
-  }
-
-  .console-container {
-    font-family:"Cheltenham Tooled Bold";
-    color:white;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-  }
-
-  .console-underscore {
-    display:inline-block;
-    position:relative;
-    top:-0.14em;
-    left:10px;
-  }
-
-  #text, #console {
-    font-size: 48px;
-  }
-
-  @media screen and (max-width: 1000px) {
-
-    #text, #console {
-      font-size: 38px;
-    }
-
-
+  @media screen and (max-width: 700px) {
     body {
-      background-position: 10%;
-      background-size: auto;
+      padding: 50% 10%;
     }
 
-    .console-container {
-      font-size: 60px;
+    .title {
+      display: block;
+      font-family: 'Cheltenham Tooled Bold';
+      font-size: 19px;
     }
 
-    .title-card {
-      padding: 10% 0 10% 20px;
-      width: 100%
-    }
-
-    .main {
+    .head {
       display: none;
     }
-
-    .left {
-      flex: 100%;
-    }
-
   }
-
-  @media screen and (max-width:700px) {
-    #text, #console {
-      font-size: 28px;
-    }
-  }
-
 </style>
-
 </head>
 
-
-<!--body-->
-<body style="color:white;">
-  <div class="row">
-    <!--left-->
-    <div class="left">
-      <!--title card-->
-      <div class="title-card">
-        <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
-        <p><i>&mdash; The 25 Post</i></p>
-      </div>
-          
-      <div style="padding: 10px 0 0 20px;">
-        <h3>Read the latest:</h3>
-          <p class="category"><a href="https://the25post.com/commentary">COMMENTARY</a></p>
-          <p class="category"><a href="https://the25post.com/nonfiction">NON / FICTION</a></p>
-          <p>
-            <span class="category"><a href="https://the25post.com/meta">META</a></span>
-            &nbsp;||&nbsp;
-            <span class="category"><a target="_blank" href="https://the25post.com/archives/meta/daily-trojan">DAILY TROJAN</a></span>
-          </p>
-          <p>
-            <span class="category"><a href="https://the25post.com/about">ABOUT</a></span>
-            &nbsp;||&nbsp;
-            <span class="category"><a target="_blank" href="https://github.com/xamqpx/xamqpx.github.io">GITHUB REPO*</a></span>
-          </p>
-          <p class="category"><a href="https://the25post.com/archives/meta/in-other-news">IN OTHER NEWS</a></p>
-          <p class="category"><a href="https://www.instagram.com/hanyungpolitics/">HANYUNG POLITICS*</a></p>
-          <small class="category">* External link</small>
-      </div>
-      
-    </div>
-
-    <script>
-      // function([string1, string2],target id,[color1,color2])    
-      consoleText(['Happy Holidays!'], 'text',['white']);
-
-      function consoleText(words, id, colors) {
-        if (colors === undefined) colors = ['#fff'];
-        var visible = true;
-        var con = document.getElementById('console');
-        var letterCount = 1;
-        var x = 1;
-        var waiting = false;
-        var target = document.getElementById(id)
-        target.setAttribute('style', 'color:' + colors[0])
-        window.setInterval(function() {
-
-          if (letterCount === 0 && waiting === false) {
-            waiting = true;
-            target.innerHTML = words[0].substring(0, letterCount)
-            window.setTimeout(function() {
-              var usedColor = colors.shift();
-              colors.push(usedColor);
-              var usedWord = words.shift();
-              words.push(usedWord);
-              x = 1;
-              target.setAttribute('style', 'color:' + colors[0])
-              letterCount += x;
-              waiting = false;
-            }, 1000)
-          } else if (letterCount === words[0].length + 1 && waiting === false) {
-            waiting = true;
-            window.setTimeout(function() {
-              x = -1;
-              letterCount += x;
-              waiting = false;
-            }, 4000)
-          } else if (waiting === false) {
-            target.innerHTML = words[0].substring(0, letterCount)
-            letterCount += x;
-          }
-        }, 120)
-        window.setInterval(function() {
-          if (visible === true) {
-            con.className = 'console-underscore hidden'
-            visible = false;
-
-          } else {
-            con.className = 'console-underscore'
-
-            visible = true;
-          }
-        }, 400)
-      }
-    </script>
-
-    <!--right-->
-    <div class="main">
-      <!--latest-->
-      <script>
-        window.onload = function() {
-          // Month Day, Year Hour:Minute:Second, id-of-element-container
-          countDownFromTime("November 28, 2022 00:00:00", 'countup2')
-        };
-        function countDownFromTime(countFrom, id) {
-          countFrom = new Date(countFrom).getTime();
-          var now = new Date(),
-              countFrom = new Date(countFrom),
-              timeDifference = (countFrom - now);
-            
-          var secondsInADay = 60 * 60 * 1000 * 24,
-              secondsInAHour = 60 * 60 * 1000;
-            
-          days = Math.floor(timeDifference / (secondsInADay) * 1);
-          hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
-          mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
-          secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
-
-          var idEl = document.getElementById(id);
-          idEl.getElementsByClassName('days')[0].innerHTML = days;
-          idEl.getElementsByClassName('hours')[0].innerHTML = hours;
-          idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
-          idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
-
-          clearTimeout(countDownFromTime.interval);
-          countDownFromTime.interval = setTimeout(function(){ countDownFromTime(countFrom, id); }, 1000);
-        }
-      </script>
-      <a class="fill-div" href="https://the25post.com/archives/articles/newjeans">
-        <div class="latest" style="margin:15% 20px 0 0;">
-          <small style="color:#dd7e6b;font-family:Work Sans;"><br>COMMENTARY</small>
-          <h3 style="font-family:Cheltenham Bold;font-weight:normal;font-size:28px;margin:20px 0 20px 0">&ldquo;Ditto,&rdquo; the NewJeans gateway drug</h3>
-          <small>23 December 2022</small>
-          <p>
-        </div>
-      <br><br>
-      <a class="fill-div" href="https://the25post.com/archives/pieces/jones">
-        <div class="latest" style="margin: 0 20px 0 0;">
-          <small style="color:#dd7e6b;font-family:Work Sans;"><br>NON / FICTION</small>&nbsp;&nbsp;&nbsp;
-          <span class="photo-credit"><b class="blink">&#11044;</b>&nbsp;DEVELOPING</span>
-          <h3 style="font-family:Cheltenham Bold;font-weight:normal;font-size:28px;margin:20px 0 20px 0">One must imagine Jones happy</h3>
-          <p>
-        </div>
-      </a>
-    </div>
-    
+<body>
+  <div class="head">
+    <p>This is a writing website.</p>
+    <br><br>
   </div>
-  
-  
+  <p class="title">THE 25 POST</p>
+  <p class="category"><a href="https://the25post.com/archives/articles/newjeans">LATEST</a></p>
+  <p class="category"><a href="https://the25post.com/commentary">COMMENTARY</a></p>
+  <p class="category"><a href="https://the25post.com/nonfiction">NON / FICTION</a></p>
+  <p class="category"><a href="https://the25post.com/meta">META</a></p>
+  <p class="category"><a href="https://the25post.com/about">ABOUT</a></p>
 </body>
-
-<!--footer-->
-<div class="footer">
-  <p class="photo-credit" style="text-align:right;">Photo courtesy of <b>CRISTIAN ESCOBAR</b>
-</div>
 </html>
