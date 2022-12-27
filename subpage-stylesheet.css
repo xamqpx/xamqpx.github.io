@@ -243,3 +243,11 @@
     from { opacity: 1; }
     to { opacity: 0; }
   }
+  
+  .korean-title {
+    font-family: 'Song Myung';
+  }
+  
+  .korean-text {
+    font-family: 'Noto';
+  }

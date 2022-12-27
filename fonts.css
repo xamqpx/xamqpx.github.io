@@ -82,3 +82,13 @@
     font-family: 'Work Sans';
     src: url('fonts/WorkSans-Regular.ttf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Song Myung';
+    src: url('fonts/SongMyung-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Noto';
+    src: url('fonts/NotoSerifKR-Regular.otf');
+  }

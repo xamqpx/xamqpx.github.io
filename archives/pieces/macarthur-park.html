@@ -60,16 +60,16 @@
 }
 
 .button {
-  background-color: #525252;
+  background-color: #e0e0e0;
   border: none;
-  color: white;
+  color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: 'Work Sans';
 }
 
 .center_button {
@@ -139,20 +139,20 @@
     <div class="main">
       <div style="text-align:center">
         <h3>NON / FICTION</h3>
-        <h2 id="replace_title" style="font-family:IBM Plex Sans KR; font-size:38px;">갈 곳 없어 간 곳, 맥아더 공원</h2>
+        <h2 class="korean-title" id="replace_title"><span style='font-size: 50px;'>갈 곳 없어 간 곳, 맥아더 공원</span></h2>
         <p>6 October 2022</p>
         <img src="../uploads/DSC_0186.JPG">
-        <p class="photo-credit"><span style="font-family: IBM Plex Sans KR;font-size:18px;">외딴 땅에 온 이민으로서 정체성 또는 자존심을 지켜야 한다는, 절대 동포는 동포끼리 붙어야 한다는 이민 집념이 인종차별로 변질되는 듯 하다.</span>&nbsp;&nbsp;&nbsp;<span>Photographs by <b>JONATHAN PARK</b> and <b>PETER LIU</b></span></p>
+        <p class="photo-credit"><span class="korean-text">외딴 땅에 온 이민으로서 정체성 또는 자존심을 지켜야 한다는, 절대 동포는 동포끼리 붙어야 한다는 이민 집념이 인종차별로 변질되는 듯 하다.</span>&nbsp;&nbsp;&nbsp;<span>Photographs by <b>JONATHAN PARK</b> and <b>PETER LIU</b></span></p>
         
       </div>
       <p style="color:grey"><i>Read this article in:</i></p>
-      <button class="button" onclick="englishToKorean()">Korean <span style="font-family:IBM Plex Sans KR">(한국어)</span></button>
+      <button class="button" onclick="englishToKorean()">Korean <span class="korean-text">(한국어)</span></button>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <button class="button" onclick="koreanToEnglish()">English</button>
       <hr style="width:30%;margin: 50px auto 50px auto;">
-      <div id="replace" style="font-family:IBM Plex Sans KR;">
+      <div id="replace" class="korean-text">
         <p>
-          <inline class="padded-dropcap" style="font-size:70px">기</inline>나긴 폭염에 체력도 딸리고 어쨌든 우버 뒷자석에 몸을 끼워넣었다. 장소는 엘에이 한인타운. 한국 미국 두 곳에 살아본 사람으로서 이도 저도 아닌 동네였다. 꾀죄죄한 길거리 위에 간판은 한국 금호타이어, 우리나라 어느 읖에서나 볼만한 아기자기한 베어커리 카페, 치과, <span style="font-family:Caslon">CPA</span>, 등등.
+          <inline class="korean-title padded-dropcap">기</inline>나긴 폭염에 체력도 딸리고 어쨌든 우버 뒷자석에 몸을 끼워넣었다. 장소는 엘에이 한인타운. 한국 미국 두 곳에 살아본 사람으로서 이도 저도 아닌 동네였다. 꾀죄죄한 길거리 위에 간판은 한국 금호타이어, 우리나라 어느 읖에서나 볼만한 아기자기한 베어커리 카페, 치과, <span style="font-family:Caslon">CPA</span>, 등등.
         </p>
         <p>
           "어서 타세요."
@@ -183,8 +183,8 @@
         function englishToKorean() {
           const replace = document.getElementById("replace")
           const replace_title = document.getElementById("replace_title")
-          replace_title.innerHTML = "갈 곳 없어 간 곳, 맥아더 공원"
-          replace.innerHTML = "<p><inline class='padded-dropcap' style='font-size:70px'>기</inline>나긴 폭염에 체력도 딸리고 어쨌든 우버 뒷자석에 몸을 끼워넣었다. 장소는 엘에이 한인타운. 한국 미국 두 곳에 살아본 사람으로서 이도 저도 아닌 동네였다. 꾀죄죄한 길거리 위에 간판은 한국 금호타이어, 우리나라 어느 읖에서나 볼만한 아기자기한 베어커리 카페, 치과, <span style='font-family:Caslon'>CPA</span>, 등등.</p><p>&ldquo;어서 타세요.&rdquo;</p><p>하필 기사 아저씨는 한국 사람이었다. 사오십대 정도 돼보였다. 이름 보고 아셨을 리는 없고. 내가 그리 동포 같이 생겼던가.</p><p>&ldquo;예.&rdquo;</p><p>&ldquo;사람 바쁜데 참.&rdquo;</p><p>어느새 차는 떠나고, 일상적인 침묵이 잠시 내려앉았다.</p><p>&ldquo;맥아더 공원 가시는 거 맞죠?&rdquo;</p><p>&ldquo;네.&rdquo;</p><p>&ldquo;거 별거 없는데.&rdquo;</p><p>&ldquo;아 그래요.&rdquo;</p><p>&ldquo;엘에이 볼 거 그리 많은데 굳이.&rdquo;</p><p>&ldquo;거기가 왜...&rdquo;</p><p>&ldquo;거지들만 많고. 더럽고. 마약하는 놈들만 널렸죠.&rdquo; 예상한 바였다. &ldquo;거기 한국 사람 아무도 안 가요. 히스패닉들만 많고.&rdquo;</p><p>&ldquo;뭐, 엘에이는 다 그렇지 않나요.&rdquo;</p><p>이에 별 답장 없었다. 계속 대화를 나눠보니 관광객으로 착각하신 듯했다. 엘에이 사는 대학생이라 설명하던 중에 이미 도착해 있었다.</p><p>차에서 내렸다. 동포 어른들의 흔한 넘사벽이었다. 더럽고 가난한 꼴을 못 보는 민족. 외딴 땅에 온 이민으로서 정체성 또는 자존심을 지켜야 한다는, 절대 동포는 동포끼리 붙어야 한다는 이민 집념이 인종차별로 변질되는 듯 하다. 음악이 흘러오고 아이들이 자유로이 노는 광경에 우선 '히스패닉'이란 단어가 떠오른다는 것. 애초에 자세히 보지도 않았을 것이다.</p><p>어느 정도는 기사 아저씨 말이 맞았다. 죽어가는 나무 심은 화분 옆을 지날 때 익숙한 찌든내가 불어오고, 바싹 마른 눈주름 끼고 헐레헐레 걸어가는 몇 명은 있었다. 딱히 오래 앉아 즐기고 싶은 곳은 아니었다만, 그래도 사람이 사는 곳 같아 상쾌했던 기억이 남는다. 무덤덤한 일상에서의 탈출, 또는 모험이랄까. 이런 사소한 순간들까지도 모험으로 삼으니 살 맛이 나더라.&nbsp;&#9632;</p>"
+          replace_title.innerHTML = "<span style='font-size: 50px;'>갈 곳 없어 간 곳, 맥아더 공원</span>"
+          replace.innerHTML = "<p><inline class='korean-title padded-dropcap'>기</inline>나긴 폭염에 체력도 딸리고 어쨌든 우버 뒷자석에 몸을 끼워넣었다. 장소는 엘에이 한인타운. 한국 미국 두 곳에 살아본 사람으로서 이도 저도 아닌 동네였다. 꾀죄죄한 길거리 위에 간판은 한국 금호타이어, 우리나라 어느 읖에서나 볼만한 아기자기한 베어커리 카페, 치과, <span style='font-family:Caslon'>CPA</span>, 등등.</p><p>&ldquo;어서 타세요.&rdquo;</p><p>하필 기사 아저씨는 한국 사람이었다. 사오십대 정도 돼보였다. 이름 보고 아셨을 리는 없고. 내가 그리 동포 같이 생겼던가.</p><p>&ldquo;예.&rdquo;</p><p>&ldquo;사람 바쁜데 참.&rdquo;</p><p>어느새 차는 떠나고, 일상적인 침묵이 잠시 내려앉았다.</p><p>&ldquo;맥아더 공원 가시는 거 맞죠?&rdquo;</p><p>&ldquo;네.&rdquo;</p><p>&ldquo;거 별거 없는데.&rdquo;</p><p>&ldquo;아 그래요.&rdquo;</p><p>&ldquo;엘에이 볼 거 그리 많은데 굳이.&rdquo;</p><p>&ldquo;거기가 왜...&rdquo;</p><p>&ldquo;거지들만 많고. 더럽고. 마약하는 놈들만 널렸죠.&rdquo; 예상한 바였다. &ldquo;거기 한국 사람 아무도 안 가요. 히스패닉들만 많고.&rdquo;</p><p>&ldquo;뭐, 엘에이는 다 그렇지 않나요.&rdquo;</p><p>이에 별 답장 없었다. 계속 대화를 나눠보니 관광객으로 착각하신 듯했다. 엘에이 사는 대학생이라 설명하던 중에 이미 도착해 있었다.</p><p>차에서 내렸다. 동포 어른들의 흔한 넘사벽이었다. 더럽고 가난한 꼴을 못 보는 민족. 외딴 땅에 온 이민으로서 정체성 또는 자존심을 지켜야 한다는, 절대 동포는 동포끼리 붙어야 한다는 이민 집념이 인종차별로 변질되는 듯 하다. 음악이 흘러오고 아이들이 자유로이 노는 광경에 우선 '히스패닉'이란 단어가 떠오른다는 것. 애초에 자세히 보지도 않았을 것이다.</p><p>어느 정도는 기사 아저씨 말이 맞았다. 죽어가는 나무 심은 화분 옆을 지날 때 익숙한 찌든내가 불어오고, 바싹 마른 눈주름 끼고 헐레헐레 걸어가는 몇 명은 있었다. 딱히 오래 앉아 즐기고 싶은 곳은 아니었다만, 그래도 사람이 사는 곳 같아 상쾌했던 기억이 남는다. 무덤덤한 일상에서의 탈출, 또는 모험이랄까. 이런 사소한 순간들까지도 모험으로 삼으니 살 맛이 나더라.&nbsp;&#9632;</p>"
         }
       </script>
       <br><br>
