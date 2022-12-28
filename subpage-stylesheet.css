@@ -22,26 +22,6 @@
     font-style: normal;
   }
 
-  a:link {
-    text-decoration: underline;
-    color: black;
-  }
-  
-  a:visited {
-  text-decoration: underline;
-    color: black;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-    color: black;
-  }
-  
-  a:active {
-    text-decoration: underline;
-    color: black;
-  }
-
   .photo-credit {
     font-family:Work Sans;
     font-size:14px;
@@ -52,6 +32,12 @@
   .photo-credit i {
     font-size: 18px;
   }
+
+  a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+    transition: color 0.4s;
+    color: black;
+}
 
   .author {
     font-family: Work Sans;
