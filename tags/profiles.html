@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="msapplication-square310x310logo" content="archives/mstile-310x310.png" />
+<title>Tag: Profiles | The 25 Post</title>
+<!--basics-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="manifest" href="../icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+<!--stylesheets-->
+<link rel="stylesheet" href="../../subpage-stylesheet.css">
+<link rel="stylesheet" href="../../fonts.css">
+
+<style>
+    #rss div {
+        display: none;
+    }
+
+    .feed-title {
+        display: none;
+    }
+
+    .feed-item-title {
+        font-family: "Cheltenham Bold";
+    }
+
+    .feed-item-title a {
+        transition: color 0.3s;
+        text-decoration: none;
+    }
+
+    .feed-item-title a:hover {
+        color: #b0b0b0;
+        cursor: pointer;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <div class="navbar-left">
+          <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
+          
+        </div>
+        <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
+          <a href="https://the25post.com/commentary">COMMENTARY</a>
+          <a href="https://the25post.com/nonfiction">NON / FICTION</a>
+          <a href="https://the25post.com/meta">META</a>
+          <a href="https://the25post.com/about">ABOUT</a>
+        </div>
+    </div>
+
+    <script>
+    function toggleNav() {
+        var element = document.getElementById("navbar-collapse");
+        var button = document.getElementById("menu");
+        if (element.style.display == "block") {
+        element.style.display = "none";
+        button.innerHTML = "&equiv;";
+        } else {
+        element.style.display = "block";
+        element.style.height = "170px";
+        button.innerHTML = "&times;";
+        } 
+    }
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("navbar").style.padding = "0px";
+        document.getElementById("logo").style.fontSize = "16px";
+        document.getElementById("menu").style.fontSize = "16px";
+        } else {
+        document.getElementById("navbar").style.padding = "10px 10px";
+        document.getElementById("logo").style.fontSize = "20px";
+        document.getElementById("menu").style.fontSize = "20px";
+        }
+    }
+
+    window.onload = function() {navbarCollapse()};
+    function navbarCollapse() {
+        document.getElementById("navbar").style.padding = "10px 10px";
+        document.getElementById("logo").style.fontSize = "20px";
+        document.getElementById("menu").style.fontSize = "20px";
+    }
+    </script>
+
+    <div class="row">
+        <div class="side" style="flex:5%"></div>
+        <div class="side" style="flex:45%">
+            <h3>TAGS</h3>
+            <h1 style="font-family:Cheltenham Bold;font-weight:normal;">Profiles</h1>
+            <p><i>The people around us.</i></p>
+            <br><br>
+            <div id="rss">
+                <script src="//rss.bloople.net/?url=https%3A%2F%2Fthe25post.com%2Ftags%2Fprofiles.xml&showtitle=false&type=js"></script>
+            </div>
+        </div>
+        <div class="side" style="flex:50%"></div>
+    </div>
+    
+</body>
+</html>
