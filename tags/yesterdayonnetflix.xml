@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yesterdayOnNetflix>
+<rss version="2.0">
+<channel>
    <article>
       <title>Notes on Kim Wexler</title>
       <date>16 December 2022</date>
@@ -15,4 +16,6 @@
       <date>6 July 2022</date>
       <description>Confronting the unaccepting abusive parents and homophobic bullies and discriminatory governments of the world is a necessary and important task, but one I&apos;m not necessarily up for when I boot up Netflix or go to a theater.</description>
    </article>
-</yesterdayOnNetflix>
+</channel>
+
+</rss>
