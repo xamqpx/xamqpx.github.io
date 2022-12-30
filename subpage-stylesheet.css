@@ -140,6 +140,11 @@
     font-weight: normal;
     font-size: 16px;
     margin-bottom: -10px;
+    transition: color 0.4s;
+  }
+
+  a h3:hover {
+    color: #aa1e6b;
   }
   
   .padded-dropcap {
