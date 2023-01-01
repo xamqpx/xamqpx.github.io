@@ -3,111 +3,414 @@
 
 
 <head>
-<title>HOME | The 25 Post</title>
+  <title>HOME | The 25 Post</title>
 
-<!--basics-->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--basics-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="archives/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="archives/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="archives/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="archives/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="archives/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="archives/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="archives/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="archives/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="archives/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="archives/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="archives/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="archives/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="archives/icons/favicon-16x16.png">
-    <link rel="manifest" href="archives/icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="archives/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+  <!--icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="archives/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="archives/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="archives/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="archives/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="archives/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="archives/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="archives/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="archives/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="archives/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="archives/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="archives/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="archives/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="archives/icons/favicon-16x16.png">
+  <link rel="manifest" href="archives/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="archives/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://the25post.com/">
-<meta content="HOME &mdash; The 25 Post" property="og:title">
-<meta content='Happy Holidays! NEWEST: Peter Liu on the death of Suchmos bassist HSU.' property="og:description">
-<meta content='https://the25post.com/archives/uploads/25post-header-dalle.png' property='og:image'>
-<link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
-<meta name="twitter:card" content="summary_large_image">
-
-
-
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the25post.com/">
+  <meta content="HOME &mdash; The 25 Post" property="og:title">
+  <meta content='This is a writing website.' property="og:description">
+  <meta content='https://the25post.com/archives/uploads/dalle-index.png' property='og:image'>
+  <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
+  <meta name="twitter:card" content="summary_large_image">
+  
 <!--stylesheets-->
 <link rel="stylesheet" href="homepages-stylesheet.css">
 <link rel="stylesheet" href="fonts.css">
+
 <style>
-  html, body {
-    margin: 0;
-    height: 100%;
-  }
-
-  body {
-    text-align: center;
-    color: white;
-    background: url('archives/uploads/jr-korpa-stwHyPWNtbI-unsplash.jpg');
-    background-size: cover;
-    padding: 50px 10%;
-  }
-
-  .head p {
-    display: block;
-    font-family: 'Cheltenham Std Light';
-    font-size: 80px;
-    margin: 0;
-  }
-
+  html, body { margin: 0; height: 100%; }
+  body { color: black; padding: 20px 0 20px 0; }
+  h2 { margin: 10px; }
   .title {
-   display: none;
+    display: block;
+    font-family: 'Cheltenham Bold';
+    font-size: 60px;
+    margin: 0;
   }
-
+  .number { font-family: 'Cheltenham Tooled Bold'; }
   .category {
     font-family: 'Work Sans';
-    font-size: 19px;
+    font-size: 14px;
+    display: inline;
+  }
+  .date-right { display: block; }
+  .date-middle { display: none; }
+  a:link, a:active, a:visited { text-decoration: none; color: black; }
+  .category a:hover { color: grey; }
+  .break { display: inline; }
+  .break-block { display: none; }
+  #tags small {  font-family: 'Work Sans'; display: inline;}
+  #tags a { color: black;  transition: color 0.4s; }
+  #tags a:hover { color: grey; }
+  .bighed {  font-size:40px; margin: 0 0 30px 0; }
+  #cover-art {
+    background:url(archives/uploads/dalle-index.png);
+    background-size:cover;
+    background-position:bottom;
+    width:90%;
+    margin: auto;
+    max-height:350px;
+    text-align:justify;
+    overflow:hidden;
+  }
+  img { opacity: 1; transition: opacity 0.4s; }
+  img:hover {opacity: 0.8;}
+  #cover-art p {
+    color:#ddd;
+    font-size:36px;
+    text-shadow:0 20px grey;
+    margin:0;
+    transition: color 0.4s;
+    transition: text-shadow 0.4s;
+  }
+  #cover-art p:hover { color: white; text-shadow: 0 0 grey; }
+  #jones small { transition: color 0.4s; text-decoration: underline; }
+  #jones small:hover { color: grey; }
+  #table_id td {margin: 0; padding: 10px;}
+  tr {margin: 10px;}
+  h3 { font-size: 19px; margin: 0 0 5px 0; }
+  .left-copy { display: none; }
+  .left, .main, .right  { padding: 0 10px; }
+  .main { border-left: 1px solid grey; border-right: 1px solid grey; }
+  .article-tag {
+    margin: 0 0 5px 0;
+    font-family: 'Work Sans';
+    color: #dd7e6b;
   }
 
-  a:link, a:active, a:visited {
-    text-decoration: none;
-    color: white;
+  /* responsive */
+  @media screen and (max-width: 1200px) {
+    #bl { display: none; }
+    .left, .main, .right {margin-bottom: 50px;}
+    .left { display: none; }
+    .left-copy { display: block; }
+    .date-right { display: none; }
+    .date-middle { display: block; }
+    .main { border: none; }
+    h2 { margin: 10px 0; }
   }
-
-  a:hover {
-    color: grey;
-  }
-
   @media screen and (max-width: 700px) {
-    body {
-      padding: 50% 10%;
-    }
-
-    .title {
-      display: block;
-      font-family: 'Cheltenham Tooled Bold';
-      font-size: 19px;
-    }
-
-    .head {
-      display: none;
-    }
+    #table_id td { padding: 0 0 20px 0; }
+    .break { display: none; }
+    .break-block { display: inline; }
+    #tags { text-align: center;}
+    .title { font-size: 50px; }
+    .bighed { font-size: 24px; }
+    #cover-art { width: 100%; }
+    #cover-art p { font-size: 24px; max-height: 200px; }
   }
 </style>
 </head>
 
 <body>
-  <div class="head">
-    <p>This is a writing website.</p>
-    <br><br>
-  </div>
-  <p class="title">THE 25 POST</p>
-  <p class="category"><a href="https://the25post.com/archives/pieces/jones#3">LATEST</a></p>
-  <p class="category"><a href="https://the25post.com/commentary">COMMENTARY</a></p>
-  <p class="category"><a href="https://the25post.com/nonfiction">NON / FICTION</a></p>
-  <p class="category"><a href="https://the25post.com/meta">META</a></p>
-  <p class="category"><a href="https://the25post.com/about">ABOUT</a></p>
+  <div class="meat">
+    <div class="row">
+      <!-- REMEMBER TO COPY LEFT INTO **LEFT-COPY** -->
+      <div class="left" style="flex:25%">
+        <h2>Featured</h2>
+        <a class="fill-div" href="https://the25post/com/archives/articles/newjeans">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">MUSIC</p>
+                <h3>&ldquo;Ditto,&rdquo; the NewJeans gateway drug</h3>
+                <small>23 December 2022</small>
+              </td>
+              <td>
+                <img src="https://newjeans.kr/imgs/window/new-folder-1/nj_ditto_5.jpg">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/kim-wexler">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">REVIEWS</p>
+                <h3>Notes on Kim Wexler</h3>
+                <small>16 December 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="https://d6ehjqrqtzoun.cloudfront.net/de135c4a-8855-4ffe-80cd-17894897e0af.png">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/hsu">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">MUSIC</p>
+                <h3>HSU</h3>
+                <p class="author">by <b>PETER LIU</b></p>
+                <small>5 December 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="archives/uploads/hsu-cover.png">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/korea-trumpist">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">POLITICS</p>
+                <h3>South Korea&rsquo;s Trumpist phase</h3>
+                <small>1 November 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="archives/uploads/korea-trumpist.webp">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <div id="tags" style="margin: 10px;">
+          Browse by tag:
+          &nbsp;&nbsp;&nbsp;
+          <small><a href="https://the25post.com/tags/music"><span>MUSIC</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span>
+          <small><a href="https://the25post.com/tags/politics"><span>POLITICS</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span>
+          <small><a href="https://the25post.com/tags/profiles"><span>PROFILES</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span>
+          <small><a href="https://the25post.com/tags/reviews"><span>REVIEWS</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span>
+          <small><a href="https://the25post.com/tags/sports"><span>SPORTS</span></a></small>
+        </div>
+      </div>
+      <div class="main" style="flex:50%;text-align:center;">
+        <div class="date-middle" style="font-size:14px;text-align:right;margin:10px">
+          <span><script>document.write(new Date().toDateString());</script></span>
+          <span id = "clock1" onload="currentTime()"></span>
+        </div>
+        <script>
+          function currentTime() {
+            let date = new Date(); 
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let session = "AM";
+
+            if(hh === 0){
+                hh = 12;
+            }
+            if(hh > 12){
+                hh = hh - 12;
+                session = "PM";
+            }
+
+            hh = (hh < 10) ? "0" + hh : hh;
+            mm = (mm < 10) ? "0" + mm : mm;
+            ss = (ss < 10) ? "0" + ss : ss;
+              
+            let time = hh + ":" + mm + ":" + ss + " " + session;
+
+            document.getElementById("clock1").innerText = time; 
+            let t = setTimeout(function(){ currentTime() }, 1000);
+          }
+
+          currentTime();
+        </script>
+        <a href=""><p class="title">THE 25 POST</p></a>
+        <div>
+          <span class="category"><a href="https://the25post.com/commentary">COMMENTARY</a></span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="category"><a href="https://the25post.com/nonfiction">NON / FICTION</a></span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="category"><a href="https://the25post.com/meta">META</a></span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="category"><a href="https://the25post.com/about">ABOUT</a></span>
+        </div>
+        <div style="height:30px"></div>
+        <a class="fill-div" href="https://the25post.com/archives/pieces/jones#3">
+          <small class="article-tag">NON / FICTION</small>&nbsp;
+          <h3 class="bighed">3. The Last Boy on Earth</h3>
+          <div id="cover-art">
+            <p>But he also found beauty in the ruins, glimpses of the world that had once been. He discovered libraries and museums, filled with the knowledge of ages past. He climbed to the tops of towering skyscrapers, gazing out at the ruins spread out before him. And as he journeyed, the boy began to understand that the world was more than just a place of destruction. It was a place of hope and possibility, a place where he could find meaning and purpose.</p>
+          </div>
+        </a>
+        <div style="height:20px"></div>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://the25post.com/archives/pieces/jones"><h3 style="margin: 0 0 10px 0;display: inline;">One must imagine Jones happy</h3></a>
+        <div style="margin:auto;" id="jones">
+          <a href="https://the25post.com/archives/pieces/jones#1"><small>1. THE CIGARETTE STORE</small></a>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <a href="https://the25post.com/archives/pieces/jones#2"><small>2. THE HAND WE WERE DEALT</small></a>
+        </div>
+        
+      </div>
+      <div class="left left-copy" style="flex:25%">
+        <h2>Featured</h2>
+        <a class="fill-div" href="https://the25post/com/archives/articles/newjeans">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">MUSIC</p>
+                <h3>&ldquo;Ditto,&rdquo; the NewJeans gateway drug</h3>
+                <small>23 December 2022</small>
+              </td>
+              <td>
+                <img src="https://newjeans.kr/imgs/window/new-folder-1/nj_ditto_5.jpg">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/kim-wexler">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">REVIEWS</p>
+                <h3>Notes on Kim Wexler</h3>
+                <small>16 December 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="https://d6ehjqrqtzoun.cloudfront.net/de135c4a-8855-4ffe-80cd-17894897e0af.png">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/hsu">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">MUSIC</p>
+                <h3>HSU</h3>
+                <p class="author">by <b>PETER LIU</b></p>
+                <small>5 December 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="archives/uploads/hsu-cover.png">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/korea-trumpist">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">POLITICS</p>
+                <h3>South Korea&rsquo;s Trumpist phase</h3>
+                <small>1 November 2022</small>
+              </td>
+              <td id="coverimg">
+                <img src="archives/uploads/korea-trumpist.webp">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <div id="tags" style="margin: 10px;">
+          Browse by tag:
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <small><a href="https://the25post.com/tags/music"><span>MUSIC</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <small><a href="https://the25post.com/tags/politics"><span>POLITICS</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <small><a href="https://the25post.com/tags/profiles"><span>PROFILES</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <small><a href="https://the25post.com/tags/reviews"><span>REVIEWS</span></a></small>
+          <span class="break">&nbsp;&nbsp;&nbsp;</span><span class="break-block"><br></span>
+          <small><a href="https://the25post.com/tags/sports"><span>SPORTS</span></a></small>
+        </div>
+      </div>
+      <div class="right" style="flex:25%">
+        <div class="date-right" style="font-size:14px;text-align:right;margin:10px">
+          <span><script>document.write(new Date().toDateString());</script></span>
+          <span id = "clock" onload="currentTime()"></span>
+        </div>
+        <script>
+          function currentTime() {
+            let date = new Date(); 
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let session = "AM";
+
+            if(hh === 0){
+                hh = 12;
+            }
+            if(hh > 12){
+                hh = hh - 12;
+                session = "PM";
+            }
+
+            hh = (hh < 10) ? "0" + hh : hh;
+            mm = (mm < 10) ? "0" + mm : mm;
+            ss = (ss < 10) ? "0" + ss : ss;
+              
+            let time = hh + ":" + mm + ":" + ss + " " + session;
+
+            document.getElementById("clock").innerText = time; 
+            let t = setTimeout(function(){ currentTime() }, 1000);
+          }
+
+          currentTime();
+        </script>
+        <a class="fill-div" href="https://the25post.com/archives/meta/in-other-news">
+          <table id="table_id">
+            <tr>
+              <td style="width: 100%;">
+                <h2 style="margin: 0;font-size:24px;">In other news</h2>
+                <p style="margin: 10px 0;"><i>What&rsquo;s happening outside.</i></p>
+                <img src="https://media.npr.org/assets/img/2022/02/11/gettyimages-1173983701_custom-78c1f6bfa15249c8025cf17710f5d2d129945a7a-s900-c85.webp">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/god-look">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">COMMENTARY</p>
+                <h3>What does God look like?</h3>
+                <small>18 December 2022</small>
+              </td>
+              <td>
+                <img src="archives/uploads/god-look-cover.png">
+              </td>
+            </tr>
+          </table>
+        </a>
+        <a class="fill-div" href="https://the25post.com/archives/articles/luka-doncic">
+          <table id="table_id" style="text-align:left;">
+            <tr>
+              <td>
+                <p class="article-tag" style="font-size:14px;">SPORTS</p>
+                <h3>The ups and ups of Luka Doncic</h3>
+                <small>5 December 2022</small>
+              </td>
+              <td>
+                <img src="https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2022-05/Luka%20Doncic%20Dallas%20Mavericks_0.jpeg?itok=lmjaio-l">
+              </td>
+            </tr>
+          </table>
+        </a>
+        
+      </div>
+    </div>
+  </div>  
 </body>
 </html>
