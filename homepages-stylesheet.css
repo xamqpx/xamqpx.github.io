@@ -131,12 +131,11 @@
   }
 
   tr {
-    -webkit-transition: background-color 0.4s linear;
-    -ms-transition: background-color 0.4s linear;
-    transition: background-color 0.4s linear;
+    background-color: transparent;
+    transition: background-color 0.8s;
   }
 
-  tr:hover { background: #e0e0e0; }
+  tr:hover { background-color: #e0e0e0; }
   tr h3:hover {color: black; }
   
   @media screen and (max-width: 700px) {
