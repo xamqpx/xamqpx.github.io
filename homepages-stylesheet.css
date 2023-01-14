@@ -62,9 +62,13 @@
   }
 
   .featured {
-    background:#e4e4e4;
     color:black;
-    padding: 20px;
+    padding: 10px;
+    transition: background-color 0.4s;
+  }
+
+  .featured:hover {
+    background-color: #e0e0e0;
   }
 
   .featured img, .diary img {
@@ -74,7 +78,7 @@
   }
 
   .feat-title {
-    height: 180px;
+    height: 250px;
   }
 
   .diary-title {
@@ -130,13 +134,13 @@
     padding: 20px;
   }
 
-  tr {
+  .spill tr {
     background-color: transparent;
     transition: background-color 0.8s;
   }
 
-  tr:hover { background-color: #e0e0e0; }
-  tr h3:hover {color: black; }
+  .spill tr:hover { background-color: #e0e0e0; cursor: pointer }
+  .spill tr h3:hover {color: black; }
   
   @media screen and (max-width: 700px) {
     #table_id td {
