@@ -64,11 +64,14 @@
   .featured {
     color:black;
     padding: 10px;
+  }
+
+  .row .rawr {
     transition: background-color 0.4s;
   }
 
-  .featured:hover {
-    background-color: #e0e0e0;
+  .row .rawr:hover {
+    background: #e0e0e0;
   }
 
   .featured img, .diary img {
@@ -136,11 +139,15 @@
 
   .spill tr {
     background-color: transparent;
-    transition: background-color 0.8s;
   }
 
-  .spill tr:hover { background-color: #e0e0e0; cursor: pointer }
-  .spill tr h3:hover {color: black; }
+  .spill .rawr {
+    transition: background-color 0.4s;
+  }
+
+  .spill .rawr:hover {
+    background-color: #e0e0e0;
+  }
   
   @media screen and (max-width: 700px) {
     #table_id td {
