@@ -92,3 +92,38 @@
     font-family: 'Noto';
     src: url('fonts/NotoSerifKR-Regular.otf');
   }
+
+  @font-face {
+    font-family: 'Kepler';
+    src: url('fonts/KeplerStd-Light.otf');
+  }
+
+  @font-face {
+    font-family: 'Kepler Italic';
+    src: url('fonts/KeplerStd-LightIt.otf');
+  }
+
+  @font-face {
+    font-family: 'Kepler Bold';
+    src: url('fonts/KeplerStd-BoldDisp.otf');
+  }
+
+  @font-face {
+    font-family: 'Kepler Bold Extended';
+    src: url('fonts/KeplerStd-BoldExtDisp.otf');
+  }
+
+  @font-face {
+    font-family: 'Kepler Caption Display';
+    src: url('fonts/KeplerStd-MediumCnDisp.otf');
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('fonts/GothamBook.ttf');
+  }
+
+  @font-face {
+    font-family: 'Gotham Bold';
+    src: url('fonts/Gotham-Bold.otf');
+  }
