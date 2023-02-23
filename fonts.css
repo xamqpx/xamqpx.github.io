@@ -114,6 +114,11 @@
   }
 
   @font-face {
+    font-family: 'Kepler Bold Caption Display';
+    src: url('fonts/KeplerStd-BoldCnDisp.otf');
+  }
+
+  @font-face {
     font-family: 'Kepler Caption Display';
     src: url('fonts/KeplerStd-MediumCnDisp.otf');
   }
