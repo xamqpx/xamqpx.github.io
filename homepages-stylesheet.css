@@ -129,7 +129,6 @@
   }
 
   #table_id td {
-    display: inline-block;
     width: 50%;
     vertical-align: top;
     margin: 20px 0 20px 0;
