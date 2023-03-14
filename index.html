@@ -32,7 +32,7 @@
   <meta property="og:url" content="https://the25post.com/">
   <meta content="HOME &mdash; The 25 Post" property="og:title">
   <meta content='This is a writing website.' property="og:description">
-  <meta content='https://the25post.com/archives/uploads/dalle-index.png' property='og:image'>
+  <meta content='https://the25post.com/archives/uploads/twentyfivepostheader.jpg' property='og:image'>
   <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
   <meta name="twitter:card" content="summary_large_image">
   
@@ -80,9 +80,10 @@
     to { opacity: 1; transform: translate(0px); }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1000px) {
     .container { padding: 0; }
-    .divide { display: none; }
+    .popular img, .featured img, .popular .title, .feat-title { height: auto; }
+    .popular .side { border-bottom: 1px solid grey; margin-top: 20px; padding-bottom: 20px; }
   }
 </style>
 </head>
