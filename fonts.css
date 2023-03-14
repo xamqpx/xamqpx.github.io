@@ -132,3 +132,8 @@
     font-family: 'Gotham Bold';
     src: url('fonts/Gotham-Bold.otf');
   }
+
+  @font-face {
+    font-family: 'Le Monde Journal';
+    src: url('fonts/le-monde-journal-std-regular.otf');
+  }

@@ -33,7 +33,7 @@
   }
   
   body {
-    font-family: "Caslon";
+    font-family: "Le Monde Journal";
     margin: 0;
     background: white;
     color: black;
@@ -192,11 +192,6 @@
     font-family: "Work Sans";
     font-size: 14px;
     margin: 0;
-  }
-
-  p i {
-    font-family: "Caslon Italic";
-    font-style: normal;
   }
   
   .content {
