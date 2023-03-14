@@ -80,53 +80,26 @@
 </head>
 
 <body>
-  <div class="navbar" id="navbar">
-    <div class="navbar-left">
-      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-      
-    </div>
-    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-      <a href="https://the25post.com/commentary">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-      <a href="https://the25post.com/meta">META</a>
-      <a href="https://the25post.com/about">ABOUT</a>
-    </div>
+  <div id="navbar">
+    <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+    <p style="margin:0;"><small>A writing website.</small></p>
+    
   </div>
+</div>
 
-  <script>
-    function toggleNav() {
-      var element = document.getElementById("navbar-collapse");
-      var button = document.getElementById("menu");
-      if (element.style.display == "block") {
-        element.style.display = "none";
-        button.innerHTML = "&equiv;";
-      } else {
-        element.style.display = "block";
-        element.style.height = "170px";
-        button.innerHTML = "&times;";
-      } 
-    }
-    window.onscroll = function() {scrollFunction()};
+<script>
+  window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        document.getElementById("navbar").style.padding = "0px";
-        document.getElementById("logo").style.fontSize = "16px";
-        document.getElementById("menu").style.fontSize = "16px";
-      } else {
-        document.getElementById("navbar").style.padding = "10px 10px";
-        document.getElementById("logo").style.fontSize = "20px";
-        document.getElementById("menu").style.fontSize = "20px";
-      }
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      document.getElementById("navbar").style.padding = "20px";
+      document.getElementById("logo").style.fontSize = "24px";
+    } else {
+      document.getElementById("navbar").style.padding = "30px";
+      document.getElementById("logo").style.fontSize = "40px";
     }
-
-    window.onload = function() {navbarCollapse()};
-    function navbarCollapse() {
-      document.getElementById("navbar").style.padding = "10px 10px";
-      document.getElementById("logo").style.fontSize = "20px";
-      document.getElementById("menu").style.fontSize = "20px";
-    }
-  </script>
+  }
+</script>
 <div class="row">
     <div class="side">
 
@@ -173,7 +146,7 @@
         function koreanToEnglish() {
           const replace = document.getElementById("replace")
           const replace_title = document.getElementById("replace_title")
-          replace_title.innerHTML = "<span style='font-family: Cheltenham Bold;font-weight:normal;font-size:38px;'>MacArthur Park: Koreatown in photos and an Uber</span>"
+          replace_title.innerHTML = "<span class='headline'>MacArthur Park: Koreatown in photos and an Uber</span>"
           replace.innerHTML = "<div style='font-family:Caslon'><p><inline class='padded-dropcap'>T</inline>he Uber swerved in, and thank god it did. The record heat wave in the city was on the verge of knocking us the fuck out. We're in Koreatown, Los Angeles. This whole neighborhood feels a little disorienting, even liminal, as someone who's lived in both Korea and America. Along soot-blackened streets you see the familiar signs, scrawled in often ancient (by that, I mean like 1980s &mdash; sorry) Korean, advertising tires, CPA services, quaint and cute little cafes, the whole deal.</p><p>&ldquo;Come on, get in,&rdquo; the driver said in Korean.</p><p>Of course the driver was Korean. Middle-aged. I have no idea how he immediately knew that I was; definitely not the name. Maybe I look the part. I've never really thought about it, never had to.</p><p>&ldquo;Don't got all the time in the world.&rdquo;</p><p>The car screeched and we were off. There was the customary silence, and then the driver spoke.</p><p>&ldquo;So, MacArthur Park?&rdquo;</p><p>We'd chosen the destination on a whim, Peter and I. We were bored, and we'd brought our cameras.</p><p>&ldquo;Yeah,&rdquo; I said.</p><p>&ldquo;Huh. There's jackshit there, you know.&rdquo;</p><p>&ldquo;Oh.&rdquo;</p><p>&ldquo;I mean, of the all the places you could've gone in L.A., I don't get why here.&rdquo;</p><p>&ldquo;We just wanted to see it, I guess. Why?&rdquo;</p><p>&ldquo;Just a shit ton of beggars. Crackheads. There aren't any Koreans there, you know. Just a bunch of Hispanics. The Koreans go to better places.&rdquo;</p><p>It was about as much what I expected to hear.</p><p>&ldquo;That's just how L.A. is,&rdquo; I say back. He seemed to have nothing to say to that.</p><p>I kept talking, and apparently he thought we were tourists; by the time I was explaining to him that we were students in L.A., it was too late. We were at our destination.</p><p>We got out of the car. It was typical for a guy like him to say shit like that, but it stuck with me. Korea's come to a point where our people can't stand to see anything unclean or poor; and as immigrants to this country, especially, the desire to distance themselves from so-perceived poverty, and the need to safekeep their identity and their pride, seem to manifest as blatant racism and ethnocentrism in these people. There&rsquo;s no use arguing about it, though. For them, it isn't about being racist, it's about protection, no matter the (arguably unnecessary) cost. The riots in &rsquo;92 didn't help much either in that respect. Many of our parents are the same way.</p><p>As we walked around, it did hurt a little to know that despite all the singing and dancing, the celebrations of life and the laughter in conversations, the kids running about, the Bible study group singing their hearts out accompanied by a guitar &mdash; they would simply be slotted away as an other.</p><p>To at least some extent, the driver was right. Whenever we passed planted trees by the lake, there was that familiar stench of marked territory, and there were of course the few men and women hobbling around with their faces cracked and sagging. The staples of an urban landscape. It wasn't really a place where I wanted to stay for too long; but for the first time in a long time, it did feel like a place where people came and went to live, and that much was a breath of fresh air. Enjoying these little moments, escapades, as adventures my suburban ass never stepped foot on, is what keeps me going in what is otherwise a hellscape.&nbsp;&#9632;</p></div>"
         }
         function englishToKorean() {

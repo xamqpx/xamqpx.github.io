@@ -65,60 +65,33 @@
             </style>
     </head>
     <body>
-        <div class="navbar" id="navbar">
-            <div class="navbar-left">
-              <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-              
-            </div>
-            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-              <a href="https://the25post.com/commentary">COMMENTARY</a>
-              <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-              <a href="https://the25post.com/meta">META</a>
-              <a href="https://the25post.com/about">ABOUT</a>
-            </div>
+        <div id="navbar">
+            <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+            <p style="margin:0;"><small>A writing website.</small></p>
+            
           </div>
-        
-          <script>
-            function toggleNav() {
-              var element = document.getElementById("navbar-collapse");
-              var button = document.getElementById("menu");
-              if (element.style.display == "block") {
-                element.style.display = "none";
-                button.innerHTML = "&equiv;";
-              } else {
-                element.style.display = "block";
-                element.style.height = "170px";
-                button.innerHTML = "&times;";
-              } 
+        </div>
+      
+        <script>
+          window.onscroll = function() {scrollFunction()};
+      
+          function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+              document.getElementById("navbar").style.padding = "20px";
+              document.getElementById("logo").style.fontSize = "24px";
+            } else {
+              document.getElementById("navbar").style.padding = "30px";
+              document.getElementById("logo").style.fontSize = "40px";
             }
-            window.onscroll = function() {scrollFunction()};
-        
-            function scrollFunction() {
-              if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                document.getElementById("navbar").style.padding = "0px";
-                document.getElementById("logo").style.fontSize = "16px";
-                document.getElementById("menu").style.fontSize = "16px";
-              } else {
-                document.getElementById("navbar").style.padding = "10px 10px";
-                document.getElementById("logo").style.fontSize = "20px";
-                document.getElementById("menu").style.fontSize = "20px";
-              }
-            }
-        
-            window.onload = function() {navbarCollapse()};
-            function navbarCollapse() {
-              document.getElementById("navbar").style.padding = "10px 10px";
-              document.getElementById("logo").style.fontSize = "20px";
-              document.getElementById("menu").style.fontSize = "20px";
-            }
-          </script>
+          }
+        </script>
 
         <div class="row">
             <div class="side"></div>
             <div class="main">
                 <div id="migrants-interactive">
                     <h3>INTERACTIVE</h3>
-                    <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px;text-align:left">Where Republican governors are sending migrants</h2>
+                    <h2 class="headline">Where Republican governors are sending migrants</h2>
                     <p>19 September 2022</p>
                     <br>
                     <p>On 6 April 2022, Texas governor Greg Abbott directed the state's Division of Emergency Management to begin sending migrants on buses to Washington, D.C., writing: &ldquo;The U.S. Department of Homeland Security (DHS) has no real plan for addressing this unprecedented surge of illegal aliens but may resort to releasing groups of them in Texas communities whose resources are already overwhelmed. Texans cannot continue to shoulder the burdens imposed by open-border advocates in other parts of the country.&rdquo;</p>

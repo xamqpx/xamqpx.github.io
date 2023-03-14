@@ -41,58 +41,31 @@
 
     </head>
     <body>
-        <div class="navbar" id="navbar">
-            <div class="navbar-left">
-              <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-              
-            </div>
-            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-              <a href="https://the25post.com/commentary">COMMENTARY</a>
-              <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-              <a href="https://the25post.com/meta">META</a>
-              <a href="https://the25post.com/about">ABOUT</a>
-            </div>
-          </div>
+      <div id="navbar">
+        <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+        <p style="margin:0;"><small>A writing website.</small></p>
         
-          <script>
-            function toggleNav() {
-              var element = document.getElementById("navbar-collapse");
-              var button = document.getElementById("menu");
-              if (element.style.display == "block") {
-                element.style.display = "none";
-                button.innerHTML = "&equiv;";
-              } else {
-                element.style.display = "block";
-                element.style.height = "170px";
-                button.innerHTML = "&times;";
-              } 
-            }
-            window.onscroll = function() {scrollFunction()};
-        
-            function scrollFunction() {
-              if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                document.getElementById("navbar").style.padding = "0px";
-                document.getElementById("logo").style.fontSize = "16px";
-                document.getElementById("menu").style.fontSize = "16px";
-              } else {
-                document.getElementById("navbar").style.padding = "10px 10px";
-                document.getElementById("logo").style.fontSize = "20px";
-                document.getElementById("menu").style.fontSize = "20px";
-              }
-            }
-        
-            window.onload = function() {navbarCollapse()};
-            function navbarCollapse() {
-              document.getElementById("navbar").style.padding = "10px 10px";
-              document.getElementById("logo").style.fontSize = "20px";
-              document.getElementById("menu").style.fontSize = "20px";
-            }
-          </script>
+      </div>
+    </div>
+  
+    <script>
+      window.onscroll = function() {scrollFunction()};
+  
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("navbar").style.padding = "20px";
+          document.getElementById("logo").style.fontSize = "24px";
+        } else {
+          document.getElementById("navbar").style.padding = "30px";
+          document.getElementById("logo").style.fontSize = "40px";
+        }
+      }
+    </script>
 
         <div class="row">
             <div class="side">
                 <a href="https://the25post.com/tags/music"><h3>MUSIC</h3></a>
-                <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px">Between Springhill and Quecreek</h2>
+                <h2 class="headline">Between Springhill and Quecreek</h2>
                 <p class="author">by <b>RYAN KILCOIN</b></p>
                 <p>22 January 2023</p>
             </div>

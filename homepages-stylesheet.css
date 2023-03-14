@@ -7,6 +7,8 @@
     height: auto;
   }
 
+   p i { font-family: 'Le Monde Journal'; }
+
   
   .clearfix::after {
     display: block;
@@ -35,25 +37,16 @@
   body {
     font-family: "Le Monde Journal";
     margin: 0;
-    background: white;
-    color: black;
+    background: black;
+    color: white;
     font-size: 19px;
     text-align: left;
     line-height: 1.3;
   }
 
-  .long-read {
-    color: black;
-  }
-
   a:link, a:visited, a:active {
     text-decoration: none;
     color: black;
-  }
-
-  .diary {
-    color: black;
-    padding: 10px;
   }
 
   .meat {
@@ -62,15 +55,11 @@
   }
 
   .featured {
-    color:black;
+    color:white;
   }
 
   .row .rawr {
     transition: background-color 0.4s;
-  }
-
-  .row .rawr:hover {
-    background: #e0e0e0;
   }
 
   .featured img, .diary img {
@@ -90,36 +79,30 @@
   
   .featured a:link, a:visited, a:active {
     text-decoration: none;
-    color:black;
+    color:white;
   }
 
   h2 {
     transition: color 0.3s;
-    font-family: "Cheltenham Bold";
+    font-family: "Kepler Bold Extended";
     font-weight: normal;
     font-size: 28px;
   }
 
   h3 {
     transition: color 0.3s;
-    font-family: "Cheltenham Bold";
+    font-family: "Kepler Bold Extended";
     font-weight: normal;
     font-size: 28px;
   }
 
   h3:hover {
-    color: #b0b0b0;
     cursor: pointer;
   }
 
   .spill {
     color: black;
     padding: 20px;
-  }
-  
-  .spill a:link, a:visited, a:active {
-    text-decoration: none;
-    color:black;
   }
 
   #table_id {
@@ -159,7 +142,7 @@
   }
 
   .spill h3 {
-    font-family: "Cheltenham Bold";
+    font-family: "Kepler Bold Extended";
     font-weight: normal;
     font-size: 28px;
   }
@@ -181,7 +164,7 @@
   }
 
   .photo-credit {
-    font-family:Work Sans;
+    font-family: 'Work Sans';
     font-size:14px;
     text-align: left;
     margin: 0 0 2%;
@@ -266,7 +249,9 @@
   }
 
   #logo {
-    transition: 0.4s;
+    color: white;
+    font-size: 30px;
+    font-family: 'Megalito';
   }
   
   .subheading {
@@ -274,7 +259,7 @@
   }
 
   .subheading h2 {
-    font-family: "Cheltenham Bold";
+    font-family: "Kepler Bold Extended";
     font-weight: normal;
     font-size: 36px;
     margin: 20px 0 0 0;
@@ -412,4 +397,29 @@
 
 .korean-text {
   font-family: 'Noto';
+}
+
+.container h2 { font-family: 'Megalito'; }
+.drop-in { animation: drop-in 2s ease 200ms backwards; }
+.drop-in-2 { animation: drop-in 2s ease 1000ms backwards; }
+.drop-in-3 { animation: drop-in 2s ease 1200ms backwards; }
+.drop-in-4 { animation: drop-in 2s ease 1400ms backwards; }
+.drop-in-5 { animation: drop-in 2s ease 1600ms backwards; }
+.the-rest { animation: drop-in 2s ease 2000ms backwards; }
+
+@keyframes drop-in {
+  from { opacity: 0;  transform: translateY(100px); }
+  to { opacity: 1; transform: translate(0px); }
+}
+
+@media screen and (max-width: 700px) {
+  .container { padding: 0; }
+}
+
+.container .sub:hover { color: white; text-decoration: underline; }
+
+.headline {
+  font-family: 'Kepler Bold Extended';
+  font-weight:normal;
+  font-size: 38px;
 }

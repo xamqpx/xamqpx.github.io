@@ -40,59 +40,32 @@
     </head>
 
 <body>
-  <div class="navbar" id="navbar">
-    <div class="navbar-left">
-      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-      
-    </div>
-    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-      <a href="https://the25post.com/commentary">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-      <a href="https://the25post.com/meta">META</a>
-      <a href="https://the25post.com/about">ABOUT</a>
-    </div>
+  <div id="navbar">
+    <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+    <p style="margin:0;"><small>A writing website.</small></p>
+    
   </div>
+</div>
 
-  <script>
-    function toggleNav() {
-      var element = document.getElementById("navbar-collapse");
-      var button = document.getElementById("menu");
-      if (element.style.display == "block") {
-        element.style.display = "none";
-        button.innerHTML = "&equiv;";
-      } else {
-        element.style.display = "block";
-        element.style.height = "170px";
-        button.innerHTML = "&times;";
-      } 
-    }
-    window.onscroll = function() {scrollFunction()};
+<script>
+  window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        document.getElementById("navbar").style.padding = "0px";
-        document.getElementById("logo").style.fontSize = "16px";
-        document.getElementById("menu").style.fontSize = "16px";
-      } else {
-        document.getElementById("navbar").style.padding = "10px 10px";
-        document.getElementById("logo").style.fontSize = "20px";
-        document.getElementById("menu").style.fontSize = "20px";
-      }
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      document.getElementById("navbar").style.padding = "20px";
+      document.getElementById("logo").style.fontSize = "24px";
+    } else {
+      document.getElementById("navbar").style.padding = "30px";
+      document.getElementById("logo").style.fontSize = "40px";
     }
-
-    window.onload = function() {navbarCollapse()};
-    function navbarCollapse() {
-      document.getElementById("navbar").style.padding = "10px 10px";
-      document.getElementById("logo").style.fontSize = "20px";
-      document.getElementById("menu").style.fontSize = "20px";
-    }
-  </script>
+  }
+</script>
 
 
 <div class="row">
     <div class="side">
         <h3>COMMENTARY</h3>
-        <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px;text-align:left">What does God look like?</h2>
+        <h2 class="headline">What does God look like?</h2>
         <p>18 December 2022</p>
         
     </div>
@@ -122,12 +95,12 @@
 
       <p>Responses have been edited for length and clarity.</p>
 
-      <div style="background:#e0e0e0; padding:20px;">
+      <div style="background:#525252; padding:20px;">
         <p>To me, God is caring and kind. He always looks out for everyone&rsquo;s best interests and wants the best for you. He has a plan for your life &#8230; that will make you the greatest version of yourself.</p>
         <p><i>&mdash; Anonymous, identified as Christian</i></p>
       </div>
       <br>
-      <div style="background:#e0e0e0; padding:20px;">
+      <div style="background:#525252; padding:20px;">
         <p>If we take the creative angle, we can interpret God as a sort of eldritch or cosmic entity. Too immense to perceive in any meaningful way. &#8230; The same way a 2D shape cannot comprehend the nature of a 3D shape, a human mortal cannot comprehend the nature of God &mdash; a being of higher dimensions. However, in Islam, we are given a series of characteristics that we can use to build our abstract perceptions, such as &ldquo;The Kindest&rdquo; and &ldquo;The All Powerful.&rdquo;</p>
         
       <p><i>&mdash; Shadman, identified as Muslim</i></p>
@@ -142,14 +115,14 @@
 
       <p>I was particularly moved by a submission from Akhila, who identified as Hindu but non-practicing. Her response is presented here in full:</p>
 
-      <div style="background:#e0e0e0; padding:20px;">
+      <div style="background:#525252; padding:20px;">
         <p>God, to me, looks like when I saw a man walk up to a woman and ask her if she needed a hug, at 6 a.m. outside a Starbucks, in 40-degree weather. I see divinity in people dancing in the streets at a pop up dance floor in Berlin. I see divinity in medieval art, yearning for the love and comfort of another living being. I see divinity in the plants that create my air, and my dog that eats his own poop. I see it in the carvings of sculptors, the stonemasonry of architects from the 1500s, and in the performances of actors in my Shakespeare class. In the laugh of someone on the train, the hands of my friends as they show me memes on their phones, and the eyes of someone as we hold eye contact and understand chronic illness, together. I grew up Hindu so maybe that&rsquo;s why I see divinity in everything; maybe it&rsquo;s a chicken-or-egg sort of thing. I see it in myself, my world around me. The table and chair I eat on, the cereal and coffee. I see divinity in action and in silence. In the scarves I knit and the smiles on my friends' faces as I ask them if they would like to hold my ball of yarn as they tell me about their day. I see it in life and in death. It&rsquo;s everywhere, yet I guess it&rsquo;s nowhere. I think we are all divine inside, as we live and breathe. And return to our earth, back into our air. We never leave each other. We are always with one another. Which looks like divinity to me.</p>
       </div>
       <br>
 
       <p>Of Satan, Akhila wrote:</p>
 
-      <div style="background:#e0e0e0; padding:20px;">
+      <div style="background:#525252; padding:20px;">
         <p>It&rsquo;s that thing that lives within all of us, just as we are divine. We hold it within us to manifest something that is not pleasant. Maybe necessary, maybe as defense; maybe we don&rsquo;t think about it, or think about it too much. Even in Christian lore, Satan is God&rsquo;s child, is he not? He is divinity incarnate &mdash; yet a different form. We, as humans, are capable of immense range and hold so much within us at all times. We use them at different times, and to pretend otherwise is a little negligent in my opinion.</p>
       </div>
       <br>

@@ -42,7 +42,7 @@
             }
 
             .sub {
-                color: #525252;
+                color: #e0e0e0;
                 font-size: 21px;
             }
 
@@ -51,7 +51,7 @@
             }
 
             .feed-item-title {
-                font-family: "Cheltenham Bold";
+                font-family: "Kepler Bold Extended";
             }
 
             .feed-item-title a {
@@ -109,60 +109,33 @@
          </style>
     </head>
     <body>
-        <div class="navbar" id="navbar">
-            <div class="navbar-left">
-              <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-              
-            </div>
-            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-              <a href="https://the25post.com/commentary">COMMENTARY</a>
-              <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-              <a href="https://the25post.com/meta">META</a>
-              <a href="https://the25post.com/about">ABOUT</a>
-            </div>
+        <div id="navbar">
+            <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+            <p style="margin:0;"><small>A writing website.</small></p>
+            
           </div>
-        
-          <script>
-            function toggleNav() {
-              var element = document.getElementById("navbar-collapse");
-              var button = document.getElementById("menu");
-              if (element.style.display == "block") {
-                element.style.display = "none";
-                button.innerHTML = "&equiv;";
-              } else {
-                element.style.display = "block";
-                element.style.height = "170px";
-                button.innerHTML = "&times;";
-              } 
+        </div>
+      
+        <script>
+          window.onscroll = function() {scrollFunction()};
+      
+          function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+              document.getElementById("navbar").style.padding = "20px";
+              document.getElementById("logo").style.fontSize = "24px";
+            } else {
+              document.getElementById("navbar").style.padding = "30px";
+              document.getElementById("logo").style.fontSize = "40px";
             }
-            window.onscroll = function() {scrollFunction()};
-        
-            function scrollFunction() {
-              if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                document.getElementById("navbar").style.padding = "0px";
-                document.getElementById("logo").style.fontSize = "16px";
-                document.getElementById("menu").style.fontSize = "16px";
-              } else {
-                document.getElementById("navbar").style.padding = "10px 10px";
-                document.getElementById("logo").style.fontSize = "20px";
-                document.getElementById("menu").style.fontSize = "20px";
-              }
-            }
-        
-            window.onload = function() {navbarCollapse()};
-            function navbarCollapse() {
-              document.getElementById("navbar").style.padding = "10px 10px";
-              document.getElementById("logo").style.fontSize = "20px";
-              document.getElementById("menu").style.fontSize = "20px";
-            }
-          </script>
+          }
+        </script>
         
         <div class="row">
             <div class="side" style="flex:30%l">
                 <br>
-                <div style="background:#e4e4e4; padding: 20px;">
+                <div style="background:#e0e0e0; padding: 20px;">
                     <h3>FEEDS</h3>
-                    <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px">In other news</h2>
+                    <h2 class="headline">In other news</h2>
                     <p><i>What&rsquo;s happening outside.</i></p>
                     <p class="photo-credit">R.S.S. feeds courtesy of respective publications. Opinions expressed in articles featured on this page are the authors&rsquo; and are not endorsed by the Post. Full articles may require subscriptions to view.</p>
                 </div>
@@ -172,19 +145,19 @@
                 <hr style="width:95%;margin: 50px auto 50px auto;">
                 <div class="countup" id="countup1">
                   <p style="text-align:left">Russia's invasion of Ukraine has been ongoing for:</p>
-                  <span class="timeel days" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                  <span class="timeel days" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                   &nbsp;
                   <span class="timeel timeRefDays" style="font-family:Work Sans;font-size:14px">days</span>
                   &nbsp;
-                  <span class="timeel hours" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                  <span class="timeel hours" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                   &nbsp;
                   <span class="timeel timeRefHours" style="font-family:Work Sans;font-size:14px">h</span>
                   &nbsp;<br id="break">
-                  <span class="timeel minutes" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                  <span class="timeel minutes" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                   &nbsp;
                   <span class="timeel timeRefMinutes" style="font-family:Work Sans;font-size:14px">m</span>
                   &nbsp;
-                  <span class="timeel seconds" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                  <span class="timeel seconds" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                   &nbsp;
                   <span class="timeel timeRefSeconds" style="font-family:Work Sans;font-size:14px">s</span>
                   <br><br>
@@ -193,19 +166,19 @@
                 <hr style="width:95%;margin: 50px auto 50px auto;">
                 <div class="countup" id="countup2">
                     <p style="text-align:left">Given current emission trends, Earth will reach 1.5 °C of global warming in:</p>
-                    <span class="timeel days" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                    <span class="timeel days" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                     &nbsp;
                     <span class="timeel timeRefDays" style="font-family:Work Sans;font-size:14px">days</span>
                     &nbsp;
-                    <span class="timeel hours" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                    <span class="timeel hours" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                     &nbsp;
                     <span class="timeel timeRefHours" style="font-family:Work Sans;font-size:14px">h</span>
                     &nbsp;<br id="break">
-                    <span class="timeel minutes" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                    <span class="timeel minutes" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                     &nbsp;
                     <span class="timeel timeRefMinutes" style="font-family:Work Sans;font-size:14px">m</span>
                     &nbsp;
-                    <span class="timeel seconds" style="font-family:Cheltenham Bold;font-size:28px">00</span>
+                    <span class="timeel seconds" style="font-family:Kepler Bold Extended;font-size:28px">00</span>
                     &nbsp;
                     <span class="timeel timeRefSeconds" style="font-family:Work Sans;font-size:14px">s</span>
                     <br><br>
@@ -267,12 +240,6 @@
                         }
 
                 </script>
-
-                <h2>Hanyung Politics <span><a href="https://www.instagram.com/hanyungpolitics/" class="fa fa-instagram" style="text-decoration:none;"></a> <a href="https://twitter.com/hanyungpolitics" class="fa fa-twitter" style="text-decoration:none;"></a></span></h2>
-                <p><i>Korean news in the English language.</i></p>
-                <a class="twitter-timeline" data-width="400" data-height="1000" href="https://twitter.com/hanyungpolitics?ref_src=twsrc%5Etfw">Tweets by hanyungpolitics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                <hr style="width:95%;margin: 50px auto 50px auto;">
                 
                 <h2>The latest in sports</h2>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/2560px-ESPN_wordmark.svg.png">

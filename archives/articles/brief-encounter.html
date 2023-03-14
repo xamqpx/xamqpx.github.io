@@ -41,65 +41,37 @@
 
     </head>
     <body>
-        <div class="navbar" id="navbar">
-            <div class="navbar-left">
-              <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-              
-            </div>
-            <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-              <a href="https://the25post.com/commentary">COMMENTARY</a>
-              <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-              <a href="https://the25post.com/meta">META</a>
-              <a href="https://the25post.com/about">ABOUT</a>
-            </div>
-          </div>
+      <div id="navbar">
+        <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+        <p style="margin:0;"><small>A writing website.</small></p>
         
-          <script>
-            function toggleNav() {
-              var element = document.getElementById("navbar-collapse");
-              var button = document.getElementById("menu");
-              if (element.style.display == "block") {
-                element.style.display = "none";
-                button.innerHTML = "&equiv;";
-              } else {
-                element.style.display = "block";
-                element.style.height = "170px";
-                button.innerHTML = "&times;";
-              } 
-            }
-            window.onscroll = function() {scrollFunction()};
-        
-            function scrollFunction() {
-              if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                document.getElementById("navbar").style.padding = "0px";
-                document.getElementById("logo").style.fontSize = "16px";
-                document.getElementById("menu").style.fontSize = "16px";
-              } else {
-                document.getElementById("navbar").style.padding = "10px 10px";
-                document.getElementById("logo").style.fontSize = "20px";
-                document.getElementById("menu").style.fontSize = "20px";
-              }
-            }
-        
-            window.onload = function() {navbarCollapse()};
-            function navbarCollapse() {
-              document.getElementById("navbar").style.padding = "10px 10px";
-              document.getElementById("logo").style.fontSize = "20px";
-              document.getElementById("menu").style.fontSize = "20px";
-            }
-          </script>
+      </div>
+    </div>
+  
+    <script>
+      window.onscroll = function() {scrollFunction()};
+  
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("navbar").style.padding = "20px";
+          document.getElementById("logo").style.fontSize = "24px";
+        } else {
+          document.getElementById("navbar").style.padding = "30px";
+          document.getElementById("logo").style.fontSize = "40px";
+        }
+      }
+    </script>
 
         <div class="row">
             <div class="side">
                 <a href="https://the25post.com/tags/reviews"><h3>REVIEWS</h3></a>
-                <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px"><i>Brief Encounter:</i> As time goes by, fate writes a melancholic romance</h2>
+                <h2 class="headline"><i>Brief Encounter:</i> As time goes by, fate writes a melancholic romance</h2>
                 <p class="author">by <b>KEVIN NGUYEN</b></p>
                 <p style="margin-bottom: 0;">13 January 2023</p>
             </div>
             <div class="main">
                 <img src="../uploads/brief-encounter-cover.webp">
-                <p class="photo-credit">Photo courtesy of <b>ROBERT KRASKER/EAGLE-LION FILMS</b></p>
-
+                <p class="photo-credit">Photo courtesy of <b>ROBERT KRASKER/EAGLE-LI</b></p>
                 <p style="color:grey"><i>This article contains spoilers for</i> Brief Encounter.</p>
                 <p><span class="padded-dropcap">I</span>n 1938, French, American, and British jury members, outraged by Hitler and Mussolini&rsquo;s overruling of the jury&rsquo;s decisions on Best Film and Best Foreign Film at the Venice Film Festival, withdrew from the festival in protest. The French elected to form their own festival, with the intention of it being completely free of all societal or political pressures. They would host it in the city of Cannes.</p>
 
@@ -127,6 +99,7 @@
                 <p>What Lean does is one of the most truthful, thoughtful, and painful experiences I have ever been through. These people are not malicious; they are not looking to hurt their partners; and they are not in search of happier lives. But they cannot help but feel the way they do. They make mistakes. And they are faced with the ultimate choice. This brutal and heartfelt sincerity is why this underrated cinematic masterpiece is my favorite film of all time. And I will continue to come back to it again. And again. And again.&nbsp;&#9632;</p>
 
               </div>
+            </div>
         </div>
         <div class="footer">
             <p>25</p>
