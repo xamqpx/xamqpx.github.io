@@ -57,11 +57,13 @@
   
   .headlining h2 { font-size: 40px; }
 
-  .popular h2 { font-size: 20px; }
+  .popular h2, .smaller-hed { font-size: 20px; }
   .popular a:hover { text-decoration: underline; }
-  .popular .side { padding: 10px; }
+  .popular .side { padding: 10px; transition: 0.5s background-color; }
   .popular .title {height: 120px; }
   .popular img { height: 200px; object-fit: cover; }
+
+  .more-stories a:hover { text-decoration: underline; }
 
   .article-tag {
     margin: 0 0 5px 0;
@@ -69,9 +71,14 @@
     color: #dd7e6b;
     font-size: 14px;
   }
+  a.fill-div:hover { text-decoration: none; }
+  .popular .side:hover { background-color: #525252; }
+
+  ul li { padding: 5px 0; }
 
   footer { font-size: 14px; text-align: right; padding: 20px; }
   footer a:hover { text-decoration: underline; }
+  
 
   @keyframes drop-in {
     from { opacity: 0;  transform: translateY(100px); }
@@ -124,6 +131,7 @@
                 <p id="dek">Folk music offers a glimpse of the lives, histories, struggles, and deaths of coal miners &mdash; and of the way music should be, in spite of the way that it is.
                 </p>
               </div>
+              <p class="author">by <b>RYAN KILCOIN</b></p>
               <small>22 January 2023</small>
               <img src="https://www.pennlive.com/resizer/d36VSNmttEQLyccUM2kCHfXtqKE=/800x0/smart/arc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com/public/HAILH3FH6FCB3KRNUUBN3JWO2A.jpg">
               <p class="photo-credit">Photo courtesy of <b>STEVE HELBER/ASSOCIATED PRESS</b></p>
@@ -139,6 +147,7 @@
                 <p id="dek">David Lean is a name that invokes images of breathtaking desert sunrises, dense jungle foliage, and empty Arctic snowscapes; yet his most critically acclaimed work is an intimate one, entirely set in a train station.
                 </p>
               </div>
+              <p class="author">by <b>KEVIN NGUYEN</b></p>
               <small>13 January 2023</small>
               <img src="archives/uploads/brief-encounter-cover.webp">
               <p class="photo-credit">Photo courtesy of <b>ROBERT KRASKER/EAGLE-LION FILMS</b></p>
@@ -154,6 +163,7 @@
                 <p id="dek">Months-long strikes are being met with insults and anti-union legislation; what happens next will determine the future of workers&rsquo; rights.
                 </p>
               </div>
+              <p class="author">&nbsp;</p>
               <small>10 January 2023</small>
               <img src="archives/uploads/sunak-strikes-cover.jpg">
               <p class="photo-credit">The 25 Post graphic. Photos courtesy of <b>GETTY IMAGES/FLICKR/ECONOMIC TIMES</b></p>
@@ -168,46 +178,91 @@
 
     <div class="row popular">
       <div class="side" style="flex:25%;">
-        <div class="title">
-          <p class="article-tag">MUSIC</p>
-          <a href="/archives/articles/newjeans.html"><h2>&lsquo;Ditto,&rsquo; the NewJeans gateway drug</h2></a>
-        </div>
-        <p class="author">&nbsp;</p>
-        <small>23 December 2022</small>
-        <br><br>
-        <img src="https://newjeans.kr/imgs/window/new-folder-1/nj_ditto_5.jpg">
+        <a class="fill-div" href="/archives/articles/newjeans.html">
+          <div class="title">
+            <p class="article-tag">MUSIC</p>
+          <h2>&lsquo;Ditto,&rsquo; the NewJeans gateway drug</h2>
+          </div>
+          <p class="author">&nbsp;</p>
+          <small>23 December 2022</small>
+          <br><br>
+          <img src="https://newjeans.kr/imgs/window/new-folder-1/nj_ditto_5.jpg">
+        </a>
       </div>
       <div class="side" style="flex:25%;">
-        <div class="title">
-          <p class="article-tag">REVIEWS</p>
-          <a href="/archives/articles/kim-wexler.html"><h2>Notes on Kim Wexler</h2></a>
-        </div>
-        <p class="author">&nbsp;</p>
-        <small>16 December 2022</small>
-        <br><br>
-        <img src="https://d6ehjqrqtzoun.cloudfront.net/de135c4a-8855-4ffe-80cd-17894897e0af.png">
+        <a class="fill-div" href="archives/articles/kim-wexler.html">
+          <div class="title">
+            <p class="article-tag">REVIEWS</p>
+            <h2>Notes on Kim Wexler</h2>
+          </div>
+          <p class="author">&nbsp;</p>
+          <small>16 December 2022</small>
+          <br><br>
+          <img src="https://d6ehjqrqtzoun.cloudfront.net/de135c4a-8855-4ffe-80cd-17894897e0af.png">
+        </a>
       </div>
       <div class="side" style="flex:25%;">
-        <div class="title">
-          <p class="article-tag">REVIEWS</p>
-          <a href="/archives/articles/17776-review.html"><h2>&lsquo;17776&rsquo; is the best argument against capitalist immortality humanity has to offer</h2></a>
-        </div>
-        <p class="author">&nbsp;</p>
-        <small>6 July 2022</small>
-        <br><br>
-        <img src="https://pbs.twimg.com/media/DEzidxwUIAA4Pfu?format=jpg&name=900x900">
+        <a class="fill-div" href="/archives/articles/17776-review.html">
+          <div class="title">
+            <p class="article-tag">REVIEWS</p>
+            <h2>&lsquo;17776&rsquo; is the best argument against capitalist immortality humanity has to offer</h2>
+          </div>
+          <p class="author">&nbsp;</p>
+          <small>6 July 2022</small>
+          <br><br>
+          <img src="https://pbs.twimg.com/media/DEzidxwUIAA4Pfu?format=jpg&name=900x900">
+        </a>
       </div>
       <div class="side" style="flex:25%;">
-        <div class="title">
-          <p class="article-tag">NON / FICTION</p>
-          <a href="/archives/pieces/guy.html"><h2>Guy</h2></a>
-        </div>
-        <p class="author">by <b>PETER LIU</b></p>
-        <small>11 April 2022</small>
-        <br><br>
-        <img src="archives/uploads/GUY%2025POST.JPG">
+        <a class="fill-div" href="archives/pieces/guy.html">
+          <div class="title">
+            <p class="article-tag">NON / FICTION</p>
+            <h2>Guy</h2>
+          </div>
+          <p class="author">by <b>PETER LIU</b></p>
+          <small>11 April 2022</small>
+          <br><br>
+          <img src="archives/uploads/GUY%2025POST.JPG">
+        </a>
       </div>
     </div>
+
+    <hr class="divide">
+
+    <div class="row">
+      <div class="side" style="flex: 50%; padding: 20px; background: #525252;">
+        <p style="margin:0;"><small><i>From the archives:</i></small></p><br>
+          <div class="row">
+            <div class="side" style="flex: 50%;padding-right:20px">
+              <p class="article-tag">POLITICS</p>
+              <a href="archives/articles/korea-trumpist.html"><h2 style="font-size:30px;">South Korea&rsquo;s Trumpist phase</h2></a>
+              <p>Democracy is at an age where it is of the people, and by the people, but certainly not for the people.</p>
+              <small>1 November 2022</small>
+            </div>
+            <div class="side" style="flex: 50%;padding-left:20px">
+              <a href="archives/articles/korea-trumpist.html"><img src="archives/uploads/korea-trumpist.webp"></a>
+            </div>
+        </div>
+        </a>
+      </div>
+      <div class="side more-stories" style="flex: 50%; padding: 20px;">
+        <h2 class="smaller-hed">More stories:</h2>
+        <ul>
+          <li><a href="archives/articles/loyle-carner.html">Every once in a while, Loyle Carner reminds you he&rsquo;s alive</a></li>
+          <li><a href="archives/articles/luka-doncic.html">The ups and ups of Luka Doncic</a></li>
+          <li><a href="archives/articles/hsu.html">HSU</a></li>
+          <li><a href="archives/articles/misch-electronic.html">Tom Misch goes electronic</a></li>
+          <li><a href="archives/pieces/dreamsearching.html">dreamsearching</a></li>
+          <li><a href="archives/pieces/nelson.html">Nelson</a></li>
+          <li><a href="archives/articles/peter-liminal.html">Peter Liu finds home in liminal spaces</a></li>
+          <li><a href="archives/articles/comment-queen-legacy.html">The crimes that &lsquo;stable, dutiful&rsquo; Elizabeth hid in plain sight</a></li>
+        </ul>
+        
+        
+      </div>
+    </div>
+
+   
     <footer>
       <p>The 25 Post &copy; 2023. All rights reserved.</p>
       <p>
