@@ -1,0 +1,33 @@
+body, .navbar { font-family: "PT Serif";color: black; background: white; }
+.navbar-left a:hover { box-shadow: inset 0 0 0 0 #e0e0e0; }
+.menu a { color: black; transition: 0.5s color; font-family: 'Gotham'; }
+.menu a:hover { color: #990000; text-decoration: underline #990000; }
+
+.menu { text-transform: uppercase; }
+
+.dek { font-size: 17px; }
+
+h1 {font-family: 'DM Serif Display'; margin-bottom: 5px; line-height:1; font-size: 38px; font-weight: normal; }
+p { font-size: 17px; }
+.photo-credit { margin: 0;}
+
+.author, .category { font-family: 'DM Sans';}
+.category { font-family: "Gotham"; }
+
+p a:link, p a:active, p a:visited { color: #990000; text-decoration: none; }
+
+td { vertical-align: top; padding: 10px 10px 10px 0;}
+td h1 { font-size:19px; padding-bottom: 10px; }
+td .date { font-family: 'DM Sans'; font-size: 11px; }
+td .dek { font-size: 16px; padding-bottom: 10px;}
+td .author { font-size: 12px; }
+td h1, td p { margin: 0; }
+
+footer small { font-size: 14px; }
+
+.opinion h1, .ae h1 { font-style: italic; }
+.sports h1, .opinion h1, .ae h1 { font-size: 28px; }
+.opinion td h1, .ae td h1 { font-size: 26px; }
+
+::selection { background: #990000; color: white; }
+hr { border: 0.5px solid grey; }
