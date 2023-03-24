@@ -20,7 +20,7 @@
   p i { font-family: 'Le Monde Journal'; }
 
   .photo-credit {
-    font-family:Work Sans;
+    font-family:Poppins;
     font-size:14px;
     text-align: left;
     margin: 0 0 10%;
@@ -45,7 +45,7 @@
   }
 
   .author {
-    font-family: Work Sans;
+    font-family: Poppins;
     font-size: 16px;
   }
   
@@ -110,7 +110,7 @@
 
   .side h3, .main h3 {
     color:#dd7e6b;
-    font-family: "Work Sans";
+    font-family: "Poppins";
     font-weight: normal;
     font-size: 16px;
     margin-bottom: -10px;
