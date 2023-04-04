@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        * {
+            box-sizing: content-box;
+        }
+        p { font-family: 'Georgia'; }
+        h1, h2 { font-family: 'Arial'; }
+        body { background: black; hyphens: auto; }
+        
+        .section { font-family: 'Georgia'; font-weight: normal; font-style: italic; }
+
+        .main {
+            width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .row { display: flex; flex-wrap: wrap; }
+        h2 { font-size: 20px; }
+
+        img { float: left; margin: 0 20px 10px 0; width: 40%;  }
+
+        .text-side { flex: 60%; }
+
+        @media screen and (max-width: 1100px) {
+            .main { width: 90%; }
+            img { width: 100%; }
+        }
+
+        a:link, a:active, a:visited { color: #990000; }
+        
+        .photo-credit { font-size: 12px; color: grey; margin: 0; }
+        .quote { padding-left: 20px; border-left: 4px solid black; }
+        .author { margin: 0; font-family: 'Georgia' }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p style="text-align:center;"><small><a href="https://the25post.com/newsletter">View as a webpage</a></small></p>
+        <img src="https://dailytrojan.com/wp-content/uploads/2021/10/AozlQmjq_400x400.jpg" style="width: 80px;">
+        <h1 style="font-family:'Arial Black';margin-bottom: 0;">Above the Fold</h1>
+        <p style="margin:0; color:#525252;">Brought to you by the <i>Daily Trojan</i>, every weekday morning.</p>
+        <br>
+        <p><i>Good morning. Today is Tuesday, April 4, 2023. Here&rsquo;s the news you need to know before you start your day.</i></p>
+
+        <br>
+
+        <h2 class="section quote">From the Daily Trojan</h2>
+
+        <h2>Researchers breathe new life into Santa Catalina Island&rsquo;s trash</h2>
+        <img src="https://dailytrojan.com/wp-content/uploads/2023/04/3_3-1500x1000.jpg">
+        <p class="author">XIANGYUAN CHI, Science Beat Writer</p>
+        <p class="photo-credit">Anthony Clingerman | Daily Trojan</p>
+        <p><b>Santa Catalina Island</b>, the native-land-turned-tourist-destination renowned for its scenic charm, is now a collection point of the largest accumulation of ocean plastic in the world. Located between Hawaii and California, the Great Pacific Garbage Patch covers an estimated surface area of 618,000 square miles &mdash; an area three times the size of France &mdash; and contains approximately 80,000 tons of plastic.</p>
+        <p>Amid ongoing multi-million-dollar cleanup efforts, researchers at the USC Wrigley Institute for Environmental Studies, located on the island, wondered if they could turn the trash into something useful.</p>
+        <p>&hellip; Their paper, published in <i>Angewandte Chemie</i> in November, announced the successful application of the two-stage method to polyethylene &mdash; one of the most common categories of plastics, used in products like plastic bags or food packaging &mdash; from which they were able to derive pharmacologically active compounds, manufacturing materials and other products in bulk quantities.</p>
+        <p>Read the full article <a href="https://dailytrojan.com/2023/04/04/researchers-breathe-new-life-into-santa-catalina-islands-trash/">here</a>.</p>
+
+        <br>
+
+        <h2>After months, unstable ceilings at Seeley G. Mudd Building repaired Saturday</h2>
+        <img src="https://dailytrojan.com/wp-content/uploads/2023/04/Screen_Shot_2023-04-03_at_7.35.33_PM-1030x684.png">
+        <p class="photo-credit">Louis Chen | Daily Trojan</p>
+        <p>Some classes in the Seeley G. Mudd Building were recently canceled due to the ceiling&rsquo;s instability following heavy rainstorms in Los Angeles. Repair work took place Saturday to replace ceiling tiles, Facilities Planning and Management wrote in a statement to the Daily Trojan, and the whole roof will be replaced this coming summer.</p>
+        <p>In one case, the ceiling fell in, resulting in visible holes in the ceiling and rubble in the trash cans placed underneath to collect the debris. The more general issue is ceiling&rsquo;s leakage, especially when it rains.</p>
+        <p>&ldquo;[I&rsquo;m] a little insecure and nervous about the integrity of the roof,&rdquo; said Connor Castro, a sophomore majoring in psychology. &ldquo;I [just] got to walk around the trash cans that hold the water from the leaks, and there&rsquo;s a whole bunch of them, especially on the second story around the labs &#8230; There&rsquo;d be puddles on the floor sometimes when they don&rsquo;t have a trash can.&rdquo;</p>
+        <p>Read the full article <a href="https://dailytrojan.com/2023/04/04/after-months-unstable-ceilings-at-seeley-g-mudd-building-repaired-saturday/">here</a>.</p>
+
+        <br>
+        
+        <h2 class="section quote">National headlines</h2>
+
+        <h2>Donald Trump arrives in New York following historic indictment</h2>
+        <img src="https://s.abcnews.com/images/US/trump20-rt-ml-230403_1680541171631_hpEmbed_5x3_992.jpg">
+        <p class="photo-credit">Marco Bello | Reuters</p>
+        <p><b>The former President</b> arrived in New York City Monday for an overnight stay at Trump Tower, before his expected arraignment hearing today. The city has upped its police presence, with Mayor Eric Adams warning that violence and vandalism will not be tolerated.</p>
+
+        <br><br>
+
+        <h2>Finland joins NATO today as the alliance&rsquo;s 31st member.</h2>
+        <img src="https://static01.nyt.com/images/2023/04/03/multimedia/03ukraine-briefing-finland-vlcp/03ukraine-briefing-finland-vlcp-superJumbo.jpg?quality=75&auto=webp">
+        <p class="photo-credit">Olivier Matthys | EPA</p>
+        <p><b>Russia is threatening</b> to increase military presence along the 1,300-kilometer border it shares with the Nordic country. Finland had initially planned to join alongside neighbor Sweden, but the latter had its ratification stalled by objections from Turkey and Hungary.</p>
+        <p><q>For Finland, the most important objective at the meeting will be to emphasise NATO&rsquo;s support to Ukraine as Russia continues its illegal aggression,</q> said Finnish Foreign Minister Pekka Haavisto in a statement Monday. <q>We seek to promote stability and security throughout the Euro-Atlantic region.</q></p>
+        <p>In an earlier statement, Secretary General Jens Stoltenberg said he looked forward to <q>a rapid conclusion of the accession process, and to welcoming both Finland and Sweden to the NATO family as full members as soon as possible.</q></p>
+
+        <br>
+
+        <h2>NASA announces crew for next lunar mission</h2>
+        <img src="https://static.scientificamerican.com/sciam/cache/file/26DD62F9-3743-4ED7-A76BD863BD498E6D_source.jpg?w=590&h=800&C3DB9AE2-6DDF-453A-8D54ABBDACD3E54D">
+        <p class="photo-credit">NASA</p>
+        <p><b>For the first time</b> in 50 years, NASA has named a crew of astronauts bound for the moon.</p>
+        <p>The four people announced to go aboard Artemis 2, which the agency plans to launch in 2024, are: commander Reid Wiseman, pilot Victor Glover, and mission specialists Christina Koch and Jeremy Hansen. Hansen is an astronaut from the Canadian Space Agency.</p>
+        <p><q>Reid, Victor, Christina, and Jeremy, each of these adventurers has their own story. But together, they represent our creed: E pluribus unum — out of many, one,</q> said NASA administrator Bill Nelson.<q>Together, we will usher in a new era of exploration for a new generation of star sailors and dreamers — the Artemis Generation.</q></p>
+
+
+        <br>
+
+        <h2>NCAA caps March Madness with a 76-59 win for UConn</h2>
+        <img src="https://i.guim.co.uk/img/media/a79ffee7b597c3db6471efe8a4e15dd8d9c52517/546_514_3895_2337/master/3895.jpg?width=620&quality=45&dpr=2&s=none">
+        <p class="photo-credit">Troy Taormina | USA Today Sports</p>
+        <p><b>Monday&rsquo;s sweeping win</b> against San Diego State marked the end of an impressive streak for the Huskies, who have now won all six of their tournament games by a double-digit difference.</p>
+        <p>The Aztecs lost a crucial early-game lead, missing 14 straight shots in the span of 11 minutes, and allowing UConn to come back leading by four by halftime. Seniors Adama Sanogo and Tristen Newton led the charge, both with double-doubles &mdash; Sanogo 17 points, 10 rebounds; Newton 19 points, 10 rebounds.</p>
+        <br><br><br><br><br>
+        <p class="photo-credit">Written by Jonathan Park.</p>
+    </div>
+</body>
