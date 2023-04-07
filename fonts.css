@@ -142,3 +142,8 @@
     font-family: 'Poppins';
     src: url('fonts/Poppins-Bold.ttf');
   }
+
+  @font-face {
+    font-family: 'Bierstadt';
+    src: url('fonts/bierstadt.ttf');
+  }
