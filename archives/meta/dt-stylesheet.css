@@ -1,31 +1,30 @@
-body, .navbar { font-family: "PT Serif";color: black; background: white; line-height: 1.2; }
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body, .navbar { font-family: "Libre Caslon Text", serif; color: black; background: white; line-height: 1.2; }
 .navbar-left a:hover { box-shadow: inset 0 0 0 0 #e0e0e0; }
-.menu a { color: #525252; transition: 0.5s color; font-family: 'Bierstadt'; }
+.menu a { color: #525252; transition: 0.5s color; font-family: 'Libre Franklin', sans-serif; }
 .menu a:hover { color: #990000; text-decoration: underline #990000; }
 
 .menu { text-transform: uppercase; }
 
-.dek { font-size: 17px; }
-
-h1 {font-family: 'DM Serif Display'; margin-bottom: 5px; line-height:1; font-size: 38px; font-weight: normal; }
-.photo-credit { margin: 0; font-family: 'Bierstadt'; color: #525252; }
+h1 {font-family: 'Instrument Serif', serif; margin-bottom: 5px; line-height:1.5; font-size: 44px; font-weight: normal; }
+.photo-credit { margin: 0; font-family: 'Libre Franklin', sans-serif; color: #525252; }
 p i { font-family:unset; }
-p b { font-family: 'Bierstadt'; }
+p { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
+p b { font-family: 'Libre Franklin', sans-serif; }
 
-.author, .category { font-family: "Bierstadt"; margin: 0; }
+.author, .category { font-family: 'Libre Franklin', sans-serif; margin: 0; }
 
 p a:link, p a:active, p a:visited { color: #990000; text-decoration: none; }
 
 td { vertical-align: top; padding: 10px 10px 10px 0;}
-td h1 { font-size:19px; padding-bottom: 10px; }
-td .date { font-family: 'Bierstadt'; font-size: 11px; }
-td .dek { font-size: 16px; padding-bottom: 10px;}
-td .author { font-size: 12px; }
-td h1, td p { margin: 0; }
-
+td h1 { font-family: "LIbre Caslon Text", serif; font-size: 17px; font-weight: bold; line-height: 1.5; }
+td .date { font-family: 'Libre Franklin', sans-serif; font-size: 11px; }
+td .dek { font-size: 14px; }
+.author { font-size: 14px; margin-bottom: 20px; }
 footer small { font-size: 14px; }
+td p { margin: 0; }
 
-.opinion h1, .ae h1 { font-style: italic; }
 .sports h1, .opinion h1, .ae h1 { font-size: 28px; }
 .opinion td h1, .ae td h1 { font-size: 26px; }
 
