@@ -147,3 +147,19 @@
     font-family: 'Bierstadt';
     src: url('fonts/bierstadt.ttf');
   }
+
+  @font-face {
+    font-family: 'Miller Text Bold';
+    src: url('fonts/Miller\ Text\ Bold.otf');
+  }
+
+  @font-face {
+    font-family: 'Tablet Gothic';
+    src: url('fonts/Tablet\ Gothic\ W02\ Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Tablet Gothic Bold';
+    src: url('fonts/Tablet\ Gothic\ W02\ SemiBold.ttf');
+  }
+
