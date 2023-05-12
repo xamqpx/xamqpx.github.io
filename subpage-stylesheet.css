@@ -222,3 +222,26 @@
     font-weight:normal;
     font-size: 38px;
   }
+
+  .pull-quote {
+    font-family: 'Le Monde Journal';
+    font-weight:normal;
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 50px 0;
+    color: grey;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+
+  .float-image {
+    float:right; width: 200px; margin: 0 0 40px 40px;
+  }
+
+  @media screen and (max-width:800px) {
+    .float-image {
+      float: none;
+      width: 100%;
+      margin: 0 0 40px 0;
+    }
+  }
