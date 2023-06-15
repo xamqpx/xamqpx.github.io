@@ -17,8 +17,10 @@
     line-height: 1.3;
   }
 
+  p i { font-family: 'Le Monde Journal'; }
+
   .photo-credit {
-    font-family:Work Sans;
+    font-family:Poppins;
     font-size:14px;
     text-align: left;
     margin: 0 0 10%;
@@ -43,7 +45,7 @@
   }
 
   .author {
-    font-family: Work Sans;
+    font-family: Poppins;
     font-size: 16px;
   }
   
@@ -88,6 +90,7 @@
   .side {
     flex: 30%; /* Set the width of the sidebar */
     padding: 20px;
+    margin-bottom: 20px;
   }
   
   /* right */
@@ -102,12 +105,12 @@
   }
 
   h2 {
-    font-family: "Cheltenham Bold";
+    font-family: "Kepler Bold Extended";
   }
 
   .side h3, .main h3 {
     color:#dd7e6b;
-    font-family: "Work Sans";
+    font-family: "Poppins";
     font-weight: normal;
     font-size: 16px;
     margin-bottom: -10px;
@@ -194,7 +197,7 @@
     text-align: center;
     padding: 20px;
     font-size: 40px;
-    font-family: "Cheltenham Tooled Bold";
+    font-family: "Kepler Bold Extended";
   }
 
   .blink {
@@ -215,7 +218,30 @@
   }
 
   .headline {
-    font-family: 'Megalito';
+    font-family: 'Kepler Bold Extended';
     font-weight:normal;
-    font-size:38px
+    font-size: 38px;
+  }
+
+  .pull-quote {
+    font-family: 'Le Monde Journal';
+    font-weight:normal;
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 50px 0;
+    color: grey;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+
+  .float-image {
+    float:right; width: 200px; margin: 0 0 40px 40px;
+  }
+
+  @media screen and (max-width:800px) {
+    .float-image {
+      float: none;
+      width: 100%;
+      margin: 0 0 40px 0;
+    }
   }
