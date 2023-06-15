@@ -132,3 +132,34 @@
     font-family: 'Gotham Bold';
     src: url('fonts/Gotham-Bold.otf');
   }
+
+  @font-face {
+    font-family: 'Le Monde Journal';
+    src: url('fonts/le-monde-journal-std-regular.otf');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Bierstadt';
+    src: url('fonts/bierstadt.ttf');
+  }
+
+  @font-face {
+    font-family: 'Miller Text Bold';
+    src: url('fonts/Miller\ Text\ Bold.otf');
+  }
+
+  @font-face {
+    font-family: 'Tablet Gothic';
+    src: url('fonts/Tablet\ Gothic\ W02\ Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Tablet Gothic Bold';
+    src: url('fonts/Tablet\ Gothic\ W02\ SemiBold.ttf');
+  }
+
