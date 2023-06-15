@@ -2,93 +2,123 @@
 <html lang="en">
     <head>
         <title>SAMPLE HOME | Daily Trojan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&family=PT+Serif:ital@0;1&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="../../subpage-stylesheet.css">
+        <link rel="stylesheet" href="dt-stylesheet.css">
         <link rel="stylesheet" href="../../fonts.css">
-
-        <style>
-            body, .navbar { font-family: 'Kepler'; }
-            .navbar, .navbar-left, .navbar-right { padding: 0; }
-            .navbar a {  color:rgb(95, 95, 95); text-align: center; font-size: 17px;}
-            .navbar-left a:hover { box-shadow: inset 0 0 0 0 #e0e0e0; }
-
-            .dek { font-size: 17px; }
-
-            h1 { font-family: 'Kepler Bold Extended'; margin-bottom: 5px; line-height:1; font-size: 34px; }
-            p { font-size: 17px; }
-            p i { font-family: 'Kepler Italic'; }
-            p b { font-family: 'Kepler Bold'; }
-            .photo-credit { font-family: 'Kepler Italic'; margin: 0;}
-
-            .author { font-family: 'Gotham'; font-size: 14px;}
-            .author b { font-family: 'Gotham Bold'; }
-
-            p a:link, p a:active, p a:visited { color: #990000; text-decoration: none; }
-            p a:hover { text-decoration: underline; }
-
-            td {padding: 5px; vertical-align: top; padding-bottom: 20px;}
-            td h1 { font-family: 'Kepler Bold'; font-size:20px; padding-bottom: 10px; }
-            td .date { font-family: 'Gotham'; font-size: 11px; }
-            td .dek { font-family: 'Kepler'; font-size: 14px; padding-bottom: 10px;}
-            td .author { font-size: 12px; }
-            td h1, td p { margin: 0; }
-
-            footer small { font-size: 14px; }
-
-            .opinion h1, .ae h1 { font-family: 'Kepler Bold Caption Display'; }
-            .opinion td h1, .ae td h1 { font-size: 26px; }
-        </style>
     </head>
 
     
     <body>
-            <div style="text-align:center;position:sticky;top:0;background: white;filter: drop-shadow(0 0 0.1rem grey);padding:5px;">
-                <a target="_blank" href="https://dailytrojan.com" style="font-family:'Kepler Caption Display';font-size:54px;">
-                    <span style="color:#990000"><span style="font-size:58px;">D</span>AILY </span><span style="font-size:58px;">T</span>ROJAN
+            <div style="max-width: 1600px; margin: auto; text-align:center;position:sticky;top:0;background: white;padding:5px;z-index: 50;">
+                <p>
+                    <span class="category">SINCE 1912</span>
+                </p>
+                <a target="_blank" href="https://dailytrojan.com" style="font-family:'Kepler Caption Display';font-size:84px; color:black;">
+                    <span style="color:#990000"><span style="font-size:88px;">D</span>AILY </span><span style="font-size:88px;">T</span>ROJAN
                 </a>
-                <br>
-                <div style="font-size:16px;">
+                <hr>
+                <div class="menu" style="font-size:16px;">
                     <a target="_blank" href="https://dailytrojan.com/news">news</a>
                     &nbsp;&nbsp;<a target="_blank" href="https://dailytrojan.com/opinion">opinion</a>
                     &nbsp;&nbsp;<a target="_blank" href="https://dailytrojan.com/arts-and-entertainment">arts & entertainment</a>
                     &nbsp;&nbsp;<a target="_blank" href="https://dailytrojan.com/classifieds">classifieds</a>
                     &nbsp;&nbsp;<a target="_blank" href="https://dailytrojan.com/sports">sports</a>
                     &nbsp;&nbsp;<a target="_blank" href="https://dailytrojan.com/multimedia">multimedia</a>
+                    &nbsp;&nbsp;<a target="_blank" href="#">special issues</a>
+                    &nbsp;&nbsp;<a target="_blank" href="#">projects</a>
                 </div>
+                <hr>
             </div>
 
-            <p style="padding: 5px;text-align:center; margin-bottom: 0;"><i>The University of Southern California's only student-run paper. Since 1912.</i></p>
+            <script>
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+                ];
+
+                const d = new Date();
+                month = monthNames[d.getMonth()];
+                let day = d.getDay()
+                let year = d.getFullYear();
+                document.getElementById("date").innerHTML = month + " " + day + ", " + year;
+            </script>
 
             <!-- news -->
             <div class="row">
-                <div class="side" style="flex:15%;"></div>
-                <div class="side" style="flex:35%;">
-                    <p><b style="font-family:Gotham;">NEWS</b></p>
-                    <h1>&lsquo;Renaissance man&rsquo; Jason King on his Thornton takeover</h1>
-                    <p class="dek">The dean-elect talks his illustrious resume and the future of USC&rsquo;s music school.</p>
-                    <p class="author">By <b>ZACK LARA</b><br>February 23, 2023</p>
-                    <img src="https://dailytrojan.com/wp-content/uploads/2023/02/jason_king_portraits_selects_083_rt_-_-_photo_credit_laylah_amatullah_720-477x400.jpeg">
-                </div>
-                <div class="side" style="flex:35%;">
+                <div class="side" style="flex:25%;">
+                    <p class="category"><b>SPORTS</b></p>
+                    <div class="sports" style="padding-bottom: 20px;">
+                        <h1>Pitching woes doom Trojans in loss</h1>
+                        <p class="dek">The first loss of the Stankiewicz era came down to the final strike.</p>
+                        <p class="author">By <b>THOMAS JOHNSON</b><br>February 23, 2023</p>
+                        <img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_5287-2-1500x998.jpg">
+                    </div>
                     <table>
                         <tr>
-                            <td style="width:50%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/02152023_Lyft_SimonParkE-7PRINT-495x400.jpeg"></td>
-                            <td style="width:50%;">
+                            <td><img src="http://dailytrojan.com/wp-content/uploads/2022/01/sports.png"></td>
+                            <td>
+                                <h1>Fast Break: Regular season finally returns after tumultuous All-Star break</h1>
+                                <p class="author">By <b>DOMINIC VARELA</b><br>February 23, 2023</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://dailytrojan.com/wp-content/uploads/2023/02/2023_02_10_WBBvsOREGON-13-1500x1000.jpg"></td>
+                            <td>
+                                <h1>Trojans turn to Washington schools after back-to-back losses</h1>
+                                <p class="author">By <b>ROBERT WESTERMANN</b><br>February 23, 2023</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://dailytrojan.com/wp-content/uploads/2023/02/MVB_UCI_LouisChen-0477-1500x1000.jpg"></td>
+                            <td>
+                                <h1>USC drops doubleheader against GCU</h1>
+                                <p class="author">By <b>MAYA GOMES</b><br>February 22, 2023</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p style="text-align:right;"><a href="#">More stories&hellip;</a></p>
+                    <hr>
+                    <p><b style="font-family:Gotham;">TWITTER</b></p>
+                    <a class="twitter-timeline" data-height="700" data-width="100%" href="https://twitter.com/dailytrojan?ref_src=twsrc%5Etfw">Tweets by dailytrojan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <hr>
+                    <p class="category"><b>CLASSIFIEDS</b></p>
+                    <div style="height: 600px; background: #e0e0e0; line-height: 450px; text-align: center;">
+                        <p ><I>classifieds</I></p>
+                    </div>
+                </div>
+                <div class="side" style="flex:50%;">
+                    <DIV style="padding-bottom: 20px;">
+                        <p class="category"><b>NEWS</b></p>
+                        <h1>&lsquo;Renaissance man&rsquo; Jason King on his Thornton takeover</h1>
+                        <p class="dek">The dean-elect talks his illustrious resume and the future of USC&rsquo;s music school.</p>
+                        <p class="author">By <b>ZACK LARA</b><br>February 23, 2023</p>
+                        <img src="https://dailytrojan.com/wp-content/uploads/2023/02/jason_king_portraits_selects_083_rt_-_-_photo_credit_laylah_amatullah_720-477x400.jpeg">
+                    </DIV>
+                    <table>
+                        <tr>
+                            <td><img src="https://dailytrojan.com/wp-content/uploads/2023/02/02152023_Lyft_SimonParkE-7PRINT-495x400.jpeg"></td>
+                            <td>
                                 <h1>Longer wait times, lower pay: A tumultuous transition to ‘Shryft’</h1>
                                 <p class="dek">The shared-ride model continues amid complaints from students and drivers.</p>
                                 <p class="author">By <b>SPARSH SHARMA</b><br>February 23, 2023</p>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width:50%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_0091-495x400.jpg"></td>
-                            <td style="width:50%;">
+                            <td><img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_0091-495x400.jpg"></td>
+                            <td>
                                 <h1>Free food and more at South Central Mardi Gras cookout</h1>
                                 <p class="dek">The event featured burgers, hot dogs and supplies for the unhoused community.</p>
                                 <p class="author">By <b>NATHAN ELIAS</b><br>February 22, 2023</p>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width:50%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_0945-495x400.jpg"></td>
-                            <td style="width:50%;">
+                            <td><img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_0945-495x400.jpg"></td>
+                            <td>
                                 <h1>Re-envisioning Black history: An evening with Nikole Hannah-Jones</h1>
                                 <p class="dek">The founder of “The 1619 Project” spoke about creating the award-winning initiative and her experience growing up in a multiracial household in Iowa.</p>
                                 <p class="author">By <b>MARCEL  LACEY & JENNIFER NEHRER</b><br>February 22, 2023</p>
@@ -96,89 +126,8 @@
                         </tr>
                     </table>
                     <p style="text-align:right;"><a href="#">More stories&hellip;</a></p>
-                </div>
-                <div class="side" style="flex:15%;">
-                    <div style="height:200px;"></div>
-                    <p><a href="#">Submit tips &#8594;</a></p>
-                    <p><a href="#">View our full archive &#8594;</a></p>
-                    <p><a href="#">Donate to the <i>Daily Trojan</i> &#8594;</a></p>
-                </div>
-            </div>
-
-            <!-- extra -->
-            <div style="background:#fd4718; width: 100%; color: white;">
-                <div class="row">
-                    <div class="side" style="flex:50%; padding: 20px;">
-                        <br><br>
-                        <h1 style="font-family:'Kepler Caption Display';font-size: 40px;">EXTRA EN ESPAÑOL</h1>
-                        <p><i>Por primera vez en la historia de nuestro peri&oacute;dico, la redacci&oacute;n del Daily Trojan ha decidido publicar un suplemento en espa&ntilde;ol. La edici&oacute;n impresa y la edici&oacute;n en l&iacute;nea de hoy contienen nuestros primeros diez art&iacute;culos escritos completamente en espa&ntilde;ol por escritores de habla hispana. Este suplemento es una extensi&oacute;n de nuestros esfuerzos &mdash; junto a la cobertura de la ciudad de South Los Angeles en nuestra secci&oacute;n de noticias &mdash; para representar con mayor precisi&oacute;n a la poblaci&oacute;n que rodea a USC, ya que el 75% de la poblaci&oacute;n de South L.A. es hispana. Encuentra ahora las versiones completas de estos y el resto de art&iacute;culos en nuestra web o en los quioscos.</i></p>
-                        <p><p>For the first time in our history, the <i>Daily Trojan</i> editorial staff has published a Spanish-language supplement. Today's print and digital editions contain ten articles written entirely in Spanish by Spanish-speaking writers. This supplement is an expansion of our efforts &mdash; along with the newly-instated South Los Angeles city beat in our news section &mdash; to more accurately represent the population surrounding USC, as 75% of the South L.A. population is Hispanic.</p></p>
-                    </div>
-                    <div class="side" style="flex:50%; padding: 20px">
-                        <img src="../uploads/Untitled_Artwork.jpg" style="width:50%; margin: auto; display: block;">
-                    </div>
-                </div>
-                
-            </div>
-
-            <!-- twitter / sports -->
-            <div class="row">
-                <div class="side" style="flex:25%;">
-                    <p><b style="font-family:Gotham;">TWITTER</b></p>
-                    <a class="twitter-timeline" data-height="500" data-width="100%" href="https://twitter.com/dailytrojan?ref_src=twsrc%5Etfw">Tweets by dailytrojan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                <div class="side" style="flex:35%;">
-                    <p><b style="font-family:Gotham;">SPORTS</b></p>
-                    <h1>Pitching woes doom Trojans in loss</h1>
-                    <p class="dek">The first loss of the Stankiewicz era came down to the final strike.</p>
-                    <p class="author">By <b>THOMAS JOHNSON</b><br>February 23, 2023</p>
-                    <img src="https://dailytrojan.com/wp-content/uploads/2023/02/DSC_5287-2-1500x998.jpg">
-                </div>
-                <div class="side" style="flex:35%;">
-                    <table>
-                        <tr>
-                            <td style="width:50%;"><img src="http://dailytrojan.com/wp-content/uploads/2022/01/sports.png"></td>
-                            <td style="width:50%;">
-                                <h1>Fast Break: Regular season finally returns after tumultuous All-Star break</h1>
-                                <p class="dek">NBA puts on an underwhelming performance as we get ready for some real basketball.</p>
-                                <p class="author">By <b>DOMINIC VARELA</b><br>February 23, 2023</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width:50%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/2023_02_10_WBBvsOREGON-13-1500x1000.jpg"></td>
-                            <td style="width:50%;">
-                                <h1>Trojans turn to Washington schools after back-to-back losses</h1>
-                                <p class="dek">After back-to-back road losses to Berkeley and No. 3 Stanford, USC looks to get back on track as they face UW and WSU.</p>
-                                <p class="author">By <b>ROBERT WESTERMANN</b><br>February 23, 2023</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width:50%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/MVB_UCI_LouisChen-0477-1500x1000.jpg"></td>
-                            <td style="width:50%;">
-                                <h1>USC drops doubleheader against GCU</h1>
-                                <p class="dek">The No. 12 Trojans lost two straight games against the Antelopes last week.</p>
-                                <p class="author">By <b>MAYA GOMES</b><br>February 22, 2023</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <p style="text-align:right;"><a href="#">More stories&hellip;</a></p>
-                </div>
-                <div class="side" style="flex:5%;"></div>
-            </div>
-
-            <hr style="width:50%; margin: auto">
-
-            <div class="row opinion">
-                <div class="side" style="flex:5%;">
-                </div>
-                <div class="side" style="flex:35%;">
-                    <p><b style="font-family:Gotham;">OPINION</b></p>
-                    <h1>Culturally Muslim in a Christian society</h1>
-                    <p class="dek">Coming from a different religion can make things harder than you think.</p>
-                    <p class="author">By <b>DAPHNE YAMAN</b><br>February 23, 2023</p>
-                    <img src="https://dailytrojan.com/wp-content/uploads/2023/02/IMG_2242-710x375.jpg">
-                </div>
-                <div class="side" style="flex:55%;">
+                    <hr>
+                    <p class="category"><b>OPINION</b></p>
                     <table>
                         <tr>
                             <td style="width:30%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/img_4931-1500x843.jpeg"></td>
@@ -206,23 +155,8 @@
                         </tr>
                     </table>
                     <p style="text-align:right;"><a href="#">More stories&hellip;</a></p>
-                </div>
-                <div class="side" style="flex:5%;"></div>
-            </div>
-
-            <hr style="width:50%; margin: auto">
-
-            <div class="row ae">
-                <div class="side" style="flex:5%;">
-                </div>
-                <div class="side" style="flex:35%;">
-                    <p><b style="font-family:Gotham;">ARTS & ENTERTAINMENT</b></p>
-                    <h1>Comic Relief: Becoming cultured through comedy</h1>
-                    <p class="dek">“Documentary Now!” forced me to expand my media consumption.</p>
-                    <p class="author">By <b>KIMBERLY AGUIRRE</b><br>February 23, 2023</p>
-                    <img src="https://dailytrojan.com/wp-content/uploads/2023/02/img_0388-1500x1125.jpg">
-                </div>
-                <div class="side" style="flex:55%;">
+                    <hr>
+                    <p class="category"><b>ARTS & ENTERTAINMENT</b></p>
                     <table>
                         <tr>
                             <td style="width:30%;"><img src="https://dailytrojan.com/wp-content/uploads/2023/02/IMG_0140-1-1500x1000.jpg"></td>
@@ -251,7 +185,34 @@
                     </table>
                     <p style="text-align:right;"><a href="#">More stories&hellip;</a></p>
                 </div>
-                <div class="side" style="flex:5%;"></div>
+                <div class="side" style="flex:25%;">
+                    <p><a href="#">Submit tips &#8594;</a></p>
+                    <p><a href="#">View our full archive &#8594;</a></p>
+                    <p><a href="#">Donate to the <i>Daily Trojan</i> &#8594;</a></p>
+                    <hr>
+                    <div class="ae">
+                        <p class="category"><b>ARTS & ENTERTAINMENT</b></p>
+                        <h1>Comic Relief: Becoming cultured through comedy</h1>
+                        <p class="dek">“Documentary Now!” forced me to expand my media consumption.</p>
+                        <p class="author">By <b>KIMBERLY AGUIRRE</b><br>February 23, 2023</p>
+                        <img src="https://dailytrojan.com/wp-content/uploads/2023/02/img_0388-1500x1125.jpg">
+                    </div>
+                    <hr>
+                    <div class="opinion">
+                        <p class="category"><b>OPINION</b></p>
+                        <h1>Culturally Muslim in a Christian society</h1>
+                        <p class="dek">Coming from a different religion can make things harder than you think.</p>
+                        <p class="author">By <b>DAPHNE YAMAN</b><br>February 23, 2023</p>
+                        <img src="https://dailytrojan.com/wp-content/uploads/2023/02/IMG_2242-710x375.jpg">
+                    </div>
+                    <hr>
+                    <div style="height: 450px; background: #e0e0e0; line-height: 450px; text-align: center;">
+                        <p ><I>advertisement</I></p>
+                    </div>
+                    <hr>
+                    <p class="category"><b>EXTRA DE ESPAÑOL</b></p>
+                    <img src="../uploads/Untitled_Artwork.jpg" style="margin: auto; display: block;">
+                </div>
             </div>
     </body>
 

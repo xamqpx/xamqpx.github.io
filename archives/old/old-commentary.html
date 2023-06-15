@@ -58,33 +58,26 @@
     
     </head>
 <body>
-  <div class="navbar">
-    <div class="navbar-left">
-      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button></span>
-      <a href="https://the25post.com" style="font-family:Bodoni MT Poster Compressed; font-size:50px;color:white">
-        THE 25 POST</a>
-    </div>
-    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-      <a href="https://the25post.com/commentary" style="color:white">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction" style="color:white">NON / FICTION</a>
-      <a href="https://the25post.com/meta" style="color:white">META</a>
-      <a href="https://the25post.com/about" style="color:white">ABOUT</a>
-    </div>
+  <div id="navbar">
+    <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+    <p style="margin:0;"><small>A writing website.</small></p>
+    
   </div>
+</div>
 
-  <script>
-  function toggleNav() {
-    var element = document.getElementById("navbar-collapse");
-    var button = document.getElementById("menu");
-    if (element.style.height == "250px") {
-      element.style.height = "0px";
-      button.innerHTML = "&equiv;";
+<script>
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      document.getElementById("navbar").style.padding = "20px";
+      document.getElementById("logo").style.fontSize = "24px";
     } else {
-      element.style.height = "250px";
-      button.innerHTML = "&nequiv;";
-    } 
+      document.getElementById("navbar").style.padding = "30px";
+      document.getElementById("logo").style.fontSize = "40px";
+    }
   }
-  </script>
+</script>
     
     <div class="header">
       <h1 style="font-family:Cheltenham Std Condensed;font-weight:normal;">COMMENTARY</h1>

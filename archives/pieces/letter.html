@@ -34,53 +34,26 @@
 </head>
 
 <body>
-  <div class="navbar" id="navbar">
-    <div class="navbar-left">
-      <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-      
-    </div>
-    <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-      <a href="https://the25post.com/commentary">COMMENTARY</a>
-      <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-      <a href="https://the25post.com/meta">META</a>
-      <a href="https://the25post.com/about">ABOUT</a>
-    </div>
+  <div id="navbar">
+    <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+    <p style="margin:0;"><small>A writing website.</small></p>
+    
   </div>
+</div>
 
-  <script>
-    function toggleNav() {
-      var element = document.getElementById("navbar-collapse");
-      var button = document.getElementById("menu");
-      if (element.style.display == "block") {
-        element.style.display = "none";
-        button.innerHTML = "&equiv;";
-      } else {
-        element.style.display = "block";
-        element.style.height = "170px";
-        button.innerHTML = "&times;";
-      } 
-    }
-    window.onscroll = function() {scrollFunction()};
+<script>
+  window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        document.getElementById("navbar").style.padding = "0px";
-        document.getElementById("logo").style.fontSize = "16px";
-        document.getElementById("menu").style.fontSize = "16px";
-      } else {
-        document.getElementById("navbar").style.padding = "10px 10px";
-        document.getElementById("logo").style.fontSize = "20px";
-        document.getElementById("menu").style.fontSize = "20px";
-      }
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      document.getElementById("navbar").style.padding = "20px";
+      document.getElementById("logo").style.fontSize = "24px";
+    } else {
+      document.getElementById("navbar").style.padding = "30px";
+      document.getElementById("logo").style.fontSize = "40px";
     }
-
-    window.onload = function() {navbarCollapse()};
-    function navbarCollapse() {
-      document.getElementById("navbar").style.padding = "10px 10px";
-      document.getElementById("logo").style.fontSize = "20px";
-      document.getElementById("menu").style.fontSize = "20px";
-    }
-  </script>
+  }
+</script>
 
 <div class="row">
     <div class="side">
@@ -88,7 +61,7 @@
     <div class="main">
       <div style="text-align:center">
         <h3>NON / FICTION</h3>
-        <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px;">A letter to Half Moon Bay</h2>
+        <h2 class="headline">A letter to Half Moon Bay</h2>
         <p>19 February 2023</p>
         <img src="../uploads/letter-to-half-moon-bay.jpg">
         <p class="photo-credit">Photo by <b>JONATHAN PARK</b></p>
@@ -115,7 +88,7 @@
 
 <p>I write because I just want to live. And that means preserving, if not the little sanctity left in the places and the people I love, then the memory of how it used to be, or a dream of how it could be. Utopia is not feasible, nor will it ever be feasible, but we might as well try. For at least thousands of years, we&rsquo;ve depended on a notion of utopia to even survive, to have the strength to press onward. Now is no different.</p>
 
-<p>On Sunday, I went again, with my mother. We walked, as we always do, to the enormous tree that guards the yawning cliffside. It splits at the roots into two thick branches, each stretching out for a little then giving way to gravity and drooping at the end. It's always been there; It's been there so long there's a well-trodden path cutting through the split, darting for a bench nearby. I walked the path through the roots; I pressed my hand on the old bark. And I was reminded, again, of the constant in my life that is Half Moon Bay &mdash; whose roots are older than memory, but whose leaves still sway and fall and grow anew. </p>
+<p>On Sunday, I went again, with my mother. We walked, as we always do, to the enormous tree that guards the yawning cliffside. It splits at the roots into two thick branches, each stretching out for a little then giving way to gravity and drooping at the end. It's always been there; It's been there so long there's a well-trodden path cutting through the split, darting for a bench nearby. I walked the path through the roots; I pressed my hand on the old bark. And I was reminded, again, of the constant in my life that is Half Moon Bay &mdash; whose roots are older than memory, but whose leaves still sway and fall and grow anew.&nbsp;&#9632;</p>
             </div>
         <div class="spacer">
             <p></p>

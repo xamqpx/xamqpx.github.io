@@ -56,65 +56,38 @@
          </style>
     </head>
     <body>
-      <div class="navbar" id="navbar">
-        <div class="navbar-left">
-          <span><button id="menu" class="openbtn" onclick="toggleNav()">&equiv;</button><a href="https://the25post.com" style="font-family:Cheltenham Tooled Bold;display:inline;"><span id="logo">THE 25 POST</span></a></span>
-          
-        </div>
-        <div id="navbar-collapse" class="navbar-right" style="vertical-align: middle;">
-          <a href="https://the25post.com/commentary">COMMENTARY</a>
-          <a href="https://the25post.com/nonfiction">NON / FICTION</a>
-          <a href="https://the25post.com/meta">META</a>
-          <a href="https://the25post.com/about">ABOUT</a>
-        </div>
+      <div id="navbar">
+        <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+        <p style="margin:0;"><small>A writing website.</small></p>
+        
       </div>
-    
-      <script>
-        function toggleNav() {
-          var element = document.getElementById("navbar-collapse");
-          var button = document.getElementById("menu");
-          if (element.style.display == "block") {
-            element.style.display = "none";
-            button.innerHTML = "&equiv;";
-          } else {
-            element.style.display = "block";
-            element.style.height = "170px";
-            button.innerHTML = "&times;";
-          } 
+    </div>
+  
+    <script>
+      window.onscroll = function() {scrollFunction()};
+  
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("navbar").style.padding = "20px";
+          document.getElementById("logo").style.fontSize = "24px";
+        } else {
+          document.getElementById("navbar").style.padding = "30px";
+          document.getElementById("logo").style.fontSize = "40px";
         }
-        window.onscroll = function() {scrollFunction()};
-    
-        function scrollFunction() {
-          if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            document.getElementById("navbar").style.padding = "0px";
-            document.getElementById("logo").style.fontSize = "16px";
-            document.getElementById("menu").style.fontSize = "16px";
-          } else {
-            document.getElementById("navbar").style.padding = "10px 10px";
-            document.getElementById("logo").style.fontSize = "20px";
-            document.getElementById("menu").style.fontSize = "20px";
-          }
-        }
-    
-        window.onload = function() {navbarCollapse()};
-        function navbarCollapse() {
-          document.getElementById("navbar").style.padding = "10px 10px";
-          document.getElementById("logo").style.fontSize = "20px";
-          document.getElementById("menu").style.fontSize = "20px";
-        }
-      </script>
+      }
+    </script>
 
         <div class="row">
             <div class="side">
                 <h3>FOLLOW-UP</h3>
-                <h2 style="font-family: Cheltenham Bold;font-weight:normal;font-size:38px">Luka Doncic casually makes N.B.A. history</h2>
+                <h2 class="headline">Luka Doncic casually makes N.B.A. history</h2>
                 <p>28 December 2022</p>
             </div>
             <div class="main">
                 <img src="https://phantom-marca.unidadeditorial.es/2b37544c7785d7e2ee3aa140bd57af26/resize/1320/f/jpg/assets/multimedia/imagenes/2022/12/28/16722077249958.jpg">
                 <p class="photo-credit">Photo courtesy of <b>ASSOCIATED PRESS</b></p>
 
-                <div style="background: #e0e0e0;padding: 20px 0px;">
+                <div style="background: #525252;padding: 20px 0px;">
                   <p class="photo-credit" style="text-align:center;margin-bottom:10px;">NYK at DAL<br>27 December 2022</p>
                   <table>
                     <tr>
@@ -132,7 +105,7 @@
                   </table>
                 </div>
                 <br>
-                <div style="background: #e0e0e0;padding: 20px 0px;">
+                <div style="background: #525252;padding: 20px 0px;">
                   <p class="photo-credit" style="text-align:center;margin-bottom:10px;">Luka Doncic Stats</p>
                   <table>
                     <tr>
