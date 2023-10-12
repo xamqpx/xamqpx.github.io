@@ -39,250 +39,83 @@
 <!--stylesheets-->
 <link rel="stylesheet" href="homepages-stylesheet.css">
 <link rel="stylesheet" href="fonts.css">
-
-<style>
-  body { padding: 20px; }
-  body, .featured { color: white; }
-  .overflow-hidden { overflow: hidden; }
-  h2 { font-size: 45px; margin: 0; font-family: 'Kepler Bold Extended'; }
-  .container h2 { font-family: 'Megalito'; }
-  .drop-in { animation: drop-in 2s ease 200ms backwards; }
-  .drop-in-2 { animation: drop-in s ease 1000ms backwards; }
-  .the-rest { animation: drop-in 1s ease 2000ms backwards; }
-  a:link, a:visited, a:hover, a:active, a.fil-div { color: white; }
-  .row .rawr:hover { background-color: #525252; }
-
-  .divide { color: grey; width: 100%; margin: 20px auto; }
-  
-  .headlining h2 { font-size: 40px; }
-
-  .popular h2, .smaller-hed { font-size: 20px; }
-  .popular a:hover { text-decoration: underline; }
-  .popular .side { padding: 10px; transition: 0.5s background-color; }
-  .popular .title {height: 120px; }
-  .popular img { height: 200px; object-fit: cover; }
-
-  .more-stories a:hover { text-decoration: underline; }
-
-  .article-tag {
-    margin: 0 0 5px 0;
-    font-family: 'Poppins';
-    color: #dd7e6b;
-    font-size: 14px;
-    font-weight: normal;
-  }
-  a.fill-div:hover { text-decoration: none; }
-  .popular .side:hover { background-color: #525252; }
-
-  ul li { padding: 5px 0; }
-
-  footer { font-size: 14px; text-align: right; padding: 20px; }
-  footer a:hover { text-decoration: underline; }
-  
-
-  @keyframes drop-in {
-    from { opacity: 0;  transform: translateY(100px); }
-    to { opacity: 1; transform: translate(0px); }
-  }
-
-  @media screen and (max-width: 1000px) {
-    .container { padding: 0; }
-    .popular img, .featured img, .popular .title, .feat-title { height: auto; }
-    .popular .side { border-bottom: 1px solid grey; margin-top: 20px; padding-bottom: 20px; }
-  }
-  .blink {
-            animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
-        }
-</style>
+<script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="meat" style="background:black">
-  <div class="container" style="padding: 20px; position: sticky; top: 0; background: black;">
-    <div class="overflow-hidden">
-      <a href=""><h2 style="color:white;" class="drop-in">THE TWENTY-FIVE POST</h1></a>
-    </div>
-    <div class="overflow-hidden">
-     <span style="color:white;" class="drop-in-2">A writing website.</span>
-    </div>
-    </div>
-
-    <div class="the-rest">
-
-      <a class="fill-div" href="/archives/letters/ami-omar.html">
-        <div style="background: white; margin-bottom: 50px; color: black; padding: 10px;">
-          <span class="article-tag" style="color: black;font-size:24px; ">LETTERS: TO AMI & OMAR</span>&nbsp;&nbsp;&nbsp;<span>13 May 2023</span>
-        </div>
-      </a>
-
-      <a href="/archives/articles/mac-demarco.html">
-        <div class="row headlining">
-          <div class="side" style="flex:25%;"></div>
-          <div class="side" style="flex:50%;">
-            <div style="text-align:center">
-              <p class="article-tag">MUSIC</p>
-              <h2>Life, death, and Mac DeMarco</h2>
-              <p>At a turning point, I find myself gravitating toward the indescribable emotions in his music.</small>
-              <p class="author"></p>
-              <small>15 June 2023</small>
-            </div>
-            <br><br>
-            <img src="archives/uploads/mac-demarco.jpg">
-            <p class="photo-credit">25POST DESIGN. PHOTO: HARMONY GERBER/FILMMAGIC</p>
-            
-          </div>
-          <div class="side" style="flex:25%;"></div>
-        </div>
-      </a>
-
-      <hr class="divide">
-
-      <div class="row">
-        <div class="left rawr" style="flex:33.3%;animation: 0.4s ease-out 0s 1 fade;">
-          <a class="fill-div" href="/archives/articles/kings.html">
-            <div class="featured">
-              <div class="feat-title">
-                <p class="article-tag">SPORTS</p>
-                <h3>Reflections of a longtime Kings fan</h3>
-                <p>This year was the greatest season of basketball I have ever seen in my life.</p>
-              </div>
-              <p class="author">by NEIL SINGH MCWHORTER</p>
-              <small>11 May 2023</small>
-              <img src="archives/uploads/23107125942923.jpg">
-            <p class="photo-credit">JOSÉ LUIS VILLEGAS/AP PHOTO</p>
-            </div>
-          </a>
-        </div>
-        <div class="main rawr" style="flex:33.3%;animation: 1s ease-out 0s 1 fade;">
-          <a class="fill-div" href="/archives/articles/la-la-land.html">
-            <div class="featured">
-              <div class="feat-title">
-                <p class="article-tag">REVIEWS</p>
-                <h3>What <i>La La Land</i> taught me</h3>
-                <p>Mia and Sebastian&rsquo;s never-ending desire to try and do what they love — the one thing that binds them — ends up also being the very thing that ends their relationship.</p>
-              </div>
-              <p class="author">by AMITAI SEGEV</p>
-              <small>26 March 2023</small>
-              <img src="https://cdn.vox-cdn.com/thumbor/PbUR5aqwxM1wqHM7WKivo7rHM-E=/0x0:6144x4080/1220x813/filters:focal(2842x1225:3824x2207):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/52253317/LLL_D26_04820.0.jpeg">
-            <p class="photo-credit">DALE ROBINETTE/LIONSGATE</p>
-            </div>
-          </a>
-        </div>
-        <div class="right rawr" style="flex:33.3%;animation: 2s ease-out 0s 1 fade;">
-          <a class="fill-div" href="/archives/articles/haiti-full.html">
-            <div class="featured">
-              <div class="feat-title">
-                <p class="article-tag">Q&A</p>
-                <h3>Haiti just can&rsquo;t catch a break</h3>
-                <p>The nation&rsquo;s current crisis is a test of how much we&rsquo;ve learned during our racial reckonings.</p>
-              </div>
-              <p class="author">&nbsp;</p>
-              <small>24 March 2023</small>
-              <img src="https://media.npr.org/assets/img/2023/02/11/dance-19-78ab71f7f249c1c01fc3bc5c83a2f450ce8207ec-s1200-c85.webp">
-            <p class="photo-credit">RICHARD PIERRIN | AFP/GETTY IMAGES</p>
-            </div>
-          </a>
-      </div>
-    </div>
-
-    <hr class="divide">
-    <h2 style="text-align: center; font-size:28px;">POPULAR</h2>
-    <hr class="divide" style="width: 100%;">
-
-    <div class="row popular">
-      <div class="side" style="flex:25%;">
-        <a class="fill-div" href="/archives/articles/newjeans.html">
-          <div class="title">
-            <p class="article-tag">MUSIC</p>
-          <h2>&lsquo;Ditto,&rsquo; the NewJeans gateway drug</h2>
-          </div>
-          <p class="author">&nbsp;</p>
-          <small>23 December 2022</small>
-          <br><br>
-          <img src="https://newjeans.kr/imgs/window/new-folder-1/nj_ditto_5.jpg">
-        </a>
-      </div>
-      <div class="side" style="flex:25%;">
-        <a class="fill-div" href="archives/articles/brief-encounter.html">
-          <div class="title">
-            <p class="article-tag">REVIEWS</p>
-                <h2><i>Brief Encounter:</i> As time goes by, fate writes a melancholic romance</h2>
-          </div>
-          <p class="author">by <b>KEVIN NGUYEN</b></p>
-              <small>13 January 2023</small>
-          <br><br>
-          <img src="archives/uploads/brief-encounter-cover.webp">
-        </a>
-      </div>
-      <div class="side" style="flex:25%;">
-        <a class="fill-div" href="/archives/articles/17776-review.html">
-          <div class="title">
-            <p class="article-tag">REVIEWS</p>
-            <h2>&lsquo;17776&rsquo; is the best argument against capitalist immortality humanity has to offer</h2>
-          </div>
-          <p class="author">&nbsp;</p>
-          <small>6 July 2022</small>
-          <br><br>
-          <img src="https://pbs.twimg.com/media/DEzidxwUIAA4Pfu?format=jpg&name=900x900">
-        </a>
-      </div>
-      <div class="side" style="flex:25%;">
-        <a class="fill-div" href="archives/pieces/guy.html">
-          <div class="title">
-            <p class="article-tag">NON / FICTION</p>
-            <h2>Guy</h2>
-          </div>
-          <p class="author">by <b>PETER LIU</b></p>
-          <small>11 April 2022</small>
-          <br><br>
-          <img src="archives/uploads/GUY%2025POST.JPG">
-        </a>
-      </div>
-    </div>
-
-    <hr class="divide">
-
+<body>
+  <div class="container">
+    
     <div class="row">
-      <div class="side" style="flex: 50%; padding: 20px; background: #525252;">
-        <p style="margin:0;"><small><i>From the archives:</i></small></p><br>
-          <div class="row">
-            <div class="side" style="flex: 50%;padding-right:20px">
-              <p class="article-tag">POLITICS</p>
-              <a href="archives/articles/korea-trumpist.html"><h2 style="font-size:30px;">South Korea&rsquo;s Trumpist phase</h2></a>
-              <p>Democracy is at an age where it is of the people, and by the people, but certainly not for the people.</p>
-              <small>1 November 2022</small>
-            </div>
-            <div class="side" style="flex: 50%;padding-left:20px">
-              <a href="archives/articles/korea-trumpist.html"><img src="archives/uploads/korea-trumpist.webp"></a>
-            </div>
-        </div>
-        </a>
+      <!-- BIG LOGO -->
+    <a href="index.html">
+      <div id="big-logo">
+        <h1>25</h1>
       </div>
-      <div class="side more-stories" style="flex: 50%; padding: 20px;">
-        <h2 class="smaller-hed">More stories:</h2>
+    </a>
+      <div class="col" style="flex:40%">
+        <div class="article-filler" id="main-feature">
+          <a class="article-url" href="archives/articles/mac-demarco.html">
+            <img class="photo" src="https://the25post.com/archives/uploads/mac-demarco.jpg">
+          </a>
+          <span class="photo-credit">25POST DESIGN. PHOTO: HARMONY GERBER/FILMMAGIC</span>
+          <h6 class="kicker">MUSIC</h6>
+          <a class="article-url" href="https://the25post.com/archives/articles/mac-demarco.html">
+            <h2 id="main-feature-hed" class="headline">Life, death, and Mac DeMarco</h2>
+          </a>
+          <p class="subhead">At a turning point, I find myself gravitating toward the indescribable emotions in his music.</p>
+          <h4>by <span class="author">JONATHAN PARK</span></h4>
+          <small class="date">15 June 2023</small>
+        </div>
+      </div>
+      <div class="col" style="flex: 20%; padding: 0px !important;">
+        <div class="article-filler">
+          <h6 class="kicker">SPORTS</h6>
+          <a class="article-url">
+            <h2 class="headline">Reflections of a longtime Kings fan</h2>
+          </a>          
+          <p class="subhead">This year was the greatest season of basketball I have ever seen in my life.</p>
+          <h4>by <span class="author">NEIL SINGH MCWHORTER</span></h4>
+          <small class="date">11 May 2023</small>
+
+        </div>
+        <hr class="divide">
+        <div class="article-filler">
+          <h6 class="kicker">REVIEWS</h6>
+          <a class="article-url">
+            <h2 class="headline">What La La Land taught me</h2>
+          </a>
+          <p class="subhead">Mia and Sebastian’s never-ending desire to try and do what they love — the one thing that binds them — ends up also being the very thing that ends their relationship.</p>
+          <h4>by <span class="author">AMITAI SEGEV</span></h4>
+          <small class="date">26 March 2023</small>
+        </div>
+        <hr class="divide">
+        <div class="article-filler">
+          <h6 class="kicker">Q&A</h6>
+          <a class="article-url">
+            <h2 class="headline">Haiti just can’t catch a break</h2>
+          </a>
+          <p class="subhead">The nation’s current crisis is a test of how much we’ve learned during our racial reckonings.</p>
+          <h4>by <span class="author">JONATHAN PARK</span></h4>
+          <small class="date">24 March 2023</small>
+        </div>
+      </div>
+
+      <div class="col" style="flex:20%; background: #ce8054aa; padding: 40px;">
+        <h2><i class="fa-solid fa-circle blink"></i> In the news</h2>
+        <p style="font-size:24px;">Violence continues in Israel and Gaza following attack of unprecedented scale from Hamas.</p>
         <ul>
-          <li><a href="/archives/pieces/letter.html">A letter to Half Moon Bay</a></li>
-          <li><a href="archives/articles/quecreek.html">Between Springhill and Quecreek</a></li>
-          <li><a href="archives/articles/loyle-carner.html">Every once in a while, Loyle Carner reminds you he&rsquo;s alive</a></li>
-          <li><a href="archives/articles/luka-doncic.html">The ups and ups of Luka Doncic</a></li>
-          <li><a href="archives/articles/hsu.html">HSU</a></li>
-          <li><a href="archives/articles/misch-electronic.html">Tom Misch goes electronic</a></li>
-          <li><a href="archives/pieces/dreamsearching.html">dreamsearching</a></li>
-          <li><a href="archives/pieces/nelson.html">Nelson</a></li>
-          <li><a href="archives/articles/peter-liminal.html">Peter Liu finds home in liminal spaces</a></li>
-          <li><a href="archives/articles/comment-queen-legacy.html">The crimes that &lsquo;stable, dutiful&rsquo; Elizabeth hid in plain sight</a></li>
+          <li>Surprise attack over weekend caught Israel, allies off guard despite advanced intelligence, defense tech</li>
+          <li>The death toll on either side of the border has surpassed 1,000</li>
+          <li>Experts expect Israel ground invasion of Gaza to be imminent</li>
+          <li>Israel declares 'complete siege' of Gaza, vows to cut food, electricity, necessities; last entry out of Gaza destroyed in airstrikes</li>
+          <li>Biden: "We stand with Israel"; Iran, Saudi Arabia reaffirm support for Hamas</li>
+          <li>Israeli PM Netanyahu forms unity gov't; left wing refusing to join as long as far-right parties also part of coalition</li>
+          <li>EU walks back reported claims to cut aid to Palestine</li>
+          <li>US Congress looks to muster aid for Israel despite having no House Speaker</li>
+          <li>Blinken says US investigating reports that Tehran directly backed Hamas attack</li>
         </ul>
-        
-        
       </div>
     </div>
-
-   
-    <footer>
-      <p>The 25 Post &copy; 2023. All rights reserved.</p>
-      <p>
-        <a href="https://instagram.com/25.post">Instagram</a> | <a href="https://github.com/xamqpx/xamqpx.github.io">GitHub</a>
-      </p>
-    </footer>
-
+  </div>
 </body>
 </html>
