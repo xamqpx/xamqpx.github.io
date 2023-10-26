@@ -81,7 +81,7 @@
 }
 
 .col {
-  margin: 10px 20px;
+  margin: 10px 10px;
 }
 
 span.photo-credit {
@@ -115,9 +115,7 @@ h2 {
 }
 
 hr.divide, hr.column-divide { 
-  border: 0; 
-  height: 1px; 
-  background: #aaa;
+  border: 1px solid #dedede;
   margin: 40px 0;
 }
 
