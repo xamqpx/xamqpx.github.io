@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NYT Feed</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="archives/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="archives/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="archives/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="archives/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="archives/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="archives/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="archives/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="archives/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="archives/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="archives/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="archives/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="archives/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="archives/icons/favicon-16x16.png">
+        <link rel="manifest" href="archives/icons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="archives/icons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="homepages-stylesheet.css">
+        <link rel="stylesheet" href="fonts.css">
+        <script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
+
+        <meta property='og:image'>
+        <meta property="og:title" content="all the news fit to scrape." />
+        <meta property="og:description" content="For testing purposes only."/>
+        <style>
+            body {
+                max-width: 1600px; margin: 0 auto;
+            }
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            .flex-item {
+                flex: 1;
+            }
+            .left {
+                width: 25%;
+                position: fixed;
+                padding: 20px;
+            }
+            .flex-item-40 {
+                margin-left: 34%;
+                width: 40%;
+            }
+
+            .right { width: 20%; }
+            
+            @media screen and (max-width: 800px) {
+                .flex-item-30 {
+                    position: relative;
+                }
+                .flex-item-40 {
+                    margin-left: 0;
+                    flex-basis: 100%;
+                }
+            }
+
+            @media screen and (min-width: 1600px) {
+                .left {
+                    width: 20%;
+                }
+            }
+
+            #feed {
+                padding: 20px;
+                border-left: 1px solid black;
+            }
+
+            #feed h2 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: normal;
+                font-size: 24px;
+                margin: 10px 0;
+            }
+            #feed p {
+                font-size: 16px;
+            }
+            #feed a {
+                font-size: 12px;
+                text-decoration: none;
+                border-bottom: 1px solid #000;
+                margin: 0;
+                font-family: 'Poppins';
+            }
+            #feed .byline {
+                font-size: 12px;
+                font-family: 'Poppins';
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item left">
+                <h2><a href="https://the25post.com">25</a></h2>
+                <h2 style="font-size: 60px; margin: 50px 20px 10px 0;">all the news fit to scrape.</h2>
+                <div id="copy"></div>
+                <br>
+                <div id="glance"></div>
+            </div>
+            <div class="flex-item flex-item-40">
+                
+                <div id="feed"></div>
+            </div>
+            <div class="flex-item right"></div>
+        </div>
+    </body>
+    <script>
+        fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Gqo6m80T7IN1xR3IdazVGleYtWfYTPjO')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("copy").innerHTML = `<small style="font-size: 12px;">For testing purposes only.<br>${data.copyright}</small>`;
+            document.querySelector("meta[property='og:image']").setAttribute("content", data.results[0].multimedia[0].url);
+            for (let result of data.results) {
+                document.getElementById("feed").innerHTML += `
+                    <div class="article" style="margin: 20px 0 80px 0;">
+                        <h2>${result.title}</h2>
+                        <small class="byline">${result.byline}</small>
+                        <img src=${result.multimedia[0].url} style="width: 100%; height: auto; margin: 10px 0 0 0;">
+                        <small style="font-size:12px;"><span style="font-family: 'Work Sans';">${result.multimedia[0].caption}</span> <span style="font-family:'Poppins';font-weight: normal;">${result.multimedia[0].copyright}<span></small>
+                        <p>${result.abstract}</p>
+                        <a href="${result.url}" target="_blank">more</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</html>
