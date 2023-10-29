@@ -32,38 +32,29 @@
         <meta property="og:title" content="all the news fit to scrape." />
         <meta property="og:description" content="For testing purposes only."/>
         <meta name="twitter:card" content="summary_large_image">
+        <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
         <style>
-            body {
+            .flex-container, html, body {
                 max-width: 1600px; margin: 0 auto;
+                height: 100%;
             }
             .flex-container {
                 display: flex;
                 flex-wrap: wrap;
-                
+                overflow: hidden;
             }
             .flex-item {
                 flex: 1;
+                float: left;
+                width: 30%;
+                height: 100%;
+                overflow: scroll;
+                padding: 0 20px;
             }
-            .left {
-                width: 25%;
-                position: fixed;
-                padding: 20px;
-            }
-            .flex-item-40 {
-                margin-left: 34%;
-                width: 40%;
-            }
-
-            .right { width: 20%; }
             
             @media screen and (max-width: 800px) {
-                .flex-item-30 {
-                    position: relative;
-                }
-                .flex-item-40 {
-                    margin-left: 0;
-                    flex-basis: 100%;
-                }
+                .flex-container, html, body { flex-direction: column; height: initial; width: 100%; }
+                .flex-item { width: 80%; }
             }
 
             @media screen and (min-width: 1600px) {
@@ -72,64 +63,158 @@
                 }
             }
 
-            #feed {
+            .feed {
                 padding: 20px;
                 border-left: 1px solid black;
+                margin-top: 30px;
             }
 
-            #feed h2 {
-                font-family: 'Poppins', sans-serif;
+            .feed h2 {
+                font-family: 'Le Monde Journal', sans-serif;
                 font-weight: normal;
                 font-size: 24px;
                 margin: 10px 0;
             }
-            #feed p {
+            .feed p {
                 font-size: 16px;
+                font-family: 'Le Monde Journal';
             }
-            #feed a {
-                font-size: 12px;
+            .feed a {
                 text-decoration: none;
-                border-bottom: 1px solid #000;
                 margin: 0;
                 font-family: 'Poppins';
             }
-            #feed .byline {
+            .feed .byline {
                 font-size: 12px;
                 font-family: 'Poppins';
             }
+            .article { margin-bottom: 40px; }
+            .feed-title { margin-left: -5px; position: absolute; background: black; color: white; padding: 10px; }
+
+            .article h6 { font-family: 'Poppins'; font-weight: normal; font-size: 12px; margin: 0; color: #dd7e6b; }
         </style>
     </head>
     <body>
         <div class="flex-container">
-            <div class="flex-item left">
-                <h2><a href="https://the25post.com">25</a></h2>
+            <div class="flex-item" style="flex: 20%; padding: 40px;">
+                <h6 style="font-size: 24px; font-family: 'Cheltenham Bold';"><a href="https://the25post.com">25</a></h6>
                 <h2 style="font-size: 60px; margin: 50px 20px 10px 0;">all the news fit to scrape.</h2>
                 <div id="copy"></div>
                 <br>
                 <div id="glance"></div>
             </div>
-            <div class="flex-item flex-item-40">
-                
-                <div id="feed"></div>
+            <div class="flex-item" style="flex: 20%;">
+                <h2 class="feed-title">UNITED STATES</h2>
+                <div class="feed" id="feed-us"></div>
             </div>
-            <div class="flex-item right"></div>
+            <div class="flex-item" style="flex: 20%;">
+                <h2 class="feed-title">WORLD</h2>
+                <div class="feed" id="feed-world">
+                    <div id="locations"></div>
+                    <br>
+                </div>
+            </div>
+            <div class="flex-item" style="flex: 20%;">
+                <h2 class="feed-title">ARTS</h2>
+                <div class="feed" id="feed-science"></div>
+            </div>
         </div>
     </body>
     <script>
-        fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=Gqo6m80T7IN1xR3IdazVGleYtWfYTPjO')
+        fetch('https://api.nytimes.com/svc/topstories/v2/us.json?api-key=Gqo6m80T7IN1xR3IdazVGleYtWfYTPjO')
         .then(response => response.json())
         .then(data => {
-            document.getElementById("copy").innerHTML = `<small style="font-size: 12px;">For testing purposes only.<br>${data.copyright}</small>`;
+            document.getElementById("copy").innerHTML = `<small style="font-size: 12px; font-family: 'Le Monde Journal' !important;">For testing purposes only.<br>${data.copyright}</small>`;
             document.querySelector("meta[property='og:image']").setAttribute("content", data.results[0].multimedia[0].url);
             for (let result of data.results) {
-                document.getElementById("feed").innerHTML += `
-                    <div class="article" style="margin: 20px 0 80px 0;">
+                let sub_section = result.subsection;
+                if (result.subsection == "") {
+                    result.subsection = "news";
+                }
+                document.getElementById("feed-us").innerHTML += `
+                    <div class="article">
+                        <h6>${result.subsection}</h6>
                         <h2>${result.title}</h2>
                         <small class="byline">${result.byline}</small>
-                        <img src=${result.multimedia[0].url} style="width: 100%; height: auto; margin: 10px 0 0 0;">
-                        <small style="font-size:12px;"><span style="font-family: 'Work Sans';">${result.multimedia[0].caption}</span> <span style="font-family:'Poppins';font-weight: normal;">${result.multimedia[0].copyright}<span></small>
+                        <a href="${result.url}"><img src=${result.multimedia[0].url} style="width: 100%; height: auto; margin: 10px 0 0 0;"></a>
+                        <small style="font-size:10px; font-family: 'Le Monde Journal';">${result.multimedia[0].copyright}</small>
                         <p>${result.abstract}</p>
-                        <a href="${result.url}" target="_blank">more</a>
+                        <a href="${result.url}" style="font-size: 12px; background: #dd7e6b; color: white; padding: 0 10px;" target="_blank">more</a>
+                    </div>
+                `;
+            }
+        });
+
+        fetch('https://api.nytimes.com/svc/topstories/v2/world.json?api-key=Gqo6m80T7IN1xR3IdazVGleYtWfYTPjO')
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector("meta[property='og:image']").setAttribute("content", data.results[0].multimedia[0].url);
+            var geos = [];
+            for (let r of data.results) {
+                if (r.geo_facet.length > 0) {
+                    for (let geo of r.geo_facet) {
+                        geos.push(geo);
+                    }
+                }
+            }
+
+            // Count occurences of each geo
+            var counts = {};
+            for (let geo of geos) {
+                counts[geo] = counts[geo] ? counts[geo] + 1 : 1;
+            }
+
+            // Sort by count
+            var sortedGeos = [];
+            for (let geo in counts) {
+                sortedGeos.push([geo, counts[geo]]);
+            }
+            sortedGeos.sort(function(a, b) {
+                return b[1] - a[1];
+            });
+
+            // Display top 5
+            document.getElementById("locations").innerHTML = `
+                <p style="font-size: 12px; margin: 0; font-family: 'Le Monde Journal';">
+                    ${sortedGeos[0][0]} (${sortedGeos[0][1]}), 
+                    ${sortedGeos[1][0]} (${sortedGeos[1][1]}), 
+                    ${sortedGeos[2][0]} (${sortedGeos[2][1]}), 
+                    ${sortedGeos[3][0]} (${sortedGeos[3][1]}), 
+                    ${sortedGeos[4][0]} (${sortedGeos[4][1]}),
+                    ${sortedGeos[5][0]} (${sortedGeos[5][1]}),
+                    ${sortedGeos[6][0]} (${sortedGeos[6][1]}),
+                    ${sortedGeos[7][0]} (${sortedGeos[7][1]})
+                </p>
+            `;
+
+            for (let result of data.results) {
+                document.getElementById("feed-world").innerHTML += `
+                    <div class="article">
+                        <h6>${result.subsection}</h6>
+                        <a href="${result.url}"><h2>${result.title}</h2></a>
+                        <small class="byline">${result.byline}</small>
+                        <a href="${result.url}"><img src=${result.multimedia[0].url} style="width: 100%; height: auto; margin: 10px 0 0 0;"></a>
+                        <small style="font-size:10px; font-family: 'Le Monde Journal';">${result.multimedia[0].copyright}</small>
+                        <p>${result.abstract}</p>
+                        <a href="${result.url}" style="font-size: 12px; background: #dd7e6b; color: white; padding: 0 10px;" target="_blank">more</a>
+                    </div>
+                `;
+            }
+        });
+        fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=Gqo6m80T7IN1xR3IdazVGleYtWfYTPjO')
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector("meta[property='og:image']").setAttribute("content", data.results[0].multimedia[0].url);
+            for (let result of data.results) {
+                document.getElementById("feed-science").innerHTML += `
+                    <div class="article">
+                        <h6>${result.subsection}</h6>
+                        <a href="${result.url}"><h2>${result.title}</h2></a>
+                        <small class="byline">${result.byline}</small>
+                        <a href="${result.url}"><img src=${result.multimedia[0].url} style="width: 100%; height: auto; margin: 10px 0 0 0;"></a>
+                        <small style="font-size:10px; font-family: 'Le Monde Journal';">${result.multimedia[0].copyright}</small>
+                        <p>${result.abstract}</p>
+                        <a href="${result.url}" style="font-size: 12px; background: #dd7e6b; color: white; padding: 0 10px;" target="_blank">more</a>
                     </div>
                 `;
             }
