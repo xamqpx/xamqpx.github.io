@@ -102,7 +102,8 @@ function parseGameData(gameId) {
         const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-5);
 
         let scoring_plays_html = '';
-        for (let play of scoring_plays) {
+        for (i = scoring_plays.length - 1; i >= 0; i--) {
+            const play = scoring_plays[i];
             const scoring_description = play.text;
             const scoring_time = play.clock.displayValue;
             const scoring_period = play.period.displayValue;
