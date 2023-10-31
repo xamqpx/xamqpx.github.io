@@ -195,14 +195,14 @@ function parseGameData(gameId) {
                 document.getElementById(i).innerHTML += `
                 <h4> </h4>
                 <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
-                <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
+                <h6>${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</h6>
                 
                 `
                 } else {
                     document.getElementById(i).innerHTML += `
                     <h4>${xstat.displayName.toLowerCase()}</h4>
                     <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
-                    <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
+                    <h6>${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</h6>
                     `;    
                 }
                 
