@@ -1,0 +1,315 @@
+<html>
+    <head>
+        <style>
+            html { width: 20%; margin: 0 auto; }
+            h4 { margin: 10px 0;}
+            #scoreboard {
+            display: flex;
+            justify-content: center;
+            }
+
+
+            #scoreboard > div {
+            padding: 10px; 
+            }
+
+            #scoreboard h4, #scoreboard h6 { text-align: center !important; }
+
+            #scoreboard h4 { font-size: 42px !important; }
+
+            #leaders-container h4 { margin: 10px 0 !important; }
+
+            #leaders-container h6 { margin: 0 !important; }
+
+            h4.stats-header { display: inline-block; color: white; padding: 5px 10px; background: #900; }
+
+            button#toggle-all-stats { border: 0; background: 0; text-decoration: underline; color: #900; cursor: pointer; font-family: 'Neue Haas Grotesk Pro' !important; padding: 0; }
+
+            #win-probability-container h4.percentage { margin: 0; font-size: 40px; }
+
+            table#linescore-table { width: 100%; border-collapse: collapse; }
+            table#linescore-table td.linescores-team-name h6 { text-align: right !important; }
+            table#linescore-table h6 { margin-bottom: 0; }
+
+            table#linescore-table tr:first-child { border-bottom: 1px solid #ccc; }
+
+            #scoring-plays-container { border-left: 1px solid black; padding: 5px 12px; }
+        </style>
+    </head>
+
+<body>
+<!-- SCORE -->
+<div id="score-container"></div>
+<br>
+
+<!-- TOGGLE STATS -->
+<button id="toggle-all-stats" onclick="toggleStats()"><p>Hide stats</p></button>
+  <div id="all-stats-container">
+
+    <h4 class="stats-header">Scoring plays</h4>
+    <ul id="scoring-plays-container"></ul>
+    
+    <div id="win-probability-container">
+    	<h4 class="stats-header">Win probability</h4>
+    </div>
+    
+    <br>
+    
+<!-- GAME LEADERS -->
+    <div id="leaders-header-container"></div>
+    <div id="leaders-container" style="display: flex;">
+      <div id="1" style="flex:50%;"></div>
+      <div id="0" style="flex:50%; text-align: right !important;"></div>
+    </div>
+    
+    <br>
+    <div id="disclaimer"></div>
+</div>
+
+
+<!--
+TOGGLE STATS
+-->
+<script>
+toggleStats();
+toggleStats();
+function toggleStats() {
+	const toggle_button = document.getElementById('toggle-all-stats')
+	const all_stats = document.getElementById('all-stats-container');
+    if (all_stats.style.display === 'none') {
+    	all_stats.style.display = 'block';
+        toggle_button.innerHTML = `<p>Hide stats</p>`;
+    } else {
+    	all_stats.style.display = 'none';
+        toggle_button.innerHTML = `<p>Show stats</p>`;
+    }
+}
+</script>
+
+<!-- 
+GET DATA FROM ESPN API
+
+CHANGING API URL:
+- Go to the dedicated ESPN page for the game:
+- Get the nine-digit number at the end of the URL
+e.g. url is https://www.espn.com/college-football/game/_/gameId/401520327
+GAME ID is 401520327
+
+-->
+<script>
+    fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401581588')
+    .then(response => response.json())
+    .then(data => {
+        const away_team = data.boxscore.teams[0].team.displayName;
+        const home_team = data.boxscore.teams[1].team.displayName;
+        // ============== BOX SCORE ============= //
+
+        const game_status = data.header.competitions[0].status.type.state; // "pre" "in" "post"
+
+        const date = new Date(data.header.competitions[0].date);
+        let formattedTime;
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            formattedTime = date.toLocaleDateString('en-US', options);
+        if (data.header.timeValid) {
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const period = hours >= 12 ? 'p.m.' : 'a.m.';
+            const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+            formattedTime += `<br>${formattedHours}:${formattedMinutes} ${period}`;
+        }
+
+        if (game_status === "pre") {
+            var box_score_html = `
+                <div id="scoreboard">
+                        <div style="flex: 30%;">
+                            <h4>&nbsp;</h4>
+                            <h6>${away_team}</h6>
+                        </div>
+                        <div style="flex: 30%;">
+                            <h6><b>${data.gameInfo.venue.fullName}</b></h6>
+                            <h6>${formattedTime}</h6>
+                        </div>
+                        <div style="flex: 30%;">
+                            <h4>&nbsp;</h4>
+                            <h6>${home_team}</h6>
+                        </div>
+                </div>
+            `;
+            document.getElementById('score-container').innerHTML += box_score_html;
+        } else {
+            const away_score = data.header.competitions[0].competitors[1].score;
+            const home_score = data.header.competitions[0].competitors[0].score;
+
+            const away_abbrev = data.header.competitions[0].competitors[1].team.abbreviation;
+            const home_abbrev = data.header.competitions[0].competitors[0].team.abbreviation;
+
+            const display_clock = data.header.competitions[0].status.type.shortDetail;
+
+            var display_clock_color = display_clock === "Final" ? "black" : "#900";
+
+            var box_score_html = `
+                <div id="scoreboard">
+                        <div style="flex: 20%;">
+                            <h4>${away_score}</h4>
+                            <h6>${away_team}</h6>
+                        </div>
+                        <div style="flex: 50%;">
+                            <h6 style="color: ${display_clock_color};"><b>${display_clock}</b></h6>
+                            <table id="linescore-table">
+                                <tr>
+                                    <th></th>
+                                    <th><h6><b>Q1</b></h6></th>
+                                    <th><h6><b>Q2</b></h6></th>
+                                    <th><h6><b>Q3</b></h6></th>
+                                    <th><h6><b>Q4</b></h6></th>
+                                </tr>
+                                <tr id="linescores-away">
+                                    <td class="linescores-team-name"><h6>${away_abbrev}</h6></td>
+                                </tr>
+                                <tr id="linescores-home">
+                                    <td class="linescores-team-name"><h6>${home_abbrev}</h6></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="flex: 20%;">
+                            <h4>${home_score}</h4>
+                            <h6>${home_team}</h6>
+                        </div>
+                </div>
+            `;
+
+            document.getElementById('score-container').innerHTML += box_score_html;
+
+            for (let linescore of data.header.competitions[0].competitors[0].linescores) {
+                document.getElementById('linescores-away').innerHTML += `<td><h6>${linescore.displayValue}</h6></td>`;
+            }
+            for (let linescore of data.header.competitions[0].competitors[1].linescores) {
+                document.getElementById('linescores-home').innerHTML += `<td><h6>${linescore.displayValue}</h6></td>`;
+            }
+
+        }
+
+        //================= SCORING PLAYS =================//
+        const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-3);
+
+        let scoring_plays_html = '';
+        for (let play of scoring_plays) {
+            const scoring_description = play.text;
+            const scoring_time = play.clock.displayValue;
+            const scoring_period = play.period.displayValue;
+            const pbp_away_score = play.awayScore;
+            const pbp_home_score = play.homeScore;
+
+            scoring_plays_html += `
+                <li class="scoring-play">
+                    <h4 style="margin-bottom: 5px;">${scoring_description}</h4>
+                    <h6 style="margin-top: 0;">${scoring_time} ${scoring_period} | ${pbp_away_score} - ${pbp_home_score}</h6>
+                </li>
+            `;
+        }
+
+        document.getElementById('scoring-plays-container').innerHTML = scoring_plays_html;
+
+        //================= WIN PROBABILITY =================//
+        if (data.winprobability) {
+            const win_p = data.winprobability;
+            const home_win_p = win_p[win_p.length - 1].homeWinPercentage;
+            const home_win_p_previous = win_p[win_p.length - 2].homeWinPercentage;
+            
+            let display_win_p;
+            let display_change;
+            let display_team;
+            if (home_win_p >= 0.5) {
+                display_win_p = (home_win_p * 100).toFixed(1);
+                display_change = ((home_win_p - home_win_p_previous) * 100).toFixed(1);
+                display_team = home_team;
+            } else {
+                display_win_p = ((1 - home_win_p) * 100).toFixed(1);
+                display_change = ((home_win_p_previous - home_win_p) * 100).toFixed(1);
+                display_team = away_team;
+            }
+
+            let display_change_color;
+            if (display_change > 0) {
+                display_change_color = 'green';
+            } else if (display_change < 0) {
+                display_change_color = 'red';
+            } else {
+                display_change_color = 'black';
+            }
+
+            const win_p_container = document.getElementById('win-probability-container');
+            win_p_container.innerHTML += `
+                <h4 class="percentage">${display_win_p}% <span style="color: ${display_change_color}; font-size: 12px;">${display_change > 0 ? '+' : ''}${display_change}%</h4>
+                <h6 style="margin-top: 0px;">${display_team}</h6>
+            `;
+        // IF GAME HASN'T STARTED, USE MATCHUP PREDICTOR
+        } else {
+            const home_win_p = data.predictor.awayTeam.gameProjection;
+            const away_win_p = data.predictor.homeTeam.teamChanceLoss;
+
+            let display_win_p;
+            let display_change;
+            let display_team;
+            if (home_win_p >= 0.5) {
+                display_win_p = (home_win_p * 100).toFixed(1);
+                display_change = ((home_win_p - home_win_p_previous) * 100).toFixed(1);
+                display_team = home_team;
+            } else {
+                display_win_p = ((1 - home_win_p) * 100).toFixed(1);
+                display_change = ((home_win_p_previous - home_win_p) * 100).toFixed(1);
+                display_team = away_team;
+            }
+
+            const win_p_container = document.getElementById('win-probability-container');
+            win_p_container.innerHTML += `
+                <h4 class="percentage">${display_win_p}%</h4>
+                <h6 style="margin-top: 0px;">${display_team}</h6>
+            `;
+        }
+        
+
+        // ============== GAME LEADERS ============= //
+        const leadersData = data.leaders;
+    
+        var i = 0;
+        
+        // data.leaders[0], [1]    
+        for (let xteam of leadersData) {
+            
+            document.getElementById(i).innerHTML += `<h6>${xteam.team.displayName}</h6>`;
+            
+            for (let xstat of xteam.leaders) {
+                    
+                const xathlete = xstat.leaders[0].athlete;
+                
+                if (i == 0) {
+                document.getElementById(i).innerHTML += `
+                <h4> </h4>
+                <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
+                <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
+                
+                `
+                } else {
+                    document.getElementById(i).innerHTML += `
+                    <h4>${xstat.displayName.toLowerCase()}</h4>
+                    <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
+                    <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
+                    `;    
+                }
+                
+            }
+            
+            if (i == 1) { break; }
+            
+            i += 1;
+            
+        }
+    });
+
+    
+</script>
+
+</body>
+</html>

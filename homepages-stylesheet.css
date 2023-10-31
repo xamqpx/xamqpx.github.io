@@ -157,3 +157,40 @@ small.date, small.nav-link {
 
   hr.column-divide { display: block; }
 }
+
+#scoreboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  }
+
+
+  #scoreboard > div {
+  padding: 10px; 
+  }
+
+  #scoreboard h4, #scoreboard h6 { text-align: center !important; }
+
+  #scoreboard h4 { font-size: 42px !important; }
+
+  #leaders-container h4 { margin: 10px 0 !important; }
+
+  #leaders-container h6 { margin: 0 !important; }
+
+  h4.stats-header { display: inline-block; color: white; padding: 5px 10px; background: #900; }
+
+  button#toggle-all-stats { border: 0; background: 0; text-decoration: underline; color: #900; cursor: pointer; font-family: 'Neue Haas Grotesk Pro' !important; padding: 0; }
+
+  #win-probability-container h4.percentage { margin-top: 20px; font-size: 40px; }
+
+  table#linescore-table { width: 100%; border-collapse: collapse; }
+  table#linescore-table td.linescores-team-name h6 { text-align: right !important; }
+  table#linescore-table h6 { margin: 5px 0 0 0; }
+
+  table#linescore-table tr:first-child { border-bottom: 1px solid #ccc; }
+
+  #scoring-plays-container { border-left: 1px solid black; padding: 5px 12px; }
+
+  table.game-display h6 { margin: 10px 0 !important; font-family: 'Poppins' }
+  table.game-display { margin: 0; width: 100%; }
+  table.game-display td { display: inline-block; }
