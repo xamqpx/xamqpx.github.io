@@ -245,6 +245,16 @@ function parseGameData(gameId) {
             parseGameData(games[num].id)
         });
     }
+
+    function callGameOnLoad() {
+        getScoreboardData().then((data) => {
+            let jsonData;
+            jsonData = data;
+            console.log(jsonData);
+            const games = jsonData.events;
+            parseGameData(games[games.length - 1].id);
+        });
+    }
     
 
     function displayGameList() {
@@ -271,23 +281,29 @@ function parseGameData(gameId) {
                 let home_background;
                 let away_color;
                 let away_background;
-                
 
-                if (home_win) {
+                const game_status = score_data.status.type.state; // "pre" "in" "post"
+                const game_status_detail = score_data.status.type.shortDetail; // "1st Quarter" "Final" "Halftime"
+
+                if (home_win && game_status == "post" ) {
                     home_background = '#900';
                     home_color = 'white';
 
                     away_color = 'black';
                     away_background = 'transparent';
-                } else {
+                } else if (!(home_win) && game_status == "post") {
                     home_color = 'black';
                     home_background = 'transparent';
 
                     away_color = 'white';
                     away_background = '#900';
-                }
+                } else {
+                    home_color = 'black';
+                    home_background = 'transparent';
 
-                const game_status_detail = score_data.status.type.shortDetail; // "1st Quarter" "Final" "Halftime"
+                    away_color = 'black';
+                    away_background = 'transparent';
+                }
 
                 let game_status_detail_color;
                 if (game_status_detail === "Final" || game_status_detail === "Final/OT") {
