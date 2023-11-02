@@ -192,5 +192,38 @@ small.date, small.nav-link {
   #scoring-plays-container { border-left: 1px solid black; padding: 5px 12px; }
 
   table.game-display h6 { margin: 10px 0 !important; font-family: 'Poppins' }
-  table.game-display { margin: 0; width: 100%; }
+  table.game-display { margin: 0; width: 100%; padding: 5px; transition: 0.2s; }
   table.game-display td { display: inline-block; }
+  table.game-display:hover { background: #efefef; cursor: pointer; }
+
+  #leaders-header-container table td {
+    box-shadow: inset 0 -0.5px #900; 
+    padding: 5px 20px;
+    transition: 0.2s;
+  }
+
+  #leaders-header-container table td h4:hover { color: #900; }
+
+  #leaders-header-container table td:hover {
+    background: #efefef;
+    cursor: pointer;
+  }
+
+  img.headshot-super-small { 
+    clip-path: circle(25px at center);
+    height: 50px; width: auto;
+  }
+
+  .game-leaders-table { margin-top: 10px; }
+
+  .game-leaders-table h6 {
+    margin: 5px 0 0 0;
+  }
+
+  .game-leaders-table h6 b {
+    font-family: 'Poppins';
+    font-weight: normal;
+  }
+
+  td.leaders-stats-onclick { box-shadow: inset 0.5px 0.5px 1px 0 #aaa !important; transition: 0.5s; }
+  .leaders-stats-onclick h4 { color: #900; }
