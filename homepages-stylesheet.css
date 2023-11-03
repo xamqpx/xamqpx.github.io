@@ -212,6 +212,7 @@ small.date, small.nav-link {
   img.headshot-super-small { 
     clip-path: circle(25px at center);
     height: 50px; width: auto;
+    filter: saturate(0);
   }
 
   .game-leaders-table { margin-top: 10px; }
@@ -230,6 +231,15 @@ small.date, small.nav-link {
 
   #game-flow-chart { margin-top: 20px; }
 
-  div.tooltip-display { padding: 10px; max-width: 150px; }
+  div.tooltip-display { padding: 10px; }
   div.tooltip-display h6 { font-size: 12px; margin: 5px 0; }
   div.tooltip-display h6 b {  font-family: 'Poppins'; font-weight: normal; }
+
+  .google-visualization-tooltip {  
+    position:relative !important; 
+    top:0 !important;
+    right:0 !important; 
+    z-index:+1; 
+    box-shadow: none !important;
+    border: none !important;
+  } 

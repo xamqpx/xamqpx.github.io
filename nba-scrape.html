@@ -127,15 +127,21 @@
             document.getElementById('points-container').innerHTML = '';
             document.getElementById('assists-container').innerHTML = '';
             document.getElementById('rebounds-container').innerHTML = '';
+            document.getElementById('game-flow-chart').innerHTML = '';
             var apiURL = `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=${gameId}`;
             fetch(apiURL)
             .then(response => response.json())
             .then(data => {
                 const away_team = data.boxscore.teams[0].team.displayName;
                 const home_team = data.boxscore.teams[1].team.displayName;
+
+                const home_team_abbrev = data.leaders[0].team.abbreviation;
+                const away_team_abbrev = data.leaders[1].team.abbreviation;
                 // ============== BOX SCORE ============= //
 
                 const game_status = data.header.competitions[0].status.type.state; // "pre" "in" "post"
+
+                document.getElementById('all-stats-container').style.display = game_status === "pre" ? 'none' : 'flex';
 
                 const date = new Date(data.header.competitions[0].date);
                 let formattedTime;
@@ -177,7 +183,7 @@
 
                     const display_clock = data.header.competitions[0].status.type.shortDetail;
 
-                    var display_clock_color = display_clock === "Final" || "Final/OT" ? "black" : "#900";
+                    const display_clock_color = data.header.competitions[0].status.type.state === 'in' ? '#900' : 'black';
 
                     var box_score_html = `
                         <div id="scoreboard">
@@ -186,7 +192,7 @@
                                     <h6>${away_team}</h6>
                                 </div>
                                 <div style="flex: 50%;">
-                                    <h6 style="color: ${display_clock_color}; margin-top: 0;"><b style="font-family:'Poppins';font-weight: normal;">${display_clock}</b></h6>
+                                    <h6 style="margin-top: 0;"><b style="font-family:'Poppins';font-weight: normal; color: ${display_clock_color}">${display_clock}</b></h6>
                                     <table id="linescore-table">
                                         <tr>
                                             <th></th>
@@ -222,7 +228,7 @@
                 }
 
                 //================= SCORING PLAYS =================//
-                const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-5);
+                const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-4);
 
                 let scoring_plays_html = '';
                 for (i = scoring_plays.length - 1; i >= 0; i--) {
@@ -236,12 +242,17 @@
                     scoring_plays_html += `
                         <li class="scoring-play">
                             <h4 style="margin-bottom: 5px;">${scoring_description}</h4>
-                            <h6 style="margin-top: 0;">${scoring_time} ${scoring_period} | ${pbp_away_score} - ${pbp_home_score}</h6>
+                            <h6 style="margin-top: 0;">${scoring_time} ${scoring_period} | ${away_team_abbrev} ${pbp_away_score} - ${pbp_home_score} ${home_team_abbrev}</h6>
                         </li>
                     `;
                 }
 
                 document.getElementById('scoring-plays-container').innerHTML = scoring_plays_html;
+
+                // Select all elements with class 'scoring-play'
+
+                const firstScoringPlay = document.querySelector('.scoring-play h4:first-of-type');
+                firstScoringPlay.style.fontSize = '20px';
 
                 //================= WIN PROBABILITY =================//
                 if (data.winprobability) {
@@ -299,17 +310,14 @@
                         `;
                     }
 
-                    const home_team_name = data.leaders[0].team.abbreviation;
-                    const away_team_name = data.leaders[1].team.abbreviation;
-
                     // ============== GAME FLOW ============= //
                     var draw_game_flow = () => {
 
                         var chart_data = new google.visualization.DataTable();
                         chart_data.addColumn('number', '');
                         chart_data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
-                        chart_data.addColumn('number', 'Away Score');
-                        chart_data.addColumn('number', 'Home Score');
+                        chart_data.addColumn('number', away_team_abbrev);
+                        chart_data.addColumn('number', home_team_abbrev);
                         
                         
 
@@ -318,7 +326,7 @@
                             var home_score = data.plays[i].homeScore;
                             var away_score = data.plays[i].awayScore;
                             var description = data.plays[i].text;
-                            var tooltip_display = `<div class="tooltip-display"><h6><b>${description}</b></h6><h6>${away_team_name} ${away_score} - ${home_score} ${home_team_name}</h6></div>`;
+                            var tooltip_display = `<div class="tooltip-display"><h6><b>${description}</b></h6><h6>${away_team_abbrev} ${away_score} - ${home_score} ${home_team_abbrev}</h6></div>`;
                             rows.push([i, tooltip_display, data.plays[i].awayScore, data.plays[i].homeScore]);
                         }
                         chart_data.addRows(rows);
@@ -326,18 +334,27 @@
                         const away_color = data.boxscore.teams[0].team.color;
                         const home_color = data.boxscore.teams[1].team.color;
 
+                        const plays_max_view_window = data.plays.length > 500 || game_status === 'post' ? data.plays.length : 500;
+
                         var options = {
-                            legend: { position: 'none' },
+                            legend: { position: 'top' },
                             hAxis: { 
                                 gridlines: { color: 'transparent' },
+                                textStyle: { color: 'transparent' },
+                                viewWindow: {
+                                    max: plays_max_view_window
+                                }
                             },
-                            vAxis: { 
-                                gridlines: { color: 'transparent' },
+                            vAxis: {
+                                viewWindow: {
+                                    max: 150
+                                }
                             },
                             chartArea: {
-                                width: '80%',
-                                height: '95%',
+                                width: '85%',
+                                height: '80%',
                             },
+                            width: '100%',
                             focusTarget: 'category',
                             colors: [away_color, home_color],
                             tooltip: { isHtml: true },
@@ -373,7 +390,7 @@
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${away_points_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_points_leader_name} &mdash; ${away_team_name} ${away_points_leader_position}</h6></td>
+                                <td colspan="3"><h6>${away_points_leader_name} &mdash; ${away_team_abbrev} ${away_points_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${away_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
@@ -384,7 +401,7 @@
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_points_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_points_leader_name} &mdash; ${home_team_name} ${home_points_leader_position}</h6></td>
+                                <td colspan="3"><h6>${home_points_leader_name} &mdash; ${home_team_abbrev} ${home_points_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${home_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
@@ -416,24 +433,24 @@
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${away_assists_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_assists_leader_name} &mdash; ${away_team_name} ${away_assists_leader_position}</h6></td>
+                                <td colspan="3"><h6>${away_assists_leader_name} &mdash; ${away_team_abbrev} ${away_assists_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${away_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
-                                <td width="25%"><h6 style="text-align:center;"><b>${away_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
-                                <td width="25%"><h6 style="text-align:center;"><b>${away_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
+                                <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
+                                <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
                                 <td><h6 style="text-align:center;"><b>${away_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
                             </tr>
                         </table>
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_assists_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_assists_leader_name} &mdash; ${home_team_name} ${home_assists_leader_position}</h6></td>
+                                <td colspan="3"><h6>${home_assists_leader_name} &mdash; ${home_team_abbrev} ${home_assists_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${home_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
-                                <td width="25%"><h6 style="text-align:center;"><b>${home_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
-                                <td width="25%"><h6 style="text-align:center;"><b>${home_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
+                                <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
+                                <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
                                 <td><h6 style="text-align:center;"><b>${home_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
                             </tr>
                         </table>
@@ -458,7 +475,7 @@
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${away_rebounds_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_rebounds_leader_name} &mdash; ${away_team_name} ${away_rebounds_leader_position}</h6></td>
+                                <td colspan="3"><h6>${away_rebounds_leader_name} &mdash; ${away_team_abbrev} ${away_rebounds_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${away_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
@@ -469,7 +486,7 @@
                         <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_rebounds_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_rebounds_leader_name} &mdash; ${home_team_name} ${home_rebounds_leader_position}</h6></td>
+                                <td colspan="3"><h6>${home_rebounds_leader_name} &mdash; ${home_team_abbrev} ${home_rebounds_leader_position}</h6></td>
                             </tr>
                             <tr>
                                 <td><h6 style="text-align:center;"><b>${home_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
@@ -515,6 +532,7 @@
                     const games = jsonData.events;
                     parseGameData(games[num].id)
                 });
+                
             }
 
             function callGameOnLoad() {
@@ -522,7 +540,7 @@
                     let jsonData;
                     jsonData = data;
                     console.log(jsonData);
-                    const games = jsonData.events.filter(event => event.competitions[0].status.type.state === "post");
+                    const games = jsonData.events.filter(event => event.competitions[0].status.type.state != "pre");
                     parseGameData(games[games.length - 1].id);
                 });
             }
