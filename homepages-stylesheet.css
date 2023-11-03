@@ -227,3 +227,9 @@ small.date, small.nav-link {
 
   td.leaders-stats-onclick { box-shadow: inset 0.5px 0.5px 1px 0 #aaa !important; transition: 0.5s; }
   .leaders-stats-onclick h4 { color: #900; }
+
+  #game-flow-chart { margin-top: 20px; }
+
+  div.tooltip-display { padding: 10px; max-width: 150px; }
+  div.tooltip-display h6 { font-size: 12px; margin: 5px 0; }
+  div.tooltip-display h6 b {  font-family: 'Poppins'; font-weight: normal; }
