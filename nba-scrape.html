@@ -79,6 +79,9 @@
                 <!-- SCORE -->
                 <div id="score-container"></div>
                 <br>
+                <div id="video-slideshow-container">
+                </div>
+                <br>
                 <div id="all-stats-container" style="display:flex;">
                     <div style="flex:50%; margin-right: 10%;">
                         <h4 class="stats-header">Leaders</h4>
@@ -226,7 +229,7 @@
                     }
 
                 }
-
+                
                 //================= SCORING PLAYS =================//
                 const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-4);
 
