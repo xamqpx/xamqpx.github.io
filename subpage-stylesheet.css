@@ -17,7 +17,7 @@
     line-height: 1.3;
   }
 
-  p i { font-family: 'Caslon Italic'; font-style: normal; }
+  p i, p em { font-family: 'Caslon Italic'; font-style: normal; }
 
   .photo-credit {
     font-family: 'Poppins';
@@ -26,7 +26,7 @@
     margin: 0 0 10%;
   }
 
-  .photo-credit i {
+  .photo-credit i, .photo-credit em {
     font-size: 18px;
   }
 
