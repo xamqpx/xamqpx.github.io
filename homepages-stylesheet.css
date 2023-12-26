@@ -247,3 +247,10 @@ small.date, small.nav-link {
     border: none !important;
   } 
   
+  #main-content {
+    border-right: 1px solid #aaa; padding-right: 20px;
+  }
+
+  @media screen and (max-width: 898px) {
+    #main-content { border-right: 0; padding-right: 0; }
+  }
