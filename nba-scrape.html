@@ -34,6 +34,15 @@
         <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <style>
+            .flex-item::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .flex-item {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
             .flex-container, html, body {
                 max-width: 1600px; margin: 0 auto;
                 height: 100%;
@@ -44,17 +53,28 @@
                 overflow: hidden;
             }
             .flex-item {
-                flex: 1;
                 float: left;
-                width: 30%;
+                width: 100%;
                 height: 100%;
                 overflow: scroll;
                 padding: 0 20px;
             }
+
+            #title-column { flex: 20% }
+            #game-details-all-container { flex: 40%; }
+            #game-list { flex: 10%; }
+
+            #all-stats-container { display: flex; }
+            #all-stats-container #left { flex: 50%; padding-right: 20px; }
+            #all-stats-container #right { flex: 40% }
             
             @media screen and (max-width: 800px) {
                 .flex-container, html, body { flex-direction: column; height: initial; width: 100%; }
-                .flex-item { width: 80%; }
+                .flex-item { width: 90%; }
+            }
+
+            @media screen and (max-width: 1200px) {
+                #all-stats-container { flex-direction: column; }
             }
 
             @media screen and (min-width: 1600px) {
@@ -63,12 +83,14 @@
                 }
             }
 
+            
+
             #game-flow-chart { padding-bottom: 50px; }
 
             g text { font-family: 'Poppins' !important; }
 
 
-            #box-score-container { margin-bottom: 20px; }
+            #box-score-container { margin-bottom: 20px; overflow-x: scroll; }
             #box-score-container h6 { margin: 2px 0 !important; }
             #box-score-container th { font-family: 'Poppins'; }
             #box-score-container tr { border-bottom: 1px solid #aaa; }
@@ -77,14 +99,14 @@
     </head>
     <body style="font-family: 'Poppins Light'">
         <div class="flex-container">
-            <div class="flex-item" style="flex: 20%; padding: 40px;">
+            <div class="flex-item" style="padding: 40px;" id="title-column">
                 <h6 style="font-size: 24px; font-family: 'Cheltenham Bold';"><a href="https://the25post.com">25</a></h6>
                 <h2 style="font-size: 60px; margin: 50px 20px 10px 0;">NBA</h2>
                 <div id="debug"></div>
                 
             </div>
 
-            <div class="flex-item" id="game-details-all-container" style="flex: 40%;">
+            <div class="flex-item" id="game-details-all-container">
                 <!-- SCORE -->
                 <div id="score-container"></div>
                 <br>
@@ -92,8 +114,8 @@
                 </div>
                 <br>
                 
-                <div id="all-stats-container" style="display:flex;">
-                    <div style="flex:50%; margin-right: 10%;">
+                <div id="all-stats-container">
+                    <div id="left">
                         <h4 class="stats-header">Leaders</h4>
                         <br><br>
                         <div id="leaders-header-container" style="display: flex;">
@@ -117,7 +139,7 @@
                         <br>
                         
                     </div>
-                    <div style="flex:40%">
+                    <div id="right">
                         <h4 class="stats-header">Scoring plays</h4>
                         <ul id="scoring-plays-container"></ul>
                     </div>
@@ -154,7 +176,7 @@
                         </table>
                 </div>
             </div>
-            <div class="flex-item" id="game-list" style="flex: 10%;">
+            <div class="flex-item" id="game-list">
                 <hr>
             </div>
         </div>
@@ -173,10 +195,11 @@
             document.getElementById('game-flow-chart').innerHTML = '';
             var apiURL = `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=${gameId}`;
 
+            // add debug links
             document.getElementById('debug').innerHTML = `
             <p style="font-size: 12px;">Debug &mdash; ID: ${gameId}</p>
-            <p style="font-size: 12px;"><a target="_blank" href="${apiURL}">API endpoint</a></p>
-            <p style="font-size: 12px;"><a target="_blank" href="https://www.espn.com/nba/game/_/gameId/${gameId}">ESPN Gamecast</a></p>
+            <p style="font-size: 12px;"><a target="_blank" href="${apiURL}">API endpoint <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 6px;"></i></a></p>
+            <p style="font-size: 12px;"><a target="_blank" href="https://www.espn.com/nba/game/_/gameId/${gameId}">ESPN Gamecast <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 6px;"></i></a></p>
             `;
              fetch(apiURL)
             .then(response => response.json())
@@ -282,7 +305,7 @@
                 }
                 
                 //================= SCORING PLAYS =================//
-                const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-4);
+                const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-7);
 
                 let scoring_plays_html = '';
                 for (i = scoring_plays.length - 1; i >= 0; i--) {
