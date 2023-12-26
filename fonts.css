@@ -144,6 +144,11 @@
   }
 
   @font-face {
+    font-family: 'Poppins Light';
+    src: url('fonts/Poppins-Light.ttf');
+  }
+
+  @font-face {
     font-family: 'Bierstadt';
     src: url('fonts/bierstadt.ttf');
   }
