@@ -80,9 +80,7 @@
             <div class="flex-item" style="flex: 20%; padding: 40px;">
                 <h6 style="font-size: 24px; font-family: 'Cheltenham Bold';"><a href="https://the25post.com">25</a></h6>
                 <h2 style="font-size: 60px; margin: 50px 20px 10px 0;">NBA</h2>
-                <div id="copy"></div>
-                <br>
-                <div id="glance"></div>
+                <div id="debug"></div>
                 
             </div>
 
@@ -124,7 +122,7 @@
                         <ul id="scoring-plays-container"></ul>
                     </div>
                 </div>
-                
+
                 <h4 class="stats-header">Win probability</h4>
                 <br>
                 <div id="win-probability-container"></div>
@@ -164,15 +162,23 @@
 
     <script>
         function parseGameData(gameId) {
+            
             document.getElementById('score-container').innerHTML = '';  
             document.getElementById('scoring-plays-container').innerHTML = '';
             document.getElementById('win-probability-container').innerHTML = '';
+            document.getElementById('win-probability-gradient-container').innerHTML = '';
             document.getElementById('points-container').innerHTML = '';
             document.getElementById('assists-container').innerHTML = '';
             document.getElementById('rebounds-container').innerHTML = '';
             document.getElementById('game-flow-chart').innerHTML = '';
             var apiURL = `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=${gameId}`;
-            fetch(apiURL)
+
+            document.getElementById('debug').innerHTML = `
+            <p style="font-size: 12px;">Debug &mdash; ID: ${gameId}</p>
+            <p style="font-size: 12px;"><a target="_blank" href="${apiURL}">API endpoint</a></p>
+            <p style="font-size: 12px;"><a target="_blank" href="https://www.espn.com/nba/game/_/gameId/${gameId}">ESPN Gamecast</a></p>
+            `;
+             fetch(apiURL)
             .then(response => response.json())
             .then(data => {
                 const away_team = data.boxscore.teams[0].team.displayName;
@@ -180,6 +186,8 @@
 
                 const home_team_abbrev = data.leaders[0].team.abbreviation;
                 const away_team_abbrev = data.leaders[1].team.abbreviation;
+
+
                 // ============== BOX SCORE ============= //
 
                 const game_status = data.header.competitions[0].status.type.state; // "pre" "in" "post"
@@ -200,7 +208,7 @@
                 }
 
                 if (game_status === "pre") {
-                    var box_score_html = `
+                    var score_html = `
                         <div id="scoreboard">
                                 <div style="flex: 30%;">
                                     <h4>&nbsp;</h4>
@@ -216,7 +224,10 @@
                                 </div>
                         </div>
                     `;
-                    document.getElementById('score-container').innerHTML += box_score_html;
+                    document.getElementById('score-container').innerHTML += score_html;
+
+                    document.getElementById('box-score-container').innerHTML = `
+                        `;
                 } else {
                     const away_score = data.header.competitions[0].competitors[1].score;
                     const home_score = data.header.competitions[0].competitors[0].score;
@@ -228,7 +239,7 @@
 
                     const display_clock_color = data.header.competitions[0].status.type.state === 'in' ? '#900' : 'black';
 
-                    var box_score_html = `
+                    var score_html = `
                         <div id="scoreboard">
                                 <div style="flex: 20%;">
                                     <h4>${away_score}</h4>
@@ -259,7 +270,7 @@
                         </div>
                     `;
 
-                    document.getElementById('score-container').innerHTML += box_score_html;
+                    document.getElementById('score-container').innerHTML += score_html;
 
                     for (let linescore of data.header.competitions[0].competitors[1].linescores) {
                         document.getElementById('linescores-away').innerHTML += `<td><h6>${linescore.displayValue}</h6></td>`;
@@ -467,8 +478,10 @@
 
                 // IF GAME HASN'T STARTED, USE MATCHUP PREDICTOR
                 } else {
-                    const home_win_p = data.predictor.awayTeam.gameProjection;
-                    const away_win_p = data.predictor.homeTeam.teamChanceLoss;
+
+                    // ELSE
+                    var home_win_p = data.predictor.awayTeam.gameProjection;
+                    var away_win_p = data.predictor.homeTeam.teamChanceLoss;
 
                     let display_win_p;
                     let display_change;
@@ -481,191 +494,190 @@
                         display_team = away_team;
                         }
 
-                        const win_p_container = document.getElementById('win-probability-container');
-                        win_p_container.innerHTML += `
+                        document.getElementById('win-probability-container').innerHTML = `
                             <h4 class="percentage">${display_win_p}%</h4>
                             <h6 style="margin: 0px;">${display_team}</h6>
                         `;
+                }
+
+                // ============== GAME FLOW ============= //
+                var draw_game_flow = () => {
+
+                    var chart_data = new google.visualization.DataTable();
+                    chart_data.addColumn('number', '');
+                    chart_data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
+                    chart_data.addColumn('number', away_team_abbrev);
+                    chart_data.addColumn('number', home_team_abbrev);
+                    
+                    
+
+                    var rows = [];
+                    for (var i = 0; i < data.plays.length; i++) {
+                        var home_score = data.plays[i].homeScore;
+                        var away_score = data.plays[i].awayScore;
+                        var description = data.plays[i].text;
+                        var tooltip_display = `<div class="tooltip-display"><h6><b>${description}</b></h6><h6>${away_team_abbrev} ${away_score} - ${home_score} ${home_team_abbrev}</h6></div>`;
+                        rows.push([i, tooltip_display, data.plays[i].awayScore, data.plays[i].homeScore]);
                     }
+                    chart_data.addRows(rows);
 
-                    // ============== GAME FLOW ============= //
-                    var draw_game_flow = () => {
+                    const away_color = data.boxscore.teams[0].team.color;
+                    const home_color = data.boxscore.teams[1].team.color;
 
-                        var chart_data = new google.visualization.DataTable();
-                        chart_data.addColumn('number', '');
-                        chart_data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
-                        chart_data.addColumn('number', away_team_abbrev);
-                        chart_data.addColumn('number', home_team_abbrev);
-                        
-                        
+                    const plays_max_view_window = data.plays.length > 500 || game_status === 'post' ? data.plays.length : 500;
 
-                        var rows = [];
-                        for (var i = 0; i < data.plays.length; i++) {
-                            var home_score = data.plays[i].homeScore;
-                            var away_score = data.plays[i].awayScore;
-                            var description = data.plays[i].text;
-                            var tooltip_display = `<div class="tooltip-display"><h6><b>${description}</b></h6><h6>${away_team_abbrev} ${away_score} - ${home_score} ${home_team_abbrev}</h6></div>`;
-                            rows.push([i, tooltip_display, data.plays[i].awayScore, data.plays[i].homeScore]);
-                        }
-                        chart_data.addRows(rows);
-
-                        const away_color = data.boxscore.teams[0].team.color;
-                        const home_color = data.boxscore.teams[1].team.color;
-
-                        const plays_max_view_window = data.plays.length > 500 || game_status === 'post' ? data.plays.length : 500;
-
-                        var options = {
-                            legend: { position: 'top' },
-                            hAxis: { 
-                                gridlines: { color: 'transparent' },
-                                textStyle: { color: 'transparent' },
-                                viewWindow: {
-                                    max: plays_max_view_window
-                                }
-                            },
-                            vAxis: {
-                                viewWindow: {
-                                    max: 150
-                                }
-                            },
-                            chartArea: {
-                                width: '85%',
-                                height: '80%',
-                            },
-                            width: '100%',
-                            focusTarget: 'category',
-                            colors: [away_color, home_color],
-                            tooltip: { isHtml: true },
-                        };
-
-                        var chart = new google.visualization.LineChart(document.getElementById('game-flow-chart'));
-
-                        chart.draw(chart_data, options);
+                    var options = {
+                        legend: { position: 'top' },
+                        hAxis: { 
+                            gridlines: { color: 'transparent' },
+                            textStyle: { color: 'transparent' },
+                            viewWindow: {
+                                max: plays_max_view_window
+                            }
+                        },
+                        vAxis: {
+                            viewWindow: {
+                                max: 150
+                            }
+                        },
+                        chartArea: {
+                            width: '85%',
+                            height: '80%',
+                        },
+                        width: '100%',
+                        focusTarget: 'category',
+                        colors: [away_color, home_color],
+                        tooltip: { isHtml: true },
                     };
 
-                    google.charts.load('current', {packages: ['corechart', 'line']});
-                    google.charts.setOnLoadCallback(draw_game_flow);
+                    var chart = new google.visualization.LineChart(document.getElementById('game-flow-chart'));
 
-                    // ============== GAME LEADERS ============= //
+                    chart.draw(chart_data, options);
+                };
 
-                    const home_points_leader_name = data.leaders[0].leaders[0].leaders[0].athlete.shortName;
-                    const home_points_leader_position = data.leaders[0].leaders[0].leaders[0].athlete.position.abbreviation;
-                    const home_points_leader_headshot = data.leaders[0].leaders[0].leaders[0].athlete.headshot.href;
+                google.charts.load('current', {packages: ['corechart', 'line']});
+                google.charts.setOnLoadCallback(draw_game_flow);
 
-                    const home_points_leader_points_value = data.leaders[0].leaders[0].leaders[0].statistics[0].displayValue;
-                    const home_points_leader_fg_value = data.leaders[0].leaders[0].leaders[0].statistics[1].displayValue;
-                    const home_points_leader_ft_value = data.leaders[0].leaders[0].leaders[0].statistics[2].displayValue;
+                // ============== GAME LEADERS ============= //
 
-                    const away_points_leader_name = data.leaders[1].leaders[0].leaders[0].athlete.shortName;
-                    const away_points_leader_position = data.leaders[1].leaders[0].leaders[0].athlete.position.abbreviation;
-                    const away_points_leader_headshot = data.leaders[1].leaders[0].leaders[0].athlete.headshot.href;
+                const home_points_leader_name = data.leaders[0].leaders[0].leaders[0].athlete.shortName;
+                const home_points_leader_position = data.leaders[0].leaders[0].leaders[0].athlete.position.abbreviation;
+                const home_points_leader_headshot = data.leaders[0].leaders[0].leaders[0].athlete.headshot.href;
 
-                    const away_points_leader_points_value = data.leaders[1].leaders[0].leaders[0].statistics[0].displayValue;
-                    const away_points_leader_fg_value = data.leaders[1].leaders[0].leaders[0].statistics[1].displayValue;
-                    const away_points_leader_ft_value = data.leaders[1].leaders[0].leaders[0].statistics[2].displayValue;
+                const home_points_leader_points_value = data.leaders[0].leaders[0].leaders[0].statistics[0].displayValue;
+                const home_points_leader_fg_value = data.leaders[0].leaders[0].leaders[0].statistics[1].displayValue;
+                const home_points_leader_ft_value = data.leaders[0].leaders[0].leaders[0].statistics[2].displayValue;
 
-                    document.getElementById('points-container').innerHTML = `
-                        <table class="game-leaders-table">
-                            <tr>
-                                <td rowspan="2"><img src="${away_points_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_points_leader_name} &mdash; ${away_team_abbrev} ${away_points_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${away_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
-                                <td width="60%"><h6 style="text-align:center;"><b>${away_points_leader_fg_value}</b></h6><h6 style="text-align:center;">FG</h6></td>
-                                <td><h6 style="text-align:center;"><b>${away_points_leader_ft_value}</b></h6><h6 style="text-align:center;">FT</h6></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="${home_points_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_points_leader_name} &mdash; ${home_team_abbrev} ${home_points_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${home_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
-                                <td width="60%"><h6 style="text-align:center;"><b>${home_points_leader_fg_value}</b></h6><h6 style="text-align:center;">FG</h6></td>
-                                <td><h6 style="text-align:center;"><b>${home_points_leader_ft_value}</b></h6><h6 style="text-align:center;">FT</h6></td>
-                            </tr>
-                        </table>
-                    `;
+                const away_points_leader_name = data.leaders[1].leaders[0].leaders[0].athlete.shortName;
+                const away_points_leader_position = data.leaders[1].leaders[0].leaders[0].athlete.position.abbreviation;
+                const away_points_leader_headshot = data.leaders[1].leaders[0].leaders[0].athlete.headshot.href;
 
-                    const home_assists_leader_name = data.leaders[0].leaders[1].leaders[0].athlete.shortName;
-                    const home_assists_leader_position = data.leaders[0].leaders[1].leaders[0].athlete.position.abbreviation;
-                    const home_assists_leader_headshot = data.leaders[0].leaders[1].leaders[0].athlete.headshot.href;
+                const away_points_leader_points_value = data.leaders[1].leaders[0].leaders[0].statistics[0].displayValue;
+                const away_points_leader_fg_value = data.leaders[1].leaders[0].leaders[0].statistics[1].displayValue;
+                const away_points_leader_ft_value = data.leaders[1].leaders[0].leaders[0].statistics[2].displayValue;
 
-                    const home_assists_leader_assists = data.leaders[0].leaders[1].leaders[0].statistics[0].displayValue;
-                    const home_assists_leader_turnovers = data.leaders[0].leaders[1].leaders[0].statistics[1].displayValue;
-                    const home_assists_leader_minutes = data.leaders[0].leaders[1].leaders[0].statistics[2].displayValue;
-                    const home_assists_leader_ast_to = data.leaders[0].leaders[1].leaders[0].statistics[3].displayValue;
+                document.getElementById('points-container').innerHTML = `
+                    <table class="game-leaders-table">
+                        <tr>
+                            <td rowspan="2"><img src="${away_points_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${away_points_leader_name} &mdash; ${away_team_abbrev} ${away_points_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${away_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
+                            <td width="60%"><h6 style="text-align:center;"><b>${away_points_leader_fg_value}</b></h6><h6 style="text-align:center;">FG</h6></td>
+                            <td><h6 style="text-align:center;"><b>${away_points_leader_ft_value}</b></h6><h6 style="text-align:center;">FT</h6></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><img src="${home_points_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${home_points_leader_name} &mdash; ${home_team_abbrev} ${home_points_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${home_points_leader_points_value}</b></h6><h6 style="text-align:center;">PTS</h6></td>
+                            <td width="60%"><h6 style="text-align:center;"><b>${home_points_leader_fg_value}</b></h6><h6 style="text-align:center;">FG</h6></td>
+                            <td><h6 style="text-align:center;"><b>${home_points_leader_ft_value}</b></h6><h6 style="text-align:center;">FT</h6></td>
+                        </tr>
+                    </table>
+                `;
 
-                    const away_assists_leader_name = data.leaders[1].leaders[1].leaders[0].athlete.shortName;
-                    const away_assists_leader_position = data.leaders[1].leaders[1].leaders[0].athlete.position.abbreviation;
-                    const away_assists_leader_headshot = data.leaders[1].leaders[1].leaders[0].athlete.headshot.href;
+                const home_assists_leader_name = data.leaders[0].leaders[1].leaders[0].athlete.shortName;
+                const home_assists_leader_position = data.leaders[0].leaders[1].leaders[0].athlete.position.abbreviation;
+                const home_assists_leader_headshot = data.leaders[0].leaders[1].leaders[0].athlete.headshot.href;
 
-                    const away_assists_leader_assists = data.leaders[1].leaders[1].leaders[0].statistics[0].displayValue;
-                    const away_assists_leader_turnovers = data.leaders[1].leaders[1].leaders[0].statistics[1].displayValue;
-                    const away_assists_leader_minutes = data.leaders[1].leaders[1].leaders[0].statistics[2].displayValue;
-                    const away_assists_leader_ast_to = data.leaders[1].leaders[1].leaders[0].statistics[3].displayValue;
+                const home_assists_leader_assists = data.leaders[0].leaders[1].leaders[0].statistics[0].displayValue;
+                const home_assists_leader_turnovers = data.leaders[0].leaders[1].leaders[0].statistics[1].displayValue;
+                const home_assists_leader_minutes = data.leaders[0].leaders[1].leaders[0].statistics[2].displayValue;
+                const home_assists_leader_ast_to = data.leaders[0].leaders[1].leaders[0].statistics[3].displayValue;
 
-                    document.getElementById('assists-container').innerHTML = `
-                        <table class="game-leaders-table">
-                            <tr>
-                                <td rowspan="2"><img src="${away_assists_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_assists_leader_name} &mdash; ${away_team_abbrev} ${away_assists_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${away_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
-                                <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
-                                <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
-                                <td><h6 style="text-align:center;"><b>${away_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="${home_assists_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_assists_leader_name} &mdash; ${home_team_abbrev} ${home_assists_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${home_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
-                                <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
-                                <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
-                                <td><h6 style="text-align:center;"><b>${home_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
-                            </tr>
-                        </table>
-                    `;
-                    const home_rebounds_leader_name = data.leaders[0].leaders[2].leaders[0].athlete.shortName;
-                    const home_rebounds_leader_position = data.leaders[0].leaders[2].leaders[0].athlete.position.abbreviation;
-                    const home_rebounds_leader_headshot = data.leaders[0].leaders[2].leaders[0].athlete.headshot.href;
+                const away_assists_leader_name = data.leaders[1].leaders[1].leaders[0].athlete.shortName;
+                const away_assists_leader_position = data.leaders[1].leaders[1].leaders[0].athlete.position.abbreviation;
+                const away_assists_leader_headshot = data.leaders[1].leaders[1].leaders[0].athlete.headshot.href;
 
-                    const home_rebounds_leader_rebounds = data.leaders[0].leaders[2].leaders[0].statistics[0].displayValue;
-                    const home_rebounds_leader_defensive = data.leaders[0].leaders[2].leaders[0].statistics[1].displayValue;
-                    const home_rebounds_leader_offensive = data.leaders[0].leaders[2].leaders[0].statistics[2].displayValue;
+                const away_assists_leader_assists = data.leaders[1].leaders[1].leaders[0].statistics[0].displayValue;
+                const away_assists_leader_turnovers = data.leaders[1].leaders[1].leaders[0].statistics[1].displayValue;
+                const away_assists_leader_minutes = data.leaders[1].leaders[1].leaders[0].statistics[2].displayValue;
+                const away_assists_leader_ast_to = data.leaders[1].leaders[1].leaders[0].statistics[3].displayValue;
 
-                    const away_rebounds_leader_name = data.leaders[1].leaders[2].leaders[0].athlete.shortName;
-                    const away_rebounds_leader_position = data.leaders[1].leaders[2].leaders[0].athlete.position.abbreviation;
-                    const away_rebounds_leader_headshot = data.leaders[1].leaders[2].leaders[0].athlete.headshot.href;
+                document.getElementById('assists-container').innerHTML = `
+                    <table class="game-leaders-table">
+                        <tr>
+                            <td rowspan="2"><img src="${away_assists_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${away_assists_leader_name} &mdash; ${away_team_abbrev} ${away_assists_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${away_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
+                            <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
+                            <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
+                            <td><h6 style="text-align:center;"><b>${away_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><img src="${home_assists_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${home_assists_leader_name} &mdash; ${home_team_abbrev} ${home_assists_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${home_assists_leader_assists}</b></h6><h6 style="text-align:center;">AST</h6></td>
+                            <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_turnovers}</b></h6><h6 style="text-align:center;">TO</h6></td>
+                            <td width="30%"><h6 style="text-align:center;"><b>${home_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
+                            <td><h6 style="text-align:center;"><b>${home_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
+                        </tr>
+                    </table>
+                `;
+                const home_rebounds_leader_name = data.leaders[0].leaders[2].leaders[0].athlete.shortName;
+                const home_rebounds_leader_position = data.leaders[0].leaders[2].leaders[0].athlete.position.abbreviation;
+                const home_rebounds_leader_headshot = data.leaders[0].leaders[2].leaders[0].athlete.headshot.href;
 
-                    const away_rebounds_leader_rebounds = data.leaders[1].leaders[2].leaders[0].statistics[0].displayValue;
-                    const away_rebounds_leader_defensive = data.leaders[1].leaders[2].leaders[0].statistics[1].displayValue;
-                    const away_rebounds_leader_offensive = data.leaders[1].leaders[2].leaders[0].statistics[2].displayValue;
+                const home_rebounds_leader_rebounds = data.leaders[0].leaders[2].leaders[0].statistics[0].displayValue;
+                const home_rebounds_leader_defensive = data.leaders[0].leaders[2].leaders[0].statistics[1].displayValue;
+                const home_rebounds_leader_offensive = data.leaders[0].leaders[2].leaders[0].statistics[2].displayValue;
 
-                    document.getElementById('rebounds-container').innerHTML = `
-                        <table class="game-leaders-table">
-                            <tr>
-                                <td rowspan="2"><img src="${away_rebounds_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${away_rebounds_leader_name} &mdash; ${away_team_abbrev} ${away_rebounds_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${away_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
-                                <td width="60%"><h6 style="text-align:center;"><b>${away_rebounds_leader_defensive}</b></h6><h6 style="text-align:center;">DEF</h6></td>
-                                <td><h6 style="text-align:center;"><b>${away_rebounds_leader_offensive}</b></h6><h6 style="text-align:center;">OFF</h6></td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="${home_rebounds_leader_headshot}" class="headshot-super-small"></td>
-                                <td colspan="3"><h6>${home_rebounds_leader_name} &mdash; ${home_team_abbrev} ${home_rebounds_leader_position}</h6></td>
-                            </tr>
-                            <tr>
-                                <td><h6 style="text-align:center;"><b>${home_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
-                                <td width="60%"><h6 style="text-align:center;"><b>${home_rebounds_leader_defensive}</b></h6><h6 style="text-align:center;">DEF</h6></td>
-                                <td><h6 style="text-align:center;"><b>${home_rebounds_leader_offensive}</b></h6><h6 style="text-align:center;">OFF</h6></td>                    </tr>
-                        </table>
-                    `;
+                const away_rebounds_leader_name = data.leaders[1].leaders[2].leaders[0].athlete.shortName;
+                const away_rebounds_leader_position = data.leaders[1].leaders[2].leaders[0].athlete.position.abbreviation;
+                const away_rebounds_leader_headshot = data.leaders[1].leaders[2].leaders[0].athlete.headshot.href;
+
+                const away_rebounds_leader_rebounds = data.leaders[1].leaders[2].leaders[0].statistics[0].displayValue;
+                const away_rebounds_leader_defensive = data.leaders[1].leaders[2].leaders[0].statistics[1].displayValue;
+                const away_rebounds_leader_offensive = data.leaders[1].leaders[2].leaders[0].statistics[2].displayValue;
+
+                document.getElementById('rebounds-container').innerHTML = `
+                    <table class="game-leaders-table">
+                        <tr>
+                            <td rowspan="2"><img src="${away_rebounds_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${away_rebounds_leader_name} &mdash; ${away_team_abbrev} ${away_rebounds_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${away_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
+                            <td width="60%"><h6 style="text-align:center;"><b>${away_rebounds_leader_defensive}</b></h6><h6 style="text-align:center;">DEF</h6></td>
+                            <td><h6 style="text-align:center;"><b>${away_rebounds_leader_offensive}</b></h6><h6 style="text-align:center;">OFF</h6></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><img src="${home_rebounds_leader_headshot}" class="headshot-super-small"></td>
+                            <td colspan="3"><h6>${home_rebounds_leader_name} &mdash; ${home_team_abbrev} ${home_rebounds_leader_position}</h6></td>
+                        </tr>
+                        <tr>
+                            <td><h6 style="text-align:center;"><b>${home_rebounds_leader_rebounds}</b></h6><h6 style="text-align:center;">REB</h6></td>
+                            <td width="60%"><h6 style="text-align:center;"><b>${home_rebounds_leader_defensive}</b></h6><h6 style="text-align:center;">DEF</h6></td>
+                            <td><h6 style="text-align:center;"><b>${home_rebounds_leader_offensive}</b></h6><h6 style="text-align:center;">OFF</h6></td>                    </tr>
+                    </table>
+                `;
             });
         }
 
