@@ -63,8 +63,16 @@
                 }
             }
 
-            #game-flow-chart { margin-bottom: 50px; }
-            #game-flow-chart:hover { margin-bottom: 0px; }
+            #game-flow-chart { padding-bottom: 50px; }
+
+            g text { font-family: 'Poppins' !important; }
+
+
+            #box-score-container { margin-bottom: 20px; }
+            #box-score-container h6 { margin: 2px 0 !important; }
+            #box-score-container th { font-family: 'Poppins'; }
+            #box-score-container tr { border-bottom: 1px solid #aaa; }
+            #box-score-container table { width: 100%; border-collapse: collapse; }
         </style>
     </head>
     <body style="font-family: 'Le Monde Journal';">
@@ -85,6 +93,7 @@
                 <div id="video-slideshow-container">
                 </div>
                 <br>
+                
                 <div id="all-stats-container" style="display:flex;">
                     <div style="flex:50%; margin-right: 10%;">
                         <h4 class="stats-header">Leaders</h4>
@@ -111,12 +120,40 @@
                         
                     </div>
                     <div style="flex:40%">
-                        <h4 class="stats-header">Win probability</h4>
-                        <br>
-                        <div id="win-probability-container"></div>
                         <h4 class="stats-header">Scoring plays</h4>
                         <ul id="scoring-plays-container"></ul>
                     </div>
+                </div>
+                
+                <h4 class="stats-header">Win probability</h4>
+                <br>
+                <div id="win-probability-container"></div>
+                <div id="win-probability-gradient-container"></div>
+                <br>
+                <h4 class="stats-header">Box Score</h4>
+                <br><br>
+                <div id="box-score-container">
+                    <table id="bsc-away">
+                        <tr id="bsc-away-name"></tr>
+                            <tr>
+                                <td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins';">STARTERS</h6></td>
+                            </tr>
+                            <tr class="stat-names">
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table id="bsc-home">
+                            <tr id="bsc-home-name"></tr>
+                                <tr>
+                                    <td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins';">STARTERS</h6></td>
+                                </tr>
+                            <tr class="stat-names">
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
                 </div>
             </div>
             <div class="flex-item" id="game-list" style="flex: 10%;">
@@ -288,11 +325,146 @@
                         display_change_color = 'black';
                     }
 
+                    var away_color = data.boxscore.teams[0].team.color;
+                    var home_color = data.boxscore.teams[1].team.color;
+
+                    const win_p_gradient_container = document.getElementById('win-probability-gradient-container');
+
+                    if (display_team == away_team) {
+                        win_p_gradient_container.innerHTML = `
+                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(90deg, #${away_color} 0%, #${away_color} ${display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
+                            </div>
+                        `;
+                    } else {
+                        win_p_gradient_container.innerHTML = `
+                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(-90deg, #${away_color} 0%, #${home_color} ${1 - display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
+                            </div>
+                        `;
+                    }
+
                     const win_p_container = document.getElementById('win-probability-container');
                     win_p_container.innerHTML += `
                         <h4 style="margin-top: 20px;" class="percentage">${display_win_p}% <span style="color: ${display_change_color}; font-size: 12px;">${display_change > 0 ? '+' : ''}${display_change}%</h4>
-                        <h6 style="margin-top: 0px;">${display_team}</h6>
+                        <h6 style="margin: 0px;">${display_team}</h6>
                     `;
+
+                    // ============== BOX SCORE ============= //
+                    document.getElementById('box-score-container').innerHTML = `
+                    <table id="bsc-away">
+                        <tr id="bsc-away-name"></tr>
+                            <tr>
+                                <td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins';">STARTERS</h6></td>
+                            </tr>
+                            <tr class="stat-names">
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table id="bsc-home">
+                            <tr id="bsc-home-name"></tr>
+                                <tr>
+                                    <td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins';">STARTERS</h6></td>
+                                </tr>
+                            <tr class="stat-names">
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        `;
+                    var away_table = document.getElementById('bsc-away');
+
+                    var bsc_away_name = data.boxscore.teams[0].team.displayName;
+                    document.getElementById('bsc-away-name').innerHTML = `<td colspan="16">${bsc_away_name}</td>`;
+                    var bsc_home_name = data.boxscore.teams[1].team.displayName;
+                    document.getElementById('bsc-home-name').innerHTML = `<td colspan="16">${bsc_home_name}</td>`;
+
+                    var stat_names_containers = document.getElementsByClassName('stat-names');
+                    for (container of stat_names_containers) {
+                        for (name of data.boxscore.players[0].statistics[0].names) {
+                            container.innerHTML += `<th><h6 style="text-align: right;">${name}</h6></th>`;
+                        }
+                    }
+
+                    // tracking row numbers to insert "BENCH" row
+                    let i = 0;
+                    for (away_athlete of data.boxscore.players[0].statistics[0].athletes) {
+                        var away_player_row = document.createElement('tr');
+                        away_player_row.innerHTML += `
+                            <td><h6>${away_athlete.athlete.position.abbreviation}</h6></td>
+                            <td width="20%"><h6>${away_athlete.athlete.displayName}</h6></td>
+                        `;
+                        if (away_athlete.didNotPlay) {
+                            away_player_row.innerHTML += `<td colspan="15"><h6>DID NOT PLAY (${away_athlete.reason})</h6></td>`;
+                        } else if (away_athlete.ejected) {
+                            away_player_row.innerHTML += `<td colspan="15"><h6>EJECTED (${away_athlete.reason})</h6></td>`;
+                        } else {
+                            for (stat of away_athlete.stats) {
+                                away_player_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
+                            }
+                        }
+                        
+                        away_table.innerHTML += away_player_row.innerHTML;
+                        
+                        
+                        // after 5th row
+                        if (i == 4) {
+                            away_table.innerHTML += `<tr><td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins'">BENCH</h6></td></tr>`;
+                        }
+                        
+                        i++;
+                        
+                    }
+
+                    var away_totals_row = document.createElement('tr');
+                    away_totals_row.innerHTML += `<td colspan="2"><h6 style="font-family: 'Poppins'">TEAM</h6></td>`;
+                    
+                    for (stat of data.boxscore.players[0].statistics[0].totals) {
+                        away_totals_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
+                    }
+
+                    away_table.innerHTML += away_totals_row.innerHTML;
+
+                    var home_table = document.getElementById('bsc-home');
+
+                    let j = 0;
+                    for (home_athlete of data.boxscore.players[1].statistics[0].athletes) {
+                        var home_player_row = document.createElement('tr');
+                        home_player_row.innerHTML += `
+                            <td><h6>${home_athlete.athlete.position.abbreviation}</h6></td>
+                            <td width="20%"><h6>${home_athlete.athlete.displayName}</h6></td>
+                        `;
+                        if (home_athlete.didNotPlay) {
+                            home_player_row.innerHTML += `<td colspan="15"><h6>DID NOT PLAY (${home_athlete.reason})</h6></td>`;
+                        } else if (home_athlete.ejected) {
+                            home_player_row.innerHTML += `<td colspan="15"><h6>EJECTED (${home_athlete.reason})</h6></td>`;
+                        } else {
+                            for (stat of home_athlete.stats) {
+                                home_player_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
+                            }
+                        }
+                        
+                        home_table.innerHTML += home_player_row.innerHTML;
+                        
+                        
+                        // after 5th row
+                        if (j == 4) {
+                            home_table.innerHTML += `<tr><td colspan="16"><h6 style="margin-top: 10px !important; font-family: 'Poppins'">BENCH</h6></td></tr>`;
+                        }
+                        
+                        j++;
+                        
+                    }
+
+                    var home_totals_row = document.createElement('tr');
+                    home_totals_row.innerHTML += `<td colspan="2"><h6 style="font-family: 'Poppins'">TEAM</h6></td>`;
+                    
+                    for (stat of data.boxscore.players[1].statistics[0].totals) {
+                        home_totals_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
+                    }
+
+                    home_table.innerHTML += home_totals_row.innerHTML;
+
                 // IF GAME HASN'T STARTED, USE MATCHUP PREDICTOR
                 } else {
                     const home_win_p = data.predictor.awayTeam.gameProjection;
@@ -312,7 +484,7 @@
                         const win_p_container = document.getElementById('win-probability-container');
                         win_p_container.innerHTML += `
                             <h4 class="percentage">${display_win_p}%</h4>
-                            <h6 style="margin-top: 0px;">${display_team}</h6>
+                            <h6 style="margin: 0px;">${display_team}</h6>
                         `;
                     }
 
@@ -403,8 +575,6 @@
                                 <td width="60%"><h6 style="text-align:center;"><b>${away_points_leader_fg_value}</b></h6><h6 style="text-align:center;">FG</h6></td>
                                 <td><h6 style="text-align:center;"><b>${away_points_leader_ft_value}</b></h6><h6 style="text-align:center;">FT</h6></td>
                             </tr>
-                        </table>
-                        <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_points_leader_headshot}" class="headshot-super-small"></td>
                                 <td colspan="3"><h6>${home_points_leader_name} &mdash; ${home_team_abbrev} ${home_points_leader_position}</h6></td>
@@ -447,8 +617,6 @@
                                 <td width="30%"><h6 style="text-align:center;"><b>${away_assists_leader_minutes}</b></h6><h6 style="text-align:center;">MIN</h6></td>
                                 <td><h6 style="text-align:center;"><b>${away_assists_leader_ast_to}</b></h6><h6 style="text-align:center;">AST/TO</h6></td>
                             </tr>
-                        </table>
-                        <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_assists_leader_headshot}" class="headshot-super-small"></td>
                                 <td colspan="3"><h6>${home_assists_leader_name} &mdash; ${home_team_abbrev} ${home_assists_leader_position}</h6></td>
@@ -488,8 +656,6 @@
                                 <td width="60%"><h6 style="text-align:center;"><b>${away_rebounds_leader_defensive}</b></h6><h6 style="text-align:center;">DEF</h6></td>
                                 <td><h6 style="text-align:center;"><b>${away_rebounds_leader_offensive}</b></h6><h6 style="text-align:center;">OFF</h6></td>
                             </tr>
-                        </table>
-                        <table class="game-leaders-table">
                             <tr>
                                 <td rowspan="2"><img src="${home_rebounds_leader_headshot}" class="headshot-super-small"></td>
                                 <td colspan="3"><h6>${home_rebounds_leader_name} &mdash; ${home_team_abbrev} ${home_rebounds_leader_position}</h6></td>
