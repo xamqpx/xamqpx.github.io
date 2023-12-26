@@ -143,6 +143,9 @@ small.date, small.nav-link {
 .sub-main-feature-img { flex: 40%; }
 .sub-main-feature-col { padding-left: 20px; flex: 45%; }
 
+.section-img { flex: 30%; }
+.section-col { flex: 65%; padding-left: 20px; }
+
 .news-hed { font-size: 20px; line-height: 1; font-family: 'Poppins'; }
 /* RESPONSIVE */
 @media (max-width: 898px) {

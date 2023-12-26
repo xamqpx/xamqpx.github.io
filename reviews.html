@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <title>Reviews | The 25 Post</title>
+
+  <!--basics-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="archives/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="archives/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="archives/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="archives/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="archives/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="archives/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="archives/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="archives/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="archives/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="archives/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="archives/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="archives/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="archives/icons/favicon-16x16.png">
+  <link rel="manifest" href="archives/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="archives/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the25post.com/">
+  <meta content="Reviews &mdash; The 25 Post" property="og:title">
+  <meta content='This is a writing website.' property="og:description">
+  <meta content='https://the25post.com/archives/uploads/twentyfivepostheader.jpg' property='og:image'>
+  <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
+  <meta name="twitter:card" content="summary_large_image">
+  
+<!--stylesheets-->
+<link rel="stylesheet" href="homepages-stylesheet.css">
+<link rel="stylesheet" href="fonts.css">
+<script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    
+    <div class="row">
+      
+    
+      <div class="col" style="flex: 10%;">
+      </div>
+
+      <!-- BIG LOGO -->
+      <a href="index.html">
+        <div id="big-logo">
+          <h1>25</h1>
+        </div>
+      </a>
+
+        <div class="col" style="flex:70%; padding-right: 20px;">
+
+            <p style="font-family: 'Poppins'; font-size: 24px; text-align: center;"><u>MUSIC</u></p>
+            <br><br>
+
+          <div id="articles-container"></div>
+
+          
+        </div>
+        
+
+        <div class="col" style="flex:10%;">
+        </div>
+  </div>
+
+  </div>
+
+  <script>
+    // Fetch JSON data 
+  // Fetch JSON data 
+  fetch('all-articles.json')
+    .then(response => response.json())
+    .then(data => {
+
+      // Filter articles by kicker "MUSIC"
+      data = data.filter(article => article.kicker == "REVIEWS");
+
+      // Sort articles by date
+      data.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date); 
+      });
+
+      for (var i = 0; i < data.length; i++) {
+
+        var articleURL = data[i].article_url;
+        var photoURL = data[i].photo_url;
+        var photoCredit = data[i].photo_credit;
+        var kicker = data[i].kicker;
+        var headline = data[i].headline;
+        var subhead = data[i].subhead;
+        var author = data[i].author;
+        var date = data[i].date;
+
+        var articleHTML = `
+          <div class="article-filler" id="section">
+            <div class="row">
+              <div class="section-img">
+                <a class="article-url" href="${articleURL}">
+                  <img class="photo" src="${photoURL}" />
+                  <span class="photo-credit">${photoCredit}</span>
+                </a>
+              </div>
+              <div class="section-col">
+                <h6 class="kicker">${kicker}</h6>
+                <a class="article-url" href="${articleURL}">
+                  <h2 class="headline main-feature-hed">${headline}</h2>
+                </a>
+                <p class="subhead">${subhead}</p>
+                <h4>by <span class="author">${author == "" ? 'JONATHAN PARK' : author}</span></h4>
+                <small class="date">${date}</small>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divide" />
+        `;     
+        
+        document.getElementById("articles-container").innerHTML += articleHTML;
+
+      }
+    });
+  </script>
+</body>
+</html>
