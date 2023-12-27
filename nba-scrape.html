@@ -95,6 +95,10 @@
             #box-score-container th { font-family: 'Poppins'; }
             #box-score-container tr { border-bottom: 1px solid #aaa; }
             #box-score-container table { width: 100%; border-collapse: collapse; }
+
+            @media screen and (max-width: 1200px) {
+                #box-score-container table { width: 800px; }
+            }
         </style>
     </head>
     <body style="font-family: 'Poppins Light'">
@@ -361,17 +365,21 @@
 
                     var away_color = data.boxscore.teams[0].team.color;
                     var home_color = data.boxscore.teams[1].team.color;
+                    var away_color_hex = '#' + away_color;
+                    var home_color_hex = '#' + home_color;
+
+                    var mix_color = blendColors(away_color_hex, home_color_hex, home_win_p);
 
                     const win_p_gradient_container = document.getElementById('win-probability-gradient-container');
 
                     if (display_team == away_team) {
                         win_p_gradient_container.innerHTML = `
-                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(90deg, #${away_color} 0%, #${away_color} ${display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
+                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(90deg, #${away_color} 0%, #${mix_color} ${display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
                             </div>
                         `;
                     } else {
                         win_p_gradient_container.innerHTML = `
-                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(-90deg, #${away_color} 0%, #${home_color} ${1 - display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
+                            <div id="win-probability-gradient" style="background: ${away_color}; background: linear-gradient(-90deg, #${away_color} 0%, #${mix_color} ${1 - display_win_p}%, #${home_color} 100%); height: 20px; margin: 10px 0 20px 0; ">
                             </div>
                         `;
                     }
@@ -874,6 +882,14 @@
             pointsButton.click();
         }
 
+        function blendColors(colorA, colorB, amount) {
+            const [rA, gA, bA] = colorA.match(/\w\w/g).map((c) => parseInt(c, 16));
+            const [rB, gB, bB] = colorB.match(/\w\w/g).map((c) => parseInt(c, 16));
+            const r = Math.round(rA + (rB - rA) * amount).toString(16).padStart(2, '0');
+            const g = Math.round(gA + (gB - gA) * amount).toString(16).padStart(2, '0');
+            const b = Math.round(bA + (bB - bA) * amount).toString(16).padStart(2, '0');
+            return r + g + b;
+        }
             
         displayGameList();
         callGameOnLoad();
