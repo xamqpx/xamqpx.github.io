@@ -167,3 +167,53 @@
     font-family: 'Tablet Gothic Bold';
     src: url('fonts/Tablet\ Gothic\ W02\ SemiBold.ttf');
   }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre';
+    src: url('fonts/FrankRuhlLibre-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre Bold';
+    src: url('fonts/FrankRuhlLibre-Bold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre Light';
+    src: url('fonts/FrankRuhlLibre-Light.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre Medium';
+    src: url('fonts/FrankRuhlLibre-Medium.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre SemiBold';
+    src: url('fonts/FrankRuhlLibre-SemiBold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre ExtraBold';
+    src: url('fonts/FrankRuhlLibre-ExtraBold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Frank Ruhl Libre Black';
+    src: url('fonts/FrankRuhlLibre-Black.ttf');
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Grotesk Display Pro Black';
+    src: url('fonts/NeueHaasDisplayBlack.ttf');
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Grotesk Display Pro Bold';
+    src: url('fonts/NeueHaasDisplayBold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Grotesk Display Pro Light';
+    src: url('fonts/NeueHaasDisplayLight.ttf');
+  }

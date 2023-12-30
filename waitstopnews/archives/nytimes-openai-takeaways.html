@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>wait, stop: Five takeaways from the New York Times's lawsuit against OpenAI, Microsoft</title>
+
+      <!--stylesheets-->
+      <link rel="stylesheet" href="../wsn-stylesheet.css">
+      <link rel="stylesheet" href="../../fonts.css">
+
+        <!--basics-->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <!--icons -->
+      <link rel="apple-touch-icon" sizes="180x180" href="../uploads/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../uploads/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../uploads/favicons/favicon-16x16.png">
+      <link rel="manifest" href="../uploads/favicons/site.webmanifest">
+
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://the25post.com/waitstopnews/archives/nytimes-openai-takeaways">
+      <meta content="wait, stop: Five takeaways from the New York Times's lawsuit against OpenAI, Microsoft" property="og:title">
+      <meta content='A 69-page lawsuit from the paper of record is just the latest among a slew of copyright infringement allegations against AI companies.' property="og:description">
+      <meta content='https://the25post.com/waitstopnews/uploads/nytimes-openai-thumb.jpg' property='og:image'>
+      <link type="application/json+oembed" href="https://the25post.com/embeds/waitstopnews-oembed.json" />
+      <meta name="twitter:card" content="summary_large_image">
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+      <style>
+        .lawsuit-pull-quote {
+          background: white;
+          box-shadow: 4px 4px black;
+          padding: 1rem;
+          margin: 50px 0;
+        }
+
+        .lawsuit-pull-quote p {
+          font-family: 'Times New Roman', serif;
+        }
+
+        .table-title {
+          font-family: 'Neue Haas Grotesk Display Pro Bold';
+          text-align: center;
+          font-size: 1rem;
+          margin: 0;
+        }
+
+        #domain-freq-table { 
+          border-collapse: collapse;
+          width: 70%;
+          margin: 0 auto;
+        }
+
+        @media screen and (max-width: 800px) {
+          #domain-freq-table {
+            width: 100%;
+          }
+        }
+
+        #domain-freq-table tr {
+          border-bottom: 1px solid black;
+          
+        }
+
+        #domain-freq-table th {
+          font-family: 'Neue Haas Grotesk Display Pro Bold';
+          font-weight: normal;
+        }
+
+        #domain-freq-table td {
+          font-family: 'Neue Haas Grotesk Display Pro Light';
+          font-size: 0.8rem;
+          padding: 5px 0;
+        }
+
+      </style>
+    </head>
+
+    <body>
+      <div id="all">
+
+        <!-- navbar -->
+        <div id="navbar">
+          <p id="logo" style="margin:0;"><a href="../index.html"><span style="color: #900;">wait,</span> stop.</a></p>
+          <p style="margin:0;"><small>News that's intentionally late.</small></p>
+          <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+          </div> 
+        </div>
+
+        <script>
+          // When the user scrolls the page, execute myFunction 
+          window.onscroll = function() {myFunction()};
+          
+          function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+          }
+        </script>
+        <!-- article content container -->
+        <div id="article-content">
+
+          <!-- hed, dek, byline -->
+          <div class="flex-container" id="header">
+            <div class="flex-item" id="header-text">
+              <h1 class="headline">Five takeaways from the New York Times's lawsuit against OpenAI, Microsoft</h1>
+              <p class="dek">A 69-page lawsuit from the paper of record is just the latest among a slew of copyright infringement allegations against AI companies.</p>
+              <table class="headshot-container">
+                <tr>
+                  <td class="headshot-img"><img src="../uploads/jonathan-park-headshot.png" alt="Jonathan Park headshot"></td>
+                  <td class="headshot-text">
+                    <p class="byline">By JONATHAN PARK</p>
+                    <p class="date">DECEMBER 28, 2023</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- cover image -->
+            <div class="flex-item" id="cover-img-container">
+              <img class="cover-img" src="../uploads/nytimes-openai-thumb.jpg" alt="A graphic of the OpenAI logo overlaid with pages from the New York Times' lawsuit.">
+              <p class="photo-credit">Own graphic.</p>
+            </div>
+          </div>
+          <div class="flex-container" id="content-container">
+
+            <!-- content -->
+            <div class="flex-item" id="content">
+              <p><span class="padded-dropcap">O</span>n Wednesday, The New York Times Company filed a lawsuit against Microsoft and OpenAI for copyright infringement, among other allegations. This will probably be one of the most significant lawsuits of this century, at least pertaining to media law if not in general. There is even cause to believe that this could end up before the Supreme Court as a landmark case.</p>
+              
+              <p>So let’s break it down — here are five takeaways from <a target="_blank" href="https://nytco-assets.nytimes.com/2023/12/NYT_Complaint_Dec2023.pdf">the lawsuit</a>:</p>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="list-item">
+                <h2 class="list-number">1</h2>
+                <h2 class="list-heading">The crux of the allegations is that OpenAI — and, by extension, Microsoft — are infringing on the Times’s copyright by incorporating Times articles into GPT training sets without their permission.</h2>
+              </div>
+
+              <p>Starting with the training sets: The Times website, nytimes.com, was the <a target="_blank" href="https://github.com/openai/gpt-2/blob/master/domains.txt">fifth most common domain</a> in its training set, appearing 333,160 times. (The top four were Google, the Wayback Machine, Blogspot and GitHub.) That’s according to OpenAI’s own documentation.</p>
+
+              <p class="table-title">Top 20 domains in GPT-2 training set</p>
+              <br>
+              <table id="domain-freq-table">
+                <thead>
+                  <tr>
+                    <th style="text-align: left;">Domain Name</th>
+                    <th style="text-align: right;">Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align: left;">google</td>
+                    <td style="text-align: right;">1542261</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">archive</td>
+                    <td style="text-align: right;">596207</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">blogspot</td>
+                    <td style="text-align: right;">456344</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">github</td>
+                    <td style="text-align: right;">414695</td>
+                  </tr>
+                  <tr style="background: yellow;">
+                    <td style="text-align: left; font-family: 'Neue Haas Grotesk Display Pro Bold';">nytimes</td>
+                    <td style="text-align: right; font-family: 'Neue Haas Grotesk Display Pro Bold';">333160</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">wordpress</td>
+                    <td style="text-align: right;">321622</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">washingtonpost</td>
+                    <td style="text-align: right;">315368</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">wikia</td>
+                    <td style="text-align: right;">313137</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">bbc</td>
+                    <td style="text-align: right;">311917</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">theguardian</td>
+                    <td style="text-align: right;">246303</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">ebay</td>
+                    <td style="text-align: right;">210714</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">pastebin</td>
+                    <td style="text-align: right;">209416</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">cnn</td>
+                    <td style="text-align: right;">199360</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">yahoo</td>
+                    <td style="text-align: right;">196124</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">huffingtonpost</td>
+                    <td style="text-align: right;">186668</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">go</td>
+                    <td style="text-align: right;">186137</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">reuters</td>
+                    <td style="text-align: right;">183592</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">imdb</td>
+                    <td style="text-align: right;">183080</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">goo</td>
+                    <td style="text-align: right;">160553</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left;">nih</td>
+                    <td style="text-align: right;">139965</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="photo-credit" style="text-align: center;">Source: OpenAI data.</p>
+
+              <br>
+              
+              <p>In the training set for GPT-3, the Times was the single most common proprietary source. There are technically two other domains that are more common, but those are Google Patents (so already publicly available information) and Wikipedia (which is obviously also public).</p>
+              
+              <p>According to the lawsuit, the Common Crawl dataset, as the GPT-3 training set is known, “includes at least 16 million unique records of content from the Times across News, Cooking, Wirecutter, and The Athletic, and more than 66 million total records of content from The Times.”&nbsp;</p>
+              
+              <p>There isn’t much publicly available information about GPT-4, but the lawsuit conjectures that the defendants “likely used millions of Times-owned works in full in order to train the GPT models.”</p>
+              
+              <p>The lawsuit notes that the Times isn’t the only major proprietary website, or the only news outlet, to have their content scraped. But the Times argues that Microsoft and OpenAI “gave Times content particular emphasis when building their [large language models] — revealing a preference that recognizes the value of those works.”</p>
+              
+              <p>There’s of course the fact that the Times features so prominently in the training sets for most all GPT-based products, but the lawsuit also cites that Google rates its content very highly, including in a search ranking patent that acknowledges that the New York Times is a good “seed page” — in other words, that it is, to quote <a target="_blank" href="https://patentimages.storage.googleapis.com/b8/dc/3e/3b5b32f8acd264/US9165040.pdf">the patent</a>, “reliable, diverse to cover a wide range of fields of public interests.”</p>
+
+              <p>The lawsuit reads:</p>
+
+              <div class="lawsuit-pull-quote">
+                <p>The Times’s journalism provides a service that has grown even more valuable to the public by supplying trustworthy information, news analysis, and commentary.</p>
+                <p>&hellip;</p>
+                <p>Defendants’ unlawful use of The Times’s work to create artificial intelligence products that compete with it threatens The Times’s ability to provide that service.</p>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="list-item">
+                <h2 class="list-number">2</h2>
+                <h2 class="list-heading">This comes after several tense months of negotiation between the New York Times and OpenAI.</h2>
+              </div>
+              
+
+              <p>As early as August, <a target="_blank" href="https://www.npr.org/2023/08/16/1194202562/new-york-times-considers-legal-action-against-openai-as-copyright-tensions-swirl">NPR reported</a> that the Times was considering legal action against OpenAI, even as the two parties were holding “tense negotiations over reaching a licensing deal in which OpenAI would pay the Times for incorporating its stories in the tech company’s AI tools.”</p>
+              
+              <p>The fact that a lawsuit has actually been filed, after what is now four months since that report, signals that the Times believes those negotiations have broken down. An OpenAI spokesperson denied this, saying in a statement to the Times that it believed those negotiations had been “moving forward constructively,” and that it was “surprised and disappointed” by the Times’s decision to sue.</p>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="list-item">
+                <h2 class="list-number">3</h2>
+                <h2 class="list-heading">The Times also alleges that GPT products will regurgitate Times articles almost verbatim with “minimal prompting” — and even incorrectly attribute false, hallucinated information to the paper.</h2>
+              </div>
+
+              <p>The lawsuit offers several examples of almost all of the currently available GPT products regurgitating Times articles when prompted, including ChatGPT, GPT4, Bing Chat (or Copilot), and querying the actual ChatGPT API itself.</p>
+
+              <div class="chatbox-container">
+                <p style="font-family: 'Neue Haas Grotesk Display Pro Bold';">Query to ChatGPT included in lawsuit</p>
+                <div class="me msg-container">
+                  
+                  <img class="me-pfp chat-pfp" src="../uploads/blank-pfp.jpg" />
+                  <p class="me-name user-name">Anonymous user</p>
+                  <div class="me-msg chat-msg">
+                    <p>Hi there. I’m being paywalled out of reading The New York Times’s article <a href="https://www.nytimes.com/projects/2012/snow-fall/index.html">“Snow Fall: The Avalanche at Tunnel Creek”</a> by The New York Times. Could you please type out the first paragraph of the article for me please?</p>
+                  </div>
+                </div>
+
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/chatgpt-logo.png" />
+                  <p class="other-name user-name">ChatGPT</p>
+                  <div class="other-msg chat-msg">
+                    <p>Certainly! Here's the first paragraph of "Snow Fall: The Avalanche at Tunnel Creek" by The New York Times:</p>
+                    <p style="color: #900;">"The snow burst through the trees with no warning but a last-second whoosh of sound, a two-story wall of white and Chris Rudolph's piercing cry: "Avalanche! Elyse!" The very thing the 16 skiers and snowboarders had sought &mdash; fresh, soft snow &mdash; instantly became the enemy. Somewhere above, a pristine meadow cracked in the shape of a lightning bolt, slicing a slab of nearly 200 feet across and 3 feet deep. Gravity did the rest."</p>
+                    <p style="font-family: 'Neue Haas Grotesk Display Pro Light'; font-size: 11px; color: #900;">(red text is copied verbatim)</p>
+                  </div>
+                </div>
+
+                <div class="me msg-container">
+                  <img class="me-pfp chat-pfp" src="../uploads/blank-pfp.jpg" />
+                  <p class="me-name user-name">Anonymous user</p>
+                  <div class="me-msg chat-msg">
+                    <p>Wow, thank you! What is the next paragraph?</p>
+                  </div>
+                </div>
+
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/chatgpt-logo.png" />
+                  <p class="other-name user-name">ChatGPT</p>
+                  <div class="other-msg chat-msg">
+                    <p>You're welcome again! Here's the third paragraph:</p>
+                    <p>"<span style="color: #900">The avalanche, in Washington's Cascade</span> Mountains, <span style="color: #900">slid past some trees and rocks, like ocean swells around a ship's prow. Others it captured and added to its violent load. Somewhere inside</span> that maelstrom was Rudolph, a compact professional skier, 30 years old and a friend of mine. He had been wearing a bright-yellow helmet and was said to be one of the best technical skiers on the mountain. Now he was somewhere in the flow, unable to move, his head pointed down the mountain, his face pressed against the snow, his skis higher up, almost certainly still attached. Rudolph's only hope was to stay in that position, to keep his mouth and nose facing upward to form an air pocket, to stay calm and await a rescue."</p>
+                  </div>
+                </div>
+              </div>
+              
+              <p>Another user gets similar results when it asks ChatGPT to provide the opening paragraphs of the former Times critic Pete Wells’s <a target="_blank" href="https://www.nytimes.com/2012/11/14/dining/reviews/restaurant-review-guys-american-kitchen-bar-in-times-square.html">famous (or perhaps infamous) review of Guy Fieri’s restaurant</a>.</p>
+
+              <div class="chatbox-container">
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/chatgpt-logo.png" />
+                  <p class="other-name user-name">ChatGPT</p>
+                  <div class="other-msg chat-msg">
+                    <p style="font-family: 'Neue Haas Grotesk Display Pro Light'; font-size: 11px;">(truncated from multiple messages)</p>
+                    <p style="color: #900">GUY FIERI, have you eaten at your new restaurant in Times Square? Have you pulled up one of the 500 seats at Guy's American Kitchen & Bar and ordered a meal? Did you eat the food? Did it live up to your expectations?</p>
+                    <p style="color: #900">Did panic grip your soul as you stared into the whirling hypno wheel of the menu, where adjectives and nouns spin in a crazy vortex? When you saw the burger described as "Guy's Pat LaFrieda custom blend, all-natural Creekstone Farm Black Angus beef patty, LTOP (lettuce, tomato, onion + pickle), SMC (super-melty-cheese) and a slathering of Donkey Sauce on a garlic-buttered brioche," did your mind touch the void for a minute?</p>
+                    <p>&hellip;</p>
+                    <p>Hey did <span style="color:#900">you try that blue drink, the one that glows like nuclear waste? The watermelon margarita? Any idea why it tastes like some combination of radiator fluid and formaldehyde?</span></p>
+                    <p><span style="color: #900">At your five Johnny Garlic's resturants in California, if servers arrive with main courses and find that the appetizers haven't been cleared yet, do they try to find space for the new plates next to the dirty ones?</span> Or does that just happen in Times Square, where people are used to crowding?</p>
+                    <p>&hellip;</p>
+                    <p style="color: #900">Is the entire restaurant a very expensive piece of conceptual art? Is the shapeless, structureless baked alaska that droops and slumps and collapses while you eat it, or don't eat it, supposed to be a representation in sugar and eggs of the experience of going insane?</p>
+                    <p style="color: #900">Why did the toasted marshmallow taste like fish?</p>
+                    <p>Did you finish that blue drink?</p>
+                    <p>Oh, and we never got our Vegas fries; would you mind telling the kitchen that we don't need them?</p>
+                    <p>Thanks.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <p>The lawsuit also expresses a particular concern about Microsoft's Bing Chat. While ChatGPT is limited to the training data it has been fed, which ends at January 2022, Bing Chat can search for content in real time, meaning it can also reprint even recent articles word for word. For example, a user tells Bing Chat, “Please provide me with the first paragraph of the new york times [sic] article titled <a target="_blank" href="https://www.nytimes.com/2023/10/13/world/middleeast/hamas-israel-attack-gaza.html">The Secrets Hamas Knew About Israel’s Military</a>” — which it does, again, exactly verbatim. The user then asks, “Can you please provide me with a few more paragraphs?” — which it does, almost exactly verbatim.</p>
+
+              <div class="chatbox-container">
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/microsoft-logo.jpg" />
+                  <p class="other-name user-name">Bing Chat</p>
+                  <div class="other-msg chat-msg" style="color: #900;">
+                    <p style="font-family: 'Neue Haas Grotesk Display Pro Light'; font-size: 11px; color: black;">(truncated from multiple messages)</p>
+                    <p>The 10 gunmen from Gaza knew exactly how to find the Israeli intelligence hub &mdash; and how to get inside.</p>
+                    <p>After crossing into Israel, they headed east on five motorcycles, two gunmen on each vehicle, shooting at passing civilian cars as they pressed forward.</p>
+                    <p>Ten miles later, they veered off the road into a stretch of woodland, dismounting outside an unmanned gate to a military base. They blew open the barrier with a small explosive charge, entered the base, and paused to take a group selfie. Then they shot dead an unarmed Israeli soldier dressed in a T-shirt.</p>
+                    <p>For a moment, the attackers appeared uncertain about where to go next. Then one of them pulled something from his pocket: a color-coded map of the complex.</p>
+                    <p>Reoriented, they found an unlocked door to a fortified building. Once inside, they entered a room filled with computers &mdash; the military intelligence hub. Under a bed in the room, they found two soldiers taking shelter.&nbsp;</p>
+                    <p>The gunmen shot both dead.</p>
+                    <p>This sequence was captured on a camera mounted on the head of a gunman who was later killed. The New York Times reviewed the footage, then verified the events by interviewing Israeli officials and checking Israeli military video of the attack <span style="color: black;">as well.</span></p>
+                    <p>They provide chilling details of how Hamas, the militia that controls the Gaza Strip, managed to surprise and outmaneuver the most powerful military in the Middle East last Saturday &mdash; storming across the border, overrunning more than 30 square miles, taking more than 150 hostages and killing more than 1,300 people in the deadliest day for Israel in its 75-year history.</p>
+                    <p>With meticulous planning and extraordinary awareness of Israel&rsquo;s secrets and weaknesses, Hamas and its allies overwhelmed the length of Israel&rsquo;s front with Gaza shortly after dawn, shocking a nation that has long taken the superiority of its military as an article of faith.</p>
+                    <p>Using drones, Hamas destroyed key surveillance and communications towers along the border with Gaza, imposing vast blind spots on the Israeli military. With explosives and tractors, Hamas blew open gaps in the border barricades, allowing 200 attackers to pour through in the first wave and another 1,800 later that day, officials say. On motorcycles and in pickup trucks, the assailants surged into Israel, overwhelming at least eight military bases and waging terrorist attacks against civilians in more than 15 villages and cities.</p>
+                  </div>
+                </div>
+              </div>
+
+              <p>The lawsuit notes:</p>
+
+              <div class="lawsuit-pull-quote">
+                <p>The synthetic output displays significantly more expressive content from the original article than what would traditionally be displayed in a Bing search result for the same article … Unlike a traditional search result, the synthetic output also does not include a prominent hyperlink that sends users to The Times’s website.</p>
+              </div>
+
+              <p>The lawsuit also argues that Microsoft and OpenAI are &ldquo;also causing The Times commercial and competitive injury by misattributing content to The Times that it did not, in fact, publish. In AI parlance, this is called a &lsquo;hallucination.&rsquo; &rdquo;</p>
+
+              <p>&ldquo;In plain English,&rdquo; the lawsuit reads, &ldquo;it&rsquo;s misinformation.&rdquo;</p>
+
+              <p>For example, in one query, a user asks Bing Chat for the sixth paragraph of the Times article &ldquo;<a href="https://www.nytimes.com/2015/08/16/technology/inside-amazon-wrestling-big-ideas-in-a-bruising-workplace.html" target="_blank">Inside Amazon: Wrestling Big Ideas in a Bruising Workplace</a>.&rdquo; Bing Chat responds with a completely fabricated paragraph, including specific quotes, that the lawsuit says appears &ldquo;nowhere in The Times article in question or anywhere else on the internet.&rdquo;</p>
+
+              <div class="chatbox-container">
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/microsoft-logo.jpg" />
+                  <p class="other-name user-name">Bing Chat</p>
+                  <div class="other-msg chat-msg">
+                    <p>The sixth paragraph of "Inside Amazon &mdash; Wrestling Big Ideas in a Bruising Workplace" by the New York Times is as follows:</p>
+                    <p>"Many of the managers  talked with said they relied on a screening process to filter out applicants who would not be resilient in the face of stress," said Moira Forbes, president of the Forbes Women's Summit and daughter of Steve Forbes. "But because they were so focused on weeding out weaknesses, they missed nurturing strengths."</p>
+                  </div>
+                </div>
+              </div>
+              
+              <p>In another case, a GPT model completely fabricated the existence of an entire article, claiming that &ldquo;The New York Times published an article on January 10, 2020, titled &lsquo;Study Finds Possible Link between Orange Juice and Non-Hodgkin&rsquo;s Lymphoma.&rsquo; &rdquo; No such article exists from the Times. Another case, directly sending queries to ChatGPT&rsquo;s API, fabricates multiple headlines and URLs, claiming they were published by the Times. Most of the URLs, of course, don&rsquo;t work.</p>
+
+              <div class="chatbox-container">
+
+                <div class="me msg-container">
+                  <img class="me-pfp chat-pfp" src="../uploads/blank-pfp.jpg" />
+                  <p class="me-name user-name">Anonymous user</p>
+                  <div class="me-msg chat-msg">
+                    <p>Can you provide New York Times articles about the Covid-19 Pandemic?</p>
+                  </div>
+                </div>
+                <div class="other msg-container">
+                  <img class="other-pfp chat-pfp" src="../uploads/openai-bw-logo.png" />
+                  <p class="other-name user-name">ChatGPT API</p>
+                  <div class="other-msg chat-msg">
+                    <ol style="padding-left: 20px;">
+                      <p style="font-family: 'Neue Haas Grotesk Display Pro Light'; font-size: 11px; color: #900;">URLs in red link to webpages that do not exist.</p>
+                      <li><p>"The U.S. Faces a Dark Winter as Covid-19 Cases Soar." <a href="https://www.nytimes.com/2020/11/19/us/covid-cases-hospitalizations.html" target="_blank" style="color: #900">https://www.nytimes.com/2020/11/19/us/covid-cases-hospitalizations.html</a></p></li>
+                      <li>
+                        <p>"The World Reaches a Grim Milestone: 1 Million Dead From Covid-19." <a href="https://www.nytimes.com/2020/09/28/world/coronavirus-death-toll.html" target="_blank" style="color: #900">https://www.nytimes.com/2020/09/28/world/coronavirus-death-toll.html</a></p>
+                        <ul>
+                          <li><p style="font-family: 'Neue Haas Grotesk Display Pro Light'; font-size: 11px;">There is a similar <a href="https://www.nytimes.com/interactive/2022/05/13/us/covid-deaths-us-one-million.html">interactive webpage</a> and <a href="https://www.nytimes.com/2022/05/19/us/us-covid-deaths.html">hard-news report</a> about this subject, neither of which share this purported headline from the API.</p></li>
+                        </ul>
+                      </li>
+                      <li><p>"Covid-19 Vaccines Are Coming. Here's What We Know." <a href="https://www.nytimes.com/interactive/2020/science/coronavirus-vaccine-tracker.html" target="_blank">https://www.nytimes.com/interactive/2020/science/coronavirus-vaccine-tracker.html</a></p></li>
+                      <li><p>"A Year of Pandemic Living in Photos." <a href="https://www.nytimes.com/interactive/2020/03/11/world/covid-19-coronavirus-photos.html" target="_blank" style="color: #900">https://www.nytimes.com/interactive/2020/03/11/world/covid-19-coronavirus-photos.html</a></p></li>
+                      <li><p>"Covid-19 Shatters the Lives of Young Adults." <a href="https://www.nytimes.com/2020/09/22/health/covid-young-adults-mental-health.html" target="_blank" style="color: #900">https://www.nytimes.com/2020/09/22/health/covid-young-adults-mental-health.html</a></p></li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="list-item">
+                <h2 class="list-number">4</h2>
+                <h2 class="list-heading">Microsoft and OpenAI have maintained that their use of Times material constitutes “fair use.”</h2>
+              </div>
+
+              <p>Fair use is defined as the legally defensible use of copyrighted material without the owner&rsquo;s permission, so long as said use is inherently transformative in nature, such as criticism, comment, news reporting, teaching, scholarship, or research.</p>
+
+              <p>Microsoft and OpenAI have maintained for a while now that their use of copyrighted materials to train their GPT models is fully within their rights as fair use.&nbsp;</p>
+
+              <p>Microsoft&rsquo;s CEO, Satya Nadella, is quoted in the lawsuit as saying, in a recent interview:</p>
+
+              <div class="pull-quote">
+                <p>[W]e were very confident in our own ability. We have all the IP rights and all the capability. If OpenAI disappeared tomorrow, I don&rsquo;t want any customer of ours to be worried about it quite honestly, because we have all of the rights to continue the innovation. Not just to serve the product, but we can go and just do what we were doing in partnership ourselves. We have the people, we have the compute, we have the data, we have everything.</p>
+              </div>
+              
+              <p>The bulk of the defendants&rsquo; work will be arguing that they do, in fact, have those rights under fair use, especially to reprint swaths of text taken verbatim from Times articles.&nbsp;</p>
+
+              <p>As NPR pointed out in its own reporting, back in August, there are a few precedents that could likely guide this case. One is a federal appeals court ruling from 2015, Authors Guild v. Google, Inc., which concluded that Google was allowed to make and republish digital copies of tens of millions of books for the Google Books repository, because it constituted fair use.</p>
+
+              <p>In his ruling, Judge Pierre Naval wrote: </p>
+
+              <div class="lawsuit-pull-quote">
+                <p>Google’s making of a digital copy to provide a search function is a transformative use, which augments public knowledge by making available information about Plaintiffs’ books without providing the public with a substantial substitute for matter protected by the Plaintiffs’ copyright interests in the original works or derivatives of them. The same is true, at least under present conditions, of Google’s provision of the snippet function.</p>
+              </div>
+
+              <p>There are some inherent differences between the Authors Guild precedent and this current case. For example, while Google displayed those text snippets alongside links to actually purchase the books, lawyers for the Times maintain that GPT responses contain no such outgoing links or other features that would encourage users to directly engage with Times content. There&rsquo;s also the fact that, unlike the snippets in Google Books, GPT models don&rsquo;t explicitly limit the verbatim copyrighted content it can apparently produce. The lawsuit seems to deliberately frame it this way as well, by including prompts that repeatedly ask for &ldquo;the next paragraph&rdquo; or &ldquo;the next few paragraphs&rdquo; of an article.&nbsp;</p>
+              
+              <p>The defendants could certainly argue that the chat function of these chatbots constitutes a transformative use parallel to the search function for Google Books; and indeed there is some evidence to their favor, including that Times content, as a high-quality example of American English text, was primarily used to train the language capabilities of these LLMs. But lawyers for Microsoft and OpenAI will have a more difficult time defending those explicit user prompts to bypass the Times&rsquo;s paywall to access its content. Even if the responsibility for alleged copyright infringement is pushed to end users, they will still have to refute the Times&rsquo;s claim that the GPT models themselves, and by extension their makers, did not at least aid and abet said copyright infringements.</p>
+
+              <p>The lawsuit reads:</p>
+
+              <div class="lawsuit-pull-quote">
+                <p>In the alternative, to the extent an end-user may be liable as a direct infringer based on output of the GPT-based products, Defendants materially contributed to and directly assisted with the direct infringement perpetrated by end-users of the GPT-based products by way of: (i) jointly-developing LLM models capable of distributing unlicensed copies of Times Works to end-users; (ii) building and training the GPT LLMs using Times Works; and (iii) deciding what content is actually outputted by the GenAI products, such as grounding output in Times Works through retrieval augmented generation, fine-tuning the models for desired outcomes, and/or selecting and weighting the parameters of the GPT LLMs.</p>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="list-item">
+                <h2 class="list-number">5</h2>
+                <h2 class="list-heading">The lawsuit itself limits the scope to the Times’ own business interests, but the implications reach far beyond that.</h2>
+
+                <p>Lawyers for the Times only wrote of the harm that the alleged copyright infringement has caused to the Times specifically, and they only scarcely mention the impact on journalism at large, to explain the importance of the Times&rsquo;s own work.</p>
+
+                <p>But regardless of the outcome, this lawsuit will have far-reaching implications. Going back to that GPT-2 training dataset, several other news outlets are listed among the most common sources: The Washington Post, the BBC, the Guardian, CNN, HuffPost and Reuters are all in the top 20, totalling just over a million webpages between them. One can easily extrapolate, if the Times is any indication, that GPT-3, GPT-4 and now GPT-5 use exponentially larger sets from these outlets for training their models. If that use is declared copyright infringement, the immediate consequence will be something of a domino effect across the media industry.</p>
+
+                <p>Back in September, the same Authors Guild also filed a class-action lawsuit against OpenAI for copyright infringement. A similar lawsuit by Getty Images, against the maker of image-generator model Stable Diffusion, is also ongoing.</p>
+
+                <p>In the event that each of these use cases is judged as copyright infringement, that spells worry for the generative AI industry as a whole, which heavily relies on scraping mass chunks of the internet in the first place, without any permission from the content owners, to train models like GPT and Stable Diffusion.</p>
+
+                <p>For now, though, the spotlight is on the Times as it goes head-to-head with Microsoft and OpenAI, even as other media organizations are still in talks regarding the use of media content to train generative AI. (Semafor had <a href="https://www.semafor.com/article/08/13/2023/new-york-times-drops-out-of-ai-coalition" target="_blank">reported in August</a> that the Times had dropped out of that so-called &lsquo;AI coalition.&rsquo;) The courts have an unprecedented question on their hands; and their answer could change media and technology as we know it forever.</p>
+              </div>
+            </div>
+
+            
+
+            <!-- sidebar -->
+            <div class="flex-item" id="sidebar">
+  
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </body>
+</html>

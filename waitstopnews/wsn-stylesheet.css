@@ -1,0 +1,233 @@
+
+body {
+    background: #e8ded1; margin: 0;
+}
+
+html { scroll-behavior: smooth;  }
+
+#navbar { 
+    text-align: center; 
+    position: sticky; 
+    top: 0; 
+    padding: 20px 0; 
+    z-index: 50; 
+    background: #e8ded1;
+}
+
+#logo {
+    font-family: 'Neue Haas Grotesk Display Pro Black';
+    font-weight: normal;
+    font-size: 24px;
+    transition: 500ms;
+}
+
+#logo a { text-decoration: none; color: black; }
+
+p { font-family: 'Frank Ruhl Libre'; }
+
+.flex-container { display: flex; }
+
+.flex-item { padding: 40px; }
+
+#header-text { flex: 30%; }
+#cover-img-container { flex: 50%; }
+
+#content { 
+    flex: 40%; 
+    padding-right: 0;
+    padding-left: 30%;
+}
+#sidebar { flex: 30%; }
+
+span.padded-dropcap { 
+    margin-left: 0;
+    margin-right: 5px;
+    padding: 0;
+    line-height: 1;
+    float: left;
+    position: relative;
+    top: 0em;
+    margin-bottom: -0.2em;
+    font-size: 50px;
+    font-family: 'Neue Haas Grotesk Display Pro Black';
+    color: black;
+}
+
+.cover-img { width: 100%; }
+
+h1.headline { 
+    font-family: 'Neue Haas Grotesk Display Pro Black';
+    font-weight: normal;
+    font-size: 40px;
+}
+
+p.dek {
+    font-size: 20px;
+}
+
+p.photo-credit {
+    font-family: 'Neue Haas Grotesk Display Pro Light';
+    font-size: 12px;
+    text-align: right;
+}
+
+p.byline {
+    font-family: 'Neue Haas Grotesk Display Pro Bold';
+    font-size: 14px;
+    margin: 0;
+}
+
+p.date {
+    font-family: 'Neue Haas Grotesk Display Pro Light';
+    font-size: 12px;
+    margin: 0;
+}
+
+table.headshot-container { 
+    width: 100%; 
+    border-collapse: collapse; 
+    border: 0; 
+    margin: 0; 
+    padding: 0; 
+}
+
+td.headshot-img { width: 10%; }
+td.headshot-img img { width: 100%; border-radius: 50%; filter: saturate(0); }
+td.headshot-text { width: 90%; padding-left: 10px; }
+
+h2.list-number { 
+    font-family: 'Neue Haas Grotesk Display Pro Black';
+    font-weight: normal;
+    font-size: 60px;
+    background: black;
+    color: #e8ded1;
+    box-shadow: 2px 2px grey;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0;
+}
+
+h2.list-heading { 
+    font-family: 'Neue Haas Grotesk Display Pro Bold';
+    font-weight: normal;
+    font-size: 24px;
+}
+
+a:link, a:active, a:visited { color: #02189b; transition: 0.2s; }
+a:hover { color: #61b0b7; }
+  
+.progress-container {
+    width: 100%;
+    height: 4px;
+    margin-top: 10px;
+    background: #e8ded1;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #02189b;
+    width: 0%;
+}
+
+.pull-quote p {
+    font-family: 'Neue Haas Grotesk Display Pro Bold';
+    font-weight: normal;
+    border-left: 4px solid #02189b;
+    margin: 50px 0;
+    padding-left: 10px;
+}
+
+.chatbox-container {
+    width: 100%;
+    margin: 50px 0;
+    display: inline-block;
+}
+
+.msg-container {
+    width: 100%;
+    display: inline-block;
+}
+
+.user-name {
+    font-family: 'Neue Haas Grotesk Display Pro Light';
+    font-size: 14px;
+    color: black;    
+}
+
+.user-name.me-name {
+    text-align: right;
+    padding-top: 1px;
+}
+
+.user-name.other-name {
+    padding-top: 3px;
+}
+
+.chat-msg {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    clear: both;
+    font-size: 14px;
+}
+
+.chat-msg.me-msg {
+    background: #02189b;
+    color: white;
+    margin-left: 30%;
+    float: right;
+}
+
+.chat-msg.me-msg a:link, .chat-msg.me-msg a:active, .chat-msg.me-msg a:visited { color: white; }
+
+.chat-msg.other-msg {
+    background: #efefef;
+    color: black;
+    margin-right: 30%;
+    float: left;
+}
+
+.chat-pfp {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.chat-pfp.me-pfp {
+    margin-left: 10px;
+    float: right;
+    margin-right: 0;
+}
+
+.chat-pfp.other-pfp {
+    margin-right: 10px;
+    float: left;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .flex-container { flex-direction: column; }
+    .flex-item { flex: 100%; }
+
+    #content { padding: 0 40px; }
+
+    .chat-msg.me-msg {
+        margin-left: 10%;
+    }
+    .chat-msg.other-msg {
+        margin-right: 10%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    h1.headline { font-size: 24px; }
+    p.dek { font-size: 16px; }
+    h2.list-heading { font-size: 18px; }
+    
+    #navbar { position: sticky; }
+}
