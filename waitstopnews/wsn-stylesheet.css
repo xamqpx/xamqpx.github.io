@@ -5,6 +5,11 @@ body {
 
 html { scroll-behavior: smooth;  }
 
+::-moz-selection, ::selection {
+    background: #61b0b7;
+    color: white;
+}
+
 #navbar { 
     text-align: center; 
     position: sticky; 
@@ -21,6 +26,15 @@ html { scroll-behavior: smooth;  }
     transition: 500ms;
 }
 
+#article-content { 
+    flex: 40%; 
+    padding-right: 0;
+    padding-left: 30%;
+}
+
+#article-sidebar { flex: 30%; }
+
+
 #logo a { text-decoration: none; color: black; }
 
 p { font-family: 'Frank Ruhl Libre'; }
@@ -31,13 +45,6 @@ p { font-family: 'Frank Ruhl Libre'; }
 
 #header-text { flex: 30%; }
 #cover-img-container { flex: 50%; }
-
-#content { 
-    flex: 40%; 
-    padding-right: 0;
-    padding-left: 30%;
-}
-#sidebar { flex: 30%; }
 
 span.padded-dropcap { 
     margin-left: 0;
@@ -212,7 +219,10 @@ a:hover { color: #61b0b7; }
     .flex-container { flex-direction: column; }
     .flex-item { flex: 100%; }
 
-    #content { padding: 0 40px; }
+    #article-content {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 
     .chat-msg.me-msg {
         margin-left: 10%;
@@ -220,6 +230,17 @@ a:hover { color: #61b0b7; }
     .chat-msg.other-msg {
         margin-right: 10%;
     }
+}
+
+hr.divide {
+    border: 0;
+    height: 1px;
+    background: #bbb;
+    margin: 30px 0;
+}
+
+video {
+    width: 100%;
 }
 
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>The mission</title>
+
+      <link rel="stylesheet" href="wsn-stylesheet.css">
+        <link rel="stylesheet" href="../fonts.css">
+
+        <!--icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="uploads/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="uploads/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="uploads/favicons/favicon-16x16.png">
+        <link rel="manifest" href="uploads/favicons/site.webmanifest">
+
+        <!-- SEO -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://the25post.com/waitstopnews/mission">
+        <meta property="og:title" content="The mission">
+        <meta property="og:description" content="Why this project exists.">
+        <meta property='og:image' content='https://the25post.com/waitstopnews/uploads/waitstopnews-logo.png'>
+
+        <style>
+          h1.mission-title {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            font-weight: normal;
+            font-size: 5vw;
+          }
+
+          @media only screen and (max-width: 1100px) {
+            h1.mission-title {
+              font-size: 40px;
+            }
+          }
+        </style>
+    </head>
+
+    <body>
+      <div id="all">
+
+        <!-- navbar -->
+        <div id="navbar">
+          <p id="logo" style="margin:0;"><a href="index.html"><span style="color: #900;">wait,</span> stop.</a></p>
+          <p style="margin:0;"><small>News that's intentionally late.</small></p>
+          <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+          </div> 
+        </div>
+
+        <script>
+          // When the user scrolls the page, execute myFunction 
+          window.onscroll = function() {myFunction()};
+          
+          function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+          }
+        </script>
+        <!-- article content container -->
+        <div class="flex-container" id="content">
+
+            <!-- content -->
+            <div class="flex-item" id="article-content">
+              <h1 class="mission-title">The mission</h1>
+              <p class="date">NOVEMBER 8, 2023</p>
+              <p>It has now been just over one excruciating month since the attack of Israel by the Palestinian militant group Hamas, and the subsequent siege and invasion of Gaza. It&rsquo;s been easy to get caught up in this constant 24-hour news cycle, seeing video after video of rubble and bloodshed and raw grief. It has also been easy to lose sight of our rationality, our humanity, carried away by our own guttural emotions as this unspeakable violence unfolds &mdash; not just in Israel and Gaza, but also across the United States, where antisemitism and Islamophobia are unmistakably on the rise.</p>
+              <p>As someone who aspires to be a journalist, I have seen how trust in mainstream media has basically eroded overnight. The New York Times came under fire after it reported that Israel had bombed a hospital, when it was later revealed that that claim was dubious at best. Jewish and pro-Israel individuals are turning to Fox News because they see other news organizations as hostile towards Israel. Palestinian and pro-Palestinian individuals are increasingly turning to social media: TikTok, Twitter, Instagram, where, yes, information can frow freely with no obligation to serve a corporate media business, but so can misinformation, and disinformation.</p>
+              <p>I&rsquo;m starting this account because I want to challenge the notion that, in this age of social media, we need to constantly be reporting the news 24/7, be absorbing the news 24/7 and to constantly <em>react </em>to it &mdash; to almost instantaneously make some kind of value judgment and &ldquo;pick a side&rdquo; over a geopolitical conflict that many of us, especially those who are Gen Z, have had to learn about overnight.</p>
+              <p>Of course, it takes a certain privilege to be able to step back from a war and look at it holistically. I am just some random guy, thousands of miles away from any sort of missile being fired, with no vested interest in either Israel or Gaza. I recognize that privilege, and I hope to use it in some way for the greater good, however corny that sounds.</p>
+              <p>That&rsquo;s where Waitstop News comes in. By definition, this account will be later than most to the major headlines. It may take days or weeks to look at a situation and form a comprehensive understanding &mdash; for example, are today&rsquo;s developments actually significant, or blown out of proportion just because it happened today? Are there narratives being hastily constructed that, as the facts change, have to be broken down later on and rewritten?&nbsp;</p>
+              <p>They say hindsight is 20/20 &mdash; and this account aims to use that to its full advantage.</p>
+              <p>&mdash; Jonathan Park</p>
+            </div>
+
+            
+
+            <!-- sidebar -->
+            <div class="flex-item" id="article-sidebar">
+
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </body>
+</html>

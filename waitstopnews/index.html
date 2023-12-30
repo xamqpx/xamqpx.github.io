@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>wait, stop. - news that's intentionally late</title>
+        <link rel="stylesheet" href="wsn-stylesheet.css">
+        <link rel="stylesheet" href="../fonts.css">
+
+        <!--icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="uploads/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="uploads/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="uploads/favicons/favicon-16x16.png">
+        <link rel="manifest" href="uploads/favicons/site.webmanifest">
+
+        <!-- SEO -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://the25post.com/waitstopnews">
+        <meta property="og:title" content="wait, stop.">
+        <meta property="og:description" content="News that's intentionally late.">
+        <meta property='og:image' content='https://the25post.com/waitstopnews/uploads/waitstopnews-logo.png'>
+
+        <meta name="twitter:card" content="summary">
+
+        <!-- oEmbed -->
+        <link type="application/json+oembed" href="https://the25post.com/embeds/waitstopnews-oembed.json" />
+
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
+
+        <style>
+            #header {
+                margin-bottom: 20px;
+            }
+            #all {
+                padding: 50px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            h1.logo {
+                font-family: 'Neue Haas Grotesk Display Pro';
+                font-size: 4vw;
+                margin: 0.3vw 0 0 0;
+                opacity: 0; /* Initially hide the element */
+                animation: fadeUp 1s ease-in-out forwards; /* Apply the fade up animation */
+            }
+
+            h1.hp-headline { 
+                font-family: 'Neue Haas Grotesk Display Pro';
+                font-weight: normal;
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            h1.hp-headline a { text-decoration: none; color: black; }
+            h1.hp-headline a:hover { color: #61b0b7; }
+
+            #header-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            #left { flex: 70%; border-right: 1px solid #bbb; padding-right: 20px; }
+            #right { flex: 25%; margin-left: 10px; }
+
+
+            #header-logo { flex: 10%; }
+            #header-title { flex: 90%; padding-left: 1vw; }
+
+            
+            #main-feature-description { flex: 30%; margin-right: 3%; }
+            #main-feature-media { flex: 60%; }
+
+            #original-videos { flex: 30%; margin-right: 3%; }
+            #in-the-media { flex: 60%; }
+
+            @keyframes fadeUp {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+
+            #socials { padding-left: 0.2vw; }
+            #socials p { font-family: 'Neue Haas Grotesk Display Pro Bold'; }
+            #socials a { text-decoration: none; color: black; }
+            #socials a:hover { color: #61b0b7; }
+
+            .section-title { font-family: 'Neue Haas Grotesk Display Pro Bold'; font-size: 16px; margin: 0; background: yellow; display: inline-block; }
+
+            @media screen and (max-width: 1100px) {
+                #main-feature-media { margin-right: 0; }
+                #main-feature-description { margin-bottom: 20px; }
+                #left { border-right: none; margin-right: 0; }
+                #right { margin-left: 0; }
+                h1.hp-headline { margin-top: 20px; font-size: 28px; }
+            }
+
+            .section-feed {
+                border-left: 1px solid black;
+            }
+
+            .section-feed ul {
+                padding-left: 10.5px;
+            }
+
+            .kicker { font-family: 'Neue Haas Grotesk Display Pro Bold'; font-size: 14px; margin-bottom: 2px; }
+        </style>
+    </head>
+    <body>
+        <div id="all">
+            <div id="header">
+                <div id="header-content">
+                    <div id="header-logo">
+                        <a href="#"><img src="uploads/waitstopnews-logo.png" style="width: 100%;"></a>
+                    </div>
+                    <div id="header-title">
+                        <h1 class="logo">News that's <span style="color: #900">intentionally late.</span></h1>
+                        <div id="socials">
+                            <p style="margin: 0;">
+                                A meta-journalism project. <a href="https://www.bbc.com/news/world-middle-east-67745092" style="text-decoration: underline;">The mission</a>
+                                &nbsp;&nbsp;
+                                <a href="https://www.instagram.com/waitstopnews"><i class="fa-brands fa-instagram"></i></a>
+                                &nbsp;&nbsp;
+                                <a href="https://www.tiktok.com/@waitstopnews"><i class="fa-brands fa-tiktok"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="flex-container" id="content">
+                <div id="left">
+                    <div id="main-feature">
+                        <div class="flex-container" id="main-feature-content">
+                            <div id="main-feature-description">
+                                <p class="section-title">ORIGINALS</p>
+                                <br><br>
+                                <h1 class="hp-headline"><a href="archives/nytimes-openai-takeaways.html">Five takeaways from the New York Times's lawsuit against OpenAI, Microsoft</a></h1>
+                                <p class="hp-dek">A 69-page lawsuit from the paper of record is just the latest among a slew of copyright infringement allegations against AI companies.</p>
+                                <p class="date">DECEMBER 28, 2023</p>
+                            </div>
+                            <div id="main-feature-media">
+                                <a href="archives/nytimes-openai-takeaways.html"><img src="uploads/nytimes-openai-thumb.jpg" style="width: 100%;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divide">
+                    <p class="section-title">ISRAEL-HAMAS WAR</p>
+                    <div class="flex-container">
+                        <div id="original-videos">
+                            <br>
+                            <div class="hp-video-series">
+                                <p class="kicker"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;VIDEO</p>
+                                <h1 class="hp-headline" style="font-size: 18px;">The Oct. 7 attack</h1>
+                            </div>
+                            <hr class="divide">
+                            <div class="hp-video-series">
+                                <p class="kicker"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;VIDEO</p>
+                                <h1 class="hp-headline" style="font-size: 18px;">&lsquo;At risk of genocide&rsquo;: The collective punishment of Gaza</h1>
+                            </div>
+                            <hr class="divide">
+                            <div class="hp-video-series">
+                                <p class="kicker"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;VIDEO</p>
+                                <h1 class="hp-headline" style="font-size: 18px;">Northern Gaza evacuations, Hezbollah involvement, the &lsquo;human shields&rsquo; argument</h1>
+                            </div>
+                        </div>
+                        <div id="in-the-media">
+                            <p class="kicker">CNN</p>
+                            <h1 class="hp-headline"><a href="https://www.cnn.com/videos/world/2023/12/05/the-lead-mark-regev-jake-tapper-live.cnn">&lsquo;Where are these people supposed to go?&rsquo;: Jake Tapper presses Israeli official</a></h1>
+                            <a href="https://www.cnn.com/videos/world/2023/12/05/the-lead-mark-regev-jake-tapper-live.cnn"><img src="uploads/mark-regev-cnn-horiz.jpg" style="width: 100%;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <p class="section-title">IN THE NEWS</p>
+                    <br><br>
+                    <h1 class="hp-headline"><a href="https://www.cbsnews.com/video/gaza-death-toll-surpasses-21000-health-ministry-says/">Gaza death toll surpasses 21,000, health ministry says</a></h1>
+                    <p style="margin-top: 0;"><em>&mdash; CBS News</em></p>
+                    <h1 class="hp-headline"><a href="https://www.bbc.com/news/world-middle-east-67745092">Israel mistakenly kills three hostages</a></h1>
+                    <p style="margin-top: 0;"><em>&mdash; BBC</em></p>
+                    <div class="section-feed">
+                        <ul>
+                            <li><p>CNN: <a href="https://www.cnn.com/2023/12/29/middleeast/south-africa-icj-israel-genocide-intl/index.html">South Africa asks International Court of Justice to begin proceedings against Israel, accusing state of genocide for its assault on Gaza</a></p></li>
+                            <li><p>New York Times: <a href="https://www.nytimes.com/video/world/100000009208814/israel-gaza-bomb-civilians.html">Israel bombed sites where it ordered Gazans to evacuate</a></p></li>
+                            <li><p>Washington Post: <a href="https://www.washingtonpost.com/world/2023/12/21/al-shifa-hospital-gaza-hamas-israel/">No immediate evidence that al-Shifa hospital was Hamas &lsquo;command center&rsquo;</a></p></li>
+                            <li><p>New York Times: <a href="https://www.nytimes.com/2023/12/28/world/middleeast/oct-7-attacks-hamas-israel-sexual-violence.html">Investigation finds &lsquo;pattern of rape, mutilation and extreme brutality against women&rsquo; in Hamas attacks</a></p></li>
+                            <li><p>Democracy Now: <a href="https://www.democracynow.org/2023/12/1/israel_gaza_war_gospel_artificial_intelligence">Israel using AI to generate targets as it continues assault on Gaza</a></p></li>
+                            <li><p>CNN, YNet: <a href="https://www.cnn.com/2023/12/06/middleeast/leaked-audio-of-heated-meeting-reveals-hostages-fury-at-netanyahu/index.html">&lsquo;You're putting politics over returning the hostages&rsquo; &mdash; audio leaked from private meeting between released hostages, families and Netanyahu reveals growing frustrations</a></p></li>
+                            <li><p>Washington Post: <a href="https://www.washingtonpost.com/world/2023/11/30/gaza-library-palestinian-culture/">Israeli airstrikes destroying libraries in Gaza</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            window.addEventListener('load', function() {
+                var logo = document.querySelector('.logo');
+                logo.style.opacity = 1; // Show the element after the window loads
+            });
+        </script>
+    </body>
+</html>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
