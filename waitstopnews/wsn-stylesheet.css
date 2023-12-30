@@ -208,7 +208,7 @@ a:hover { color: #61b0b7; }
     margin-left: 0;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     .flex-container { flex-direction: column; }
     .flex-item { flex: 100%; }
 
@@ -223,7 +223,7 @@ a:hover { color: #61b0b7; }
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 989px) {
 
     h1.headline { font-size: 24px; }
     p.dek { font-size: 16px; }
