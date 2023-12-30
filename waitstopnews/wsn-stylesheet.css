@@ -215,6 +215,8 @@ a:hover { color: #61b0b7; }
     margin-left: 0;
 }
 
+.kicker { font-family: 'Neue Haas Grotesk Display Pro Bold'; font-size: 14px; margin-bottom: 2px; }
+
 @media screen and (max-width: 1100px) {
     .flex-container { flex-direction: column; }
     .flex-item { flex: 100%; }
