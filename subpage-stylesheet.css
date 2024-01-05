@@ -10,11 +10,11 @@
   body {
     font-family: "Caslon";
     margin: 0;
-    background-color: #efefef;
-    color: #040405;
-    font-size: 19px;
+    background-color: #E2E2DE;
+    color: #242124;
+    font-size: 21px;
     text-align: left;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   p i, p em { font-family: 'Caslon Italic'; font-style: normal; }
@@ -62,11 +62,11 @@
     background-size: contain;
     background-position: center;
     height: 400px;
-    background-color: #efefef;
+    background-color: #E2E2DE ;
     padding: 0;
   }
 
-  #navbar { text-align: center; position: sticky; top: 0; background: #efefef; padding: 30px; z-index: 50; }
+  #navbar { text-align: center; position: sticky; top: 0; background: #E2E2DE; padding: 30px; z-index: 50; }
 
   #logo {
     font-family: 'Cheltenham Bold';
@@ -103,7 +103,7 @@
   .main {
     flex: 70%; /* Set the width of the main content */
     padding: 20px;
-    padding-right: 28%;
+    padding-right: 30%;
   }
 
   .right {
@@ -156,6 +156,9 @@
   }
 
   @media screen and (max-width: 700px) {
+    body {
+      font-size: 18px;
+    }
     .row {
       flex-direction: column;
       padding: 10px;
