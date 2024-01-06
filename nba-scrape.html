@@ -106,6 +106,7 @@
             <div class="flex-item" style="padding: 40px;" id="title-column">
                 <h6 style="font-size: 24px; font-family: 'Cheltenham Bold';"><a href="https://the25post.com">25</a></h6>
                 <h2 style="font-size: 60px; margin: 50px 20px 10px 0;">NBA</h2>
+                <p>Refresh to update.</p>
                 <div id="debug"></div>
                 
             </div>
@@ -437,9 +438,9 @@
                             <td width="20%"><h6>${away_athlete.athlete.displayName}</h6></td>
                         `;
                         if (away_athlete.didNotPlay) {
-                            away_player_row.innerHTML += `<td colspan="15"><h6>DID NOT PLAY (${away_athlete.reason})</h6></td>`;
+                            away_player_row.innerHTML += `<td colspan="15"><h6 style="text-align:center;">DID NOT PLAY (${away_athlete.reason})</h6></td>`;
                         } else if (away_athlete.ejected) {
-                            away_player_row.innerHTML += `<td colspan="15"><h6>EJECTED (${away_athlete.reason})</h6></td>`;
+                            away_player_row.innerHTML += `<td colspan="15"><h6 style="text-align:center;">EJECTED (${away_athlete.reason})</h6></td>`;
                         } else {
                             for (stat of away_athlete.stats) {
                                 away_player_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
@@ -477,9 +478,9 @@
                             <td width="20%"><h6>${home_athlete.athlete.displayName}</h6></td>
                         `;
                         if (home_athlete.didNotPlay) {
-                            home_player_row.innerHTML += `<td colspan="15"><h6>DID NOT PLAY (${home_athlete.reason})</h6></td>`;
+                            home_player_row.innerHTML += `<td colspan="15"><h6 style="text-align:center;">DID NOT PLAY (${home_athlete.reason})</h6></td>`;
                         } else if (home_athlete.ejected) {
-                            home_player_row.innerHTML += `<td colspan="15"><h6>EJECTED (${home_athlete.reason})</h6></td>`;
+                            home_player_row.innerHTML += `<td colspan="15"><h6 style="text-align:center;">EJECTED (${home_athlete.reason})</h6></td>`;
                         } else {
                             for (stat of home_athlete.stats) {
                                 home_player_row.innerHTML += `<td><h6 style="text-align: right;">${stat}</h6></td>`;
@@ -576,9 +577,10 @@
                             height: '80%',
                         },
                         width: '100%',
+                        backgroundColor: '#E2E2DE',
                         focusTarget: 'category',
                         colors: [away_color, home_color],
-                        tooltip: { isHtml: true },
+                        tooltip: { isHtml: true, },
                     };
 
                     var chart = new google.visualization.LineChart(document.getElementById('game-flow-chart'));
@@ -894,12 +896,6 @@
         displayGameList();
         callGameOnLoad();
         toggleLeadersStats();
-
-        setInterval(function() {
-            displayGameList();
-            callGameOnLoad();
-            toggleLeadersStats();
-        }, 60000);
     </script>
 
 </html>

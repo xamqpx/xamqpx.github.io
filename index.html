@@ -40,6 +40,34 @@
 <link rel="stylesheet" href="homepages-stylesheet.css">
 <link rel="stylesheet" href="fonts.css">
 <script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
+<style>
+  .blink {
+        animation: blink-animation 2s infinite;
+        -webkit-animation: blink-animation 2s infinite;
+      }
+      @keyframes blink-animation {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+</style>
 </head>
 
 <body>
@@ -66,6 +94,8 @@
             <small class="nav-link"><a href="politics.html">POLITICS</a></small>
             <small class="nav-link"><a href="reviews.html">REVIEWS</a></small>
             <small class="nav-link"><a href="sports.html">SPORTS</a></small>
+            <br>
+            <small class="nav-link"><a target="_blank" href="waitstopnews/index.html">WAITSTOP NEWS <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 6px;"></i></a></small>
             <small class="nav-link"><a target="_blank" href="https://parkdj.com">ABOUT <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 6px;"></i></a></small>
           </div>
           <div class="article-filler" id="main-feature">
@@ -154,6 +184,19 @@
         </div>
 
         <div class="col" style="flex: 20%; padding: 0px !important;">
+          <div style="background: #233342; padding: 15px;">
+            <h6 class="kicker" style="margin-top: 0;"><span class="blink">⬤</span> LIVE</h6>
+            <div style="display: flex;">
+              <div style="flex: 30%;">
+                <img src="/archives/uploads/nba-logo.png" style="width: 100%;">
+              </div>
+              <div style="flex: 70%; margin: 0 20px;">
+                <h2 style="font-family: Poppins; margin-bottom: 5px;"><a href="nba-scrape.html" style="color: #E2E2DE;">Schedule, stats, box scores</a></h2>
+                <small style="color: #E2E2DE; font-family: Poppins Light;">Scraped from ESPN API.</small>
+              </div>
+            </div>
+          </div>
+          
           <div class="article-filler">
             <h6 class="kicker"></h6>
             <a class="article-url">
