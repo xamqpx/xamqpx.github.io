@@ -10,7 +10,7 @@
   body {
     font-family: "Caslon";
     margin: 0;
-    background-color: #E2E2DE;
+    background-color: #efefef;
     color: #242124;
     font-size: 21px;
     text-align: left;
@@ -50,8 +50,13 @@
   }
 
   .author {
-    font-family: Poppins;
+    font-family: Poppins Light;
     font-size: 16px;
+  }
+
+  .author b {
+    font-family: Poppins;
+    font-weight: normal;
   }
   
   .header {
@@ -62,11 +67,11 @@
     background-size: contain;
     background-position: center;
     height: 400px;
-    background-color: #E2E2DE ;
+    background-color: #efefef;
     padding: 0;
   }
 
-  #navbar { text-align: center; position: sticky; top: 0; background: #E2E2DE; padding: 30px; z-index: 50; }
+  #navbar { text-align: center; position: sticky; top: 0; background: #efefef; padding: 30px; z-index: 50; }
 
   #logo {
     font-family: 'Cheltenham Bold';

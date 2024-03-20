@@ -18,7 +18,7 @@
   body {
     font-family: "Caslon";
     margin: 0;
-    background: #E2E2DE;
+    background: #efefef;
     color: black;
     font-size: 16px;
     text-align: left;
@@ -234,7 +234,7 @@ small.date, small.nav-link {
 
   #game-flow-chart { margin-top: 20px; }
 
-  div.tooltip-display { padding: 10px; background: #e2e2de; }
+  div.tooltip-display { padding: 10px; background: #efefef; }
   div.tooltip-display h6 { font-size: 12px; margin: 5px 0; }
   div.tooltip-display h6 b {  font-family: 'Poppins'; font-weight: normal; }
 
