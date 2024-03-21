@@ -1,5 +1,16 @@
 [
   {
+    "slug": "atlanta-paper-boi-hip-hop", 
+    "kicker": "REVIEWS",
+    "headline": "In <em>Atlanta</em>, hip hop is when a rapper doesn’t rap",
+    "subhead": "By omitting Paper Boi’s rap music in a show about the Atlanta rap scene, what emerges is a vision of hip hop itself.",
+    "author": "",
+    "date": "21 March 2024",
+    "photo_url": "/archives/uploads/paper-boi-cover.webp",
+    "photo_credit": "GUY D’ALEMA/FX", 
+    "article_url": "/archives/articles/atlanta-paper-boi-hip-hop.html"
+  },
+  {
     "slug": "three-radical-films", 
     "kicker": "REVIEWS",
     "headline": "Three radical films",
@@ -7,13 +18,13 @@
     "author": "RYAN KILCOIN",
     "date": "20 March 2024",
     "photo_url": "/archives/uploads/threeradicalfilmscover.jpg",
-    "photo_credit": "", 
+    "photo_credit": "GUY D’ALEMA/FX", 
     "article_url": "/archives/articles/three-radical-films.html"
   },  
   {
     "slug": "all-of-us-strangers", 
     "kicker": "REVIEWS",
-    "headline": "‘All of Us Strangers’ changed my life",
+    "headline": "<em>All of Us Strangers</em> changed my life",
     "subhead": "Whatever was happening to me, I knew one thing for sure. My life can now be divided into two eras: before watching this film, and after.",
     "author": "",
     "date": "4 January 2024",
