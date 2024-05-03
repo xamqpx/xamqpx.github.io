@@ -6,7 +6,7 @@
     width: 100%;
   }
 
-   p i { font-family: 'Caslon Italic'; }
+   p i { font-family: 'Tiempos Headline Light Italic'; }
 
   
   .clearfix::after {
@@ -16,7 +16,7 @@
   }
   
   body {
-    font-family: "Caslon";
+    font-family: "Tiempos Headline Light";
     margin: 0;
     background: #efefef;
     color: black;
@@ -61,7 +61,7 @@
   padding: 20px; 
   font-size: 120px;
   color: #fff;
-  font-family: 'Cheltenham Bold';
+  font-family: 'Tiempos Headline Bold';
 }
 
 #navigation { padding-left: 170px; }
@@ -108,7 +108,7 @@ h6.kicker {
 
 h2 {
   font-size: 20px;
-  font-family: 'Cheltenham Bold';
+  font-family: 'Tiempos Headline Bold';
   font-weight: 700;
   font-weight: normal;
   margin: 0;

@@ -8,16 +8,16 @@
   }
   
   body {
-    font-family: "Caslon";
+    font-family: "Tiempos Headline Light";
     margin: 0;
     background-color: #efefef;
     color: #242124;
-    font-size: 21px;
+    font-size: 17px;
     text-align: left;
     line-height: 1.5;
   }
 
-  p i, p em, blockquote em { font-family: 'Caslon Italic'; font-style: normal; }
+  p i, p em, blockquote em { font-family: 'Tiempos Headline Light Italic'; font-style: normal; }
 
   .photo-credit {
     font-family: 'Poppins Light';
@@ -74,7 +74,7 @@
   #navbar { text-align: center; position: sticky; top: 0; background: #efefef; padding: 30px; z-index: 50; }
 
   #logo {
-    font-family: 'Cheltenham Bold';
+    font-family: 'Tiempos Headline Bold';
     font-weight: normal;
     font-size: 20px;
     transition: 500ms;
@@ -116,7 +116,7 @@
   }
 
   h2 {
-    font-family: "Cheltenham Bold";
+    font-family: "Tiempos Headline Bold";
   }
 
   .side h3, .main h3 {
@@ -211,7 +211,7 @@
     text-align: center;
     padding: 20px;
     font-size: 40px;
-    font-family: "Cheltenham Bold";
+    font-family: "Tiempos Headline Bold";
   }
 
   .blink {
@@ -232,14 +232,14 @@
   }
 
   .headline {
-    font-family: 'Cheltenham Bold';
+    font-family: 'Tiempos Headline Bold';
     font-weight:normal;
     font-size: 38px;
     line-height: 1;
   }
 
   .pull-quote {
-    font-family: 'Caslon';
+    font-family: 'Tiempos Headline Light';
     font-weight:normal;
     font-size: 28px;
     line-height: 1.2;

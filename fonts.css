@@ -217,3 +217,23 @@
     font-family: 'Neue Haas Grotesk Display Pro Light';
     src: url('fonts/NeueHaasDisplayLight.ttf');
   }
+
+  @font-face {
+    font-family: 'Tiempos Headline Light';
+    src: url('fonts/TiemposHeadline-Light.otf');
+  }
+
+  @font-face {
+    font-family: 'Tiempos Headline Light Italic';
+    src: url('fonts/TiemposHeadline-LightItalic.otf');
+  }
+
+  @font-face {
+    font-family: 'Tiempos Headline Bold';
+    src: url('fonts/TiemposHeadline-Bold.otf');
+  }
+
+  @font-face {
+    font-family: 'Tiempos Headline Bold Italic';
+    src: url('fonts/TiemposHeadline-BoldItalic.otf');
+  }
