@@ -99,7 +99,7 @@
   /* columns */
   /* left */
   .side {
-    flex: 30%; /* Set the width of the sidebar */
+    flex: 25%; /* Set the width of the sidebar */
     padding: 20px;
     margin-bottom: 20px;
   }
