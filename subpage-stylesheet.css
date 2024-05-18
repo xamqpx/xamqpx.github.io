@@ -21,13 +21,13 @@
 
   .photo-credit {
     font-family: 'Poppins Light';
-    font-size:12px;
+    font-size: 12px !important;
     text-align: left;
     margin: 0 0 10%;
   }
 
   .photo-credit i, .photo-credit em {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .photo-credit b {
