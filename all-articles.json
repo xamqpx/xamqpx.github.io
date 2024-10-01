@@ -1,90 +1,101 @@
 [
   {
-    "slug": "portugal", 
+    "slug": "hollywood-bowl",
+    "kicker": "DISPATCH",
+    "headline": "hollywood bowl, upper level",
+    "subhead": "'ok, now this / is the last song,' she was saying, / her voice a drowning / echo from this humid stall. / and she began to sing.",
+    "author": "",
+    "date": "1 October 2024",
+    "photo_url": "/archives/uploads/hollywoodbowlcover.jpg",
+    "photo_credit": "JONATHAN PARK",
+    "article_url": "/archives/pieces/hollywood-bowl.html"
+  },
+  {
+    "slug": "portugal",
     "kicker": "DISPATCH",
     "headline": "Letter from Portugal",
     "subhead": "After seventeen days, I leave just as much a stranger as I was when I first stepped foot in Lisbon. But I have nonetheless fallen in love with all the country has to offer.",
     "author": "",
     "date": "10 June 2024",
     "photo_url": "/archives/uploads/_DSC5081.jpg",
-    "photo_credit": "RICHARD RODRIGUEZ/THE CLIBURN", 
+    "photo_credit": "RICHARD RODRIGUEZ/THE CLIBURN",
     "article_url": "/archives/pieces/portugal.html"
   },
   {
-    "slug": "yunchan-lim", 
+    "slug": "yunchan-lim",
     "kicker": "MUSIC",
     "headline": "How Yunchan Lim shook up classical music",
     "subhead": "Two years after the South Korean pianist crashed into the limelight, his influence still resonates.",
     "author": "AMITAI SEGEV",
     "date": "17 May 2024",
     "photo_url": "/archives/uploads/yunchan-lim-cliburn.jpg",
-    "photo_credit": "RICHARD RODRIGUEZ/THE CLIBURN", 
+    "photo_credit": "RICHARD RODRIGUEZ/THE CLIBURN",
     "article_url": "/archives/articles/yunchan-lim.html"
   },
   {
-    "slug": "if-i-must-die", 
+    "slug": "if-i-must-die",
     "kicker": "NON / FICTION",
     "headline": "'If I Must Die,' by Refaat Alareer",
     "subhead": "Anything I can say about Gaza has already been said, most beautifully, by the Palestinian writer and professor, since murdered by the Israeli military.",
     "author": "REFAAT ALAREER & JONATHAN PARK",
     "date": "6 May 2024",
     "photo_url": "/archives/uploads/if-i-must-die-cover-flipped.jpg",
-    "photo_credit": "BOGDAN KRUPIN / PEXELS", 
+    "photo_credit": "BOGDAN KRUPIN / PEXELS",
     "article_url": "/archives/pieces/if-i-must-die.html"
   },
   {
-    "slug": "atlanta-paper-boi-hip-hop", 
+    "slug": "atlanta-paper-boi-hip-hop",
     "kicker": "REVIEWS",
     "headline": "In <em>Atlanta</em>, hip hop is when a rapper doesn’t rap",
     "subhead": "By omitting Paper Boi’s rap music in a show about the Atlanta rap scene, what emerges is a vision of hip hop itself.",
     "author": "",
     "date": "21 March 2024",
     "photo_url": "/archives/uploads/paper-boi-cover.webp",
-    "photo_credit": "GUY D’ALEMA/FX", 
+    "photo_credit": "GUY D’ALEMA/FX",
     "article_url": "/archives/articles/atlanta-paper-boi-hip-hop.html"
   },
   {
-    "slug": "three-radical-films", 
+    "slug": "three-radical-films",
     "kicker": "REVIEWS",
     "headline": "Three radical films",
     "subhead": "From Star Wars to Hunger Games, Hollywood loves to play with “rebellion chic.” What about movies that authentically grapple with revolutionary politics?",
     "author": "RYAN KILCOIN",
     "date": "20 March 2024",
     "photo_url": "/archives/uploads/threeradicalfilmscover.jpg",
-    "photo_credit": "GUY D’ALEMA/FX", 
+    "photo_credit": "GUY D’ALEMA/FX",
     "article_url": "/archives/articles/three-radical-films.html"
-  },  
+  },
   {
-    "slug": "all-of-us-strangers", 
+    "slug": "all-of-us-strangers",
     "kicker": "REVIEWS",
     "headline": "<em>All of Us Strangers</em> changed my life",
     "subhead": "Whatever was happening to me, I knew one thing for sure. My life can now be divided into two eras: before watching this film, and after.",
     "author": "",
     "date": "4 January 2024",
     "photo_url": "/archives/uploads/aous-cover.jpg",
-    "photo_credit": "PHOTO COURTESY OF SEARCHLIGHT PICTURES", 
+    "photo_credit": "PHOTO COURTESY OF SEARCHLIGHT PICTURES",
     "article_url": "/archives/articles/all-of-us-strangers.html"
-  },  
+  },
   {
-    "slug": "bernstein-oppenheim-letters", 
+    "slug": "bernstein-oppenheim-letters",
     "kicker": "WORD FOR WORD",
     "headline": "Selected letters between Leonard Bernstein and David Oppenheim",
     "subhead": "Glimpses of a lifelong friendship, and hints of something more.",
     "author": "",
     "date": "24 December 2023",
     "photo_url": "/archives/uploads/leonard-bernstein-cover-cropped.jpg",
-    "photo_credit": "PHOTO: LIBRARY OF CONGRESS", 
+    "photo_credit": "PHOTO: LIBRARY OF CONGRESS",
     "article_url": "/archives/articles/bernstein-oppenheim-letters.html"
   },
   {
-    "slug": "mac-demarco", 
+    "slug": "mac-demarco",
     "kicker": "MUSIC",
     "headline": "Life, death, and Mac DeMarco",
     "subhead": "At a turning point, I find myself gravitating toward the indescribable emotions in his music.",
     "author": "",
     "date": "15 June 2023",
     "photo_url": "/archives/uploads/mac-demarco.jpg",
-    "photo_credit": "25POST DESIGN. PHOTO: HARMONY GERBER/FILMMAGIC", 
+    "photo_credit": "25POST DESIGN. PHOTO: HARMONY GERBER/FILMMAGIC",
     "article_url": "/archives/articles/mac-demarco.html"
   },
   {
@@ -92,7 +103,7 @@
     "kicker": "SPORTS",
     "headline": "Reflections of a longtime Kings fan",
     "subhead": "This year was the greatest season of basketball I have ever seen in my life.",
-    "author": "NEIL SINGH MCWHORTER",   
+    "author": "NEIL SINGH MCWHORTER",
     "date": "11 May 2023",
     "photo_url": "/archives/uploads/23107125942923.jpg",
     "photo_credit": "JOSÉ LUIS VILLEGAS/AP PHOTO",
@@ -101,7 +112,7 @@
   {
     "slug": "la-la-land",
     "kicker": "REVIEWS",
-    "headline": "What <i>La La Land</i> taught me", 
+    "headline": "What <i>La La Land</i> taught me",
     "subhead": "Mia and Sebastian’s never-ending desire to try and do what they love — the one thing that binds them — ends up also being the very thing that ends their relationship.",
     "author": "AMITAI SEGEV",
     "date": "26 March 2023",
@@ -132,7 +143,7 @@
     "article_url": "/archives/articles/newjeans.html"
   },
   {
-    "slug": "brief-encounter",  
+    "slug": "brief-encounter",
     "kicker": "REVIEWS",
     "headline": "<i>Brief Encounter:</i> As time goes by, fate writes a melancholic romance",
     "subhead": "David Lean is a name that invokes images of breathtaking desert sunrises, dense jungle foliage, and empty Arctic snowcapes; yet his most critically acclaimed work is an intimate one, entirely set in a train station.",
@@ -144,7 +155,7 @@
   },
   {
     "slug": "17776-review",
-    "kicker": "REVIEWS", 
+    "kicker": "REVIEWS",
     "headline": "Review: '17776' is the best argument against capitalist immortality humanity has to offer",
     "subhead": "Something is terribly wrong. Something is terribly wrong. Something is terribly wrong.",
     "author": "",
@@ -159,7 +170,7 @@
     "headline": "Guy",
     "subhead": "The noises of hurried passengers and their suitcases, bound here and everywhere, filled in the silence between us. Finally, he said: “I think you can do it.”",
     "author": "PETER LIU",
-    "date": "11 April 2022", 
+    "date": "11 April 2022",
     "photo_url": "/archives/uploads/GUY%2025POST.JPG",
     "photo_credit": "PETER LIU",
     "article_url": "/archives/pieces/guy.html"
@@ -178,7 +189,7 @@
   {
     "slug": "letter",
     "kicker": "NON / FICTION",
-    "headline": "A letter to Half Moon Bay", 
+    "headline": "A letter to Half Moon Bay",
     "subhead": "As we grow older, our sacred places grow desecrated.",
     "author": "",
     "date": "19 February 2023",
@@ -194,7 +205,7 @@
     "author": "RYAN KILCOIN",
     "date": "22 January 2023",
     "photo_url": "https://www.pennlive.com/resizer/d36VSNmttEQLyccUM2kCHfXtqKE=/800x0/smart/arc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com/public/HAILH3FH6FCB3KRNUUBN3JWO2A.jpg",
-    "photo_credit": "STEVE HELBER/ASSOCIATED PRESS", 
+    "photo_credit": "STEVE HELBER/ASSOCIATED PRESS",
     "article_url": "/archives/articles/quecreek.html"
   },
   {
@@ -205,7 +216,7 @@
     "author": "",
     "date": "20 August 2022",
     "photo_url": "https://cdn.vox-cdn.com/thumbor/-Huz-Uuc_m_S7xORWeS2CWs7RNY=/0x0:2546x1672/1220x813/filters:focal(1070x633:1476x1039):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66120171/loylecarner.0.jpg",
-    "photo_credit": "SAM ASHTON", 
+    "photo_credit": "SAM ASHTON",
     "article_url": "/archives/articles/loyle-carner.html"
   },
   {
@@ -221,7 +232,7 @@
   },
   {
     "slug": "hsu",
-    "kicker": "NON / FICTION", 
+    "kicker": "NON / FICTION",
     "headline": "HSU",
     "subhead": "One year after the death of a bassist, a beginner learns to live with the memories he left behind.",
     "author": "PETER LIU",
@@ -247,7 +258,7 @@
     "headline": "dreamsearching",
     "subhead": "Let’s go home.",
     "author": "",
-    "date": "27 June 2022", 
+    "date": "27 June 2022",
     "photo_url": "/archives/uploads/DREAMSEARCHING%2025POST.jpg",
     "photo_credit": "JONATHAN PARK",
     "article_url": "/archives/pieces/dreamsearching.html"
