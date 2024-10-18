@@ -1,315 +1,402 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scrolling Map</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css"
+        />
         <style>
-            html { width: 20%; margin: 0 auto; }
-            h4 { margin: 10px 0;}
-            #scoreboard {
-            display: flex;
-            justify-content: center;
+            body {
+                margin: 0;
+                height: 8000vh; /* Increase the height for scrolling */
+                background: black;
+            }
+            #content {
+                position: relative;
+            }
+            #map {
+                position: fixed; /* Fix the map in place */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh; /* Set the height of the map */
+                z-index: -1;
+            }
+            #article-container {
+                position: absolute;
+                z-index: 10;
+                margin-top: 25%;
+                & .article-text {
+                    color: white;
+                    background: black;
+                    padding: 20px;
+                    font-size: 14px;
+                }
             }
 
-
-            #scoreboard > div {
-            padding: 10px; 
+            .city {
+                height: 800vh; /* 8000vh total / 10 schools */
+                width: 40%;
+                margin-left: auto;
+                margin-right: 5%;
+                & img {
+                    width: 100%;
+                }
+            }
+            .photo-container {
+                position: relative;
+                margin: 20px 0;
             }
 
-            #scoreboard h4, #scoreboard h6 { text-align: center !important; }
+            .caption {
+                position: absolute;
+                bottom: 40px;
+                left: 16px;
+                z-index: 20;
+            }
 
-            #scoreboard h4 { font-size: 42px !important; }
+            .paper-label {
+                margin-top: 25%;
+                z-index: 5;
+                & td {
+                    padding: 10px;
+                }
+                background: white;
 
-            #leaders-container h4 { margin: 10px 0 !important; }
+                width: 40%;
+            }
+            .paper-logo {
+                width: 25%;
+            }
+            .paper-info {
+                width: 75%;
+            }
 
-            #leaders-container h6 { margin: 0 !important; }
-
-            h4.stats-header { display: inline-block; color: white; padding: 5px 10px; background: #900; }
-
-            button#toggle-all-stats { border: 0; background: 0; text-decoration: underline; color: #900; cursor: pointer; font-family: 'Neue Haas Grotesk Pro' !important; padding: 0; }
-
-            #win-probability-container h4.percentage { margin: 0; font-size: 40px; }
-
-            table#linescore-table { width: 100%; border-collapse: collapse; }
-            table#linescore-table td.linescores-team-name h6 { text-align: right !important; }
-            table#linescore-table h6 { margin-bottom: 0; }
-
-            table#linescore-table tr:first-child { border-bottom: 1px solid #ccc; }
-
-            #scoring-plays-container { border-left: 1px solid black; padding: 5px 12px; }
+            @media screen and (max-width: 989px) {
+                .city {
+                    width: 80%;
+                    margin: 0 auto !important;
+                }
+                .paper-label {
+                    width: 100%;
+                    margin-top: 1000%;
+                }
+            }
         </style>
     </head>
-
-<body>
-<!-- SCORE -->
-<div id="score-container"></div>
-<br>
-
-<!-- TOGGLE STATS -->
-<button id="toggle-all-stats" onclick="toggleStats()"><p>Hide stats</p></button>
-  <div id="all-stats-container">
-
-    <h4 class="stats-header">Scoring plays</h4>
-    <ul id="scoring-plays-container"></ul>
-    
-    <div id="win-probability-container">
-    	<h4 class="stats-header">Win probability</h4>
-    </div>
-    
-    <br>
-    
-<!-- GAME LEADERS -->
-    <div id="leaders-header-container"></div>
-    <div id="leaders-container" style="display: flex;">
-      <div id="1" style="flex:50%;"></div>
-      <div id="0" style="flex:50%; text-align: right !important;"></div>
-    </div>
-    
-    <br>
-    <div id="disclaimer"></div>
-</div>
-
-
-<!--
-TOGGLE STATS
--->
-<script>
-toggleStats();
-toggleStats();
-function toggleStats() {
-	const toggle_button = document.getElementById('toggle-all-stats')
-	const all_stats = document.getElementById('all-stats-container');
-    if (all_stats.style.display === 'none') {
-    	all_stats.style.display = 'block';
-        toggle_button.innerHTML = `<p>Hide stats</p>`;
-    } else {
-    	all_stats.style.display = 'none';
-        toggle_button.innerHTML = `<p>Show stats</p>`;
-    }
-}
-</script>
-
-<!-- 
-GET DATA FROM ESPN API
-
-CHANGING API URL:
-- Go to the dedicated ESPN page for the game:
-- Get the nine-digit number at the end of the URL
-e.g. url is https://www.espn.com/college-football/game/_/gameId/401520327
-GAME ID is 401520327
-
--->
-<script>
-    fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401581588')
-    .then(response => response.json())
-    .then(data => {
-        const away_team = data.boxscore.teams[0].team.displayName;
-        const home_team = data.boxscore.teams[1].team.displayName;
-        // ============== BOX SCORE ============= //
-
-        const game_status = data.header.competitions[0].status.type.state; // "pre" "in" "post"
-
-        const date = new Date(data.header.competitions[0].date);
-        let formattedTime;
-        const options = { year: 'numeric', month: 'short', day: 'numeric' };
-            formattedTime = date.toLocaleDateString('en-US', options);
-        if (data.header.timeValid) {
-            const hours = date.getHours();
-            const minutes = date.getMinutes();
-            const period = hours >= 12 ? 'p.m.' : 'a.m.';
-            const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
-            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-            formattedTime += `<br>${formattedHours}:${formattedMinutes} ${period}`;
-        }
-
-        if (game_status === "pre") {
-            var box_score_html = `
-                <div id="scoreboard">
-                        <div style="flex: 30%;">
-                            <h4>&nbsp;</h4>
-                            <h6>${away_team}</h6>
-                        </div>
-                        <div style="flex: 30%;">
-                            <h6><b>${data.gameInfo.venue.fullName}</b></h6>
-                            <h6>${formattedTime}</h6>
-                        </div>
-                        <div style="flex: 30%;">
-                            <h4>&nbsp;</h4>
-                            <h6>${home_team}</h6>
-                        </div>
+    <body>
+        <div id="content">
+            <div id="map"></div>
+            <div
+                id="logo"
+                style="width: 200px; margin: 20px auto; display: block"
+            >
+                <img
+                    src="https://dailytrojan.com/images-dte/dt14.png"
+                    style="width: 100%"
+                />
+            </div>
+            <div id="article-container">
+                <div class="city" id="us-wide">
+                    <div class="article-text">
+                        <p>
+                            <strong>We are always moving through time.</strong>
+                            It is a constant for everyone on earth. Through
+                            photography, there is a rare opportunity to freeze a
+                            moment in time in an image. In a unique and new
+                            collaboration, college newspapers The Battalion, The
+                            Crimson White, the Daily Bruin, The Daily
+                            Californian, The Daily Texan, the Daily Trojan, The
+                            Daily Wildcat, The Scarlet & Black, The Vanderbilt
+                            Hustler and Washington Square News teamed up to
+                            capture one hour of time across the country. With
+                            schools in every American time zone, on Oct. 9 at 8
+                            a.m. PDT, student photojournalists worked across the
+                            country to capture their school and environment. As
+                            soon as 9 a.m. struck, all of the photography
+                            ceased. Those photos taken in that one hour have
+                            been compiled together to create “A Moment in Time,”
+                            a first-of-its-kind, collaborative photo essay.
+                        </p>
+                    </div>
+                    <div style="height: 100vh"></div>
+                    <div
+                        class="article-text"
+                        style="text-align: center !important"
+                    >
+                        <h6>THE WEEKLY FRAME II</h6>
+                        <h2>A Moment in Time</h2>
+                    </div>
                 </div>
-            `;
-            document.getElementById('score-container').innerHTML += box_score_html;
-        } else {
-            const away_score = data.header.competitions[0].competitors[1].score;
-            const home_score = data.header.competitions[0].competitors[0].score;
-
-            const away_abbrev = data.header.competitions[0].competitors[1].team.abbreviation;
-            const home_abbrev = data.header.competitions[0].competitors[0].team.abbreviation;
-
-            const display_clock = data.header.competitions[0].status.type.shortDetail;
-
-            var display_clock_color = display_clock === "Final" ? "black" : "#900";
-
-            var box_score_html = `
-                <div id="scoreboard">
-                        <div style="flex: 20%;">
-                            <h4>${away_score}</h4>
-                            <h6>${away_team}</h6>
+                <div class="city" id="usc">
+                    <table class="paper-label" id="daily-trojan">
+                        <tr>
+                            <td class="paper-logo">
+                                <img
+                                    src="https://dailytrojan.com/wp-content/uploads/2015/02/DT-facebook1.png"
+                                />
+                            </td>
+                            <td class="paper-info">
+                                <h4>Daily Trojan</h4>
+                                <h6>University of Southern California</h6>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
                         </div>
-                        <div style="flex: 50%;">
-                            <h6 style="color: ${display_clock_color};"><b>${display_clock}</b></h6>
-                            <table id="linescore-table">
-                                <tr>
-                                    <th></th>
-                                    <th><h6><b>Q1</b></h6></th>
-                                    <th><h6><b>Q2</b></h6></th>
-                                    <th><h6><b>Q3</b></h6></th>
-                                    <th><h6><b>Q4</b></h6></th>
-                                </tr>
-                                <tr id="linescores-away">
-                                    <td class="linescores-team-name"><h6>${away_abbrev}</h6></td>
-                                </tr>
-                                <tr id="linescores-home">
-                                    <td class="linescores-team-name"><h6>${home_abbrev}</h6></td>
-                                </tr>
-                            </table>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
                         </div>
-                        <div style="flex: 20%;">
-                            <h4>${home_score}</h4>
-                            <h6>${home_team}</h6>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
                         </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
                 </div>
-            `;
+                <div class="city" id="texas-am">
+                    <table class="paper-label" id="battalion">
+                        <tr>
+                            <td class="paper-logo">
+                                <img
+                                    src="https://thebatt.com/wp-content/uploads/2024/01/B-Batt-70x70.png"
+                                />
+                            </td>
+                            <td class="paper-info">
+                                <h4>The Battalion</h4>
+                                <h6>Texas A&M</h6>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <img
+                            class="photo-container"
+                            src="https://placehold.co/600x400/png"
+                        />
+                        <div class="caption">
+                            Caption (Photographer / Daily Trojan)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            document.getElementById('score-container').innerHTML += box_score_html;
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            // Initialize the map
+            const map = L.map("map", {
+                scrollWheelZoom: false, // Disable zoom with the mouse wheel
+                keepBuffer: 300, // Preload tiles in a 3-tile radius around the viewport
+            }).setView([37.0902, -95.7129], 5); // Start view (US)
 
-            for (let linescore of data.header.competitions[0].competitors[0].linescores) {
-                document.getElementById('linescores-away').innerHTML += `<td><h6>${linescore.displayValue}</h6></td>`;
+            // Add OpenStreetMap tiles to the main map
+            const mainLayer = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                    maxZoom: 19,
+                    attribution: "© OpenStreetMap contributors",
+                    noWrap: true, // Avoid wrapping tiles beyond map bounds
+                },
+            ).addTo(map);
+            // Define cities with their coordinates and zoom levels
+            const cities = [
+                { name: "United States", coords: [37.0902, -95.7129], zoom: 5 },
+                {
+                    name: "University of Southern California",
+                    coords: [34.02174, -118.27836],
+                    zoom: 16,
+                },
+                {
+                    name: "Texas A&M University",
+                    coords: [30.60246, -96.30392],
+                    zoom: 13,
+                },
+                {
+                    name: "University of Alabama",
+                    coords: [33.21206, -87.53865],
+                    zoom: 16,
+                },
+                { name: "UCLA", coords: [34.06782, -118.44641], zoom: 16 },
+                {
+                    name: "University of Texas at Austin",
+                    coords: [30.28322, -97.73247],
+                    zoom: 16,
+                },
+                {
+                    name: "University of Arizona",
+                    coords: [32.23383, -110.95009],
+                    zoom: 16,
+                },
+                {
+                    name: "Grinnell College",
+                    coords: [41.751319, -92.718635],
+                    zoom: 17,
+                },
+                {
+                    name: "Vanderbilt University",
+                    coords: [36.14376, -86.80445],
+                    zoom: 16,
+                },
+                {
+                    name: "New York University",
+                    coords: [40.7291, -73.995894],
+                    zoom: 17,
+                },
+            ];
+
+            // Interpolate between two cities
+            function interpolateCoords(startCoords, endCoords, factor) {
+                return [
+                    startCoords[0] + (endCoords[0] - startCoords[0]) * factor,
+                    startCoords[1] + (endCoords[1] - startCoords[1]) * factor,
+                ];
             }
-            for (let linescore of data.header.competitions[0].competitors[1].linescores) {
-                document.getElementById('linescores-home').innerHTML += `<td><h6>${linescore.displayValue}</h6></td>`;
-            }
 
-        }
+            function getResponsiveZoom(city) {
+                const screenWidth = window.innerWidth;
 
-        //================= SCORING PLAYS =================//
-        const scoring_plays = data.plays.filter(play => play.scoringPlay).slice(-3);
-
-        let scoring_plays_html = '';
-        for (let play of scoring_plays) {
-            const scoring_description = play.text;
-            const scoring_time = play.clock.displayValue;
-            const scoring_period = play.period.displayValue;
-            const pbp_away_score = play.awayScore;
-            const pbp_home_score = play.homeScore;
-
-            scoring_plays_html += `
-                <li class="scoring-play">
-                    <h4 style="margin-bottom: 5px;">${scoring_description}</h4>
-                    <h6 style="margin-top: 0;">${scoring_time} ${scoring_period} | ${pbp_away_score} - ${pbp_home_score}</h6>
-                </li>
-            `;
-        }
-
-        document.getElementById('scoring-plays-container').innerHTML = scoring_plays_html;
-
-        //================= WIN PROBABILITY =================//
-        if (data.winprobability) {
-            const win_p = data.winprobability;
-            const home_win_p = win_p[win_p.length - 1].homeWinPercentage;
-            const home_win_p_previous = win_p[win_p.length - 2].homeWinPercentage;
-            
-            let display_win_p;
-            let display_change;
-            let display_team;
-            if (home_win_p >= 0.5) {
-                display_win_p = (home_win_p * 100).toFixed(1);
-                display_change = ((home_win_p - home_win_p_previous) * 100).toFixed(1);
-                display_team = home_team;
-            } else {
-                display_win_p = ((1 - home_win_p) * 100).toFixed(1);
-                display_change = ((home_win_p_previous - home_win_p) * 100).toFixed(1);
-                display_team = away_team;
-            }
-
-            let display_change_color;
-            if (display_change > 0) {
-                display_change_color = 'green';
-            } else if (display_change < 0) {
-                display_change_color = 'red';
-            } else {
-                display_change_color = 'black';
-            }
-
-            const win_p_container = document.getElementById('win-probability-container');
-            win_p_container.innerHTML += `
-                <h4 class="percentage">${display_win_p}% <span style="color: ${display_change_color}; font-size: 12px;">${display_change > 0 ? '+' : ''}${display_change}%</h4>
-                <h6 style="margin-top: 0px;">${display_team}</h6>
-            `;
-        // IF GAME HASN'T STARTED, USE MATCHUP PREDICTOR
-        } else {
-            const home_win_p = data.predictor.awayTeam.gameProjection;
-            const away_win_p = data.predictor.homeTeam.teamChanceLoss;
-
-            let display_win_p;
-            let display_change;
-            let display_team;
-            if (home_win_p >= 0.5) {
-                display_win_p = (home_win_p * 100).toFixed(1);
-                display_change = ((home_win_p - home_win_p_previous) * 100).toFixed(1);
-                display_team = home_team;
-            } else {
-                display_win_p = ((1 - home_win_p) * 100).toFixed(1);
-                display_change = ((home_win_p_previous - home_win_p) * 100).toFixed(1);
-                display_team = away_team;
-            }
-
-            const win_p_container = document.getElementById('win-probability-container');
-            win_p_container.innerHTML += `
-                <h4 class="percentage">${display_win_p}%</h4>
-                <h6 style="margin-top: 0px;">${display_team}</h6>
-            `;
-        }
-        
-
-        // ============== GAME LEADERS ============= //
-        const leadersData = data.leaders;
-    
-        var i = 0;
-        
-        // data.leaders[0], [1]    
-        for (let xteam of leadersData) {
-            
-            document.getElementById(i).innerHTML += `<h6>${xteam.team.displayName}</h6>`;
-            
-            for (let xstat of xteam.leaders) {
-                    
-                const xathlete = xstat.leaders[0].athlete;
-                
-                if (i == 0) {
-                document.getElementById(i).innerHTML += `
-                <h4> </h4>
-                <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
-                <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
-                
-                `
+                if (screenWidth < 767) {
+                    return city.zoom - 2; // Zoom in more on smaller screens
+                } else if (screenWidth < 989) {
+                    return city.zoom - 1; // Moderate zoom for medium screens
                 } else {
-                    document.getElementById(i).innerHTML += `
-                    <h4>${xstat.displayName.toLowerCase()}</h4>
-                    <h4 style="font-size:20px;">${xstat.leaders[0].displayValue}</h4>
-                    <h6><b> ${xathlete.jersey} ${xathlete.shortName} (${xathlete.position.abbreviation})</b></h6>
-                    `;    
+                    return city.zoom; // Default zoom for larger screens
                 }
-                
             }
-            
-            if (i == 1) { break; }
-            
-            i += 1;
-            
-        }
-    });
 
-    
-</script>
+            // Handle scroll event
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
+                const totalHeight =
+                    document.body.scrollHeight - window.innerHeight;
 
-</body>
+                // Determine the relative scroll position (0 to 1)
+                const scrollPosition = scrollY / totalHeight;
+
+                // Calculate how much to stay on a city before moving (e.g., 20% of the scroll per city)
+                const stayFactor = 0.5;
+                const moveFactor = 1 - stayFactor; // Remaining time for transition
+
+                // Determine which two cities to interpolate between
+                const sectionSize = 1 / cities.length; // The size of each scroll section
+                const sectionIndex = Math.floor(scrollPosition / sectionSize);
+                const relativePosition =
+                    (scrollPosition % sectionSize) / sectionSize;
+
+                if (sectionIndex < cities.length) {
+                    const currentCity = cities[sectionIndex];
+
+                    if (relativePosition < stayFactor) {
+                        // Stay at the current city
+                        map.setView(
+                            currentCity.coords,
+                            getResponsiveZoom(currentCity),
+                            {
+                                animate: false,
+                            },
+                        );
+                    } else {
+                        // Move gradually toward the next city, if there is one
+                        if (sectionIndex < cities.length - 1) {
+                            const nextCity = cities[sectionIndex + 1];
+                            const moveProgress =
+                                (relativePosition - stayFactor) / moveFactor;
+                            const interpolatedCoords = interpolateCoords(
+                                currentCity.coords,
+                                nextCity.coords,
+                                moveProgress,
+                            );
+
+                            const interpolatedZoom =
+                                getResponsiveZoom(currentCity) +
+                                (getResponsiveZoom(nextCity) -
+                                    getResponsiveZoom(currentCity)) *
+                                    moveProgress;
+
+                            map.setView(interpolatedCoords, interpolatedZoom, {
+                                animate: false,
+                            });
+                        }
+                    }
+                }
+            });
+            window.onload = function () {
+                window.scrollTo(0, 0); // Scroll to the top
+                map.setView(cities[0].coords, cities[0].zoom); // Set the map view to the initial city (United States)
+            };
+        </script>
+    </body>
 </html>
