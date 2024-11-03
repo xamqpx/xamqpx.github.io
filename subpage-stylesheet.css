@@ -1,13 +1,12 @@
 * {
-  box-sizing: content-box;
+    box-sizing: content-box;
 }
-    
- 
- img {
+
+img {
     width: 100%;
-  }
-  
-  body {
+}
+
+body {
     font-family: "Tiempos Headline Light";
     margin: 0;
     background-color: #efefef;
@@ -15,51 +14,62 @@
     font-size: 17px;
     text-align: left;
     line-height: 1.5;
-  }
+}
 
-  p i, p em, blockquote em { font-family: 'Tiempos Headline Light Italic'; font-style: normal; }
+p i,
+p em,
+blockquote em {
+    font-family: "Tiempos Headline Light Italic";
+    font-style: normal;
+}
 
-  .photo-credit {
-    font-family: 'Poppins Light';
+.photo-credit {
+    font-family: "Poppins Light";
     font-size: 12px !important;
     text-align: left;
     margin: 0 0 10%;
-  }
+}
 
-  .photo-credit i, .photo-credit em {
+.photo-credit i,
+.photo-credit em {
     font-size: 14px;
-  }
+}
 
-  .photo-credit b {
-    font-family: 'Poppins';
+.photo-credit b {
+    font-family: "Poppins";
     font-weight: normal;
-  }
+}
 
-  a:link, a:active, a:visited, a:hover {
+a:link,
+a:active,
+a:visited,
+a:hover {
     color: #040405;
     text-decoration: none;
-  }
+}
 
-  p a:link, p a:active, p a:visited {
+p a:link,
+p a:active,
+p a:visited {
     text-decoration: underline;
     transition: color 0.4s;
-  }
+}
 
-  p a:hover {
+p a:hover {
     color: grey;
-  }
+}
 
-  .author {
+.author {
     font-family: Poppins Light;
     font-size: 16px;
-  }
+}
 
-  .author b {
+.author b {
     font-family: Poppins;
     font-weight: normal;
-  }
-  
-  .header {
+}
+
+.header {
     padding-bottom: 5px;
     text-align: center;
     background-repeat: no-repeat;
@@ -69,70 +79,81 @@
     height: 400px;
     background-color: #efefef;
     padding: 0;
-  }
+}
 
-  #navbar { text-align: center; position: sticky; top: 0; background: #efefef; padding: 30px; z-index: 50; }
+#navbar {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: #efefef;
+    padding: 30px;
+    z-index: 50;
+}
 
-  #logo {
-    font-family: 'Tiempos Headline Bold';
+#logo {
+    font-family: "Tiempos Headline Bold";
     font-weight: normal;
     font-size: 20px;
     transition: 500ms;
-  }
+}
 
+#logo a {
+    text-decoration: none;
+    background: #233342;
+    color: white;
+}
 
-  #logo a { text-decoration: none; background: #233342; color: white; }
-  
-  * {
+* {
     box-sizing: border-box;
-  }
-  
-  .row {
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
     max-width: 1600px;
     width: 100%;
     height: 100%;
     margin: auto;
-  }
-  
-  /* columns */
-  /* left */
-  .side {
+}
+
+/* columns */
+/* left */
+.side {
     flex: 25%; /* Set the width of the sidebar */
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  /* right */
-  .main {
+}
+
+/* right */
+.main {
     flex: 70%; /* Set the width of the main content */
     padding: 20px;
     padding-right: 30%;
-  }
+}
 
-  .right {
+.right {
     padding: 20px;
-  }
+}
 
-  h2 {
+h2 {
     font-family: "Tiempos Headline Bold";
-  }
+}
 
-  .side h3, .main h3 {
-    color:#dd7e6b;
+.side h3,
+.main h3 {
+    color: #dd7e6b;
     font-family: "Poppins";
     font-weight: normal;
     font-size: 16px;
     margin-bottom: -10px;
     transition: color 0.4s;
-  }
+}
 
-  a h3:hover {
+a h3:hover {
     color: #aa1e6b;
-  }
-  
-  .padded-dropcap {
+}
+
+.padded-dropcap {
     padding-left: 5px;
     padding-right: 5px;
     float: left;
@@ -143,68 +164,69 @@
     margin-right: 2px;
     font-size: 90px;
     font-family: "Megalito";
-  }
-  
-  .openbtn {
+}
+
+.openbtn {
     display: none;
-  }
-  
-  /* stack row */
-  @media screen and (max-width: 1200px) and (min-width: 700px) {
+}
+
+/* stack row */
+@media screen and (max-width: 1200px) and (min-width: 700px) {
     .row {
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .side {
-      padding-right: 20%
+        padding-right: 20%;
     }
-  }
+}
 
-  @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     body {
-      font-size: 18px;
+        font-size: 18px;
     }
     .row {
-      flex-direction: column;
-      padding: 10px;
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .side, .main {
-      padding: 0 10px 0 10px;
+    .side,
+    .main {
+        padding: 0 10px 0 10px;
     }
 
     .openbtn {
-      display: inline-block;
-      cursor: pointer;
-      background-color: transparent;
-      padding: 10px 10px;
-      border: none;
+        display: inline-block;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 10px 10px;
+        border: none;
     }
 
     .navbar-right {
-      display: none;
-      float: left;
+        display: none;
+        float: left;
     }
-    
+
     .openbtn:hover {
-      font-size: 24px;
+        font-size: 24px;
     }
-    
+
     #main {
-      transition: margin-top .5s;
-      padding: 16px;
+        transition: margin-top 0.5s;
+        padding: 16px;
     }
-  }
-  
-  /* stack navbar */
-  @media screen and (max-width: 400px) {
+}
+
+/* stack navbar */
+@media screen and (max-width: 400px) {
     .navbar a {
-      float: none;
-      width: 100%;
+        float: none;
+        width: 100%;
     }
-  }
-  
-  .footer {
+}
+
+.footer {
     left: 0;
     bottom: 0;
     width: 100%;
@@ -212,58 +234,64 @@
     padding: 20px;
     font-size: 40px;
     font-family: "Tiempos Headline Bold";
-  }
+}
 
-  .blink {
-    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
-  }
+.blink {
+    animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
 
-  @keyframes blinker {  
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-  
-  .korean-title {
-    font-family: 'Song Myung';
-  }
-  
-  .korean-text {
-    font-family: 'Noto';
-  }
+@keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 
-  .headline {
-    font-family: 'Tiempos Headline Bold';
-    font-weight:normal;
+.korean-title {
+    font-family: "Song Myung";
+}
+
+.korean-text {
+    font-family: "Noto";
+}
+
+.headline {
+    font-family: "Tiempos Headline Bold";
+    font-weight: normal;
     font-size: 38px;
     line-height: 1;
-  }
+}
 
-  .pull-quote {
-    font-family: 'Tiempos Headline Light';
-    font-weight:normal;
+.pull-quote {
+    font-family: "Tiempos Headline Light";
+    font-weight: normal;
     font-size: 28px;
     line-height: 1.2;
     padding: 50px 0;
     color: grey;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
-  }
+}
 
-  .float-image {
-    float:right; width: 200px; margin: 0 0 40px 40px;
-  }
+.float-image {
+    float: right;
+    width: 200px;
+    margin: 0 0 40px 40px;
+}
 
-  @media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
     .float-image {
-      float: none;
-      width: 100%;
-      margin: 0 0 40px 0;
+        float: none;
+        width: 100%;
+        margin: 0 0 40px 0;
     }
-  }
+}
 
-  blockquote {
+blockquote {
     font-size: 16px;
     line-height: 1.2;
     padding: 50px 0;
     color: #555;
-  }
+}

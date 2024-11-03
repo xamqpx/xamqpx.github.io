@@ -1,357 +1,461 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <title>HOME | The 25 Post</title>
 
+        <!--basics-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <title>HOME | The 25 Post</title>
+        <!--icons -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="archives/icons/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="archives/icons/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="archives/icons/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="archives/icons/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="archives/icons/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="archives/icons/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="archives/icons/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="archives/icons/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="archives/icons/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="archives/icons/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="archives/icons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="archives/icons/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="archives/icons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="archives/icons/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="archives/icons/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
 
-  <!--basics-->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://the25post.com/" />
+        <meta content="HOME &mdash; The 25 Post" property="og:title" />
+        <meta content="This is a writing website." property="og:description" />
+        <meta
+            content="https://the25post.com/archives/uploads/twentyfivepostheader.jpg"
+            property="og:image"
+        />
+        <link
+            type="application/json+oembed"
+            href="https://the25post.com/embeds/oembed.json"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
 
-  <!--icons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="archives/icons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="archives/icons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="archives/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="archives/icons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="archives/icons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="archives/icons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="archives/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="archives/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="archives/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="archives/icons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="archives/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="archives/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="archives/icons/favicon-16x16.png">
-  <link rel="manifest" href="archives/icons/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="archives/icons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+        <!--stylesheets-->
+        <link rel="stylesheet" href="homepages-stylesheet.css" />
+        <link rel="stylesheet" href="fonts.css" />
+        <script
+            src="https://kit.fontawesome.com/c1e1e973df.js"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            .blink {
+                animation: blink-animation 2s infinite;
+                -webkit-animation: blink-animation 2s infinite;
+            }
+            @keyframes blink-animation {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            @-webkit-keyframes blink-animation {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://the25post.com/">
-  <meta content="HOME &mdash; The 25 Post" property="og:title">
-  <meta content='This is a writing website.' property="og:description">
-  <meta content='https://the25post.com/archives/uploads/twentyfivepostheader.jpg' property='og:image'>
-  <link type="application/json+oembed" href="https://the25post.com/embeds/oembed.json" />
-  <meta name="twitter:card" content="summary_large_image">
-  
-<!--stylesheets-->
-<link rel="stylesheet" href="homepages-stylesheet.css">
-<link rel="stylesheet" href="fonts.css">
-<script src="https://kit.fontawesome.com/c1e1e973df.js" crossorigin="anonymous"></script>
-<style>
-  .blink {
-        animation: blink-animation 2s infinite;
-        -webkit-animation: blink-animation 2s infinite;
-      }
-      @keyframes blink-animation {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-</style>
-</head>
-
-<body>
-  <div class="container">
-    
-    <div class="row">
-      
-    
-      <div class="col" style="flex: 10%;">
-      </div>
-
-      <!-- BIG LOGO -->
-      <a href="index.html">
-        <div id="big-logo">
-          <h1>25</h1>
-        </div>
-      </a>
-
-        <div id="main-content" class="col" style="flex:40%;">
-          <div id="navigation">
-            <small class="nav-link">THE 25 POST &nbsp;&nbsp; | &nbsp;&nbsp;</small>
-
-            <small class="nav-link"><a href="music.html">MUSIC</a></small>
-            <small class="nav-link"><a href="politics.html">POLITICS</a></small>
-            <small class="nav-link"><a href="reviews.html">REVIEWS</a></small>
-            <small class="nav-link"><a href="sports.html">SPORTS</a></small>
-            <small class="nav-link"><a target="_blank" href="https://parkdj.com">ABOUT <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 6px;"></i></a></small>
-          </div>
-          <div class="article-filler" id="main-feature">
-            <a class="article-url">
-              <img class="photo" />
-            </a>
-            <span class="photo-credit"></span>
-            <h6 class="kicker"></h6>
-            <a class="article-url-mf">
-              <h2 class="headline main-feature-hed"></h2>
-            </a>
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-
-          <hr class="divide">
-
-          <div class="article-filler" id="sub-main-feature">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline main-feature-hed"></h2>
-            </a>
-            <br>
+    <body>
+        <div class="container">
             <div class="row">
-              <div class="sub-main-feature-img">
-                <a class="article-url">
-                  <img class="photo" />
-                  <span class="photo-credit"></span>
+                <div class="col" style="flex: 10%"></div>
+
+                <!-- BIG LOGO -->
+                <a href="index.html">
+                    <div id="big-logo">
+                        <h1>25</h1>
+                    </div>
                 </a>
-              </div>
-              <div class="sub-main-feature-col">
-                <p class="subhead"></p>
-                <h4>by <span class="author"></span></h4>
-                <small class="date"></small>
-              </div>
+
+                <div id="main-content" class="col" style="flex: 40%">
+                    <div id="navigation">
+                        <small class="nav-link"
+                            >THE 25 POST &nbsp;&nbsp; | &nbsp;&nbsp;</small
+                        >
+
+                        <small class="nav-link"
+                            ><a href="music.html">MUSIC</a></small
+                        >
+                        <small class="nav-link"
+                            ><a href="politics.html">POLITICS</a></small
+                        >
+                        <small class="nav-link"
+                            ><a href="reviews.html">REVIEWS</a></small
+                        >
+                        <small class="nav-link"
+                            ><a href="sports.html">SPORTS</a></small
+                        >
+                        <small class="nav-link"
+                            ><a href="non-fiction.html">NON / FICTION</a></small
+                        >
+                        <small class="nav-link"
+                            ><a target="_blank" href="https://parkdj.com"
+                                >ABOUT
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square"
+                                    style="font-size: 6px"
+                                ></i></a
+                        ></small>
+                    </div>
+                    <div class="article-filler" id="main-feature">
+                        <a class="article-url">
+                            <img class="photo" />
+                        </a>
+                        <span class="photo-credit"></span>
+                        <h6 class="kicker"></h6>
+                        <a class="article-url-mf">
+                            <h2 class="headline main-feature-hed"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+
+                    <hr class="divide" />
+
+                    <div class="article-filler" id="sub-main-feature">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline main-feature-hed"></h2>
+                        </a>
+                        <br />
+                        <div class="row">
+                            <div class="sub-main-feature-img">
+                                <a class="article-url">
+                                    <img class="photo" />
+                                    <span class="photo-credit"></span>
+                                </a>
+                            </div>
+                            <div class="sub-main-feature-col">
+                                <p class="subhead"></p>
+                                <h4>by <span class="author"></span></h4>
+                                <small class="date"></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="divide" />
+
+                    <div class="article-filler" id="sub-main-feature">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline main-feature-hed"></h2>
+                        </a>
+                        <br />
+                        <div class="row">
+                            <div class="sub-main-feature-img">
+                                <a class="article-url">
+                                    <img class="photo" />
+                                    <span class="photo-credit"></span>
+                                </a>
+                            </div>
+                            <div class="sub-main-feature-col">
+                                <p class="subhead"></p>
+                                <h4>by <span class="author"></span></h4>
+                                <small class="date"></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="divide" />
+
+                    <div class="article-filler" id="sub-main-feature">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline main-feature-hed"></h2>
+                        </a>
+                        <br />
+                        <div class="row">
+                            <div class="sub-main-feature-img">
+                                <a class="article-url">
+                                    <img class="photo" />
+                                    <span class="photo-credit"></span>
+                                </a>
+                            </div>
+                            <div class="sub-main-feature-col">
+                                <p class="subhead"></p>
+                                <h4>by <span class="author"></span></h4>
+                                <small class="date"></small>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="column-divide" />
+                </div>
+
+                <div class="col" style="flex: 20%; padding: 0px !important">
+                    <div style="background: #233342; padding: 15px">
+                        <h6 class="kicker" style="margin-top: 0">
+                            <span class="blink">⬤</span> LIVE
+                        </h6>
+                        <div style="display: flex">
+                            <div style="flex: 30%">
+                                <img
+                                    src="/archives/uploads/nba-logo.png"
+                                    style="width: 100%"
+                                />
+                            </div>
+                            <div style="flex: 70%; margin: 0 20px">
+                                <h2
+                                    style="
+                                        font-family: Poppins;
+                                        margin-bottom: 5px;
+                                    "
+                                >
+                                    <a
+                                        href="nba-scrape.html"
+                                        style="color: #e2e2de"
+                                        >Schedule, stats, box scores</a
+                                    >
+                                </h2>
+                                <small
+                                    style="
+                                        color: #e2e2de;
+                                        font-family: Poppins Light;
+                                    "
+                                    >Scraped from ESPN API.</small
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                    <hr class="divide" />
+                    <div class="article-filler">
+                        <h6 class="kicker"></h6>
+                        <a class="article-url">
+                            <h2 class="headline"></h2>
+                        </a>
+                        <p class="subhead"></p>
+                        <h4>by <span class="author"></span></h4>
+                        <small class="date"></small>
+                    </div>
+                </div>
+
+                <div class="col" style="flex: 10%"></div>
             </div>
-          </div>
-
-          <hr class="divide">
-
-          <div class="article-filler" id="sub-main-feature">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline main-feature-hed"></h2>
-            </a>
-            <br>
-            <div class="row">
-              <div class="sub-main-feature-img">
-                <a class="article-url">
-                  <img class="photo" />
-                  <span class="photo-credit"></span>
-                </a>
-              </div>
-              <div class="sub-main-feature-col">
-                <p class="subhead"></p>
-                <h4>by <span class="author"></span></h4>
-                <small class="date"></small>
-              </div>
-            </div>
-          </div>
-
-          <hr class="divide">
-
-          <div class="article-filler" id="sub-main-feature">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline main-feature-hed"></h2>
-            </a>
-            <br>
-            <div class="row">
-              <div class="sub-main-feature-img">
-                <a class="article-url">
-                  <img class="photo" />
-                  <span class="photo-credit"></span>
-                </a>
-              </div>
-              <div class="sub-main-feature-col">
-                <p class="subhead"></p>
-                <h4>by <span class="author"></span></h4>
-                <small class="date"></small>
-              </div>
-            </div>
-          </div>
-          <hr class="column-divide">
         </div>
 
-        <div class="col" style="flex: 20%; padding: 0px !important;">
-          <div style="background: #233342; padding: 15px;">
-            <h6 class="kicker" style="margin-top: 0;"><span class="blink">⬤</span> LIVE</h6>
-            <div style="display: flex;">
-              <div style="flex: 30%;">
-                <img src="/archives/uploads/nba-logo.png" style="width: 100%;">
-              </div>
-              <div style="flex: 70%; margin: 0 20px;">
-                <h2 style="font-family: Poppins; margin-bottom: 5px;"><a href="nba-scrape.html" style="color: #E2E2DE;">Schedule, stats, box scores</a></h2>
-                <small style="color: #E2E2DE; font-family: Poppins Light;">Scraped from ESPN API.</small>
-              </div>
-            </div>
-          </div>
-          
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-          <hr class="divide">
-          <div class="article-filler">
-            <h6 class="kicker"></h6>
-            <a class="article-url">
-              <h2 class="headline"></h2>
-            </a>          
-            <p class="subhead"></p>
-            <h4>by <span class="author"></span></h4>
-            <small class="date"></small>
-          </div>
-        </div>
-        
+        <script>
+            // Fetch JSON data
+            fetch("all-articles.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    // Sort articles by date
+                    data.sort((a, b) => {
+                        return new Date(b.date) - new Date(a.date);
+                    });
 
-        <div class="col" style="flex:10%;">
-        </div>
-  </div>
+                    // Get all article divs
+                    const articleDivs =
+                        document.querySelectorAll(".article-filler");
 
-  </div>
+                    // Loop through each div
+                    articleDivs.forEach((div, index) => {
+                        const articleData = data[index];
 
-  <script>
-    // Fetch JSON data 
-    fetch('all-articles.json')
-      .then(response => response.json())
-      .then(data => {
+                        // Check if element exists before setting
+                        const kickerEl = div.querySelector(".kicker");
+                        setIfElement(kickerEl, articleData, "kicker");
 
-        // Sort articles by date
-        data.sort((a, b) => {
-          return new Date(b.date) - new Date(a.date); 
-        });
+                        const headlineEl = div.querySelector(".headline");
+                        setIfElement(headlineEl, articleData, "headline");
 
-        // Get all article divs
-        const articleDivs = document.querySelectorAll('.article-filler');
+                        const articleURLEl = div.querySelector(".article-url");
+                        if (articleURLEl) {
+                            articleURLEl.href = articleData.article_url;
+                        }
 
-        // Loop through each div
-        articleDivs.forEach((div, index) => {
+                        const articleURLElMF =
+                            div.querySelector(".article-url-mf");
+                        if (articleURLElMF) {
+                            articleURLElMF.href = articleData.article_url;
+                        }
 
-          const articleData = data[index];
+                        const subheadEl = div.querySelector(".subhead");
+                        setIfElement(subheadEl, articleData, "subhead");
 
-          // Check if element exists before setting 
-          const kickerEl = div.querySelector('.kicker');
-          setIfElement(kickerEl, articleData, 'kicker');
+                        const photoEl = div.querySelector(".photo");
+                        if (photoEl) {
+                            photoEl.src = articleData.photo_url;
+                        }
 
-          const headlineEl = div.querySelector('.headline');
-          setIfElement(headlineEl, articleData, 'headline');
+                        const photoCreditEl =
+                            div.querySelector(".photo-credit");
+                        setIfElement(
+                            photoCreditEl,
+                            articleData,
+                            "photo_credit",
+                        );
 
-          const articleURLEl = div.querySelector('.article-url');
-          if (articleURLEl) {
-            articleURLEl.href = articleData.article_url;
-          }
+                        const dateEl = div.querySelector(".date");
+                        setIfElement(dateEl, articleData, "date");
 
-          const articleURLElMF = div.querySelector('.article-url-mf');
-          if (articleURLElMF) {
-            articleURLElMF.href = articleData.article_url;
-          }
+                        let author = articleData.author;
+                        if (author === "") {
+                            author = "JONATHAN PARK";
+                        }
 
-          const subheadEl = div.querySelector('.subhead');
-          setIfElement(subheadEl, articleData, 'subhead');
+                        const authorEl = div.querySelector(".author");
+                        if (authorEl) {
+                            authorEl.innerHTML = author;
+                        }
+                    });
 
-          const photoEl = div.querySelector('.photo');
-          if (photoEl) {
-            photoEl.src = articleData.photo_url; 
-          }
-
-          const photoCreditEl = div.querySelector('.photo-credit');
-          setIfElement(photoCreditEl, articleData, 'photo_credit');  
-
-          const dateEl = div.querySelector('.date');
-          setIfElement(dateEl, articleData, 'date');
-
-          let author = articleData.author;
-          if (author === '') {
-            author = 'JONATHAN PARK';
-          }
-
-          const authorEl = div.querySelector('.author');
-          if (authorEl) {
-            authorEl.innerHTML = author;
-          }
-
-        });
-
-        function setIfElement(element, data, property) {
-          if (element) {
-            element.innerHTML = data[property];
-          } 
-        };
-
-      });
-  </script>
-</body>
+                    function setIfElement(element, data, property) {
+                        if (element) {
+                            element.innerHTML = data[property];
+                        }
+                    }
+                });
+        </script>
+    </body>
 </html>
