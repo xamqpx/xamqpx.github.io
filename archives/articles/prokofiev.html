@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Prokofiev's grief | The 25 Post</title>
+      <link rel="stylesheet" href="../../subpage-stylesheet.css">
+      <link rel="stylesheet" href="../../fonts.css">
+
+      <!--basics-->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!--icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="../icons/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="../icons/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="../icons/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="../icons/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="../icons/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="../icons/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+      <link rel="manifest" href="../icons/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://the25post.com/archives/articles/prokofiev.html">
+      <meta content="Prokofiev's grief | The 25 Post" property="og:title">
+      <meta content='How the Russian pianist-composer’s Piano Concerto No. 2 masterfully tells the story of loss and tragedy.' property="og:description">
+      <meta content='https://the25post.com/archives/uploads/prokofiev-thumb.png' property='og:image'>
+      <link type="application/json+oembed" href="https://the25post.com/embeds/amitai-segev-oembed.json" />
+      <meta name="twitter:card" content="summary_large_image">
+
+    <!-- font awesome -->
+    <script
+        src="https://kit.fontawesome.com/5177f0fe75.js"
+        crossorigin="anonymous"
+    ></script>
+
+     <!-- style sheet -->
+      <style>
+        body, #navbar {
+          background: #0a0a0a !important;
+          color: white;
+          & a { color: white; }
+        }
+
+        .full-img {
+            justify-content: bottom;
+          background-image: linear-gradient(black, black), url('../uploads/prokofiev-thumb.png');
+          background-size: cover;
+          background-position: top;
+          background-blend-mode: saturation;
+          top: 0; left: 0;
+          height: 1600px;
+        }
+
+        .full-img-header {
+            padding-top: 100px;
+          position: relative;
+          & h3 {
+            color:#dd7e6b;
+            font-family: "Poppins";
+            font-weight: normal;
+            font-size: 16px;
+            margin-bottom: -10px;
+            transition: color 0.4s;
+
+          }
+          & .headline, & p, & h3 { text-align: center !important; }
+        }
+
+        .comparison-flexbox {
+          display: flex;
+          width: 100%;
+          max-width: 1100px;
+          margin: 0 auto;
+          & .comparison-flexbox-item {
+            flex: 40%;
+            padding: 20px;
+          }
+          & .comparison-spacer {
+            height: 50px;
+          }
+        }
+
+        .full-img-photo-credit {
+          font-family: 'Poppins Light';
+          font-size: 12px !important;
+          text-align: left;
+          margin: 10px 20px !important;
+        }
+
+        .full-img-photo-credit i, .full-img-photo-credit em {
+          font-size: 14px;
+        }
+
+        .full-img-photo-credit b {
+          font-family: 'Poppins';
+          font-weight: normal;
+        }
+        .row .main_center { width: 40%; margin: 0 auto; }
+
+        .fullsc-video { width: 100%; }
+
+
+        .headline { font-size: 14vw; -webkit-text-stroke: 5px #ffffff66; color: transparent; margin: 5% 0; }
+        .big-text { font-size: 28px; }
+
+
+        html {
+          box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        .full-screen-sticky{
+          position: sticky;
+          top:0;
+          z-index:-1; // push the sticky element to the back
+          width:100%;
+          height:100vh; // fill the viewport height
+          border:10px solid #fff;
+          overflow:hidden; // if using video
+          img, video {
+            position: absolute;
+            display: block;
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            // or use background images on the sticky element if you can't support object-fit
+          }
+
+        }
+        .play-pause-btn { font-size: 32px; cursor: pointer; }
+
+
+        .section-text {
+          margin-top:-75vh; // pull the content back up
+          margin-left: auto;
+          padding-bottom: 100px;
+          padding-left: 10vh;
+          min-height:75vh; // catch-all for small amounts of content
+          width: 50%;
+          max-width: 600px;
+          & p { color: black; background: white; display: inline-block; padding: 15px; margin: 100vh 0; }
+        }
+
+        h6 { margin: 0 !important; }
+
+        @media screen and (max-width: 1100px) {
+          .comparison-flexbox {
+            display: block;
+            & .comparison-flexbox-item {
+              flex: 100%;
+            }
+            & .comparison-spacer {
+              display: none;
+            }
+          }
+
+          .full-img {
+            background-position: center; height: 100vh;
+          }
+
+
+          .row .main_center { width: 100%; padding: 10px; }
+
+          .full-screen-sticky video {
+              height: 100vh; object-fit: cover;
+          }
+
+          #proks1vid1 { object-position: 22%; }
+          #proks2vid1 { object-position: 30%; }
+          #proks3vid1 { object-position: 20% 100%; }
+
+          /* This ensures the actual video content fills the player */
+          .full-screen-sticky video::-webkit-media-controls-enclosure {
+            height: 100%;
+          }
+
+          .full-screen-sticky video::-webkit-media-controls-overlay-enclosure {
+            height: 100%;
+          }
+
+          .full-screen-sticky video::-internal-media-controls-overflow-button {
+            display: none;
+          }
+
+          .section-text { padding: 0 20px; }
+        }
+
+        @media screen and (max-width: 720px) { .headline { font-size: 48px; -webkit-text-stroke: 0; margin-top: 80%; color: white; } }
+
+
+      </style>
+
+    </head>
+    <body>
+      <div id="navbar">
+        <p id="logo" style="margin:0;"><a href="https://the25post.com">THE TWENTY-FIVE POST</a></p>
+        <p style="margin:0;"><small>A writing website.</small></p>
+      </div>
+    </div>
+
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("navbar").style.padding = "14px";
+          document.getElementById("logo").style.fontSize = "14px";
+        } else {
+          document.getElementById("navbar").style.padding = "20px";
+          document.getElementById("logo").style.fontSize = "20px";
+        }
+      }
+    </script>
+
+
+
+        <div class="full-img">
+          <div class="full-img-header">
+            <a href="../../music.html"><h3>MUSIC</h3></a>
+            <h2 class="headline">PROKOFIEV'S<br>GRIEF</h2>
+            <p class="author">By <b>AMITAI SEGEV</b></p>
+            <p>X January 2024</p>
+          </div>
+        </div>
+        <p class="full-img-photo-credit"><em>Sergei Prokofiev.</em></p>
+
+        <div class="row">
+            <div class="main_center">
+               <div class="big-text">
+                   <p><inline class="padded-dropcap">I</inline>&rsquo;ll admit, as a fan of classical music, I have always been discouraged by Sergei Prokofiev. I have tried listening to his sonatas, symphonies, and quartets; but all I could ever remember him for was Romeo and Juliet. Part of this uneasiness purely lies in aesthetic preferences. He was not as Romantic as his contemporaries Franz Liszt or Fr&eacute;d&eacute;ric Chopin, instead venturing into modernism. For that reason, I thought his music was simply not pleasant enough to listen to.</p>
+
+                   <p>That is until I stumbled across Prokofiev&rsquo;s Piano Concerto No. 2.</p>
+               </div>
+
+                <p>I had never heard such abstract melodies that develop and evolve so beautifully in unimaginable ways before. On my first listen, part of me felt uncomfortable with the constant trembling of sounds that I thought would be impossible to play on the piano. (&ldquo;A decade ago I&rsquo;d have bet you there were only a dozen pianists in the world who could play Prokofiev&rsquo;s Second Piano Concerto properly,&rdquo; muses a 2012 BBC Music Magazine article.) This piece is a grand testament to Prokofiev&rsquo;s struggle with loss and the political turmoil of his home country. Through its dark themes and dramatic climaxes, Prokofiev weaves a narrative that takes hold of its listeners.</p>
+
+                <p>Composed in 1912, Prokofiev had dedicated the piece to a close friend, Maximilian Schmidthof, who had taken his life after writing a farewell letter to the composer. With a short runtime of 30 minutes, Prokofiev created one of the most influential pieces for the piano and set the precedent for his career as a composer who pushes boundaries melodically and physically.</p>
+
+                <p>When the composer debuted the concerto on September 5, 1913, the audience was torn between acclaim and bewilderment. In his own recounting of the premiere, the Russian composer recalled the mixed reactions of &ldquo;cries of approval and boos&rdquo; from the audience. &ldquo;I was pleased that the concerto provoked such strong feelings in the audience,&rdquo; he wrote. But soon after its debut, the piece was lost in a fire during the Russian Revolution, and he set out to write it all over again.</p>
+
+                <p>Premiering his newly rewritten version in 1924, the reception was once again mixed. Critics described the piece as a &ldquo;cacophony of sounds that has nothing in common with civilized music,&rdquo; and a &ldquo;Babel of insane sounds heaped upon each other for no rhyme or reason.&rdquo;</p>
+
+                <p>The piece was then largely forgotten for the next forty years before the Russian pianist Vladimir Ashkenazy played it with the New York Philharmonic in 1958. Since then, it has been performed hundreds of times by the world&rsquo;s most talented musicians and is widely regarded as one of the most important pieces to come out of the Romantic Era.</p>
+
+                <p>Reading those &mdash; admittedly hilarious &mdash; reviews made me wonder what even inspired them to be written. So I took a closer look at the music itself.<br>
+                </p>
+
+                <p><em>For this analysis, I chose to use the <a href="https://www.youtube.com/watch?v=6iGxsoN29G0&t=9s">2009 recording</a> by Evgeny Kissin &mdash; whose work I have always gravitated towards &mdash; with the Philharmonia Orchestra conducted by Ashkenazy, which won a Grammy that year for Best Instrumental Soloist(s) Performance (with Orchestra).</em></p>
+            </div>
+        </div>
+
+        <div style="height: 10vh"></div>
+
+
+        <article id="proks1">
+          <div class="full-screen-sticky" id="pkvid1-video">
+              <video class="fullsc-video" id="proks1vid1" src="../uploads/proks1-vid1.mp4" preload onended="document.getElementById('playPauseBtn-proks1').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks1').classList.add('fa-play');">
+              </video>
+          </div>
+          <div style="height: 30vh"></div>
+
+
+          <div class="section-text">
+
+
+              <br><br>
+              <i id="playPauseBtn-proks1" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <p style="color: white; background: none; font-size: 14px; margin: 0; padding: 0;"><em>Click to play/pause</em></p>
+              <div><h6><span  id="currentTime1">0</span> / <span id="totalTime1">0</span></h6></div>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn1 = document.getElementById('playPauseBtn-proks1');
+                const video1 = document.getElementById('proks1vid1');
+
+                playPauseBtn1.addEventListener('click', function() {
+                    if (playPauseBtn1.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        playPauseBtn1.classList.remove('fa-play');
+                        playPauseBtn1.classList.add('fa-pause');
+                        video1.play();
+                    } else {
+                        playPauseBtn1.classList.remove('fa-pause');
+                        playPauseBtn1.classList.add('fa-play');
+
+                        video1.pause();
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime1');
+                    var totalTimeElement = document.getElementById('totalTime1');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video1.currentTime);
+                    totalTimeElement.textContent = formatTime(video1.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video1.currentTime);
+                        totalTimeElement.textContent = formatTime(video1.duration);
+                    }, 500);
+                });
+
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;">The first movement sets the tone for the rest of the concerto. The piece opens subtly, with a subdued piano tone that gradually crescendos to the first crucial part of the piece: the introduction of the first theme.</p>
+
+            <img src="../uploads/proks1-img1.png" width="100%">
+
+            <br><br>
+
+            <img src="../uploads/proks1-img2.png" width="100%">
+
+
+            <p style="margin-bottom: 20px;">The phrase is simple: thirteen notes, a rising G minor scale with an A-flat twist at the end. It is these notes that set the foundation for the rest of the movement. </p>
+            <img  style="margin-bottom: 100vh;" src="../uploads/proks1-img3.png" width="100%">
+
+          </div>
+        </article>
+
+        <article id="proks2">
+          <div class="full-screen-sticky" id="pkvid2-video">
+              <video class="fullsc-video" id="proks2vid1" src="../uploads/proks2-vid1.mp4" preload onended="document.getElementById('playPauseBtn-proks2').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks2').classList.add('fa-play');">
+              </video>
+          </div>
+
+          <div style="height: 30vh"></div>
+
+          <div class="section-text">
+
+              <i id="playPauseBtn-proks2" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <p style="color: white; background: none; font-size: 14px; margin: 0; padding: 0;"><em>All other videos will be paused when you play a new video.</em></p>
+              <div><h6><span  id="currentTime2">0</span> / <span id="totalTime2">0</span></h6></div>
+              <br><br>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn2 = document.getElementById('playPauseBtn-proks2');
+                const video2 = document.getElementById('proks2vid1');
+
+
+                playPauseBtn2.addEventListener('click', function() {
+                    if (playPauseBtn2.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        playPauseBtn2.classList.remove('fa-play');
+                        playPauseBtn2.classList.add('fa-pause');
+                        video2.play();
+                    } else {
+                        playPauseBtn2.classList.remove('fa-pause');
+                        playPauseBtn2.classList.add('fa-play');
+
+                        video2.pause();
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime2');
+                    var totalTimeElement = document.getElementById('totalTime2');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video2.currentTime);
+                    totalTimeElement.textContent = formatTime(video2.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video2.currentTime);
+                        totalTimeElement.textContent = formatTime(video2.duration);
+                    }, 500);
+                });
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;">We are now hearing the piece taking shape; hints of dissonant melodies begin to slither their way in, almost sarcastically &mdash;</p>
+
+            <img src="../uploads/proks2-img1.png" width="100%">
+            <img src="../uploads/proks2-img1-1.png" width="100%">
+
+            <br><br>
+
+
+            <p style="margin-bottom: 20px;">&mdash; then with a bang.</p>
+            <img src="../uploads/proks2-img2.png" width="100%">
+            <br><br><br><br><br><br>
+
+          </div>
+        </article>
+
+        <article id="proks3">
+          <div class="full-screen-sticky" id="pkvid3-video">
+              <video class="fullsc-video" id="proks3vid1" src="../uploads/proks3-vid1.mp4" preload onended="document.getElementById('playPauseBtn-proks3').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks3').classList.add('fa-play');">
+              </video>
+          </div>
+
+          <div style="height: 30vh"></div>
+
+          <div class="section-text">
+
+              <i id="playPauseBtn-proks3" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <div><h6><span  id="currentTime3">0</span> / <span id="totalTime3">0</span></h6></div>
+              <br><br>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn3 = document.getElementById('playPauseBtn-proks3');
+                const video3 = document.getElementById('proks3vid1');
+
+
+                playPauseBtn3.addEventListener('click', function() {
+                    if (playPauseBtn3.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        playPauseBtn3.classList.remove('fa-play');
+                        playPauseBtn3.classList.add('fa-pause');
+                        video3.play();
+                    } else {
+                        playPauseBtn3.classList.remove('fa-pause');
+                        playPauseBtn3.classList.add('fa-play');
+
+                        video3.pause();
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime3');
+                    var totalTimeElement = document.getElementById('totalTime3');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video3.currentTime);
+                    totalTimeElement.textContent = formatTime(video3.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video3.currentTime);
+                        totalTimeElement.textContent = formatTime(video3.duration);
+                    }, 500);
+                });
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;">The cadenza takes up nearly half of the first movement. It begins similarly subdued &mdash;</p>
+
+            <img src="../uploads/proks3-img1.png" width="100%">
+
+            <br><br>
+
+
+            <p style="margin-bottom: 20px;">&mdash; and then all hell breaks loose. Chords clash together and dissonant arpeggios resonate like thunder as Kissin hammers his hands over the keys.</p>
+            <img src="../uploads/proks3-img2.png" width="100%">
+            <img src="../uploads/proks3-img2-1.png" width="100%">
+
+            <br><br>
+
+            <p style="margin-bottom: 20px;">Suddenly, amid all of the chaos, we hear the familiar first theme, a series of pedal tones in the alto and tenor voice, while both hands continue to play arpeggiated chords throughout. This is the first moment of clarity of the whole piece.</p>
+            <img src="../uploads/proks3-img3.png" width="100%">
+
+            <br><br>
+
+            <p style="margin-bottom: 20px;">The cadenza ends, and the orchestra returns with an explosive tutti section: the brass blares their horns; the flutes and oboes shriek overhead.</p>
+            <img src="../uploads/proks3-img4.png" width="100%">
+            <img src="../uploads/proks3-img4-1.png" width="100%">
+            <br><br><br><br><br><br>
+
+          </div>
+        </article>
+        <div class="footer">
+            <p>25</p>
+        </div>
+    </body>
+</html>
