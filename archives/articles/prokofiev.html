@@ -124,18 +124,17 @@
         .full-screen-sticky{
           position: sticky;
           top:0;
-          z-index:-1; // push the sticky element to the back
+          z-index:-1; 
           width:100%;
-          height:100vh; // fill the viewport height
-          border:10px solid #fff;
-          overflow:hidden; // if using video
+          height:100vh; 
+          overflow:hidden;
           img, video {
             position: absolute;
             display: block;
             width:100%;
             height:100%;
             object-fit: cover;
-            // or use background images on the sticky element if you can't support object-fit
+            
           }
 
         }
@@ -143,14 +142,14 @@
 
 
         .section-text {
-          margin-top:-75vh; // pull the content back up
-          margin-left: auto;
+          margin-top: -75vh;
+          margin-right: auto;
           padding-bottom: 100px;
           padding-left: 10vh;
-          min-height:75vh; // catch-all for small amounts of content
+          min-height:75vh; 
           width: 50%;
           max-width: 600px;
-          & p { color: black; background: white; display: inline-block; padding: 15px; margin: 100vh 0; }
+          & p { color: white; background: #000000aa; display: inline-block; padding: 15px; margin: 100vh 0; }
         }
 
         h6 { margin: 0 !important; }
@@ -181,6 +180,8 @@
           #proks2vid1 { object-position: 30%; }
           #proks3vid1 { object-position: 20% 100%; }
           #proks4vid1 { object-position: 45%; }
+          #proks6vid1 { object-position: 95%; }
+          #proks7vid1 { object-position: 90%; }
 
           /* This ensures the actual video content fills the player */
           .full-screen-sticky video::-webkit-media-controls-enclosure {
@@ -203,6 +204,7 @@
         @media screen and (max-width: 720px) {
             .headline { font-size: 48px; -webkit-text-stroke: 0; margin-top: 80%; color: white; }
             p { font-size: 15px; }
+            .section-text { width: 100%; }
         }
 
 
@@ -217,17 +219,8 @@
     </div>
 
     <script>
-      window.onscroll = function() {scrollFunction()};
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-          document.getElementById("navbar").style.padding = "14px";
-          document.getElementById("logo").style.fontSize = "14px";
-        } else {
-          document.getElementById("navbar").style.padding = "20px";
-          document.getElementById("logo").style.fontSize = "20px";
-        }
-      }
+      document.getElementById("navbar").style.padding = "14px";
+      document.getElementById("logo").style.fontSize = "14px";
     </script>
 
 
@@ -237,7 +230,7 @@
             <a href="../../music.html"><h3>MUSIC</h3></a>
             <h2 class="headline">PROKOFIEV'S<br>GRIEF</h2>
             <p class="author">By <b>AMITAI SEGEV</b></p>
-            <p>X January 2024</p>
+            <p>25 January 2025</p>
           </div>
         </div>
         <p class="full-img-photo-credit"><em>Sergei Prokofiev.</em></p>
@@ -334,7 +327,7 @@
 
             </script>
 
-            <p style="margin-top: 20vh; margin-bottom: 20px;">The first movement sets the tone for the rest of the concerto. The piece opens subtly, with a subdued piano tone that gradually crescendos to the first crucial part of the piece: the introduction of the first theme.</p>
+            <p style="margin-top: 20vh; margin-bottom: 20px;"><strong>The first movement sets the tone for the rest of the concerto.</strong> The piece opens subtly, with a subdued piano tone that gradually crescendos to the first crucial part of the piece: the introduction of the first theme.</p>
 
             <img src="../uploads/proks1-img1.png" width="100%">
 
@@ -580,7 +573,7 @@
                 });
             </script>
 
-            <p style="margin-top: 20vh; margin-bottom: 20px;">After the first movement decrescendos out, the concerto immediately picks up again in the second movement. The piano is off to the races in a perpetual motion, playing rapid sixteenth notes that force the listener forward.</p>
+            <p style="margin-top: 20vh; margin-bottom: 20px;"><strong>After the first movement decrescendos out, the concerto immediately picks up again in the second movement.</strong> The piano is off to the races in a perpetual motion, playing rapid sixteenth notes that force the listener forward.</p>
 
             <img src="../uploads/proks4-img1.png" width="100%">
 
@@ -597,6 +590,271 @@
 
           </div>
         </article>
+
+        <article id="proks5">
+          <div class="full-screen-sticky" id="pkvid5-video">
+              <video playsinline class="fullsc-video" id="proks5vid1" src="../uploads/proks5-vid1.mp4#t=0.0001" preload="metadata" onended="document.getElementById('playPauseBtn-proks5').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks5').classList.add('fa-play');" style="filter: brightness(50%);">
+              </video>
+          </div>
+
+          <div style="height: 30vh"></div>
+
+          <div class="section-text">
+
+              <i id="playPauseBtn-proks5" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <div><h6><span  id="currentTime5">0</span> / <span id="totalTime5">0</span></h6></div>
+              <br><br>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn5 = document.getElementById('playPauseBtn-proks5');
+                const video5 = document.getElementById('proks5vid1');
+
+
+                playPauseBtn5.addEventListener('click', function() {
+                    if (playPauseBtn5.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        document.querySelectorAll('.play-pause-btn').forEach(btn => {
+                            btn.classList.add('fa-play'); btn.classList.remove('fa-pause');
+                        });
+                        playPauseBtn5.classList.remove('fa-play');
+                        playPauseBtn5.classList.add('fa-pause');
+                        video5.play();
+                    } else {
+                        playPauseBtn5.classList.remove('fa-pause');
+                        playPauseBtn5.classList.add('fa-play');
+
+                        video5.pause();
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime5');
+                    var totalTimeElement = document.getElementById('totalTime5');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video5.currentTime);
+                    totalTimeElement.textContent = formatTime(video5.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video5.currentTime);
+                        totalTimeElement.textContent = formatTime(video5.duration);
+                    }, 500);
+                });
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;"><strong>Still unsettled, the third movement arrives.</strong> No longer with the frantic energy of the second movement, the movement opens with a heavy march; Kissin joins in with brittle and cold melodies; dissonant chords clang in the upper register as the orchestra continues its terrifying march. </p>
+
+            <img src="../uploads/proks5-img1.png" width="100%">
+            <img src="../uploads/proks5-img2.png" width="100%">
+
+            <br><br>
+
+
+            <p style="margin-bottom: 20px;">Near the end, the melody comes alive and overwhelms the listener, as the horns continue to blare and flutes play chilling high notes. The piano then eventually leads the charge into a decrescendo.</p>
+            <img src="../uploads/proks5-img3.png" width="100%">
+            <img src="../uploads/proks5-img4.png" width="100%">
+            <img src="../uploads/proks5-img5.png" width="100%">
+            <br><br><br><br><br><br>
+
+          </div>
+        </article>
+
+        <article id="proks6">
+          <div class="full-screen-sticky" id="pkvid6-video">
+              <video playsinline class="fullsc-video" id="proks6vid1" src="../uploads/proks6-vid1.mp4#t=0.0001" preload="metadata" onended="document.getElementById('playPauseBtn-proks6').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks6').classList.add('fa-play');">
+              </video>
+          </div>
+
+          <div style="height: 30vh"></div>
+
+          <div class="section-text">
+
+              <i id="playPauseBtn-proks6" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <div><h6><span  id="currentTime6">0</span> / <span id="totalTime6">0</span></h6></div>
+              <br><br>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn6 = document.getElementById('playPauseBtn-proks6');
+                const video6 = document.getElementById('proks6vid1');
+
+
+                playPauseBtn6.addEventListener('click', function() {
+                    if (playPauseBtn6.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        document.querySelectorAll('.play-pause-btn').forEach(btn => {
+                            btn.classList.add('fa-play'); btn.classList.remove('fa-pause');
+                        });
+                        playPauseBtn6.classList.remove('fa-play');
+                        playPauseBtn6.classList.add('fa-pause');
+                        video6.play();
+                    } else {
+                        playPauseBtn6.classList.remove('fa-pause');
+                        playPauseBtn6.classList.add('fa-play');
+
+                        video6.pause();
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime6');
+                    var totalTimeElement = document.getElementById('totalTime6');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video6.currentTime);
+                    totalTimeElement.textContent = formatTime(video6.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video6.currentTime);
+                        totalTimeElement.textContent = formatTime(video6.duration);
+                    }, 500);
+                });
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;"><strong>It all comes to a head in the fourth and final movement,</strong> where, after a frantic introduction befitting the tempo marking — <em>allegro tempestoso</em> — a new theme is introduced.  
+            </p>
+
+            <img src="../uploads/proks6-img2.png" width="100%">
+            <img src="../uploads/proks6-img3.png" width="100%">
+            <img src="../uploads/proks6-img4.png" width="100%">
+            
+            <br><br>
+
+
+            <p style="margin-bottom: 20px;">
+              It’s a unique compositional choice: When one thinks of the typical format of a concerto — like those of Mozart, Tchaikovsky, or Brahms — the theme from the first movement is usually revisited in the last one. But instead, Prokofiev allows the piece to evolve beyond that. It’s a more subdued and mellow line, compared to the frantic atonal moments and the ominous marches that came before it. The biographer Daniel Jaffé calls the theme a “lullaby,” seeming to gradually lay the piece to rest. Perhaps it resembles something like moving on, acceptance.
+              <br><br>
+              The piano introduces this lullaby first (in a section that reminds me especially of the cadenza in <a href="https://youtu.be/9cPTURzDAyY?si=5NI2z8zvGa_immj1&t=172">Beethoven’s Piano Concerto No. 4</a>), then the orchestra joins in, the theme echoing around the hall, swelling then disappearing into a final rendition by the bassoon.
+            </p>
+            <p style="margin-bottom: 20px;">Then another piano solo begins —  Jaffe describes it as “not so much a cadenza... but a post-cadential meditation”: introspective and somber, not without its powerful moments, but more wandering than brash as in the first movement.</p>
+            <img src="../uploads/proks6-img5.png" width="100%">
+            <br><br><br><br><br><br>
+
+          </div>
+        </article>
+
+        <article id="proks7">
+          <div class="full-screen-sticky" id="pkvid7-video">
+              <video playsinline class="fullsc-video" id="proks7vid1" src="../uploads/proks7-vid1.mp4#t=0.0001" preload="metadata" onended="document.getElementById('playPauseBtn-proks7').classList.remove('fa-pause');document.getElementById('playPauseBtn-proks7').classList.add('fa-play');">
+              </video>
+          </div>
+
+          <div style="height: 30vh"></div>
+
+          <div class="section-text">
+
+              <i id="playPauseBtn-proks7" class="fas fa-play play-pause-btn"></i>
+              <br><br>
+              <div><h6><span  id="currentTime7">0</span> / <span id="totalTime7">0</span></h6></div>
+              <br><br>
+
+            <script>
+                // JavaScript to toggle between play and pause icons
+                const playPauseBtn7 = document.getElementById('playPauseBtn-proks7');
+                const video7 = document.getElementById('proks7vid1');
+
+
+                playPauseBtn7.addEventListener('click', function() {
+                    if (playPauseBtn7.classList.contains('fa-play')) {
+                        document.querySelectorAll('video').forEach(video => video.pause());
+                        document.querySelectorAll('.play-pause-btn').forEach(btn => {
+                            btn.classList.add('fa-play'); btn.classList.remove('fa-pause');
+                        });
+                        playPauseBtn7.classList.remove('fa-play');
+                        playPauseBtn7.classList.add('fa-pause');
+                        video7.play();
+                    } else {
+                        playPauseBtn7.classList.remove('fa-pause');
+                        playPauseBtn7.classList.add('fa-play');
+
+                        video7.pause();
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Function to format seconds into mm:ss
+                    function formatTime(seconds) {
+                        var minutes = Math.floor(seconds / 60);
+                        var remainingSeconds = Math.floor(seconds % 60);
+                        return minutes.toString().padStart(2, '0') + ":" + remainingSeconds.toString().padStart(2, '0');
+                    }
+
+                    // Get references to the DOM elements where the times will be displayed
+                    var currentTimeElement = document.getElementById('currentTime7');
+                    var totalTimeElement = document.getElementById('totalTime7');
+
+                    // Set initial values
+                    currentTimeElement.textContent = formatTime(video7.currentTime);
+                    totalTimeElement.textContent = formatTime(video7.duration);
+
+                    // Update current time and total time every 500ms
+                    setInterval(function() {
+                        currentTimeElement.textContent = formatTime(video7.currentTime);
+                        totalTimeElement.textContent = formatTime(video7.duration);
+                    }, 500);
+                });
+            </script>
+
+            <p style="margin-top: 20vh; margin-bottom: 20px;">The orchestra rejoins without fanfare, quietly reintroducing the theme. 
+            </p>
+
+            <img src="../uploads/proks7-img1.png" width="100%">
+            <img src="../uploads/proks7-img1-1.png" width="100%">
+            <br><br>
+
+
+            <p style="margin-bottom: 20px;">
+              Slowly, the music builds to a finale —
+            </p>
+            <img src="../uploads/proks7-img2.png" width="100%">
+            <br><br>
+            <p style="margin-bottom: 20px;">— the piano briefly meditates on the theme one last time —</p>
+            <img src="../uploads/proks7-img3.png" width="100%">
+            <br><br>
+            <p style="margin-bottom: 20px;">— and the orchestra repeats the frantic <em>tempestoso</em> that began the movement, racing to an abrupt ending.</p>
+            <img src="../uploads/proks7-img4.png" width="100%">
+            <img src="../uploads/proks7-img5.png" width="100%">
+            <br><br><br><br><br><br>
+
+          </div>
+        </article>
+
+        <div style="height: 10vh"></div>
+
+        <div class="row">
+          <div class="main_center">
+             <p>I find myself constantly coming back to Sergei Prokofiev&rsquo;s Piano Concerto No. 2. The chaos and dissonance of the piece feel like a perfect embodiment of the inner turmoil of the composer as he grapples with the personal loss of his close friend and the political upheaval of the Russian Revolution. It feels as though I can hear Prokofiev processing his grief in real time as he writes each note.</p>
+
+             <p>Prokofiev&rsquo;s use of modernist techniques, which remain unsettling to this day, creates one of the most captivating auditory stories I have ever listened to. Romantic compositions are often associated with warmth and lush melodies &mdash; Rachmaninoff is known for his elegance and depth; Ravel for his richness and radiance &mdash; but Prokofiev makes a starkly different stylistic choice that had initially made me hesitant to approach his work. But, knowing now Prokofiev&rsquo;s reasons for writing the concerto, it is clear to me there is no other way he could have written such feelings down other than to defy the norms of what sounds &ldquo;good.&rdquo;</p>
+             
+             <p>In his book, &ldquo;The Concerto: A Listener&rsquo;s Guide,&rdquo; the author Michael Steinberg describes an article written by an old Russian newspaper reviewing the premiere of the concerto. As the performance went on, excitement turned to anticipation, then to anger. But despite the audience&rsquo;s constant taunting, Prokofiev bowed defiantly &mdash; and played an encore.&nbsp;&#9632;
+             </p>
+          </div>
+      </div>
         <div class="footer">
             <p>25</p>
         </div>
