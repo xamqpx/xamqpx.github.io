@@ -119,14 +119,16 @@ p a:hover {
 /* columns */
 /* left */
 .side {
-    flex: 25%; /* Set the width of the sidebar */
+    flex: 25%;
+    /* Set the width of the sidebar */
     padding: 20px;
     margin-bottom: 20px;
 }
 
 /* right */
 .main {
-    flex: 70%; /* Set the width of the main content */
+    flex: 70%;
+    /* Set the width of the main content */
     padding: 20px;
     padding-right: 30%;
 }
@@ -185,6 +187,7 @@ a h3:hover {
     body {
         font-size: 18px;
     }
+
     .row {
         flex-direction: column;
         padding: 10px;
@@ -244,6 +247,7 @@ a h3:hover {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -294,4 +298,17 @@ blockquote {
     line-height: 1.2;
     padding: 50px 0;
     color: #555;
+}
+
+sup.text {
+    color: white;
+    background: #dd7e6b;
+    font-weight: bold;
+    padding: 0 3px;
+    margin: 0 3px;
+}
+
+sup.footnote {
+    color: #dd7e6b;
+    font-weight: bold;
 }
