@@ -1,4 +1,15 @@
 [{
+        "slug": "yard",
+        "kicker": "LIFE",
+        "headline": "&lsquo;The Yard&rsquo;",
+        "subhead": "It’s a white-guy YouTube podcast about literally nothing. Why am I paying fifteen dollars a month to watch even more of it?",
+        "author": "",
+        "date": "7 October 2025",
+        "photo_url": "/archives/uploads/yard-thumbnail.png",
+        "photo_credit": "THE YARD",
+        "article_url": "/archives/articles/yard.html"
+    },
+    {
         "slug": "gun-rebirth",
         "kicker": "POLITICS",
         "headline": "The rebirth of the American gun",
