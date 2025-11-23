@@ -219,9 +219,20 @@
         "article_url": "/archives/articles/brief-encounter.html"
     },
     {
+        "slug": "kim-wexler",
+        "kicker": "REVIEWS",
+        "headline": "Notes on Kim Wexler",
+        "subhead": "Breaking Bad viewers who hated Skyler White finally got the complicit, unconditionally loving wife they wanted in Better Call Saul. Now what?",
+        "author": "",
+        "date": "16 December 2022",
+        "photo_url": "https://d6ehjqrqtzoun.cloudfront.net/de135c4a-8855-4ffe-80cd-17894897e0af.png",
+        "photo_credit": "AMC/SONY PICTURES TELEVISION",
+        "article_url": "/archives/articles/kim-wexler.html"
+    },
+    {
         "slug": "17776-review",
         "kicker": "REVIEWS",
-        "headline": "Review: '17776' is the best argument against capitalist immortality humanity has to offer",
+        "headline": "'17776' is the best argument against capitalist immortality humanity has to offer",
         "subhead": "Something is terribly wrong. Something is terribly wrong. Something is terribly wrong.",
         "author": "",
         "date": "22 August 2022",
@@ -316,17 +327,6 @@
         "photo_url": "/archives/uploads/TOM%20MISCH%2025POST.jpg",
         "photo_credit": "JOSHUA HALLING",
         "article_url": "/archives/articles/misch-electronic.html"
-    },
-    {
-        "slug": "dreamsearching",
-        "kicker": "NON / FICTION",
-        "headline": "dreamsearching",
-        "subhead": "Let’s go home.",
-        "author": "",
-        "date": "27 June 2022",
-        "photo_url": "/archives/uploads/DREAMSEARCHING%2025POST.jpg",
-        "photo_credit": "JONATHAN PARK",
-        "article_url": "/archives/pieces/dreamsearching.html"
     },
     {
         "slug": "nelson",
